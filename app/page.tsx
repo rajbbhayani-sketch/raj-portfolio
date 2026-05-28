@@ -18,6 +18,10 @@ const caseStudies = [
     pdf: "",
     github: "#",
     githubLabel: "Private Repository",
+    highlight: "Flagship Logistics Case Study",
+    metricOne: "5 Corridors",
+    metricTwo: "Port & Delay Risk",
+    metricThree: "CO2 Tracking",
     problem:
       "European freight networks face road congestion, port bottlenecks, emissions pressure, and fragmented corridor visibility.",
     solution:
@@ -47,6 +51,10 @@ const caseStudies = [
     pdf: "/pdfs/procurement.pdf",
     github: "#",
     githubLabel: "Private Repository",
+    highlight: "Executive Procurement Control Tower",
+    metricOne: "Supplier Risk",
+    metricTwo: "ESG Exposure",
+    metricThree: "Spend Visibility",
     problem:
       "Procurement teams often manage spend, delivery reliability, ESG risk, and supplier performance in separate systems.",
     solution:
@@ -76,6 +84,10 @@ const caseStudies = [
     pdf: "/pdfs/currency.pdf",
     github: "#",
     githubLabel: "Private Repository",
+    highlight: "Financial Exposure Intelligence",
+    metricOne: "Currency Risk",
+    metricTwo: "Inflation Signals",
+    metricThree: "Forecasting",
     problem:
       "Currency movements and inflation pressure can increase procurement costs and weaken supplier contract predictability.",
     solution:
@@ -105,6 +117,10 @@ const caseStudies = [
     pdf: "/pdfs/defense.pdf",
     github: "#",
     githubLabel: "Private Repository",
+    highlight: "Operational Readiness System",
+    metricOne: "Readiness",
+    metricTwo: "Maintenance",
+    metricThree: "Procurement Risk",
     problem:
       "Readiness drops when downtime, maintenance cost, procurement delays, and supplier dependency are managed separately.",
     solution:
@@ -134,6 +150,10 @@ const caseStudies = [
     pdf: "/pdfs/xai.mp4",
     github: "#",
     githubLabel: "Private Repository",
+    highlight: "AI Decision Support Prototype",
+    metricOne: "XGBoost",
+    metricTwo: "SHAP",
+    metricThree: "Scenario Lab",
     problem:
       "Inventory planners need more than a stockout prediction. They need to understand why a part is risky and what action is reasonable.",
     solution:
@@ -280,7 +300,8 @@ export default function Home() {
     };
 
     window.addEventListener("keydown", handleEsc);
-    document.body.style.overflow = activeCase !== null || activeInsight !== null ? "hidden" : "auto";
+    document.body.style.overflow =
+      activeCase !== null || activeInsight !== null ? "hidden" : "auto";
 
     return () => {
       window.removeEventListener("keydown", handleEsc);
@@ -404,46 +425,82 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="case-studies" className="px-6 py-24">
+      <section id="case-studies" className="px-6 py-28">
         <div className="mx-auto max-w-7xl">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-blue-600">Featured Work</p>
-          <h2 className="text-4xl font-black tracking-tight">Business Case Studies</h2>
-          <p className="mt-4 max-w-3xl text-lg leading-8 text-slate-600">
-            Each case study connects a business problem with an analytics based solution framework.
-          </p>
+          <div className="max-w-3xl">
+            <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-blue-600">Featured Work</p>
+            <h2 className="text-5xl font-black tracking-tight">Case Study Showcase</h2>
+            <p className="mt-5 text-lg leading-8 text-slate-600">
+              Business problems, analytics systems, and decision frameworks presented as executive-level portfolio cases.
+            </p>
+          </div>
 
-          <div className="mt-12 grid gap-8 lg:grid-cols-2">
+          <div className="mt-16 space-y-12">
             {caseStudies.map((item, index) => (
               <article
                 key={item.title}
-                className="group overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-slate-900/10"
+                className={`group grid overflow-hidden rounded-[2.5rem] border border-slate-200 bg-white shadow-xl shadow-slate-900/5 transition duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-slate-900/10 lg:grid-cols-2 ${
+                  index % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""
+                }`}
               >
-                <div className="relative bg-gradient-to-br from-slate-950 to-slate-800 p-4">
-                  <div className="mb-3 flex gap-2">
-                    <span className="h-3 w-3 rounded-full bg-red-400" />
-                    <span className="h-3 w-3 rounded-full bg-yellow-400" />
-                    <span className="h-3 w-3 rounded-full bg-green-400" />
-                  </div>
+                <div className="relative min-h-[520px] overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950 p-8">
+                  <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-blue-500/20 blur-3xl" />
+                  <div className="absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-cyan-400/10 blur-3xl" />
 
-                  <div className="overflow-hidden rounded-2xl bg-white shadow-2xl">
-                    <img
-                      src={item.image || item.fallbackImage}
-                      alt={item.title}
-                      className="h-72 w-full object-cover object-top transition duration-500 group-hover:scale-[1.03]"
-                    />
-                  </div>
+                  <div className="relative z-10">
+                    <div className="mb-5 flex items-center justify-between">
+                      <div className="flex gap-2">
+                        <span className="h-3 w-3 rounded-full bg-red-400" />
+                        <span className="h-3 w-3 rounded-full bg-yellow-400" />
+                        <span className="h-3 w-3 rounded-full bg-green-400" />
+                      </div>
+                      <p className="text-xs font-black uppercase tracking-widest text-blue-200">
+                        Executive Analytics System
+                      </p>
+                    </div>
 
-                  <p className="mt-4 text-xs font-black uppercase tracking-widest text-blue-200">
-                    Executive Analytics System
-                  </p>
+                    <div className="rounded-[1.6rem] border border-white/10 bg-white/10 p-3 shadow-2xl backdrop-blur">
+                      <div className="overflow-hidden rounded-[1.2rem] bg-white">
+                        <img
+                          src={item.image || item.fallbackImage}
+                          alt={item.title}
+                          className="h-[360px] w-full object-contain object-center transition duration-700 group-hover:scale-[1.03]"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="mt-6 grid grid-cols-3 gap-3">
+                      {[item.metricOne, item.metricTwo, item.metricThree].map((metric) => (
+                        <div key={metric} className="rounded-2xl border border-white/10 bg-white/10 p-4 text-white backdrop-blur">
+                          <p className="text-xs font-semibold text-blue-200">Focus</p>
+                          <p className="mt-1 text-sm font-black">{metric}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
                 </div>
 
-                <div className="p-7">
-                  <span className="rounded-full bg-blue-50 px-3 py-1 text-sm font-semibold text-blue-700">{item.tag}</span>
-                  <h3 className="mt-5 text-2xl font-black">{item.title}</h3>
-                  <p className="mt-4 leading-7 text-slate-600">{item.problem}</p>
+                <div className="flex flex-col justify-center p-8 lg:p-12">
+                  <p className="mb-4 text-sm font-black uppercase tracking-widest text-blue-600">
+                    {item.highlight}
+                  </p>
 
-                  <div className="mt-5 flex flex-wrap gap-2">
+                  <span className="w-fit rounded-full bg-blue-50 px-3 py-1 text-sm font-semibold text-blue-700">
+                    {item.tag}
+                  </span>
+
+                  <h3 className="mt-6 text-3xl font-black tracking-tight lg:text-4xl">
+                    {item.title}
+                  </h3>
+
+                  <p className="mt-5 text-lg leading-8 text-slate-600">{item.problem}</p>
+
+                  <div className="mt-6 rounded-3xl bg-slate-50 p-5">
+                    <p className="font-black text-slate-950">Business Value</p>
+                    <p className="mt-2 leading-7 text-slate-600">{item.value}</p>
+                  </div>
+
+                  <div className="mt-6 flex flex-wrap gap-2">
                     {item.tools.map((tool) => (
                       <span key={tool} className="rounded-full border border-slate-200 px-3 py-1 text-xs font-semibold text-slate-600">
                         {tool}
@@ -451,7 +508,7 @@ export default function Home() {
                     ))}
                   </div>
 
-                  <div className="mt-6 flex flex-wrap gap-3">
+                  <div className="mt-8 flex flex-wrap gap-3">
                     <button onClick={() => setActiveCase(index)} className="rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-700">
                       View Full Case Study
                     </button>
@@ -462,9 +519,8 @@ export default function Home() {
                       </a>
                     )}
 
-                    <a
-                      href={item.github}
-                      target="_blank"
+                    <button
+                      disabled={item.github === "#"}
                       className={`rounded-full border px-5 py-3 text-sm font-semibold transition ${
                         item.github === "#"
                           ? "cursor-not-allowed border-slate-200 bg-slate-50 text-slate-400"
@@ -472,7 +528,7 @@ export default function Home() {
                       }`}
                     >
                       {item.githubLabel || "GitHub"}
-                    </a>
+                    </button>
                   </div>
                 </div>
               </article>
@@ -674,7 +730,7 @@ export default function Home() {
 
             <div className="px-6 pb-0">
               <div className="overflow-hidden rounded-[1.5rem] bg-slate-950 p-4">
-                <img src={selected.image || selected.fallbackImage} alt={selected.title} className="h-96 w-full rounded-2xl object-cover object-top" />
+                <img src={selected.image || selected.fallbackImage} alt={selected.title} className="h-96 w-full rounded-2xl object-contain object-center bg-white" />
               </div>
             </div>
 
@@ -737,9 +793,8 @@ export default function Home() {
                   </a>
                 )}
 
-                <a
-                  href={selected.github}
-                  target="_blank"
+                <button
+                  disabled={selected.github === "#"}
                   className={`rounded-full border px-5 py-3 text-sm font-semibold ${
                     selected.github === "#"
                       ? "cursor-not-allowed border-slate-200 bg-slate-50 text-slate-400"
@@ -747,7 +802,7 @@ export default function Home() {
                   }`}
                 >
                   {selected.githubLabel || "GitHub"}
-                </a>
+                </button>
 
                 <button onClick={() => setActiveCase(null)} className="rounded-full border border-slate-300 px-5 py-3 text-sm font-semibold">
                   Back to Case Studies
