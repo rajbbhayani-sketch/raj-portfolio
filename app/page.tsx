@@ -226,7 +226,7 @@ const languages = ["English - Fluent", "German - Intermediate", "Hindi - Native"
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white text-slate-950">
+    <main className="relative min-h-screen overflow-hidden bg-white/90 text-slate-950">
       <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur-xl">
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4">
           <a href="#" className="flex items-center gap-3 font-black tracking-tight">
@@ -486,22 +486,28 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contact" className="border-t border-slate-200 px-5 py-20">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.58fr_0.42fr]">
-          <div>
-            <p className="text-sm font-black uppercase tracking-[0.28em] text-[#0071e3]">Recruiters & Hiring Managers</p>
-            <h2 className="mt-4 text-4xl font-black tracking-tight md:text-6xl">Let&apos;s talk about your next analyst role.</h2>
-            <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-600">
+      <section id="contact" className="relative border-t border-slate-200 bg-[#f5f5f7]/80 px-5 py-20">
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-56 bg-[radial-gradient(circle_at_20%_30%,rgba(0,113,227,0.08),transparent_34%),radial-gradient(circle_at_80%_20%,rgba(15,23,42,0.05),transparent_30%)]" />
+        <div className="relative mx-auto max-w-7xl">
+          <div className="grid gap-8 lg:grid-cols-[0.45fr_0.55fr] lg:items-end">
+            <div>
+              <p className="text-sm font-black uppercase tracking-[0.28em] text-[#0071e3]">Recruiters & Hiring Managers</p>
+              <h2 className="mt-4 text-4xl font-black tracking-tight md:text-6xl">Let&apos;s talk about your next analyst role.</h2>
+            </div>
+            <p className="max-w-3xl text-lg leading-8 text-slate-600">
               I am looking for full-time opportunities across Europe in business analysis, BI, operations analytics, supply chain analytics, procurement analytics, and AI-powered decision support.
             </p>
           </div>
-          <div className="space-y-4">
+
+          <div className="mt-12 grid gap-6 lg:grid-cols-[0.58fr_0.42fr]">
             <ContactForm />
-            <ContactLink icon={Mail} label="Email" value="rajbharatbhayani@gmail.com" href="mailto:rajbharatbhayani@gmail.com" />
-            <ContactLink icon={Phone} label="Phone" value="+49 176 62398987" href="tel:+4917662398987" />
-            <ContactLink icon={Link} label="LinkedIn" value="linkedin.com/in/mrrajbhayani" href="https://www.linkedin.com/in/mrrajbhayani" />
-            <ContactLink icon={Link} label="Instagram" value="@raj_bhayani___" href="https://www.instagram.com/raj_bhayani___" />
-            <ContactLink icon={MapPin} label="Current Base" value="Berlin, Germany - open across Europe" href="https://maps.google.com/?q=Berlin,Germany" />
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+              <ContactLink icon={Mail} label="Email" value="rajbharatbhayani@gmail.com" href="mailto:rajbharatbhayani@gmail.com" />
+              <ContactLink icon={Phone} label="Phone" value="+49 176 62398987" href="tel:+4917662398987" />
+              <ContactLink icon={Link} label="LinkedIn" value="linkedin.com/in/mrrajbhayani" href="https://www.linkedin.com/in/mrrajbhayani" />
+              <ContactLink icon={Link} label="Instagram" value="@raj_bhayani___" href="https://www.instagram.com/raj_bhayani___" />
+              <ContactLink icon={MapPin} label="Current Base" value="Berlin, Germany - open across Europe" href="https://maps.google.com/?q=Berlin,Germany" wide />
+            </div>
           </div>
         </div>
       </section>
@@ -544,9 +550,17 @@ function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
-      <p className="text-sm font-black uppercase tracking-[0.22em] text-[#0071e3]">Contact Form</p>
-      <div className="mt-5 grid gap-3">
+    <form onSubmit={handleSubmit} className="rounded-lg border border-slate-200 bg-white p-6 shadow-2xl shadow-slate-200/80">
+      <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p className="text-sm font-black uppercase tracking-[0.22em] text-[#0071e3]">Contact Form</p>
+          <h3 className="mt-2 text-2xl font-black">Send a quick opportunity note</h3>
+        </div>
+        <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-black uppercase tracking-[0.16em] text-blue-700">
+          Email Draft
+        </span>
+      </div>
+      <div className="mt-6 grid gap-4 sm:grid-cols-2">
         <input
           required
           value={form.name}
@@ -564,7 +578,7 @@ function ContactForm() {
           value={form.role}
           onChange={(event) => updateField("role", event.target.value)}
           placeholder="Role / opportunity"
-          className="rounded-lg border border-slate-200 px-4 py-3 font-semibold outline-none transition focus:border-[#0071e3]"
+          className="rounded-lg border border-slate-200 px-4 py-3 font-semibold outline-none transition focus:border-[#0071e3] sm:col-span-2"
         />
         <textarea
           required
@@ -572,7 +586,7 @@ function ContactForm() {
           onChange={(event) => updateField("message", event.target.value)}
           placeholder="Short message"
           rows={4}
-          className="resize-none rounded-lg border border-slate-200 px-4 py-3 font-semibold outline-none transition focus:border-[#0071e3]"
+          className="resize-none rounded-lg border border-slate-200 px-4 py-3 font-semibold outline-none transition focus:border-[#0071e3] sm:col-span-2"
         />
       </div>
       <button type="submit" className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#0071e3] px-5 py-3 font-black text-white transition hover:bg-[#0077ed]">
@@ -616,20 +630,22 @@ function ContactLink({
   label,
   value,
   href,
+  wide = false,
 }: {
   icon: typeof Mail;
   label: string;
   value: string;
   href: string;
+  wide?: boolean;
 }) {
   return (
-    <a href={href} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noreferrer" : undefined} className="flex items-center gap-4 rounded-lg border border-slate-200 bg-white p-4 transition hover:border-[#0071e3]/60 hover:bg-slate-100">
-      <span className="rounded-lg bg-[#0071e3] p-3 text-white">
+    <a href={href} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noreferrer" : undefined} className={`flex items-center gap-4 rounded-lg border border-slate-200 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:border-[#0071e3]/60 hover:shadow-lg hover:shadow-slate-200/80 ${wide ? "sm:col-span-2 lg:col-span-1" : ""}`}>
+      <span className="grid h-11 w-11 shrink-0 place-items-center rounded-lg bg-[#0071e3] text-white">
         <Icon size={20} />
       </span>
-      <span>
+      <span className="min-w-0">
         <span className="block text-xs font-black uppercase tracking-[0.18em] text-slate-400">{label}</span>
-        <span className="mt-1 block font-bold text-slate-950">{value}</span>
+        <span className="mt-1 block break-words font-bold text-slate-950">{value}</span>
       </span>
     </a>
   );
