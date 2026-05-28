@@ -28,7 +28,7 @@ const roleTargets = [
 
 const impactStats = [
   ["2+", "Years in analysis, BI, and operations"],
-  ["5", "Portfolio case studies for European business problems"],
+  ["7", "Portfolio case studies for European business problems"],
   ["4", "Languages for international teams"],
   ["EU", "Open to roles across Europe"],
 ];
@@ -119,6 +119,24 @@ const skillGroups = [
 ];
 
 const projects = [
+  {
+    title: "AI Business Analyst Co-Pilot For European Market Decisions",
+    category: "AI Business Analysis",
+    image: "/projects/ai-business-analysis.png",
+    href: "",
+    problem: "Business teams often lose time translating stakeholder requests, scattered KPI notes, customer signals, and market changes into clear requirements and action priorities.",
+    value: "Designed a portfolio prototype for an AI-assisted business analysis workflow that summarizes requirements, flags KPI anomalies, scores opportunities, and turns executive questions into structured next steps.",
+    tools: ["AI Workflow Design", "Power BI Concept", "Python", "Prompt Engineering", "Requirements Analysis"],
+  },
+  {
+    title: "AI European Supply Chain Risk & Disruption Control Tower",
+    category: "AI Supply Chain Analytics",
+    image: "/projects/ai-supply-chain-risk.png",
+    href: "",
+    problem: "European supply chains face supplier delays, port congestion, transport disruption, inventory shortages, and sustainability pressure across countries and corridors.",
+    value: "Designed an AI control tower concept that predicts supplier delay risk, highlights logistics bottlenecks, monitors inventory exposure, and recommends mitigation actions for supply chain teams.",
+    tools: ["AI Risk Scoring", "Supply Chain Analytics", "Forecasting", "Scenario Analysis", "Power BI Concept"],
+  },
   {
     title: "European Procurement & Supplier Risk Intelligence",
     category: "Procurement Risk",
