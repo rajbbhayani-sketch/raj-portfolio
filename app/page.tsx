@@ -14,7 +14,6 @@ const caseStudies = [
     title: "European Waterway Supply Chain Intelligence",
     tag: "Logistics Strategy",
     image: "/projects/waterway.png",
-    fallbackImage: "/insights/river-transport.png",
     pdf: "",
     github: "#",
     githubLabel: "Private Repository",
@@ -28,21 +27,13 @@ const caseStudies = [
       "Designed a corridor intelligence framework covering cargo demand, delay risk, port turnaround, CO2 tracking, and predictive logistics monitoring.",
     value:
       "Better corridor visibility, improved port monitoring, and sustainability focused logistics decisions.",
+    context:
+      "European freight systems face increasing congestion, sustainability pressure, and fragmented logistics visibility across road, rail, and inland waterways.",
+    approach:
+      "Built a logistics intelligence concept connecting cargo demand, corridor delay risk, port turnaround, and CO2 reduction potential.",
+    learning:
+      "This project strengthened my understanding of European logistics resilience, multimodal transport, and infrastructure driven supply chain strategy.",
     tools: ["Power BI", "DAX", "Power Query", "Data Modeling", "Forecasting"],
-    details: {
-      summary:
-        "This case study explores how inland waterway logistics can support European freight resilience, reduce road congestion, and improve sustainable supply chain planning.",
-      rootCauses: [
-        "Limited visibility into inland corridor performance.",
-        "Port congestion and waiting time are often monitored separately.",
-        "Sustainability metrics are not always connected to logistics planning.",
-      ],
-      impact: [
-        "Improved corridor planning and delay risk monitoring.",
-        "Better understanding of port turnaround and congestion points.",
-        "Stronger sustainability reporting through CO2 reduction analysis.",
-      ],
-    },
   },
   {
     title: "European Procurement & Supplier Risk Intelligence",
@@ -61,21 +52,13 @@ const caseStudies = [
       "Built a supplier risk framework combining spend, lead time, on time delivery, ESG score, supplier status, and country exposure.",
     value:
       "Higher supplier visibility, risk based sourcing decisions, and stronger ESG monitoring.",
+    context:
+      "Procurement organizations need stronger visibility across suppliers, costs, ESG exposure, delivery performance, and regional sourcing risk.",
+    approach:
+      "Created a procurement intelligence system combining supplier performance, spend analysis, lead time visibility, ESG monitoring, and supplier risk scoring.",
+    learning:
+      "This project improved my understanding of procurement decision support, supplier segmentation, and executive reporting for sourcing decisions.",
     tools: ["Power BI", "DAX", "Power Query", "SQL Style Analytics", "Data Modeling"],
-    details: {
-      summary:
-        "This case study focuses on procurement visibility, supplier performance, ESG compliance, and cost pressure monitoring across European supplier networks.",
-      rootCauses: [
-        "Supplier data is fragmented across procurement, finance, and compliance systems.",
-        "Delivery reliability and ESG risk are often reviewed separately.",
-        "Procurement teams lack a single executive view of spend, risk, and supplier performance.",
-      ],
-      impact: [
-        "Improved supplier risk visibility.",
-        "Better sourcing and supplier diversification decisions.",
-        "Stronger ESG and delivery performance monitoring.",
-      ],
-    },
   },
   {
     title: "European Currency Risk & Inflation Intelligence",
@@ -94,21 +77,13 @@ const caseStudies = [
       "Created a financial risk intelligence model to track volatility, inflation risk, supplier exposure, and forecasted procurement cost.",
     value:
       "Improved cost risk visibility and forecast driven procurement decisions.",
+    context:
+      "European procurement teams are exposed to currency volatility, inflation pressure, and supplier cost uncertainty across different regions.",
+    approach:
+      "Designed an intelligence layer for currency exposure, procurement inflation impact, supplier risk watchlists, and forecasted procurement cost monitoring.",
+    learning:
+      "This project helped me connect financial risk monitoring with procurement decision making and supplier exposure analysis.",
     tools: ["Power BI", "DAX", "Power Query", "Forecasting", "Data Modeling"],
-    details: {
-      summary:
-        "This case study connects procurement inflation, supplier currency dependency, and financial risk monitoring into one executive intelligence framework.",
-      rootCauses: [
-        "Currency exposure is often not connected directly to supplier risk.",
-        "Inflation impact is difficult to track across countries and suppliers.",
-        "Procurement teams need earlier warning signals before cost pressure becomes visible in budgets.",
-      ],
-      impact: [
-        "Improved procurement cost forecasting.",
-        "Better supplier currency exposure monitoring.",
-        "More proactive financial risk decisions.",
-      ],
-    },
   },
   {
     title: "European Defense Operations & Readiness Intelligence",
@@ -127,21 +102,13 @@ const caseStudies = [
       "Designed an executive readiness control tower for equipment availability, maintenance cost, downtime risk, throughput, and supplier exposure.",
     value:
       "Readiness focused decision support, maintenance cost visibility, and procurement bottleneck monitoring.",
+    context:
+      "Operations teams need integrated visibility across maintenance, production throughput, supplier dependency, and procurement delays.",
+    approach:
+      "Created a readiness intelligence framework combining equipment availability, maintenance cost, downtime risk, manufacturing throughput, and procurement exposure.",
+    learning:
+      "This project improved my ability to connect operations analytics with readiness monitoring, maintenance planning, and supply chain risk.",
     tools: ["Power BI", "DAX", "Power Query", "Operations Analytics", "Data Modeling"],
-    details: {
-      summary:
-        "This case study focuses on operational readiness, manufacturing throughput, maintenance intelligence, and procurement risk monitoring.",
-      rootCauses: [
-        "Maintenance, procurement, and production data are often disconnected.",
-        "Downtime risk becomes visible too late for proactive planning.",
-        "Supplier dependency can reduce readiness when procurement delays occur.",
-      ],
-      impact: [
-        "Better maintenance and downtime visibility.",
-        "Improved readiness monitoring.",
-        "More transparent supplier and procurement risk tracking.",
-      ],
-    },
   },
   {
     title: "XAI Inventory Control Tower",
@@ -160,21 +127,13 @@ const caseStudies = [
       "Developed a Streamlit based control tower using XGBoost, SHAP, scenario simulation, safety stock logic, and portfolio risk monitoring.",
     value:
       "Explainable stockout risk, scenario based planning, and more transparent inventory decisions.",
+    context:
+      "Industrial spare parts inventory planning requires transparent AI support because planners must understand why a part is considered risky.",
+    approach:
+      "Built a thesis based Streamlit prototype using XGBoost prediction, SHAP explainability, scenario simulation, safety stock logic, and decision support outputs.",
+    learning:
+      "This project strengthened my skills in explainable AI, business decision support, inventory analytics, and translating model outputs into practical recommendations.",
     tools: ["Python", "Streamlit", "XGBoost", "SHAP", "Plotly", "Pandas"],
-    details: {
-      summary:
-        "This thesis based prototype applies explainable AI to industrial spare parts inventory planning and decision support.",
-      rootCauses: [
-        "Traditional stockout prediction does not explain why risk exists.",
-        "Inventory decisions need transparency for planners and managers.",
-        "Scenario planning is needed when demand or supplier reliability changes.",
-      ],
-      impact: [
-        "Explainable stockout risk prediction.",
-        "Scenario based decision support.",
-        "More transparent inventory planning recommendations.",
-      ],
-    },
   },
 ];
 
@@ -338,7 +297,7 @@ export default function Home() {
         <div className="absolute left-1/2 top-0 -z-10 h-[520px] w-[900px] -translate-x-1/2 rounded-full bg-blue-100 blur-3xl" />
 
         <div className="mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-[1.1fr_0.9fr]">
-          <div>
+          <div className="animate-[fadeUp_0.8s_ease-out]">
             <p className="mb-5 inline-block rounded-full border border-blue-200 bg-white/80 px-4 py-2 text-sm font-semibold text-blue-700 shadow-sm">
               Business Analyst · AI Powered Analytics · Operations Intelligence
             </p>
@@ -373,7 +332,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="rounded-[2rem] border border-slate-200 bg-white/90 p-7 shadow-2xl shadow-slate-900/10 backdrop-blur">
+          <div className="rounded-[2rem] border border-slate-200 bg-white/90 p-7 shadow-2xl shadow-slate-900/10 backdrop-blur transition hover:-translate-y-1">
             <div className="flex items-center gap-6">
               <img
                 src="/profile/profile.jpg"
@@ -431,7 +390,7 @@ export default function Home() {
             <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-blue-600">Featured Work</p>
             <h2 className="text-5xl font-black tracking-tight">Case Study Showcase</h2>
             <p className="mt-5 text-lg leading-8 text-slate-600">
-              Business problems, analytics systems, and decision frameworks presented as executive-level portfolio cases.
+              Business problems, analytics systems, and decision frameworks presented as executive level portfolio cases.
             </p>
           </div>
 
@@ -462,7 +421,7 @@ export default function Home() {
                     <div className="rounded-[1.6rem] border border-white/10 bg-white/10 p-3 shadow-2xl backdrop-blur">
                       <div className="overflow-hidden rounded-[1.2rem] bg-white">
                         <img
-                          src={item.image || item.fallbackImage}
+                          src={item.image}
                           alt={item.title}
                           className="h-[360px] w-full object-contain object-center transition duration-700 group-hover:scale-[1.03]"
                         />
@@ -730,7 +689,7 @@ export default function Home() {
 
             <div className="px-6 pb-0">
               <div className="overflow-hidden rounded-[1.5rem] bg-slate-950 p-4">
-                <img src={selected.image || selected.fallbackImage} alt={selected.title} className="h-96 w-full rounded-2xl object-contain object-center bg-white" />
+                <img src={selected.image} alt={selected.title} className="h-96 w-full rounded-2xl object-contain object-center bg-white" />
               </div>
             </div>
 
@@ -740,43 +699,28 @@ export default function Home() {
 
               <div className="mt-8 grid gap-6 md:grid-cols-2">
                 <div className="rounded-3xl bg-slate-50 p-6">
-                  <h3 className="font-black">Executive Summary</h3>
-                  <p className="mt-3 leading-7 text-slate-600">{selected.details.summary}</p>
+                  <h3 className="font-black">Business Context</h3>
+                  <p className="mt-3 leading-7 text-slate-600">{selected.context}</p>
                 </div>
 
                 <div className="rounded-3xl bg-slate-50 p-6">
-                  <h3 className="font-black">Business Problem</h3>
+                  <h3 className="font-black">Core Problem</h3>
                   <p className="mt-3 leading-7 text-slate-600">{selected.problem}</p>
                 </div>
 
                 <div className="rounded-3xl bg-slate-50 p-6">
-                  <h3 className="font-black">Solution Framework</h3>
-                  <p className="mt-3 leading-7 text-slate-600">{selected.solution}</p>
+                  <h3 className="font-black">Analytical Approach</h3>
+                  <p className="mt-3 leading-7 text-slate-600">{selected.approach}</p>
                 </div>
 
                 <div className="rounded-3xl bg-slate-50 p-6">
-                  <h3 className="font-black">Business Value</h3>
+                  <h3 className="font-black">Business Impact</h3>
                   <p className="mt-3 leading-7 text-slate-600">{selected.value}</p>
                 </div>
-              </div>
 
-              <div className="mt-8 grid gap-6 md:grid-cols-2">
-                <div>
-                  <h3 className="font-black">Root Causes</h3>
-                  <ul className="mt-3 list-disc space-y-2 pl-5 text-slate-600">
-                    {selected.details.rootCauses.map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div>
-                  <h3 className="font-black">Expected Impact</h3>
-                  <ul className="mt-3 list-disc space-y-2 pl-5 text-slate-600">
-                    {selected.details.impact.map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
+                <div className="rounded-3xl bg-slate-50 p-6 md:col-span-2">
+                  <h3 className="font-black">Key Learning</h3>
+                  <p className="mt-3 leading-7 text-slate-600">{selected.learning}</p>
                 </div>
               </div>
 
