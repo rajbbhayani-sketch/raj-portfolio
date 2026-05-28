@@ -207,17 +207,17 @@ const languages = ["English - Fluent", "German - Intermediate", "Hindi - Native"
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-[#07111f] text-white">
-      <header className="sticky top-0 z-50 border-b border-white/10 bg-[#07111f]/92 backdrop-blur-xl">
+    <main className="min-h-screen bg-white text-slate-950">
+      <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur-xl">
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4">
           <a href="#" className="flex items-center gap-3 font-black tracking-tight">
-            <span className="grid h-10 w-10 place-items-center rounded-full bg-cyan-300 text-slate-950">RB</span>
+            <span className="grid h-10 w-10 place-items-center rounded-full bg-[#0071e3] text-white">RB</span>
             <span className="hidden sm:inline">Raj Bharat Bhayani</span>
           </a>
 
-          <div className="hidden items-center gap-6 text-sm font-semibold text-slate-300 lg:flex">
+          <div className="hidden items-center gap-6 text-sm font-semibold text-slate-600 lg:flex">
             {navItems.map((item) => (
-              <a key={item} href={`#${item.toLowerCase()}`} className="transition hover:text-white">
+              <a key={item} href={`#${item.toLowerCase()}`} className="transition hover:text-slate-950">
                 {item}
               </a>
             ))}
@@ -225,7 +225,7 @@ export default function Home() {
 
           <a
             href="mailto:rajbharatbhayani@gmail.com"
-            className="inline-flex items-center gap-2 rounded-full bg-cyan-300 px-4 py-2 text-sm font-black text-slate-950 transition hover:bg-white"
+            className="inline-flex items-center gap-2 rounded-full bg-[#0071e3] px-4 py-2 text-sm font-black text-white transition hover:bg-[#0077ed]"
           >
             <Mail size={16} />
             Hire Me
@@ -234,34 +234,34 @@ export default function Home() {
       </header>
 
       <section id="profile" className="relative overflow-hidden">
-        <div className="absolute inset-x-0 top-0 h-[560px] bg-[radial-gradient(circle_at_20%_20%,rgba(103,232,249,0.22),transparent_30%),radial-gradient(circle_at_80%_10%,rgba(45,212,191,0.13),transparent_28%)]" />
+        <div className="absolute inset-x-0 top-0 h-[560px] bg-[radial-gradient(circle_at_20%_20%,rgba(0,113,227,0.08),transparent_32%),radial-gradient(circle_at_82%_12%,rgba(245,245,247,0.95),transparent_32%)]" />
         <div className="relative mx-auto grid max-w-7xl gap-12 px-5 pb-14 pt-16 md:pt-24 lg:grid-cols-[1.04fr_0.96fr] lg:items-center">
           <div>
-            <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-cyan-300/30 bg-cyan-300/10 px-4 py-2 text-sm font-bold text-cyan-100">
+            <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-4 py-2 text-sm font-bold text-blue-700">
               <span className="h-2 w-2 rounded-full bg-emerald-300" />
               Berlin based - open to Business Analyst roles across Europe
             </p>
             <h1 className="max-w-5xl text-5xl font-black leading-[1.02] tracking-tight md:text-7xl">
               Business analyst who turns messy data into clear decisions.
             </h1>
-            <p className="mt-6 max-w-3xl text-xl font-semibold leading-8 text-cyan-100">
+            <p className="mt-6 max-w-3xl text-xl font-semibold leading-8 text-blue-700">
               I combine business analysis, BI dashboards, operations thinking, supply chain knowledge, and explainable AI to help teams see risk earlier and act faster.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a href="#projects" className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 font-black text-slate-950 transition hover:bg-cyan-200">
+              <a href="#projects" className="inline-flex items-center gap-2 rounded-full bg-slate-950 px-5 py-3 font-black text-white transition hover:bg-[#0071e3]">
                 View Case Studies <ArrowUpRight size={18} />
               </a>
-              <a href="mailto:rajbharatbhayani@gmail.com" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-3 font-black text-white transition hover:border-cyan-200 hover:text-cyan-200">
+              <a href="mailto:rajbharatbhayani@gmail.com" className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-5 py-3 font-black text-slate-950 transition hover:border-[#0071e3] hover:text-[#0071e3]">
                 <Mail size={18} /> Contact Raj
               </a>
-              <a href="https://www.linkedin.com/in/mrrajbhayani" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-3 font-black text-white transition hover:border-cyan-200 hover:text-cyan-200">
+              <a href="https://www.linkedin.com/in/mrrajbhayani" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-5 py-3 font-black text-slate-950 transition hover:border-[#0071e3] hover:text-[#0071e3]">
                 <Link size={18} /> LinkedIn
               </a>
             </div>
 
             <div className="mt-9 grid max-w-3xl gap-3 sm:grid-cols-2">
               {roleTargets.map((role) => (
-                <div key={role} className="rounded-lg border border-white/10 bg-white/[0.05] px-4 py-3 text-sm font-bold text-slate-100">
+                <div key={role} className="rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-700">
                   {role}
                 </div>
               ))}
@@ -269,22 +269,22 @@ export default function Home() {
           </div>
 
           <aside className="relative">
-            <div className="absolute -inset-5 rounded-[2rem] bg-cyan-300/10 blur-2xl" />
-            <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.055] p-5 shadow-2xl shadow-black/30">
+            <div className="absolute -inset-5 rounded-[2rem] bg-blue-50 blur-2xl" />
+            <div className="relative overflow-hidden rounded-lg border border-slate-200 bg-white p-5 shadow-2xl shadow-slate-200/80">
               <div className="grid gap-5 md:grid-cols-[0.9fr_1.1fr] lg:grid-cols-1 xl:grid-cols-[0.92fr_1.08fr]">
-                <Image src="/profile/profile.jpg" alt="Raj Bharat Bhayani" width={720} height={760} priority className="h-[360px] w-full rounded-xl object-cover object-center md:h-full lg:h-[360px] xl:h-full" />
+                <Image src="/profile/profile.jpg" alt="Raj Bharat Bhayani" width={720} height={760} priority className="h-[360px] w-full rounded-lg object-cover object-center md:h-full lg:h-[360px] xl:h-full" />
                 <div className="flex flex-col justify-between gap-5">
                   <div>
-                    <p className="text-sm font-black uppercase tracking-[0.24em] text-cyan-200">Candidate Snapshot</p>
+                    <p className="text-sm font-black uppercase tracking-[0.24em] text-[#0071e3]">Candidate Snapshot</p>
                     <h2 className="mt-3 text-3xl font-black">Raj Bharat Bhayani</h2>
-                    <p className="mt-2 flex items-center gap-2 text-slate-300">
+                    <p className="mt-2 flex items-center gap-2 text-slate-600">
                       <MapPin size={17} /> Berlin, Germany
                     </p>
                   </div>
                   <div className="space-y-3">
                     {recruiterSignals.map((signal) => (
-                      <p key={signal} className="flex gap-3 text-sm leading-6 text-slate-200">
-                        <CheckCircle2 className="mt-1 shrink-0 text-cyan-200" size={16} />
+                      <p key={signal} className="flex gap-3 text-sm leading-6 text-slate-700">
+                        <CheckCircle2 className="mt-1 shrink-0 text-[#0071e3]" size={16} />
                         <span>{signal}</span>
                       </p>
                     ))}
@@ -296,12 +296,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-y border-white/10 bg-white/[0.035] px-5 py-8">
+      <section className="border-y border-slate-200 bg-[#f5f5f7] px-5 py-8">
         <div className="mx-auto grid max-w-7xl gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {impactStats.map(([value, label]) => (
-            <div key={label} className="rounded-lg border border-white/10 bg-[#07111f]/60 p-5">
-              <p className="text-4xl font-black text-cyan-200">{value}</p>
-              <p className="mt-2 text-sm font-semibold leading-6 text-slate-300">{label}</p>
+            <div key={label} className="rounded-lg border border-slate-200 bg-white p-5">
+              <p className="text-4xl font-black text-[#0071e3]">{value}</p>
+              <p className="mt-2 text-sm font-semibold leading-6 text-slate-600">{label}</p>
             </div>
           ))}
         </div>
@@ -309,7 +309,7 @@ export default function Home() {
 
       <section className="mx-auto grid max-w-7xl gap-10 px-5 py-20 lg:grid-cols-[0.38fr_0.62fr]">
         <SectionIntro eyebrow="Positioning" title="Ready for European teams that need analytical clarity." />
-        <div className="space-y-5 text-lg leading-8 text-slate-300">
+        <div className="space-y-5 text-lg leading-8 text-slate-600">
           <p>
             My profile is built for teams that need someone who can understand business requirements, structure the problem, work with data, and communicate insights clearly to non-technical stakeholders.
           </p>
@@ -318,7 +318,7 @@ export default function Home() {
           </p>
           <div className="flex flex-wrap gap-3 pt-2">
             {languages.map((language) => (
-              <span key={language} className="rounded-full border border-white/10 bg-white/[0.05] px-4 py-2 text-sm font-bold text-slate-100">
+              <span key={language} className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-bold text-slate-700">
                 {language}
               </span>
             ))}
@@ -331,7 +331,7 @@ export default function Home() {
           <SectionIntro eyebrow="Work History" title="Experience With Business, Data, And Operations" dark />
           <div className="mt-12 space-y-5">
             {experiences.map((job) => (
-              <article key={job.role} className="grid gap-6 rounded-xl border border-slate-200 bg-white p-6 shadow-sm md:grid-cols-[0.28fr_0.72fr]">
+              <article key={job.role} className="grid gap-6 rounded-lg border border-slate-200 bg-white p-6 shadow-sm md:grid-cols-[0.28fr_0.72fr]">
                 <div className="text-sm font-bold text-slate-500">
                   <p>{job.period}</p>
                   <p className="mt-3 flex items-center gap-2 text-slate-700">
@@ -339,13 +339,13 @@ export default function Home() {
                   </p>
                 </div>
                 <div>
-                  <p className="font-black text-cyan-700">{job.company}</p>
+                  <p className="font-black text-[#0071e3]">{job.company}</p>
                   <h3 className="mt-2 text-2xl font-black tracking-tight">{job.role}</h3>
                   <p className="mt-4 leading-7 text-slate-600">{job.body}</p>
                   <ul className="mt-5 grid gap-3">
                     {job.bullets.map((bullet) => (
                       <li key={bullet} className="flex gap-3 text-slate-600">
-                        <CheckCircle2 className="mt-1 shrink-0 text-cyan-700" size={17} />
+                        <CheckCircle2 className="mt-1 shrink-0 text-[#0071e3]" size={17} />
                         <span>{bullet}</span>
                       </li>
                     ))}
@@ -361,22 +361,22 @@ export default function Home() {
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-8 lg:grid-cols-[0.42fr_0.58fr] lg:items-end">
             <SectionIntro eyebrow="Proof Of Work" title="Case Studies Built Around Real Business Questions" />
-            <p className="max-w-3xl text-lg leading-8 text-slate-300">
+            <p className="max-w-3xl text-lg leading-8 text-slate-600">
               These projects show the kind of thinking recruiters usually look for: problem framing, data structure, executive dashboards, measurable business value, and clear communication.
             </p>
           </div>
 
           <div className="mt-12 grid gap-6 lg:grid-cols-2">
             {projects.map((project, index) => (
-              <article key={project.title} className={index === 0 ? "overflow-hidden rounded-xl border border-cyan-200/30 bg-white text-slate-950 shadow-2xl shadow-cyan-950/20 lg:col-span-2 lg:grid lg:grid-cols-[0.44fr_0.56fr]" : "overflow-hidden rounded-xl border border-white/10 bg-white/[0.05]"}>
+              <article key={project.title} className={index === 0 ? "overflow-hidden rounded-lg border border-slate-200 bg-white text-slate-950 shadow-2xl shadow-slate-200/80 lg:col-span-2 lg:grid lg:grid-cols-[0.44fr_0.56fr]" : "overflow-hidden rounded-lg border border-slate-200 bg-white"}>
                 <div className={index === 0 ? "bg-slate-100 p-5" : "bg-white p-4"}>
                   <Image src={project.image} alt={project.title} width={900} height={560} className="h-72 w-full rounded-lg object-contain object-center" />
                 </div>
                 <div className={index === 0 ? "p-7 lg:p-9" : "p-6"}>
-                  <p className={index === 0 ? "text-sm font-black uppercase tracking-[0.22em] text-cyan-700" : "text-sm font-black uppercase tracking-[0.22em] text-cyan-200"}>
+                  <p className={index === 0 ? "text-sm font-black uppercase tracking-[0.22em] text-[#0071e3]" : "text-sm font-black uppercase tracking-[0.22em] text-[#0071e3]"}>
                     {project.category}
                   </p>
-                  <h3 className={index === 0 ? "mt-3 text-3xl font-black tracking-tight md:text-4xl" : "mt-3 text-2xl font-black tracking-tight text-white"}>
+                  <h3 className={index === 0 ? "mt-3 text-3xl font-black tracking-tight md:text-4xl" : "mt-3 text-2xl font-black tracking-tight text-slate-950"}>
                     {project.title}
                   </h3>
                   <div className="mt-5 grid gap-4">
@@ -385,18 +385,18 @@ export default function Home() {
                   </div>
                   <div className="mt-6 flex flex-wrap gap-2">
                     {project.tools.map((tool) => (
-                      <span key={tool} className={index === 0 ? "rounded-full border border-slate-200 px-3 py-1 text-xs font-black text-slate-600" : "rounded-full bg-white/[0.08] px-3 py-1 text-xs font-bold text-slate-200"}>
+                      <span key={tool} className={index === 0 ? "rounded-full border border-slate-200 px-3 py-1 text-xs font-black text-slate-600" : "rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-700"}>
                         {tool}
                       </span>
                     ))}
                   </div>
                   <div className="mt-7">
                     {project.href ? (
-                      <a href={project.href} target="_blank" rel="noreferrer" className={index === 0 ? "inline-flex items-center gap-2 rounded-full bg-slate-950 px-5 py-3 text-sm font-black text-white transition hover:bg-cyan-700" : "inline-flex items-center gap-2 rounded-full bg-cyan-300 px-5 py-3 text-sm font-black text-slate-950 transition hover:bg-white"}>
+                      <a href={project.href} target="_blank" rel="noreferrer" className={index === 0 ? "inline-flex items-center gap-2 rounded-full bg-slate-950 px-5 py-3 text-sm font-black text-white transition hover:bg-[#0077ed]" : "inline-flex items-center gap-2 rounded-full bg-[#0071e3] px-5 py-3 text-sm font-black text-white transition hover:bg-[#0077ed]"}>
                         Open Case Study / Demo <ArrowUpRight size={16} />
                       </a>
                     ) : (
-                      <span className={index === 0 ? "rounded-full border border-slate-200 px-5 py-3 text-sm font-black text-slate-500" : "rounded-full border border-white/10 px-5 py-3 text-sm font-black text-slate-300"}>
+                      <span className={index === 0 ? "rounded-full border border-slate-200 px-5 py-3 text-sm font-black text-slate-500" : "rounded-full border border-slate-200 px-5 py-3 text-sm font-black text-slate-600"}>
                         Private case study
                       </span>
                     )}
@@ -413,9 +413,9 @@ export default function Home() {
           <SectionIntro eyebrow="Capabilities" title="What I Bring To A Hiring Team" dark />
           <div className="mt-12 grid gap-5 md:grid-cols-2">
             {skillGroups.map(({ title, icon: Icon, summary, skills }) => (
-              <div key={title} className="rounded-xl border border-slate-200 bg-white p-6 shadow-sm">
+              <div key={title} className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
                 <div className="flex items-center gap-3">
-                  <span className="rounded-lg bg-cyan-100 p-3 text-cyan-800">
+                  <span className="rounded-lg bg-blue-50 p-3 text-[#0071e3]">
                     <Icon size={22} />
                   </span>
                   <h3 className="text-xl font-black">{title}</h3>
@@ -438,16 +438,16 @@ export default function Home() {
         <SectionIntro eyebrow="Education" title="Academic Foundation" />
         <div className="mt-12 grid gap-5 md:grid-cols-2">
           {education.map((item) => (
-            <article key={item.degree} className="rounded-xl border border-white/10 bg-white/[0.05] p-6">
-              <GraduationCap className="text-cyan-200" size={30} />
+            <article key={item.degree} className="rounded-lg border border-slate-200 bg-white p-6">
+              <GraduationCap className="text-[#0071e3]" size={30} />
               <h3 className="mt-5 text-2xl font-black">{item.degree}</h3>
-              <p className="mt-2 font-bold text-cyan-200">{item.school}</p>
+              <p className="mt-2 font-bold text-[#0071e3]">{item.school}</p>
               <p className="mt-2 text-sm font-bold text-slate-400">{item.period}</p>
-              <p className="mt-4 leading-7 text-slate-300">{item.detail}</p>
-              <p className="mt-4 rounded-lg border border-cyan-200/20 bg-cyan-300/10 p-4 text-sm font-bold leading-6 text-cyan-100">
+              <p className="mt-4 leading-7 text-slate-600">{item.detail}</p>
+              <p className="mt-4 rounded-lg border border-blue-100 bg-blue-50 p-4 text-sm font-bold leading-6 text-blue-700">
                 {item.note}
               </p>
-              <a href={item.certificate} target="_blank" rel="noreferrer" className="mt-6 inline-flex items-center gap-2 rounded-full border border-white/15 px-4 py-2 text-sm font-black text-white transition hover:border-cyan-200 hover:text-cyan-200">
+              <a href={item.certificate} target="_blank" rel="noreferrer" className="mt-6 inline-flex items-center gap-2 rounded-full border border-slate-300 px-4 py-2 text-sm font-black text-slate-950 transition hover:border-[#0071e3] hover:text-[#0071e3]">
                 <Download size={16} /> View Certificate
               </a>
             </article>
@@ -455,12 +455,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contact" className="border-t border-white/10 px-5 py-20">
+      <section id="contact" className="border-t border-slate-200 px-5 py-20">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.58fr_0.42fr]">
           <div>
-            <p className="text-sm font-black uppercase tracking-[0.28em] text-cyan-200">Recruiters & Hiring Managers</p>
+            <p className="text-sm font-black uppercase tracking-[0.28em] text-[#0071e3]">Recruiters & Hiring Managers</p>
             <h2 className="mt-4 text-4xl font-black tracking-tight md:text-6xl">Let&apos;s talk about your next analyst role.</h2>
-            <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-300">
+            <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-600">
               I am looking for full-time opportunities across Europe in business analysis, BI, operations analytics, supply chain analytics, procurement analytics, and AI-powered decision support.
             </p>
           </div>
@@ -473,7 +473,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="border-t border-white/10 px-5 py-8 text-center text-sm text-slate-400">
+      <footer className="border-t border-slate-200 px-5 py-8 text-center text-sm text-slate-400">
         &copy; 2026 Raj Bharat Bhayani. Built for European business, BI, operations, and AI analyst opportunities.
       </footer>
     </main>
@@ -483,10 +483,10 @@ export default function Home() {
 function SectionIntro({ eyebrow, title, dark = false }: { eyebrow: string; title: string; dark?: boolean }) {
   return (
     <div>
-      <p className={`text-sm font-black uppercase tracking-[0.28em] ${dark ? "text-cyan-700" : "text-cyan-200"}`}>
+      <p className={`text-sm font-black uppercase tracking-[0.28em] ${dark ? "text-[#0071e3]" : "text-[#0071e3]"}`}>
         {eyebrow}
       </p>
-      <h2 className={`mt-4 text-4xl font-black tracking-tight md:text-5xl ${dark ? "text-slate-950" : "text-white"}`}>
+      <h2 className={`mt-4 text-4xl font-black tracking-tight md:text-5xl ${dark ? "text-slate-950" : "text-slate-950"}`}>
         {title}
       </h2>
     </div>
@@ -496,10 +496,10 @@ function SectionIntro({ eyebrow, title, dark = false }: { eyebrow: string; title
 function ProjectText({ label, text, featured }: { label: string; text: string; featured: boolean }) {
   return (
     <div>
-      <p className={featured ? "text-xs font-black uppercase tracking-[0.2em] text-slate-500" : "text-xs font-black uppercase tracking-[0.2em] text-cyan-200"}>
+      <p className={featured ? "text-xs font-black uppercase tracking-[0.2em] text-slate-500" : "text-xs font-black uppercase tracking-[0.2em] text-[#0071e3]"}>
         {label}
       </p>
-      <p className={featured ? "mt-2 leading-7 text-slate-600" : "mt-2 leading-7 text-slate-300"}>{text}</p>
+      <p className={featured ? "mt-2 leading-7 text-slate-600" : "mt-2 leading-7 text-slate-600"}>{text}</p>
     </div>
   );
 }
@@ -516,13 +516,13 @@ function ContactLink({
   href: string;
 }) {
   return (
-    <a href={href} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noreferrer" : undefined} className="flex items-center gap-4 rounded-xl border border-white/10 bg-white/[0.05] p-4 transition hover:border-cyan-200/60 hover:bg-white/[0.08]">
-      <span className="rounded-lg bg-cyan-300 p-3 text-slate-950">
+    <a href={href} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noreferrer" : undefined} className="flex items-center gap-4 rounded-lg border border-slate-200 bg-white p-4 transition hover:border-[#0071e3]/60 hover:bg-slate-100">
+      <span className="rounded-lg bg-[#0071e3] p-3 text-white">
         <Icon size={20} />
       </span>
       <span>
         <span className="block text-xs font-black uppercase tracking-[0.18em] text-slate-400">{label}</span>
-        <span className="mt-1 block font-bold text-white">{value}</span>
+        <span className="mt-1 block font-bold text-slate-950">{value}</span>
       </span>
     </a>
   );

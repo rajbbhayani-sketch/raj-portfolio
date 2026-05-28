@@ -78,13 +78,13 @@ export default function AiSupplyChainRiskControlTower() {
   }, [corridor, demandVolatility, inventoryCover, portCongestion, supplierDelay, supplierReliability]);
 
   return (
-    <main className="min-h-screen bg-[#07111f] text-white">
-      <header className="border-b border-white/10 bg-[#07111f]/95 px-5 py-4">
+    <main className="min-h-screen bg-white text-slate-950">
+      <header className="border-b border-slate-200 bg-white/90 px-5 py-4">
         <nav className="mx-auto flex max-w-7xl items-center justify-between">
-          <NextLink href="/#projects" className="inline-flex items-center gap-2 font-black text-cyan-100 hover:text-white">
+          <NextLink href="/#projects" className="inline-flex items-center gap-2 font-black text-blue-700 hover:text-slate-950">
             <ArrowLeft size={18} /> Back to Portfolio
           </NextLink>
-          <a href={githubUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-cyan-300 px-4 py-2 text-sm font-black text-slate-950 hover:bg-white">
+          <a href={githubUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-[#0071e3] px-4 py-2 text-sm font-black text-white hover:bg-[#0077ed]">
             <Link size={16} /> GitHub Source
           </a>
         </nav>
@@ -92,27 +92,27 @@ export default function AiSupplyChainRiskControlTower() {
 
       <section className="mx-auto grid max-w-7xl gap-10 px-5 py-14 lg:grid-cols-[0.58fr_0.42fr] lg:items-center">
         <div>
-          <p className="text-sm font-black uppercase tracking-[0.28em] text-cyan-200">Live AI Supply Chain Demo</p>
+          <p className="text-sm font-black uppercase tracking-[0.28em] text-[#0071e3]">Live AI Supply Chain Demo</p>
           <h1 className="mt-4 text-4xl font-black tracking-tight md:text-6xl">
             AI European Supply Chain Risk & Disruption Control Tower
           </h1>
-          <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">
+          <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600">
             A working demo that scores disruption risk across European logistics corridors and turns supplier,
             port, demand, and inventory signals into practical mitigation actions.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <a href="#demo" className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 font-black text-slate-950 hover:bg-cyan-200">
+            <a href="#demo" className="inline-flex items-center gap-2 rounded-full bg-slate-950 px-5 py-3 font-black text-white hover:bg-[#0071e3]">
               Try Live Demo <ArrowUpRight size={18} />
             </a>
-            <a href="mailto:rajbharatbhayani@gmail.com" className="inline-flex items-center gap-2 rounded-full border border-white/15 px-5 py-3 font-black text-white hover:border-cyan-200 hover:text-cyan-200">
+            <a href="mailto:rajbharatbhayani@gmail.com" className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-5 py-3 font-black text-slate-950 hover:border-[#0071e3] hover:text-[#0071e3]">
               <Mail size={18} /> Discuss This Project
             </a>
           </div>
         </div>
-        <Image src="/projects/ai-supply-chain-risk.png" alt="AI European supply chain risk dashboard concept" width={900} height={560} priority className="rounded-lg border border-white/10 bg-white/5 shadow-2xl shadow-black/30" />
+        <Image src="/projects/ai-supply-chain-risk.png" alt="AI European supply chain risk dashboard concept" width={900} height={560} priority className="rounded-lg border border-slate-200 bg-white shadow-2xl shadow-slate-200/80" />
       </section>
 
-      <section className="border-y border-white/10 bg-white/[0.035] px-5 py-10">
+      <section className="border-y border-slate-200 bg-[#f5f5f7] px-5 py-10">
         <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-3">
           <InfoCard icon={Route} title="Corridor Risk" text="Scores supplier delay, port congestion, inventory cover, demand volatility, and supplier reliability." />
           <InfoCard icon={PackageCheck} title="Inventory Exposure" text="Highlights shortage pressure and helps teams decide when to increase safety stock or expedite." />
@@ -121,16 +121,16 @@ export default function AiSupplyChainRiskControlTower() {
       </section>
 
       <section id="demo" className="mx-auto grid max-w-7xl gap-6 px-5 py-16 lg:grid-cols-[0.38fr_0.62fr]">
-        <aside className="rounded-lg border border-white/10 bg-white/[0.05] p-6">
-          <p className="text-sm font-black uppercase tracking-[0.22em] text-cyan-200">Risk Inputs</p>
-          <label className="mt-5 block text-sm font-black text-slate-200" htmlFor="corridor">
+        <aside className="rounded-lg border border-slate-200 bg-white p-6">
+          <p className="text-sm font-black uppercase tracking-[0.22em] text-[#0071e3]">Risk Inputs</p>
+          <label className="mt-5 block text-sm font-black text-slate-700" htmlFor="corridor">
             European logistics corridor
           </label>
           <select
             id="corridor"
             value={corridor}
             onChange={(event) => setCorridor(event.target.value as keyof typeof corridors)}
-            className="mt-2 w-full rounded-lg border border-white/10 bg-[#0d1b2e] px-4 py-3 font-bold text-white outline-none"
+            className="mt-2 w-full rounded-lg border border-slate-200 bg-white px-4 py-3 font-bold text-slate-950 outline-none"
           >
             {Object.keys(corridors).map((item) => (
               <option key={item}>{item}</option>
@@ -145,8 +145,8 @@ export default function AiSupplyChainRiskControlTower() {
         </aside>
 
         <div className="grid gap-5">
-          <div className="rounded-lg border border-cyan-200/30 bg-white p-6 text-slate-950 shadow-2xl shadow-black/20">
-            <p className="text-sm font-black uppercase tracking-[0.22em] text-cyan-700">AI Risk Brief</p>
+          <div className="rounded-lg border border-slate-200 bg-white p-6 text-slate-950 shadow-2xl shadow-slate-200/80">
+            <p className="text-sm font-black uppercase tracking-[0.22em] text-[#0071e3]">AI Risk Brief</p>
             <h2 className="mt-3 text-3xl font-black">{result.status}</h2>
             <p className="mt-4 leading-7 text-slate-600">{corridors[corridor].context}</p>
             <p className="mt-4 rounded-lg bg-slate-100 p-4 font-bold leading-7 text-slate-700">{result.recommendation}</p>
@@ -162,11 +162,11 @@ export default function AiSupplyChainRiskControlTower() {
           <OutputPanel title="Main Risk Drivers" items={result.drivers} />
           <OutputPanel title="Recommended Supply Chain Actions" items={result.actions} />
 
-          <div className="rounded-lg border border-white/10 bg-white/[0.05] p-5">
-            <p className="flex items-center gap-2 font-black text-cyan-200">
+          <div className="rounded-lg border border-slate-200 bg-white p-5">
+            <p className="flex items-center gap-2 font-black text-[#0071e3]">
               <Map size={18} /> Transparency note
             </p>
-            <p className="mt-2 leading-7 text-slate-300">
+            <p className="mt-2 leading-7 text-slate-600">
               This live demo uses transparent scoring and scenario logic in the browser. It demonstrates how I would structure
               an AI-ready control tower before connecting it to ERP, WMS, transport, supplier, port, and forecast data.
             </p>
@@ -194,9 +194,9 @@ function Slider({
 }) {
   return (
     <label className="mt-5 block">
-      <span className="flex justify-between text-sm font-black text-slate-200">
+      <span className="flex justify-between text-sm font-black text-slate-700">
         <span>{label}</span>
-        <span className="text-cyan-200">
+        <span className="text-[#0071e3]">
           {value}
           {suffix}
         </span>
@@ -207,7 +207,7 @@ function Slider({
         max={max}
         value={value}
         onChange={(event) => setValue(Number(event.target.value))}
-        className="mt-3 w-full accent-cyan-300"
+        className="mt-3 w-full accent-[#0071e3]"
       />
     </label>
   );
@@ -217,19 +217,19 @@ function Metric({ label, value }: { label: string; value: number }) {
   return (
     <div className="rounded-lg border border-slate-200 bg-white p-4">
       <p className="text-sm font-black text-slate-500">{label}</p>
-      <p className="mt-2 text-4xl font-black text-cyan-700">{value}</p>
+      <p className="mt-2 text-4xl font-black text-[#0071e3]">{value}</p>
     </div>
   );
 }
 
 function OutputPanel({ title, items }: { title: string; items: string[] }) {
   return (
-    <div className="rounded-lg border border-white/10 bg-white/[0.05] p-5">
+    <div className="rounded-lg border border-slate-200 bg-white p-5">
       <h3 className="text-xl font-black">{title}</h3>
       <div className="mt-4 grid gap-3">
         {items.map((item) => (
-          <p key={item} className="flex gap-3 leading-7 text-slate-300">
-            <CheckCircle2 className="mt-1 shrink-0 text-cyan-200" size={17} />
+          <p key={item} className="flex gap-3 leading-7 text-slate-600">
+            <CheckCircle2 className="mt-1 shrink-0 text-[#0071e3]" size={17} />
             <span>{item}</span>
           </p>
         ))}
@@ -240,10 +240,10 @@ function OutputPanel({ title, items }: { title: string; items: string[] }) {
 
 function InfoCard({ icon: Icon, title, text }: { icon: typeof Route; title: string; text: string }) {
   return (
-    <div className="rounded-lg border border-white/10 bg-[#07111f]/60 p-5">
-      <Icon className="text-cyan-200" size={28} />
+    <div className="rounded-lg border border-slate-200 bg-white p-5">
+      <Icon className="text-[#0071e3]" size={28} />
       <h2 className="mt-4 text-xl font-black">{title}</h2>
-      <p className="mt-2 leading-7 text-slate-300">{text}</p>
+      <p className="mt-2 leading-7 text-slate-600">{text}</p>
     </div>
   );
 }
