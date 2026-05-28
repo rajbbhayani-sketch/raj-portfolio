@@ -1,534 +1,344 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import {
+  ArrowUpRight,
+  BarChart3,
+  BriefcaseBusiness,
+  CheckCircle2,
+  Database,
+  Download,
+  GraduationCap,
+  Link,
+  Mail,
+  MapPin,
+  Phone,
+  Sparkles,
+} from "lucide-react";
+import Image from "next/image";
 
-const languages = [
-  "English — Fluent",
-  "German — Intermediate",
-  "Hindi — Native",
-  "Gujarati — Native",
+const navItems = ["About", "Experience", "Skills", "Projects", "Education", "Contact"];
+
+const stats = [
+  ["2+", "Years practical experience"],
+  ["5", "Analytics case studies"],
+  ["4", "Countries in work focus"],
+  ["AI", "Decision support"],
 ];
 
-const caseStudies = [
+const experiences = [
+  {
+    period: "Jan 2026 - Apr 2026",
+    company: "Fachhochschule des Mittelstandes Bielefeld",
+    location: "Berlin, Germany",
+    role: "Master Thesis Researcher - Explainable AI & Inventory Decision Support",
+    body: "Researched Explainable AI for risk-aware inventory planning in industrial spare parts management.",
+    bullets: [
+      "Built a scenario-based decision support framework using XGBoost and SHAP.",
+      "Created a Streamlit control tower for stockout risk, safety stock, and reorder decisions.",
+      "Translated model explanations into practical inventory planning recommendations.",
+    ],
+  },
+  {
+    period: "Nov 2024 - Oct 2025",
+    company: "Flink",
+    location: "Berlin, Germany",
+    role: "Hub Operations Working Student",
+    body: "Supported quick-commerce hub operations with exposure to inventory flow, fulfillment, and last-mile logistics.",
+    bullets: [
+      "Worked in a high-volume operations environment with strong process discipline.",
+      "Supported inventory movement, order flow, and fulfillment routines.",
+      "Gained practical understanding of supply chain execution and operational efficiency.",
+    ],
+  },
+  {
+    period: "Mar 2024 - Sep 2024",
+    company: "VSG GLOBAL PTE. LTD",
+    location: "Singapore / Remote",
+    role: "Business Analyst Intern",
+    body: "Supported import-related business analysis, procurement coordination, documentation, and reporting.",
+    bullets: [
+      "Analyzed requirements, demand patterns, costs, revenue, and profitability data.",
+      "Created dashboards and reports to improve visibility of business metrics.",
+      "Collaborated with purchasing managers and cross-functional teams.",
+    ],
+  },
+  {
+    period: "Dec 2022 - Feb 2024",
+    company: "Fledge Consulting Pvt Ltd",
+    location: "Nagpur, India",
+    role: "Business Intelligence Analyst",
+    body: "Supported BI reporting and client-facing analysis for international projects.",
+    bullets: [
+      "Gathered and documented business requirements for clients and project teams.",
+      "Created and reviewed reports, dashboards, and visualizations.",
+      "Acted as a bridge between business users and technical teams.",
+    ],
+  },
+];
+
+const skillGroups = [
+  {
+    title: "Business Analysis",
+    icon: BriefcaseBusiness,
+    skills: ["Requirements Analysis", "Stakeholder Management", "Business Development", "Agile Testing", "Process Analysis"],
+  },
+  {
+    title: "Analytics & BI",
+    icon: BarChart3,
+    skills: ["Power BI", "DAX", "Power Query", "SQL", "Excel", "Dashboard Building"],
+  },
+  {
+    title: "AI Decision Support",
+    icon: Sparkles,
+    skills: ["Python", "XGBoost", "SHAP", "Streamlit", "Forecasting", "Scenario Analysis"],
+  },
+  {
+    title: "Operations Intelligence",
+    icon: Database,
+    skills: ["Supply Chain Analytics", "Procurement Risk", "Inventory Analytics", "Data Modeling", "Operations Analytics"],
+  },
+];
+
+const projects = [
   {
     title: "European Waterway Supply Chain Intelligence",
-    tag: "Logistics Strategy",
+    category: "Logistics Strategy",
     image: "/projects/waterway.png",
-    fallbackImage: "/insights/river-transport.png",
-    pdf: "",
-    github: "#",
-    githubLabel: "Private Repository",
-    highlight: "Flagship Logistics Case Study",
-    metricOne: "5 Corridors",
-    metricTwo: "Port & Delay Risk",
-    metricThree: "CO2 Tracking",
-    problem:
-      "European freight networks face road congestion, port bottlenecks, emissions pressure, and fragmented corridor visibility.",
-    solution:
-      "Designed a corridor intelligence framework covering cargo demand, delay risk, port turnaround, CO2 tracking, and predictive logistics monitoring.",
-    value:
-      "Better corridor visibility, improved port monitoring, and sustainability focused logistics decisions.",
-    tools: ["Power BI", "DAX", "Power Query", "Data Modeling", "Forecasting"],
-    details: {
-      summary:
-        "This case study explores how inland waterway logistics can support European freight resilience, reduce road congestion, and improve sustainable supply chain planning.",
-      rootCauses: [
-        "Limited visibility into inland corridor performance.",
-        "Port congestion and waiting time are often monitored separately.",
-        "Sustainability metrics are not always connected to logistics planning.",
-      ],
-      impact: [
-        "Improved corridor planning and delay risk monitoring.",
-        "Better understanding of port turnaround and congestion points.",
-        "Stronger sustainability reporting through CO2 reduction analysis.",
-      ],
-    },
+    href: "",
+    summary: "A corridor intelligence framework for freight visibility, port delay risk, CO2 tracking, and sustainable logistics planning.",
+    tools: ["Power BI", "DAX", "Power Query", "Forecasting"],
   },
   {
     title: "European Procurement & Supplier Risk Intelligence",
-    tag: "Procurement Risk",
+    category: "Procurement Risk",
     image: "/projects/procurement.png",
-    pdf: "/pdfs/procurement.pdf",
-    github: "#",
-    githubLabel: "Private Repository",
-    highlight: "Executive Procurement Control Tower",
-    metricOne: "Supplier Risk",
-    metricTwo: "ESG Exposure",
-    metricThree: "Spend Visibility",
-    problem:
-      "Procurement teams often manage spend, delivery reliability, ESG risk, and supplier performance in separate systems.",
-    solution:
-      "Built a supplier risk framework combining spend, lead time, on time delivery, ESG score, supplier status, and country exposure.",
-    value:
-      "Higher supplier visibility, risk based sourcing decisions, and stronger ESG monitoring.",
-    tools: ["Power BI", "DAX", "Power Query", "SQL Style Analytics", "Data Modeling"],
-    details: {
-      summary:
-        "This case study focuses on procurement visibility, supplier performance, ESG compliance, and cost pressure monitoring across European supplier networks.",
-      rootCauses: [
-        "Supplier data is fragmented across procurement, finance, and compliance systems.",
-        "Delivery reliability and ESG risk are often reviewed separately.",
-        "Procurement teams lack a single executive view of spend, risk, and supplier performance.",
-      ],
-      impact: [
-        "Improved supplier risk visibility.",
-        "Better sourcing and supplier diversification decisions.",
-        "Stronger ESG and delivery performance monitoring.",
-      ],
-    },
+    href: "/pdfs/procurement.pdf",
+    summary: "A supplier risk control tower combining spend, delivery reliability, ESG exposure, supplier status, and country risk.",
+    tools: ["Power BI", "DAX", "Data Modeling", "SQL-style Analytics"],
   },
   {
     title: "European Currency Risk & Inflation Intelligence",
-    tag: "Financial Risk",
+    category: "Financial Risk",
     image: "/projects/currency.png",
-    pdf: "/pdfs/currency.pdf",
-    github: "#",
-    githubLabel: "Private Repository",
-    highlight: "Financial Exposure Intelligence",
-    metricOne: "Currency Risk",
-    metricTwo: "Inflation Signals",
-    metricThree: "Forecasting",
-    problem:
-      "Currency movements and inflation pressure can increase procurement costs and weaken supplier contract predictability.",
-    solution:
-      "Created a financial risk intelligence model to track volatility, inflation risk, supplier exposure, and forecasted procurement cost.",
-    value:
-      "Improved cost risk visibility and forecast driven procurement decisions.",
-    tools: ["Power BI", "DAX", "Power Query", "Forecasting", "Data Modeling"],
-    details: {
-      summary:
-        "This case study connects procurement inflation, supplier currency dependency, and financial risk monitoring into one executive intelligence framework.",
-      rootCauses: [
-        "Currency exposure is often not connected directly to supplier risk.",
-        "Inflation impact is difficult to track across countries and suppliers.",
-        "Procurement teams need earlier warning signals before cost pressure becomes visible in budgets.",
-      ],
-      impact: [
-        "Improved procurement cost forecasting.",
-        "Better supplier currency exposure monitoring.",
-        "More proactive financial risk decisions.",
-      ],
-    },
+    href: "/pdfs/currency.pdf",
+    summary: "A financial exposure model for currency volatility, inflation signals, supplier exposure, and procurement cost forecasting.",
+    tools: ["Power BI", "Forecasting", "Power Query", "Data Modeling"],
   },
   {
     title: "European Defense Operations & Readiness Intelligence",
-    tag: "Operations Analytics",
+    category: "Operations Analytics",
     image: "/projects/defense.png",
-    pdf: "/pdfs/defense.pdf",
-    github: "#",
-    githubLabel: "Private Repository",
-    highlight: "Operational Readiness System",
-    metricOne: "Readiness",
-    metricTwo: "Maintenance",
-    metricThree: "Procurement Risk",
-    problem:
-      "Readiness drops when downtime, maintenance cost, procurement delays, and supplier dependency are managed separately.",
-    solution:
-      "Designed an executive readiness control tower for equipment availability, maintenance cost, downtime risk, throughput, and supplier exposure.",
-    value:
-      "Readiness focused decision support, maintenance cost visibility, and procurement bottleneck monitoring.",
-    tools: ["Power BI", "DAX", "Power Query", "Operations Analytics", "Data Modeling"],
-    details: {
-      summary:
-        "This case study focuses on operational readiness, manufacturing throughput, maintenance intelligence, and procurement risk monitoring.",
-      rootCauses: [
-        "Maintenance, procurement, and production data are often disconnected.",
-        "Downtime risk becomes visible too late for proactive planning.",
-        "Supplier dependency can reduce readiness when procurement delays occur.",
-      ],
-      impact: [
-        "Better maintenance and downtime visibility.",
-        "Improved readiness monitoring.",
-        "More transparent supplier and procurement risk tracking.",
-      ],
-    },
+    href: "/pdfs/defense.pdf",
+    summary: "An executive readiness dashboard for maintenance cost, downtime risk, throughput, procurement delay, and supplier exposure.",
+    tools: ["Power BI", "Operations Analytics", "DAX", "Data Modeling"],
   },
   {
     title: "XAI Inventory Control Tower",
-    tag: "Explainable AI",
+    category: "Explainable AI",
     image: "/projects/xai.png",
-    pdf: "/pdfs/xai.mp4",
-    github: "#",
-    githubLabel: "Private Repository",
-    highlight: "AI Decision Support Prototype",
-    metricOne: "XGBoost",
-    metricTwo: "SHAP",
-    metricThree: "Scenario Lab",
-    problem:
-      "Inventory planners need more than a stockout prediction. They need to understand why a part is risky and what action is reasonable.",
-    solution:
-      "Developed a Streamlit based control tower using XGBoost, SHAP, scenario simulation, safety stock logic, and portfolio risk monitoring.",
-    value:
-      "Explainable stockout risk, scenario based planning, and more transparent inventory decisions.",
-    tools: ["Python", "Streamlit", "XGBoost", "SHAP", "Plotly", "Pandas"],
-    details: {
-      summary:
-        "This thesis based prototype applies explainable AI to industrial spare parts inventory planning and decision support.",
-      rootCauses: [
-        "Traditional stockout prediction does not explain why risk exists.",
-        "Inventory decisions need transparency for planners and managers.",
-        "Scenario planning is needed when demand or supplier reliability changes.",
-      ],
-      impact: [
-        "Explainable stockout risk prediction.",
-        "Scenario based decision support.",
-        "More transparent inventory planning recommendations.",
-      ],
-    },
+    href: "/pdfs/xai.pdf",
+    summary: "A Streamlit prototype using XGBoost and SHAP to explain stockout risk and support scenario-based inventory decisions.",
+    tools: ["Python", "Streamlit", "XGBoost", "SHAP", "Plotly"],
   },
 ];
 
-const skills = [
-  { name: "Business Analysis", source: "Used at VSG Global and portfolio case studies" },
-  { name: "Business Intelligence", source: "Used at Fledge Consulting and Power BI projects" },
-  { name: "SQL", source: "Used in BI reporting, analysis, and academic projects" },
-  { name: "Power BI", source: "Used across procurement, currency, defense, and logistics dashboards" },
-  { name: "Python", source: "Used in XAI inventory planning and Streamlit projects" },
-  { name: "Excel", source: "Used for analysis, reporting, and business cases" },
-  { name: "Data Analysis", source: "Used across dashboards, reporting, and case studies" },
-  { name: "Requirements Analysis", source: "Used at VSG Global and Fledge Consulting" },
-  { name: "Stakeholder Management", source: "Used in operations, reporting, and client communication" },
-  { name: "Supply Chain Analytics", source: "Used in procurement, logistics, and inventory projects" },
-  { name: "Operations Analytics", source: "Used in Flink operations and readiness projects" },
-  { name: "Dashboard Building", source: "Used across all Power BI portfolio projects" },
-  { name: "Agile Testing", source: "Used in operational and project environments" },
-  { name: "Business Development", source: "Learned through MBA and business analysis exposure" },
-  { name: "Marketing", source: "Learned through MBA and market intelligence work" },
-  { name: "Explainable AI", source: "Used in MBA thesis and XAI inventory control tower" },
-  { name: "XGBoost", source: "Used in stockout risk prediction prototype" },
-  { name: "SHAP", source: "Used for explainable AI decision transparency" },
-  { name: "Streamlit", source: "Used for XAI inventory decision support app" },
-  { name: "Forecasting", source: "Used in inventory, procurement, and logistics analytics" },
-  { name: "Scenario Analysis", source: "Used in XAI inventory and risk intelligence projects" },
-];
-
-const experience = [
+const education = [
   {
-    role: "Master Thesis Researcher — Explainable AI & Inventory Decision Support",
-    company: "Fachhochschule des Mittelstandes Bielefeld",
-    date: "Jan 2026 — Apr 2026",
-    location: "Berlin, Germany",
-    text: "Conducted MBA thesis research on Explainable AI for risk aware inventory planning in industrial spare parts management.",
-    bullets: [
-      "Developed a scenario based decision support framework using XGBoost and SHAP.",
-      "Built a Streamlit control tower for stockout risk monitoring, safety stock logic, and reorder decision support.",
-      "Translated analytical outputs into actionable inventory planning recommendations.",
-    ],
-    tags: ["Python", "Streamlit", "XGBoost", "SHAP", "Inventory Analytics"],
+    degree: "MBA, General Technology Management",
+    school: "Fachhochschule des Mittelstandes Bielefeld",
+    period: "Oct 2024 - May 2026",
+    detail: "Focus on Data Science, Big Data Analytics, Technology Management, International Project Management, and research methods.",
+    certificate: "/certificates/mba-certificate.jpeg",
   },
   {
-    role: "Hub Operations Working Student",
-    company: "Flink",
-    date: "Nov 2024 — Oct 2025",
-    location: "Berlin, Germany",
-    text: "Supported hub operations in Germany’s quick commerce environment with exposure to inventory flow, order fulfillment, and last mile logistics.",
-    bullets: [
-      "Worked in fast paced operations requiring process discipline and cross functional communication.",
-      "Gained practical understanding of supply chain execution and operational efficiency.",
-      "Supported inventory and fulfillment processes in a high volume delivery environment.",
-    ],
-    tags: ["Operations", "Inventory Flow", "Last Mile Logistics", "Process Efficiency"],
-  },
-  {
-    role: "Business Analyst Intern",
-    company: "VSG GLOBAL PTE. LTD",
-    date: "Mar 2024 — Sep 2024",
-    location: "Singapore / Remote",
-    text: "Supported business analysis activities for import related operations, including documentation, procurement coordination, and reporting.",
-    bullets: [
-      "Analyzed customer requirements, demand patterns, costs, revenue, and profitability data.",
-      "Created dashboards and reports to improve visibility of key business metrics.",
-      "Collaborated with purchasing managers and cross functional teams.",
-    ],
-    tags: ["Business Analysis", "Procurement", "Reporting", "Dashboard Development"],
-  },
-  {
-    role: "Business Intelligence Analyst",
-    company: "Fledge Consulting Pvt Ltd",
-    date: "Dec 2022 — Feb 2024",
-    location: "Nagpur, India",
-    text: "Supported BI reporting and client facing analysis activities for international clients.",
-    bullets: [
-      "Gathered and documented business requirements for client and project teams.",
-      "Created and reviewed reports, dashboards, and visualizations.",
-      "Acted as a point of contact between business and technical teams.",
-    ],
-    tags: ["BI Reporting", "SQL", "Data Analysis", "Stakeholder Communication"],
+    degree: "Bachelor of Computer Applications",
+    school: "Bhakta Kavi Narsinh Mehta University",
+    period: "Sep 2021 - Jun 2024",
+    detail: "Foundation in programming, databases, computer applications, statistics, and business IT fundamentals.",
+    certificate: "/certificates/bca-certificate.png",
   },
 ];
 
-const insights = [
-  {
-    title: "Germany’s River Transport: An Overlooked Logistics Backbone",
-    category: "Logistics · Sustainability",
-    readTime: "4 min insight",
-    image: "/insights/river-transport.png",
-    text: "A perspective on how inland waterways can support urban logistics, sustainability, and freight resilience in Germany.",
-    takeaways: [
-      "River transport is often invisible but important for bulk logistics.",
-      "Waterways can reduce pressure on roads and support lower emission freight.",
-      "Digital logistics could improve the role of inland waterways in urban supply chains.",
-    ],
-  },
-  {
-    title: "Autobahn to Bahn?",
-    category: "Mobility Strategy · Infrastructure",
-    readTime: "4 min insight",
-    image: "/insights/autobahn.jpg",
-    text: "A strategic view on Germany’s mobility future, freight transition, rail capacity, and automotive identity.",
-    takeaways: [
-      "Germany’s automotive identity makes transport transition complex.",
-      "Rail can reduce emissions but requires serious infrastructure modernization.",
-      "Future freight strategy must balance road flexibility, rail capacity, and climate goals.",
-    ],
-  },
-];
+const languages = ["English - Fluent", "German - Intermediate", "Hindi - Native", "Gujarati - Native"];
 
 export default function Home() {
-  const [activeCase, setActiveCase] = useState<number | null>(null);
-  const [activeInsight, setActiveInsight] = useState<number | null>(null);
-
-  const selected = activeCase !== null ? caseStudies[activeCase] : null;
-  const selectedInsight = activeInsight !== null ? insights[activeInsight] : null;
-
-  useEffect(() => {
-    const handleEsc = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        setActiveCase(null);
-        setActiveInsight(null);
-      }
-    };
-
-    window.addEventListener("keydown", handleEsc);
-    document.body.style.overflow =
-      activeCase !== null || activeInsight !== null ? "hidden" : "auto";
-
-    return () => {
-      window.removeEventListener("keydown", handleEsc);
-      document.body.style.overflow = "auto";
-    };
-  }, [activeCase, activeInsight]);
-
   return (
-    <main className="min-h-screen bg-[#f6f7fb] text-slate-950">
-      <nav className="sticky top-0 z-50 border-b border-slate-200/70 bg-white/85 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+    <main className="min-h-screen bg-[#07111f] text-white">
+      <header className="sticky top-0 z-50 border-b border-white/10 bg-[#07111f]/90 backdrop-blur-xl">
+        <nav className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
           <a href="#" className="text-lg font-black tracking-tight">
-            Raj Bharat Bhayani
+            RBB
           </a>
-
-          <div className="hidden gap-8 text-sm font-semibold text-slate-600 md:flex">
-            <a href="#about" className="hover:text-blue-700">About</a>
-            <a href="#case-studies" className="hover:text-blue-700">Case Studies</a>
-            <a href="#insights" className="hover:text-blue-700">Insights</a>
-            <a href="#experience" className="hover:text-blue-700">Experience</a>
-            <a href="#contact" className="hover:text-blue-700">Contact</a>
+          <div className="hidden items-center gap-6 text-sm font-medium text-slate-300 md:flex">
+            {navItems.map((item) => (
+              <a key={item} href={`#${item.toLowerCase()}`} className="transition hover:text-white">
+                {item}
+              </a>
+            ))}
           </div>
-
           <a
             href="mailto:rajbharatbhayani@gmail.com"
-            className="rounded-full bg-slate-950 px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-700"
+            className="inline-flex items-center gap-2 rounded-full bg-cyan-300 px-4 py-2 text-sm font-bold text-slate-950 transition hover:bg-white"
           >
+            <Mail size={16} />
             Contact
           </a>
+        </nav>
+      </header>
+
+      <section className="mx-auto grid max-w-6xl gap-12 px-5 pb-20 pt-16 md:pt-24 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+        <div>
+          <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-cyan-300/30 bg-cyan-300/10 px-4 py-2 text-sm font-semibold text-cyan-200">
+            <span className="h-2 w-2 rounded-full bg-emerald-300" />
+            Available for Business Analyst roles
+          </p>
+          <h1 className="max-w-4xl text-5xl font-black leading-[1.02] tracking-tight md:text-7xl">
+            Raj Bharat Bhayani
+          </h1>
+          <h2 className="mt-5 text-2xl font-bold text-cyan-200 md:text-3xl">
+            Business Analyst & AI Powered Analytics Professional
+          </h2>
+          <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300">
+            I turn business problems into clear analytics systems for procurement risk, supply chain resilience,
+            operations visibility, and explainable AI decision support.
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <a href="#projects" className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-3 font-bold text-slate-950 transition hover:bg-cyan-200">
+              View My Work <ArrowUpRight size={18} />
+            </a>
+            <a href="https://www.linkedin.com/in/mrrajbhayani" target="_blank" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-3 font-bold text-white transition hover:border-cyan-200 hover:text-cyan-200">
+              <Link size={18} /> LinkedIn
+            </a>
+          </div>
         </div>
-      </nav>
 
-      <section className="relative overflow-hidden px-6 py-24 md:py-32">
-        <div className="absolute left-1/2 top-0 -z-10 h-[520px] w-[900px] -translate-x-1/2 rounded-full bg-blue-100 blur-3xl" />
-
-        <div className="mx-auto grid max-w-7xl items-center gap-14 lg:grid-cols-[1.1fr_0.9fr]">
-          <div>
-            <p className="mb-5 inline-block rounded-full border border-blue-200 bg-white/80 px-4 py-2 text-sm font-semibold text-blue-700 shadow-sm">
-              Business Analyst · AI Powered Analytics · Operations Intelligence
-            </p>
-
-            <h1 className="max-w-5xl text-5xl font-black tracking-tight md:text-7xl">
-              Turning analytics into business decisions.
-            </h1>
-
-            <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600">
-              I build business intelligence and decision support projects focused on procurement risk,
-              supply chain resilience, operations analytics, and explainable AI.
-            </p>
-
-            <div className="mt-8 flex flex-wrap gap-4">
-              <a href="#case-studies" className="rounded-full bg-slate-950 px-6 py-3 font-semibold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-blue-700">
-                View Case Studies
-              </a>
-              <a href="mailto:rajbharatbhayani@gmail.com" className="rounded-full border border-slate-300 bg-white px-6 py-3 font-semibold transition hover:-translate-y-0.5 hover:border-blue-300">
-                Contact Me
-              </a>
-              <a href="https://www.linkedin.com/in/mrrajbhayani" target="_blank" className="rounded-full border border-slate-300 bg-white px-6 py-3 font-semibold transition hover:-translate-y-0.5 hover:border-blue-300">
-                LinkedIn
-              </a>
-            </div>
-
-            <div className="mt-8 flex flex-wrap gap-3">
-              {languages.map((language) => (
-                <span key={language} className="rounded-full border border-slate-200 bg-white/90 px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm">
-                  {language}
-                </span>
-              ))}
+        <div className="relative">
+          <div className="absolute -inset-4 rounded-[2rem] bg-cyan-300/10 blur-2xl" />
+          <div className="relative overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/[0.04] p-5 shadow-2xl shadow-black/30">
+            <Image src="/profile/profile.jpg" alt="Raj Bharat Bhayani" width={760} height={840} priority className="h-[420px] w-full rounded-[1.1rem] object-cover object-center" />
+            <div className="mt-5 grid gap-3 text-sm text-slate-300 sm:grid-cols-2">
+              <span className="inline-flex items-center gap-2"><MapPin size={16} /> Berlin, Germany</span>
+              <span>Business Intelligence</span>
+              <span>Supply Chain Analytics</span>
+              <span>Explainable AI</span>
             </div>
           </div>
+        </div>
+      </section>
 
-          <div className="rounded-[2rem] border border-slate-200 bg-white/90 p-7 shadow-2xl shadow-slate-900/10 backdrop-blur">
-            <div className="flex items-center gap-6">
-              <img
-                src="/profile/profile.jpg"
-                alt="Raj Bharat Bhayani"
-                className="h-32 w-32 rounded-3xl object-cover shadow-xl shadow-slate-900/15"
-              />
-              <div>
-                <p className="inline-flex rounded-full bg-emerald-50 px-3 py-1 text-xs font-black uppercase tracking-widest text-emerald-700">
-                  Open to Work
-                </p>
-                <h2 className="mt-3 text-2xl font-black">Raj Bharat Bhayani</h2>
-                <p className="mt-1 text-slate-600">Berlin, Germany</p>
+      <section className="border-y border-white/10 bg-white/[0.03] px-5 py-8">
+        <div className="mx-auto grid max-w-6xl gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {stats.map(([value, label]) => (
+            <div key={label}>
+              <p className="text-4xl font-black text-cyan-200">{value}</p>
+              <p className="mt-1 text-sm font-semibold text-slate-300">{label}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="about" className="mx-auto grid max-w-6xl gap-10 px-5 py-20 lg:grid-cols-[0.35fr_0.65fr]">
+        <SectionIntro eyebrow="Hello" title="I build analytics that business teams can actually use." />
+        <div className="space-y-5 text-lg leading-8 text-slate-300">
+          <p>
+            My work sits between business analysis, BI reporting, operational decision making, and AI-enabled
+            analytics. I focus on making complex risk, supply chain, and procurement questions easier to see,
+            explain, and act on.
+          </p>
+          <p>
+            I am open to Business Analyst, BI Analyst, Operations Analyst, Supply Chain Analyst, and AI Business
+            Analyst roles across Europe.
+          </p>
+          <div className="flex flex-wrap gap-3 pt-2">
+            {languages.map((language) => (
+              <span key={language} className="rounded-full border border-white/10 bg-white/[0.04] px-4 py-2 text-sm font-semibold text-slate-200">
+                {language}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="experience" className="bg-[#f6f8fb] px-5 py-20 text-slate-950">
+        <div className="mx-auto max-w-6xl">
+          <SectionIntro eyebrow="My Journey" title="Work Experience" dark />
+          <div className="mt-12 space-y-6">
+            {experiences.map((job) => (
+              <article key={job.role} className="grid gap-6 rounded-lg border border-slate-200 bg-white p-6 shadow-sm md:grid-cols-[0.28fr_0.72fr]">
+                <div className="text-sm font-bold text-slate-500">
+                  <p>{job.period}</p>
+                  <p className="mt-3 flex items-center gap-2 text-slate-700"><MapPin size={15} /> {job.location}</p>
+                </div>
+                <div>
+                  <p className="font-black text-cyan-700">{job.company}</p>
+                  <h3 className="mt-2 text-2xl font-black tracking-tight">{job.role}</h3>
+                  <p className="mt-4 leading-7 text-slate-600">{job.body}</p>
+                  <ul className="mt-4 space-y-2">
+                    {job.bullets.map((bullet) => (
+                      <li key={bullet} className="flex gap-3 text-slate-600">
+                        <CheckCircle2 className="mt-1 shrink-0 text-cyan-700" size={17} />
+                        <span>{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="skills" className="mx-auto max-w-6xl px-5 py-20">
+        <SectionIntro eyebrow="What I Do" title="Skills & Expertise" />
+        <div className="mt-12 grid gap-5 md:grid-cols-2">
+          {skillGroups.map(({ title, icon: Icon, skills }) => (
+            <div key={title} className="rounded-lg border border-white/10 bg-white/[0.04] p-6">
+              <div className="flex items-center gap-3">
+                <span className="rounded-lg bg-cyan-300 p-3 text-slate-950"><Icon size={22} /></span>
+                <h3 className="text-xl font-black">{title}</h3>
+              </div>
+              <div className="mt-5 flex flex-wrap gap-2">
+                {skills.map((skill) => (
+                  <span key={skill} className="rounded-full bg-white/[0.07] px-3 py-1.5 text-sm font-semibold text-slate-200">
+                    {skill}
+                  </span>
+                ))}
               </div>
             </div>
-
-            <div className="mt-8 grid gap-4">
-              {["Business Analyst", "BI Analyst", "Operations Analyst", "Supply Chain Analyst", "AI Business Analyst"].map((item) => (
-                <div key={item} className="rounded-2xl border border-slate-100 bg-slate-50 p-4 font-semibold text-slate-700 transition hover:bg-white hover:shadow-sm">
-                  {item}
-                </div>
-              ))}
-            </div>
-          </div>
+          ))}
         </div>
       </section>
 
-      <section id="about" className="bg-white px-6 py-24">
-        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.9fr_1.1fr]">
-          <div>
-            <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-blue-600">About</p>
-            <h2 className="text-4xl font-black tracking-tight">
-              Business analyst bridging analytics, operations, and AI driven decision support.
-            </h2>
-          </div>
-
-          <div className="space-y-5 text-lg leading-8 text-slate-600">
-            <p>
-              I am a Business Analyst focused on AI powered analytics, business intelligence,
-              supply chain analytics, procurement risk, operations analytics, and explainable AI decision support.
-            </p>
-            <p>
-              I actively use AI, forecasting, explainable AI, and decision support frameworks to improve business analysis,
-              operational visibility, and strategic decision making.
-            </p>
-            <p>
-              Open to Business Analyst, BI Analyst, Operations Analyst, Supply Chain Analyst, and AI powered analytics roles across Europe.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section id="case-studies" className="px-6 py-28">
-        <div className="mx-auto max-w-7xl">
-          <div className="max-w-3xl">
-            <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-blue-600">Featured Work</p>
-            <h2 className="text-5xl font-black tracking-tight">Case Study Showcase</h2>
-            <p className="mt-5 text-lg leading-8 text-slate-600">
-              Business problems, analytics systems, and decision frameworks presented as executive-level portfolio cases.
-            </p>
-          </div>
-
-          <div className="mt-16 space-y-12">
-            {caseStudies.map((item, index) => (
-              <article
-                key={item.title}
-                className={`group grid overflow-hidden rounded-[2.5rem] border border-slate-200 bg-white shadow-xl shadow-slate-900/5 transition duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-slate-900/10 lg:grid-cols-2 ${
-                  index % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""
-                }`}
-              >
-                <div className="relative min-h-[520px] overflow-hidden bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950 p-8">
-                  <div className="absolute -right-20 -top-20 h-64 w-64 rounded-full bg-blue-500/20 blur-3xl" />
-                  <div className="absolute -bottom-20 -left-20 h-64 w-64 rounded-full bg-cyan-400/10 blur-3xl" />
-
-                  <div className="relative z-10">
-                    <div className="mb-5 flex items-center justify-between">
-                      <div className="flex gap-2">
-                        <span className="h-3 w-3 rounded-full bg-red-400" />
-                        <span className="h-3 w-3 rounded-full bg-yellow-400" />
-                        <span className="h-3 w-3 rounded-full bg-green-400" />
-                      </div>
-                      <p className="text-xs font-black uppercase tracking-widest text-blue-200">
-                        Executive Analytics System
-                      </p>
-                    </div>
-
-                    <div className="rounded-[1.6rem] border border-white/10 bg-white/10 p-3 shadow-2xl backdrop-blur">
-                      <div className="overflow-hidden rounded-[1.2rem] bg-white">
-                        <img
-                          src={item.image || item.fallbackImage}
-                          alt={item.title}
-                          className="h-[360px] w-full object-contain object-center transition duration-700 group-hover:scale-[1.03]"
-                        />
-                      </div>
-                    </div>
-
-                    <div className="mt-6 grid grid-cols-3 gap-3">
-                      {[item.metricOne, item.metricTwo, item.metricThree].map((metric) => (
-                        <div key={metric} className="rounded-2xl border border-white/10 bg-white/10 p-4 text-white backdrop-blur">
-                          <p className="text-xs font-semibold text-blue-200">Focus</p>
-                          <p className="mt-1 text-sm font-black">{metric}</p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
+      <section id="projects" className="bg-[#f6f8fb] px-5 py-20 text-slate-950">
+        <div className="mx-auto max-w-6xl">
+          <SectionIntro eyebrow="Featured Work" title="Recent Projects" dark />
+          <div className="mt-12 grid gap-6">
+            {projects.map((project) => (
+              <article key={project.title} className="grid overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm lg:grid-cols-[0.38fr_0.62fr]">
+                <div className="bg-slate-100 p-4">
+                  <Image src={project.image} alt={project.title} width={720} height={420} className="h-72 w-full rounded-md object-contain object-center" />
                 </div>
-
-                <div className="flex flex-col justify-center p-8 lg:p-12">
-                  <p className="mb-4 text-sm font-black uppercase tracking-widest text-blue-600">
-                    {item.highlight}
-                  </p>
-
-                  <span className="w-fit rounded-full bg-blue-50 px-3 py-1 text-sm font-semibold text-blue-700">
-                    {item.tag}
-                  </span>
-
-                  <h3 className="mt-6 text-3xl font-black tracking-tight lg:text-4xl">
-                    {item.title}
-                  </h3>
-
-                  <p className="mt-5 text-lg leading-8 text-slate-600">{item.problem}</p>
-
-                  <div className="mt-6 rounded-3xl bg-slate-50 p-5">
-                    <p className="font-black text-slate-950">Business Value</p>
-                    <p className="mt-2 leading-7 text-slate-600">{item.value}</p>
-                  </div>
-
-                  <div className="mt-6 flex flex-wrap gap-2">
-                    {item.tools.map((tool) => (
-                      <span key={tool} className="rounded-full border border-slate-200 px-3 py-1 text-xs font-semibold text-slate-600">
+                <div className="p-7">
+                  <p className="text-sm font-black uppercase tracking-[0.2em] text-cyan-700">{project.category}</p>
+                  <h3 className="mt-3 text-3xl font-black tracking-tight">{project.title}</h3>
+                  <p className="mt-4 leading-7 text-slate-600">{project.summary}</p>
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    {project.tools.map((tool) => (
+                      <span key={tool} className="rounded-full border border-slate-200 px-3 py-1 text-xs font-bold text-slate-600">
                         {tool}
                       </span>
                     ))}
                   </div>
-
-                  <div className="mt-8 flex flex-wrap gap-3">
-                    <button onClick={() => setActiveCase(index)} className="rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-700">
-                      View Full Case Study
-                    </button>
-
-                    {item.pdf && (
-                      <a href={item.pdf} target="_blank" className="rounded-full border border-slate-300 px-5 py-3 text-sm font-semibold transition hover:border-blue-300">
-                        Open PDF / Demo
+                  <div className="mt-7 flex flex-wrap gap-3">
+                    {project.href ? (
+                      <a href={project.href} target="_blank" className="inline-flex items-center gap-2 rounded-full bg-slate-950 px-5 py-3 text-sm font-bold text-white transition hover:bg-cyan-700">
+                        Open PDF / Demo <ArrowUpRight size={16} />
                       </a>
+                    ) : (
+                      <span className="rounded-full border border-slate-200 px-5 py-3 text-sm font-bold text-slate-500">
+                        Private case study
+                      </span>
                     )}
-
-                    <button
-                      disabled={item.github === "#"}
-                      className={`rounded-full border px-5 py-3 text-sm font-semibold transition ${
-                        item.github === "#"
-                          ? "cursor-not-allowed border-slate-200 bg-slate-50 text-slate-400"
-                          : "border-slate-300 hover:border-blue-300"
-                      }`}
-                    >
-                      {item.githubLabel || "GitHub"}
-                    </button>
                   </div>
                 </div>
               </article>
@@ -537,322 +347,83 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="insights" className="bg-white px-6 py-24">
-        <div className="mx-auto max-w-7xl">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-blue-600">Insights</p>
-          <h2 className="text-4xl font-black tracking-tight">Industry Insights & Perspectives</h2>
-          <p className="mt-4 max-w-3xl text-lg leading-8 text-slate-600">
-            Analytical perspectives on logistics, infrastructure, geopolitics, sustainability, and business strategy.
-          </p>
-
-          <div className="mt-12 grid gap-8 md:grid-cols-2">
-            {insights.map((item, index) => (
-              <article key={item.title} className="group overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-50 shadow-sm transition hover:-translate-y-1 hover:shadow-2xl">
-                <div className="relative h-96 overflow-hidden bg-slate-100">
-                  <img src={item.image} alt={item.title} className="h-full w-full object-cover object-center transition duration-500 group-hover:scale-[1.04]" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
-                  <div className="absolute bottom-5 left-5 right-5">
-                    <p className="text-sm font-bold text-blue-200">{item.category}</p>
-                    <p className="mt-1 text-sm font-semibold text-white/80">{item.readTime}</p>
-                  </div>
-                </div>
-
-                <div className="p-7">
-                  <h3 className="text-2xl font-black">{item.title}</h3>
-                  <p className="mt-3 leading-7 text-slate-600">{item.text}</p>
-                  <button onClick={() => setActiveInsight(index)} className="mt-6 rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-700">
-                    Read Insight
-                  </button>
-                </div>
-              </article>
-            ))}
-          </div>
+      <section id="education" className="mx-auto max-w-6xl px-5 py-20">
+        <SectionIntro eyebrow="Academic Background" title="Education" />
+        <div className="mt-12 grid gap-5 md:grid-cols-2">
+          {education.map((item) => (
+            <article key={item.degree} className="rounded-lg border border-white/10 bg-white/[0.04] p-6">
+              <GraduationCap className="text-cyan-200" size={30} />
+              <h3 className="mt-5 text-2xl font-black">{item.degree}</h3>
+              <p className="mt-2 font-bold text-cyan-200">{item.school}</p>
+              <p className="mt-2 text-sm font-semibold text-slate-400">{item.period}</p>
+              <p className="mt-4 leading-7 text-slate-300">{item.detail}</p>
+              <a href={item.certificate} target="_blank" className="mt-6 inline-flex items-center gap-2 rounded-full border border-white/15 px-4 py-2 text-sm font-bold text-white transition hover:border-cyan-200 hover:text-cyan-200">
+                <Download size={16} /> View Certificate
+              </a>
+            </article>
+          ))}
         </div>
       </section>
 
-      <section className="bg-gradient-to-br from-slate-100 via-white to-blue-50 px-6 py-24">
-        <div className="mx-auto max-w-7xl">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-blue-600">Skills</p>
-          <h2 className="text-4xl font-black tracking-tight">Business and technical toolkit</h2>
-
-          <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {skills.map((skill) => (
-              <div key={skill.name} className="rounded-3xl border border-slate-200 bg-white/80 p-5 shadow-sm backdrop-blur transition hover:-translate-y-1 hover:shadow-xl">
-                <p className="font-black text-slate-950">{skill.name}</p>
-                <p className="mt-2 text-sm leading-6 text-slate-600">{skill.source}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="experience" className="bg-white px-6 py-24">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.35fr_0.65fr]">
+      <section id="contact" className="border-t border-white/10 px-5 py-20">
+        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.55fr_0.45fr]">
           <div>
-            <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-blue-600">Experience</p>
-            <h2 className="text-4xl font-black tracking-tight">Professional Background</h2>
-
-            <div className="mt-8 rounded-full bg-slate-950 p-10 text-center text-white shadow-2xl shadow-slate-900/20">
-              <p className="text-6xl font-black">2+</p>
-              <p className="mt-2 font-semibold">Years Practical Experience</p>
-            </div>
-
-            <div className="mt-5 grid gap-4">
-              <div className="rounded-3xl bg-slate-50 p-5 font-semibold">4 Roles</div>
-              <div className="rounded-3xl bg-slate-50 p-5 font-semibold">Germany · Singapore · India</div>
-            </div>
+            <p className="text-sm font-black uppercase tracking-[0.28em] text-cyan-200">Get In Touch</p>
+            <h2 className="mt-4 text-4xl font-black tracking-tight md:text-5xl">Let&apos;s work together</h2>
+            <p className="mt-5 max-w-2xl text-lg leading-8 text-slate-300">
+              Available for full-time opportunities in business analysis, BI, operations analytics, supply chain
+              analytics, and AI-powered decision support.
+            </p>
           </div>
-
-          <div className="space-y-6">
-            {experience.map((job) => (
-              <article key={job.role} className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm">
-                <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
-                  <div>
-                    <h3 className="text-xl font-black">{job.role}</h3>
-                    <p className="mt-1 font-semibold text-slate-700">{job.company}</p>
-                    <p className="mt-1 text-sm text-slate-500">{job.location}</p>
-                  </div>
-                  <span className="rounded-full bg-slate-100 px-4 py-2 text-sm font-semibold text-slate-700">{job.date}</span>
-                </div>
-
-                <p className="mt-4 leading-7 text-slate-600">{job.text}</p>
-
-                <ul className="mt-4 list-disc space-y-2 pl-5 text-slate-600">
-                  {job.bullets.map((bullet) => (
-                    <li key={bullet}>{bullet}</li>
-                  ))}
-                </ul>
-
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {job.tags.map((tag) => (
-                    <span key={tag} className="rounded-full bg-blue-50 px-3 py-1 text-xs font-semibold text-blue-700">{tag}</span>
-                  ))}
-                </div>
-              </article>
-            ))}
+          <div className="space-y-3">
+            <ContactLink icon={Mail} label="Email" value="rajbharatbhayani@gmail.com" href="mailto:rajbharatbhayani@gmail.com" />
+            <ContactLink icon={Phone} label="Phone" value="+49 176 62398987" href="tel:+4917662398987" />
+            <ContactLink icon={Link} label="LinkedIn" value="Connect with me" href="https://www.linkedin.com/in/mrrajbhayani" />
+            <ContactLink icon={MapPin} label="Location" value="Berlin, Germany" href="https://maps.google.com/?q=Berlin,Germany" />
           </div>
         </div>
       </section>
 
-      <section className="px-6 py-24">
-        <div className="mx-auto max-w-7xl">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-blue-600">Education</p>
-          <h2 className="text-4xl font-black tracking-tight">Education & Academic Foundation</h2>
-
-          <div className="mt-10 grid gap-6 md:grid-cols-2">
-            <div className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm">
-              <h3 className="text-xl font-black">MBA, General Technology Management</h3>
-              <p className="mt-2 font-semibold text-slate-700">Fachhochschule des Mittelstandes Bielefeld</p>
-              <p className="mt-2 text-slate-600">Oct 2024 — May 2026</p>
-              <p className="mt-4 leading-7 text-slate-600">
-                Focus: Data Science, Big Data Analytics, Technology Management, International Project Management, and Research Methods.
-              </p>
-              <p className="mt-4 rounded-2xl bg-blue-50 p-4 font-semibold text-blue-800">
-                Thesis: Explainable AI for Risk Aware Inventory Planning of Industrial Spare Parts
-              </p>
-              <a href="/certificates/mba-certificate.jpeg" target="_blank" className="mt-5 inline-block rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white">
-                View Certificate
-              </a>
-            </div>
-
-            <div className="rounded-[2rem] border border-slate-200 bg-white p-7 shadow-sm">
-              <h3 className="text-xl font-black">Bachelor of Computer Applications</h3>
-              <p className="mt-2 font-semibold text-slate-700">Bhakta Kavi Narsinh Mehta University</p>
-              <p className="mt-2 text-slate-600">Sep 2021 — Jun 2024</p>
-              <p className="mt-4 leading-7 text-slate-600">
-                Foundation in programming, databases, computer applications, statistics, and business IT fundamentals.
-              </p>
-              <a href="/certificates/bca-certificate.png" target="_blank" className="mt-5 inline-block rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white">
-                View Certificate
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white px-6 py-24">
-        <div className="mx-auto max-w-7xl">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-blue-600">Beyond Analytics</p>
-          <h2 className="text-4xl font-black tracking-tight">Interests that shape my thinking</h2>
-
-          <div className="mt-10 grid gap-4 md:grid-cols-3">
-            {["Gym & discipline", "Travel and cross cultural exploration", "Geopolitics, trade, and infrastructure"].map((item) => (
-              <div key={item} className="rounded-3xl border border-slate-200 bg-slate-50 p-6 font-semibold">{item}</div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="contact" className="px-6 py-24">
-        <div className="mx-auto max-w-5xl rounded-[2rem] bg-slate-950 p-10 text-center text-white shadow-2xl">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-blue-300">Contact</p>
-          <h2 className="text-4xl font-black tracking-tight">Let’s connect.</h2>
-          <p className="mx-auto mt-4 max-w-2xl leading-8 text-slate-300">
-            Open to Business Analyst, BI Analyst, Operations Analyst, Supply Chain Analyst, and AI Business Analyst roles across Europe.
-          </p>
-
-          <div className="mt-8 grid gap-4 md:grid-cols-2">
-            <a href="mailto:rajbharatbhayani@gmail.com" className="rounded-3xl bg-white p-5 font-semibold text-slate-950">
-              rajbharatbhayani@gmail.com
-            </a>
-            <a href="tel:+4917662398987" className="rounded-3xl bg-white p-5 font-semibold text-slate-950">
-              +49 176 62398987
-            </a>
-            <a href="https://www.linkedin.com/in/mrrajbhayani" target="_blank" className="rounded-3xl border border-white/20 p-5 font-semibold text-white">
-              LinkedIn
-            </a>
-            <a href="https://www.instagram.com/raj_bhayani___" target="_blank" className="rounded-3xl border border-white/20 p-5 font-semibold text-white">
-              Instagram
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <footer className="border-t border-slate-200 bg-white px-6 py-8 text-center text-sm text-slate-500">
+      <footer className="border-t border-white/10 px-5 py-8 text-center text-sm text-slate-400">
         © 2026 Raj Bharat Bhayani. Business Analyst Portfolio.
       </footer>
-
-      {selected && (
-        <div
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/70 p-4 backdrop-blur-sm"
-          onClick={() => setActiveCase(null)}
-        >
-          <div
-            className="relative max-h-[90vh] w-full max-w-5xl overflow-y-auto rounded-[2rem] bg-white shadow-2xl"
-            onClick={(event) => event.stopPropagation()}
-          >
-            <button
-              onClick={() => setActiveCase(null)}
-              className="sticky right-6 top-6 z-20 ml-auto mr-6 mt-6 block rounded-full bg-slate-950 px-5 py-3 text-sm font-black text-white shadow-xl"
-            >
-              Close
-            </button>
-
-            <div className="px-6 pb-0">
-              <div className="overflow-hidden rounded-[1.5rem] bg-slate-950 p-4">
-                <img src={selected.image || selected.fallbackImage} alt={selected.title} className="h-96 w-full rounded-2xl object-contain object-center bg-white" />
-              </div>
-            </div>
-
-            <div className="p-8">
-              <span className="rounded-full bg-blue-50 px-3 py-1 text-sm font-semibold text-blue-700">{selected.tag}</span>
-              <h2 className="mt-5 text-4xl font-black">{selected.title}</h2>
-
-              <div className="mt-8 grid gap-6 md:grid-cols-2">
-                <div className="rounded-3xl bg-slate-50 p-6">
-                  <h3 className="font-black">Executive Summary</h3>
-                  <p className="mt-3 leading-7 text-slate-600">{selected.details.summary}</p>
-                </div>
-
-                <div className="rounded-3xl bg-slate-50 p-6">
-                  <h3 className="font-black">Business Problem</h3>
-                  <p className="mt-3 leading-7 text-slate-600">{selected.problem}</p>
-                </div>
-
-                <div className="rounded-3xl bg-slate-50 p-6">
-                  <h3 className="font-black">Solution Framework</h3>
-                  <p className="mt-3 leading-7 text-slate-600">{selected.solution}</p>
-                </div>
-
-                <div className="rounded-3xl bg-slate-50 p-6">
-                  <h3 className="font-black">Business Value</h3>
-                  <p className="mt-3 leading-7 text-slate-600">{selected.value}</p>
-                </div>
-              </div>
-
-              <div className="mt-8 grid gap-6 md:grid-cols-2">
-                <div>
-                  <h3 className="font-black">Root Causes</h3>
-                  <ul className="mt-3 list-disc space-y-2 pl-5 text-slate-600">
-                    {selected.details.rootCauses.map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div>
-                  <h3 className="font-black">Expected Impact</h3>
-                  <ul className="mt-3 list-disc space-y-2 pl-5 text-slate-600">
-                    {selected.details.impact.map((item) => (
-                      <li key={item}>{item}</li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-
-              <div className="mt-8 flex flex-wrap gap-3">
-                {selected.tools.map((tool) => (
-                  <span key={tool} className="rounded-full border border-slate-200 px-3 py-1 text-sm font-semibold text-slate-600">{tool}</span>
-                ))}
-              </div>
-
-              <div className="mt-8 flex flex-wrap gap-3">
-                {selected.pdf && (
-                  <a href={selected.pdf} target="_blank" className="rounded-full bg-slate-950 px-5 py-3 text-sm font-semibold text-white">
-                    Open PDF / Demo
-                  </a>
-                )}
-
-                <button
-                  disabled={selected.github === "#"}
-                  className={`rounded-full border px-5 py-3 text-sm font-semibold ${
-                    selected.github === "#"
-                      ? "cursor-not-allowed border-slate-200 bg-slate-50 text-slate-400"
-                      : "border-slate-300"
-                  }`}
-                >
-                  {selected.githubLabel || "GitHub"}
-                </button>
-
-                <button onClick={() => setActiveCase(null)} className="rounded-full border border-slate-300 px-5 py-3 text-sm font-semibold">
-                  Back to Case Studies
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {selectedInsight && (
-        <div
-          className="fixed inset-0 z-[100] flex items-center justify-center bg-slate-950/70 p-4 backdrop-blur-sm"
-          onClick={() => setActiveInsight(null)}
-        >
-          <div
-            className="relative max-h-[90vh] w-full max-w-4xl overflow-y-auto rounded-[2rem] bg-white shadow-2xl"
-            onClick={(event) => event.stopPropagation()}
-          >
-            <button
-              onClick={() => setActiveInsight(null)}
-              className="sticky right-6 top-6 z-20 ml-auto mr-6 mt-6 block rounded-full bg-slate-950 px-5 py-3 text-sm font-black text-white shadow-xl"
-            >
-              Close
-            </button>
-
-            <div className="px-6 pb-0">
-              <img src={selectedInsight.image} alt={selectedInsight.title} className="h-96 w-full rounded-[1.5rem] object-cover object-center" />
-            </div>
-
-            <div className="p-8">
-              <p className="text-sm font-bold text-blue-700">{selectedInsight.category}</p>
-              <p className="mt-1 text-sm font-semibold text-slate-500">{selectedInsight.readTime}</p>
-              <h2 className="mt-5 text-4xl font-black">{selectedInsight.title}</h2>
-              <p className="mt-5 leading-8 text-slate-600">{selectedInsight.text}</p>
-
-              <h3 className="mt-8 font-black">Key Takeaways</h3>
-              <ul className="mt-3 list-disc space-y-2 pl-5 text-slate-600">
-                {selectedInsight.takeaways.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-
-              <button onClick={() => setActiveInsight(null)} className="mt-8 rounded-full border border-slate-300 px-5 py-3 text-sm font-semibold">
-                Back to Insights
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
     </main>
+  );
+}
+
+function SectionIntro({ eyebrow, title, dark = false }: { eyebrow: string; title: string; dark?: boolean }) {
+  return (
+    <div>
+      <p className={`text-sm font-black uppercase tracking-[0.28em] ${dark ? "text-cyan-700" : "text-cyan-200"}`}>
+        {eyebrow}
+      </p>
+      <h2 className={`mt-4 text-4xl font-black tracking-tight md:text-5xl ${dark ? "text-slate-950" : "text-white"}`}>
+        {title}
+      </h2>
+    </div>
+  );
+}
+
+function ContactLink({
+  icon: Icon,
+  label,
+  value,
+  href,
+}: {
+  icon: typeof Mail;
+  label: string;
+  value: string;
+  href: string;
+}) {
+  return (
+    <a href={href} target={href.startsWith("http") ? "_blank" : undefined} className="flex items-center gap-4 rounded-lg border border-white/10 bg-white/[0.04] p-4 transition hover:border-cyan-200/60">
+      <span className="rounded-lg bg-cyan-300 p-3 text-slate-950">
+        <Icon size={20} />
+      </span>
+      <span>
+        <span className="block text-xs font-black uppercase tracking-[0.18em] text-slate-400">{label}</span>
+        <span className="mt-1 block font-bold text-white">{value}</span>
+      </span>
+    </a>
   );
 }
