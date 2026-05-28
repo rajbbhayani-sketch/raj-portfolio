@@ -13,9 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Raj Bharat Bhayani | Business Analyst Portfolio",
+  title: "Raj Bharat Bhayani | Business Analyst, BI & AI Decision Support",
   description:
-    "Portfolio of Raj Bharat Bhayani, a Business Analyst focused on BI, operations analytics, supply chain analytics, and AI powered decision support.",
+    "Berlin-based Business Analyst open to roles across Europe, focused on BI, operations analytics, supply chain analytics, procurement risk, and AI powered decision support.",
 };
 
 export default function RootLayout({
