@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { FormEvent, useState } from "react";
 import {
   ArrowUpRight,
   BarChart3,
@@ -16,7 +17,14 @@ import {
   Sparkles,
 } from "lucide-react";
 
-const navItems = ["Profile", "Experience", "Projects", "Skills", "Education", "Contact"];
+const navItems = [
+  { label: "Profile", href: "#profile" },
+  { label: "Why Me", href: "#why-me" },
+  { label: "Experience", href: "#experience" },
+  { label: "Projects", href: "#projects" },
+  { label: "Skills", href: "#skills" },
+  { label: "Contact", href: "#contact" },
+];
 
 const impactStats = [
   ["2+", "Years in analysis, BI, and operations"],
@@ -30,6 +38,25 @@ const recruiterSignals = [
   "MBA in General Technology Management with analytics and data science focus",
   "Hands-on BI, operations, procurement, supply chain, and explainable AI projects",
   "Comfortable translating business requirements into dashboards and decision support",
+];
+
+const hireReasons = [
+  {
+    title: "Business and technical bridge",
+    text: "I can speak with stakeholders, understand business pain, and translate it into dashboards, requirements, and decision workflows.",
+  },
+  {
+    title: "Europe-ready analyst profile",
+    text: "Based in Berlin, trained in Germany, and actively looking across Europe for business, BI, operations, supply chain, and AI analyst roles.",
+  },
+  {
+    title: "AI plus analytics mindset",
+    text: "My projects show how AI can support analysis without hiding the logic: clear inputs, transparent scoring, and practical recommendations.",
+  },
+  {
+    title: "Operations understanding",
+    text: "Experience in quick-commerce operations and supply chain projects helps me connect data analysis with real process execution.",
+  },
 ];
 
 const experiences = [
@@ -133,7 +160,7 @@ const projects = [
     title: "European Procurement & Supplier Risk Intelligence",
     category: "Procurement Risk",
     image: "/projects/procurement.png",
-    href: "/pdfs/procurement.pdf",
+    href: "/projects/european-procurement-supplier-risk-intelligence",
     problem: "Procurement teams need one view of spend, delivery reliability, ESG exposure, supplier status, and country risk.",
     value: "Designed an executive risk view that helps teams identify supplier exposure and prioritize sourcing decisions.",
     tools: ["Power BI", "DAX", "Data Modeling", "Power Query"],
@@ -142,7 +169,7 @@ const projects = [
     title: "XAI Inventory Control Tower",
     category: "Explainable AI",
     image: "/projects/xai.png",
-    href: "/pdfs/xai.pdf",
+    href: "/projects/xai-inventory-control-tower",
     problem: "Inventory planners need to know why a part is risky, not only whether a model predicts a stockout.",
     value: "Built a Streamlit prototype using XGBoost and SHAP to explain stockout drivers and support scenario planning.",
     tools: ["Python", "Streamlit", "XGBoost", "SHAP", "Plotly"],
@@ -151,7 +178,7 @@ const projects = [
     title: "European Currency Risk & Inflation Intelligence",
     category: "Financial Risk",
     image: "/projects/currency.png",
-    href: "/pdfs/currency.pdf",
+    href: "/projects/european-currency-risk-inflation-intelligence",
     problem: "Currency movement and inflation pressure can weaken procurement cost predictability.",
     value: "Created a financial exposure model for volatility, inflation signals, supplier exposure, and procurement cost forecasting.",
     tools: ["Power BI", "Forecasting", "Power Query", "Data Modeling"],
@@ -160,7 +187,7 @@ const projects = [
     title: "European Defense Operations & Readiness Intelligence",
     category: "Operations Analytics",
     image: "/projects/defense.png",
-    href: "/pdfs/defense.pdf",
+    href: "/projects/european-defense-operations-readiness-intelligence",
     problem: "Readiness drops when maintenance, downtime, throughput, procurement delay, and suppliers are managed separately.",
     value: "Designed an operational readiness dashboard for maintenance cost, downtime risk, throughput, and supplier exposure.",
     tools: ["Power BI", "Operations Analytics", "DAX", "Data Modeling"],
@@ -169,7 +196,7 @@ const projects = [
     title: "European Waterway Supply Chain Intelligence",
     category: "Logistics Strategy",
     image: "/projects/waterway.png",
-    href: "/pdfs/European_Waterway_Supply_Chain_Intelligence_Portfolio.pdf",
+    href: "/projects/european-waterway-supply-chain-intelligence",
     problem: "European freight networks face road congestion, port delay, fragmented visibility, and emissions pressure.",
     value: "Built a corridor intelligence concept for freight visibility, port delay risk, CO2 tracking, and sustainable logistics planning.",
     tools: ["Power BI", "DAX", "Power Query", "Forecasting"],
@@ -209,8 +236,8 @@ export default function Home() {
 
           <div className="hidden items-center gap-6 text-sm font-semibold text-slate-600 lg:flex">
             {navItems.map((item) => (
-              <a key={item} href={`#${item.toLowerCase()}`} className="transition hover:text-slate-950">
-                {item}
+              <a key={item.href} href={item.href} className="transition hover:text-slate-950">
+                {item.label}
               </a>
             ))}
           </div>
@@ -305,6 +332,26 @@ export default function Home() {
               <span key={language} className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-bold text-slate-700">
                 {language}
               </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="why-me" className="border-y border-slate-200 bg-[#f5f5f7] px-5 py-20">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-8 lg:grid-cols-[0.38fr_0.62fr] lg:items-end">
+            <SectionIntro eyebrow="Why Hire Me" title="A practical analyst for business, data, and AI work." dark />
+            <p className="max-w-3xl text-lg leading-8 text-slate-600">
+              Recruiters and hiring managers need more than tools on a CV. They need someone who can understand the business question, organize the evidence, and communicate what should happen next.
+            </p>
+          </div>
+          <div className="mt-12 grid gap-5 md:grid-cols-2">
+            {hireReasons.map((reason) => (
+              <article key={reason.title} className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
+                <CheckCircle2 className="text-[#0071e3]" size={26} />
+                <h3 className="mt-5 text-2xl font-black">{reason.title}</h3>
+                <p className="mt-3 leading-7 text-slate-600">{reason.text}</p>
+              </article>
             ))}
           </div>
         </div>
@@ -448,7 +495,8 @@ export default function Home() {
               I am looking for full-time opportunities across Europe in business analysis, BI, operations analytics, supply chain analytics, procurement analytics, and AI-powered decision support.
             </p>
           </div>
-          <div className="space-y-3">
+          <div className="space-y-4">
+            <ContactForm />
             <ContactLink icon={Mail} label="Email" value="rajbharatbhayani@gmail.com" href="mailto:rajbharatbhayani@gmail.com" />
             <ContactLink icon={Phone} label="Phone" value="+49 176 62398987" href="tel:+4917662398987" />
             <ContactLink icon={Link} label="LinkedIn" value="linkedin.com/in/mrrajbhayani" href="https://www.linkedin.com/in/mrrajbhayani" />
@@ -462,6 +510,80 @@ export default function Home() {
         &copy; 2026 Raj Bharat Bhayani. Built for European business, BI, operations, and AI analyst opportunities.
       </footer>
     </main>
+  );
+}
+
+function ContactForm() {
+  const [form, setForm] = useState({
+    name: "",
+    company: "",
+    role: "",
+    message: "",
+  });
+  const [submitted, setSubmitted] = useState(false);
+
+  const updateField = (field: keyof typeof form, value: string) => {
+    setForm((current) => ({ ...current, [field]: value }));
+  };
+
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const subject = encodeURIComponent(`Portfolio inquiry from ${form.company || form.name || "a recruiter"}`);
+    const body = encodeURIComponent(
+      [
+        `Name: ${form.name}`,
+        `Company: ${form.company}`,
+        `Role / opportunity: ${form.role}`,
+        "",
+        form.message,
+      ].join("\n"),
+    );
+
+    window.location.href = `mailto:rajbharatbhayani@gmail.com?subject=${subject}&body=${body}`;
+    setSubmitted(true);
+  };
+
+  return (
+    <form onSubmit={handleSubmit} className="rounded-lg border border-slate-200 bg-white p-5 shadow-sm">
+      <p className="text-sm font-black uppercase tracking-[0.22em] text-[#0071e3]">Contact Form</p>
+      <div className="mt-5 grid gap-3">
+        <input
+          required
+          value={form.name}
+          onChange={(event) => updateField("name", event.target.value)}
+          placeholder="Your name"
+          className="rounded-lg border border-slate-200 px-4 py-3 font-semibold outline-none transition focus:border-[#0071e3]"
+        />
+        <input
+          value={form.company}
+          onChange={(event) => updateField("company", event.target.value)}
+          placeholder="Company"
+          className="rounded-lg border border-slate-200 px-4 py-3 font-semibold outline-none transition focus:border-[#0071e3]"
+        />
+        <input
+          value={form.role}
+          onChange={(event) => updateField("role", event.target.value)}
+          placeholder="Role / opportunity"
+          className="rounded-lg border border-slate-200 px-4 py-3 font-semibold outline-none transition focus:border-[#0071e3]"
+        />
+        <textarea
+          required
+          value={form.message}
+          onChange={(event) => updateField("message", event.target.value)}
+          placeholder="Short message"
+          rows={4}
+          className="resize-none rounded-lg border border-slate-200 px-4 py-3 font-semibold outline-none transition focus:border-[#0071e3]"
+        />
+      </div>
+      <button type="submit" className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#0071e3] px-5 py-3 font-black text-white transition hover:bg-[#0077ed]">
+        Send Email Draft <ArrowUpRight size={17} />
+      </button>
+      {submitted && (
+        <p className="mt-3 text-sm font-semibold text-slate-600">
+          Your email app should open with the message ready to send.
+        </p>
+      )}
+    </form>
   );
 }
 
