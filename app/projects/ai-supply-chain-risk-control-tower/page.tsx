@@ -109,7 +109,7 @@ export default function AiSupplyChainRiskControlTower() {
             </a>
           </div>
         </div>
-        <Image src="/projects/ai-supply-chain-risk.png" alt="AI European supply chain risk dashboard concept" width={900} height={560} priority className="rounded-lg border border-slate-200 bg-white shadow-2xl shadow-slate-200/80" />
+        <Image src="/projects/ai-supply-chain-demo-screenshot.png" alt="Live AI European supply chain risk demo screenshot" width={1366} height={700} priority className="rounded-lg border border-slate-200 bg-white shadow-2xl shadow-slate-200/80" />
       </section>
 
       <section className="border-y border-slate-200 bg-[#f5f5f7] px-5 py-10">

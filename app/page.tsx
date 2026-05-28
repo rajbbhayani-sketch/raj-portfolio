@@ -18,14 +18,6 @@ import {
 
 const navItems = ["Profile", "Experience", "Projects", "Skills", "Education", "Contact"];
 
-const roleTargets = [
-  "Business Analyst",
-  "BI Analyst",
-  "Operations Analyst",
-  "Supply Chain Analyst",
-  "AI Business Analyst",
-];
-
 const impactStats = [
   ["2+", "Years in analysis, BI, and operations"],
   ["7", "Portfolio case studies for European business problems"],
@@ -122,7 +114,7 @@ const projects = [
   {
     title: "AI Business Analyst Co-Pilot For European Market Decisions",
     category: "AI Business Analysis",
-    image: "/projects/ai-business-analysis.png",
+    image: "/projects/ai-business-demo-screenshot.png",
     href: "/projects/ai-business-analyst-copilot",
     problem: "Business teams often lose time translating stakeholder requests, scattered KPI notes, customer signals, and market changes into clear requirements and action priorities.",
     value: "Designed a portfolio prototype for an AI-assisted business analysis workflow that summarizes requirements, flags KPI anomalies, scores opportunities, and turns executive questions into structured next steps.",
@@ -131,7 +123,7 @@ const projects = [
   {
     title: "AI European Supply Chain Risk & Disruption Control Tower",
     category: "AI Supply Chain Analytics",
-    image: "/projects/ai-supply-chain-risk.png",
+    image: "/projects/ai-supply-chain-demo-screenshot.png",
     href: "/projects/ai-supply-chain-risk-control-tower",
     problem: "European supply chains face supplier delays, port congestion, transport disruption, inventory shortages, and sustainability pressure across countries and corridors.",
     value: "Designed an AI control tower concept that predicts supplier delay risk, highlights logistics bottlenecks, monitors inventory exposure, and recommends mitigation actions for supply chain teams.",
@@ -177,7 +169,7 @@ const projects = [
     title: "European Waterway Supply Chain Intelligence",
     category: "Logistics Strategy",
     image: "/projects/waterway.png",
-    href: "",
+    href: "/pdfs/European_Waterway_Supply_Chain_Intelligence_Portfolio.pdf",
     problem: "European freight networks face road congestion, port delay, fragmented visibility, and emissions pressure.",
     value: "Built a corridor intelligence concept for freight visibility, port delay risk, CO2 tracking, and sustainable logistics planning.",
     tools: ["Power BI", "DAX", "Power Query", "Forecasting"],
@@ -242,10 +234,10 @@ export default function Home() {
               Berlin based - open to Business Analyst roles across Europe
             </p>
             <h1 className="max-w-5xl text-5xl font-black leading-[1.02] tracking-tight md:text-7xl">
-              Business analyst who turns messy data into clear decisions.
+              Business analysis, BI and AI decision support for European teams.
             </h1>
             <p className="mt-6 max-w-3xl text-xl font-semibold leading-8 text-blue-700">
-              I combine business analysis, BI dashboards, operations thinking, supply chain knowledge, and explainable AI to help teams see risk earlier and act faster.
+              I translate complex business questions into dashboards, risk intelligence, supply chain insights, and clear actions for hiring teams looking across Europe.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a href="#projects" className="inline-flex items-center gap-2 rounded-full bg-slate-950 px-5 py-3 font-black text-white transition hover:bg-[#0071e3]">
@@ -257,14 +249,6 @@ export default function Home() {
               <a href="https://www.linkedin.com/in/mrrajbhayani" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-5 py-3 font-black text-slate-950 transition hover:border-[#0071e3] hover:text-[#0071e3]">
                 <Link size={18} /> LinkedIn
               </a>
-            </div>
-
-            <div className="mt-9 grid max-w-3xl gap-3 sm:grid-cols-2">
-              {roleTargets.map((role) => (
-                <div key={role} className="rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm font-bold text-slate-700">
-                  {role}
-                </div>
-              ))}
             </div>
           </div>
 
@@ -468,6 +452,7 @@ export default function Home() {
             <ContactLink icon={Mail} label="Email" value="rajbharatbhayani@gmail.com" href="mailto:rajbharatbhayani@gmail.com" />
             <ContactLink icon={Phone} label="Phone" value="+49 176 62398987" href="tel:+4917662398987" />
             <ContactLink icon={Link} label="LinkedIn" value="linkedin.com/in/mrrajbhayani" href="https://www.linkedin.com/in/mrrajbhayani" />
+            <ContactLink icon={Link} label="Instagram" value="@raj_bhayani___" href="https://www.instagram.com/raj_bhayani___" />
             <ContactLink icon={MapPin} label="Current Base" value="Berlin, Germany - open across Europe" href="https://maps.google.com/?q=Berlin,Germany" />
           </div>
         </div>
