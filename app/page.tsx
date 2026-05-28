@@ -123,7 +123,7 @@ const projects = [
     title: "AI Business Analyst Co-Pilot For European Market Decisions",
     category: "AI Business Analysis",
     image: "/projects/ai-business-analysis.png",
-    href: "",
+    href: "/projects/ai-business-analyst-copilot",
     problem: "Business teams often lose time translating stakeholder requests, scattered KPI notes, customer signals, and market changes into clear requirements and action priorities.",
     value: "Designed a portfolio prototype for an AI-assisted business analysis workflow that summarizes requirements, flags KPI anomalies, scores opportunities, and turns executive questions into structured next steps.",
     tools: ["AI Workflow Design", "Power BI Concept", "Python", "Prompt Engineering", "Requirements Analysis"],
@@ -132,7 +132,7 @@ const projects = [
     title: "AI European Supply Chain Risk & Disruption Control Tower",
     category: "AI Supply Chain Analytics",
     image: "/projects/ai-supply-chain-risk.png",
-    href: "",
+    href: "/projects/ai-supply-chain-risk-control-tower",
     problem: "European supply chains face supplier delays, port congestion, transport disruption, inventory shortages, and sustainability pressure across countries and corridors.",
     value: "Designed an AI control tower concept that predicts supplier delay risk, highlights logistics bottlenecks, monitors inventory exposure, and recommends mitigation actions for supply chain teams.",
     tools: ["AI Risk Scoring", "Supply Chain Analytics", "Forecasting", "Scenario Analysis", "Power BI Concept"],
@@ -393,7 +393,7 @@ export default function Home() {
                   <div className="mt-7">
                     {project.href ? (
                       <a href={project.href} target="_blank" rel="noreferrer" className={index === 0 ? "inline-flex items-center gap-2 rounded-full bg-slate-950 px-5 py-3 text-sm font-black text-white transition hover:bg-cyan-700" : "inline-flex items-center gap-2 rounded-full bg-cyan-300 px-5 py-3 text-sm font-black text-slate-950 transition hover:bg-white"}>
-                        Open PDF / Demo <ArrowUpRight size={16} />
+                        Open Case Study / Demo <ArrowUpRight size={16} />
                       </a>
                     ) : (
                       <span className={index === 0 ? "rounded-full border border-slate-200 px-5 py-3 text-sm font-black text-slate-500" : "rounded-full border border-white/10 px-5 py-3 text-sm font-black text-slate-300"}>
