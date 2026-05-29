@@ -63,6 +63,7 @@ const experiences = [
   {
     period: "Jan 2026 - Apr 2026",
     company: "Fachhochschule des Mittelstandes Bielefeld",
+    contract: "Work Study",
     location: "Berlin, Germany",
     role: "Master Thesis Researcher - Explainable AI & Inventory Decision Support",
     body: "Researched how explainable AI can support risk-aware spare parts inventory planning and make model outputs useful for business decision makers.",
@@ -75,6 +76,7 @@ const experiences = [
   {
     period: "Nov 2024 - Oct 2025",
     company: "Flink",
+    contract: "Part-time",
     location: "Berlin, Germany",
     role: "Hub Operations Working Student",
     body: "Supported fast-moving quick-commerce operations with practical exposure to inventory flow, fulfillment, last-mile logistics, and process discipline.",
@@ -87,6 +89,7 @@ const experiences = [
   {
     period: "Mar 2024 - Sep 2024",
     company: "VSG GLOBAL PTE. LTD",
+    contract: "Internship",
     location: "Singapore / Remote",
     role: "Business Analyst Intern",
     body: "Supported import-related business analysis, procurement coordination, documentation, and reporting for cross-functional business teams.",
@@ -99,6 +102,7 @@ const experiences = [
   {
     period: "Dec 2022 - Feb 2024",
     company: "Fledge Consulting Pvt Ltd",
+    contract: "Part-time",
     location: "Nagpur, India",
     role: "Business Intelligence Analyst",
     body: "Supported BI reporting and client-facing analysis for international projects, connecting business needs with reporting and technical teams.",
@@ -370,7 +374,9 @@ export default function Home() {
                   </p>
                 </div>
                 <div>
-                  <p className="font-black text-[#0071e3]">{job.company}</p>
+                  <p className="font-black text-[#0071e3]">
+                    {job.company} <span className="text-slate-400">·</span> {job.contract}
+                  </p>
                   <h3 className="mt-2 text-2xl font-black tracking-tight">{job.role}</h3>
                   <p className="mt-4 leading-7 text-slate-600">{job.body}</p>
                   <ul className="mt-5 grid gap-3">
