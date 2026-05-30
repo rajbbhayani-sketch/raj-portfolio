@@ -271,9 +271,66 @@ const education = [
 
 const languages = ["English - Fluent", "German - Intermediate", "Hindi - Native", "Gujarati - Native"];
 
+const structuredData = [
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Raj Bharat Bhayani",
+    url: "https://www.rajbharatbhayani.eu",
+    image: "https://www.rajbharatbhayani.eu/profile/profile.jpg",
+    jobTitle: "Business Analyst, BI Analyst, Supply Chain Analyst",
+    email: "mailto:rajbharatbhayani@gmail.com",
+    telephone: "+49 176 62398987",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Berlin",
+      addressCountry: "Germany",
+    },
+    sameAs: [
+      "https://www.linkedin.com/in/mrrajbhayani",
+      "https://www.instagram.com/raj_bhayani___",
+      "https://github.com/rajbbhayani-sketch/raj-portfolio",
+    ],
+    knowsAbout: [
+      "Business Analysis",
+      "Business Intelligence",
+      "Power BI",
+      "Supply Chain Analytics",
+      "Procurement Analytics",
+      "Operations Analytics",
+      "AI Decision Support",
+      "Explainable AI",
+    ],
+    alumniOf: [
+      {
+        "@type": "CollegeOrUniversity",
+        name: "Fachhochschule des Mittelstandes Bielefeld",
+      },
+      {
+        "@type": "CollegeOrUniversity",
+        name: "Bhakta Kavi Narsinh Mehta University",
+      },
+    ],
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: "Raj Bharat Bhayani Portfolio",
+    url: "https://www.rajbharatbhayani.eu",
+    description:
+      "Portfolio for European business analysis, BI, operations analytics, supply chain analytics, procurement risk, and AI decision support roles.",
+  },
+];
+
 export default function Home() {
   return (
     <main className="relative min-h-screen overflow-hidden bg-white/90 text-slate-950">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(structuredData),
+        }}
+      />
       <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur-xl">
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4">
           <a href="#" className="flex items-center gap-3 font-black tracking-tight">

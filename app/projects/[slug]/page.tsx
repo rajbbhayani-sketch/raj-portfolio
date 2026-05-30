@@ -1,5 +1,6 @@
 import Image from "next/image";
 import NextLink from "next/link";
+import type { Metadata } from "next";
 import { ArrowLeft, ArrowUpRight, BarChart3, CheckCircle2, FileText, Mail } from "lucide-react";
 import { notFound } from "next/navigation";
 
@@ -16,6 +17,8 @@ type CaseStudy = {
   tools: string[];
   metrics: string[][];
 };
+
+const siteUrl = "https://www.rajbharatbhayani.eu";
 
 const caseStudies: CaseStudy[] = [
   {
@@ -159,7 +162,7 @@ export function generateStaticParams() {
   return caseStudies.map((study) => ({ slug: study.slug }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const study = caseStudies.find((item) => item.slug === slug);
 
@@ -169,9 +172,36 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     };
   }
 
+  const title = `${study.title} | Raj Bharat Bhayani`;
+  const url = `/projects/${study.slug}`;
+
   return {
-    title: `${study.title} | Raj Bharat Bhayani`,
+    title,
     description: study.overview,
+    alternates: {
+      canonical: url,
+    },
+    openGraph: {
+      title,
+      description: study.overview,
+      url,
+      siteName: "Raj Bharat Bhayani Portfolio",
+      type: "article",
+      images: [
+        {
+          url: study.image,
+          width: 1200,
+          height: 630,
+          alt: `${study.title} case study preview`,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description: study.overview,
+      images: [`${siteUrl}${study.image}`],
+    },
   };
 }
 
