@@ -338,7 +338,7 @@ export default function Home() {
             <div className="absolute -inset-5 rounded-[2rem] bg-blue-50 blur-2xl" />
             <div className="premium-panel relative overflow-hidden rounded-lg border border-slate-200 bg-white p-5 shadow-2xl shadow-slate-200/80">
               <div className="grid gap-5 md:grid-cols-[0.72fr_1.28fr] lg:grid-cols-1">
-                <Image src="/profile/profile.jpg" alt="Raj Bharat Bhayani" width={720} height={760} priority className="h-[320px] w-full rounded-lg object-cover object-center md:h-full lg:h-[240px] xl:h-[260px]" />
+                <Image src="/profile/profile.jpg" alt="Raj Bharat Bhayani" width={720} height={760} priority className="h-[320px] w-full rounded-lg bg-white object-contain object-center md:h-full lg:h-[240px] xl:h-[260px]" />
                 <div className="flex flex-col justify-between gap-5">
                   <div>
                     <p className="text-sm font-black uppercase tracking-[0.24em] text-[#0071e3]">Recruiter Briefing</p>
