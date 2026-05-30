@@ -32,6 +32,26 @@ img {
   max-width: 100%;
 }
 
+.premium-panel {
+  isolation: isolate;
+}
+
+.premium-panel::after {
+  animation: panelSweep 9s ease-in-out infinite;
+  background: linear-gradient(115deg, transparent 0%, rgba(0, 113, 227, 0.08) 48%, transparent 62%);
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+  transform: translateX(-85%);
+  z-index: 0;
+}
+
+.premium-panel > * {
+  position: relative;
+  z-index: 1;
+}
+
 @keyframes backgroundDrift {
   0% {
     background-position: 0% 0%, 100% 0%, 45% 100%, 0 0;
@@ -42,8 +62,24 @@ img {
   }
 }
 
+@keyframes panelSweep {
+  0%,
+  34% {
+    transform: translateX(-85%);
+  }
+
+  72%,
+  100% {
+    transform: translateX(85%);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   body {
+    animation: none;
+  }
+
+  .premium-panel::after {
     animation: none;
   }
 }
