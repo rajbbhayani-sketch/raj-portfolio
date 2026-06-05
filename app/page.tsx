@@ -32,23 +32,23 @@ const impactStats = [
   ["2+", "Years across BI, analysis, and operations"],
   ["8", "Supply chain, procurement, logistics, and analytics case studies"],
   ["4", "Languages for international teams"],
-  ["DE", "Focused on supply chain roles in Germany"],
+  ["DE", "Seeking supply chain roles in Germany"],
 ];
 
 const recruiterSignals = [
   "Based in Germany and open to relocation within Germany",
   "MBA with Data Science focus and supply chain analytics project work",
   "Hands-on portfolio across inventory planning, procurement analytics, supplier risk, logistics bottlenecks, and operations KPIs",
-  "Comfortable turning business questions into Power BI-style dashboards, KPI logic, and practical decision support",
+  "Able to turn planning and operations questions into Power BI-style dashboards, KPI logic, and practical recommendations",
 ];
 
 const agencyHighlights = [
   {
     label: "Target roles",
-    value: "Supply Chain Trainee / Junior Supply Chain Analyst / Procurement Analyst",
+    value: "Supply Chain Trainee / Junior Supply Chain Analyst / Procurement Analyst / Logistics Analyst / Operations Analyst",
   },
   {
-    label: "Location",
+    label: "Region",
     value: "Germany, open to relocation within Germany",
   },
   {
@@ -67,7 +67,7 @@ const desktopProofPoints = [
 const decisionFlow = ["Demand signal", "Inventory risk", "Supplier view", "Action brief"];
 
 const heroMetrics = [
-  ["Focus", "Supply chain analytics"],
+  ["Main profile", "Supply Chain Analyst"],
   ["Evidence", "8 case studies"],
   ["Market", "Germany"],
 ];
@@ -188,10 +188,10 @@ const skillGroups = [
     skills: ["Power BI", "SQL", "Python", "Excel", "Data Visualization", "Dashboard Building", "SAP Fundamentals"],
   },
   {
-    title: "AI & Predictive Analytics",
+    title: "Forecasting & Decision Support",
     icon: Sparkles,
-    summary: "Measured use of machine learning and explainability for planning support, not exaggerated automation claims.",
-    skills: ["Machine Learning", "Explainable AI", "Predictive Analytics", "Decision Support Systems", "Forecast Interpretation"],
+    summary: "Practical planning support with forecasting, model interpretation, and clear recommendations for business users.",
+    skills: ["Demand Forecasting", "Predictive Analytics", "Forecast Interpretation", "Explainable AI", "Decision Support Systems"],
   },
   {
     title: "Business & Operations",
@@ -204,16 +204,16 @@ const skillGroups = [
 const projects = [
   {
     title: "AI European Supply Chain Risk & Disruption Control Tower",
-    category: "AI Supply Chain Analytics",
+    category: "Supply Chain Risk Analytics",
     image: "/projects/ai-supply-chain-demo-screenshot.png",
     href: "/projects/ai-supply-chain-risk-control-tower",
     problem: "Supply chain teams need early visibility into supplier disruption, logistics bottlenecks, port congestion, low inventory cover, and demand volatility.",
-    value: "Built an interactive risk-control concept that monitors supplier delay, logistics risk, shortage exposure, and mitigation actions for European corridors.",
+    value: "Built an interactive risk-control concept that monitors supplier delay, logistics risk, shortage exposure, and mitigation actions for German and European supply chain corridors.",
     tools: ["Supply Chain Analytics", "Risk Monitoring", "Python", "Scenario Analysis", "Power BI Concept"],
     kpis: ["Supplier delay risk", "Port congestion", "Stockout exposure", "Resilience score"],
   },
   {
-    title: "Explainable AI Inventory Control Tower",
+    title: "XAI Inventory Control Tower",
     category: "Inventory Optimization",
     image: "/projects/xai.png",
     href: "/projects/xai-inventory-control-tower",
@@ -223,7 +223,7 @@ const projects = [
     kpis: ["Stockout risk", "Safety stock", "Reorder point", "Service level"],
   },
   {
-    title: "European Procurement & Supplier Intelligence Platform",
+    title: "European Procurement & Supplier Risk Intelligence",
     category: "Procurement Analytics",
     image: "/projects/procurement.png",
     href: "/projects/european-procurement-supplier-risk-intelligence",
@@ -231,6 +231,16 @@ const projects = [
     value: "Designed an executive supplier intelligence view for procurement analytics, cost optimization, supplier risk evaluation, and sourcing prioritization.",
     tools: ["Power BI", "DAX", "Power Query", "Data Modeling", "Supplier Management"],
     kpis: ["Supplier OTIF", "Spend exposure", "Risk score", "Cost variance"],
+  },
+  {
+    title: "European Waterway Supply Chain Intelligence",
+    category: "Logistics Analytics",
+    image: "/projects/waterway.png",
+    href: "/projects/european-waterway-supply-chain-intelligence",
+    problem: "German and European freight networks face road congestion, port delay, fragmented visibility, and emissions pressure.",
+    value: "Built a corridor intelligence concept for freight visibility, port delay risk, CO2 tracking, and practical logistics planning.",
+    tools: ["Power BI", "DAX", "Power Query", "Forecasting"],
+    kpis: ["Port delay", "Corridor capacity", "Freight visibility", "CO2 tracking"],
   },
   {
     title: "Demand Forecasting & Inventory Optimization Dashboard",
@@ -263,16 +273,6 @@ const projects = [
     kpis: ["Availability", "Downtime", "Throughput", "Maintenance cost"],
   },
   {
-    title: "European Waterway Supply Chain Intelligence",
-    category: "Logistics Strategy",
-    image: "/projects/waterway.png",
-    href: "/projects/european-waterway-supply-chain-intelligence",
-    problem: "European freight networks face road congestion, port delay, fragmented visibility, and emissions pressure.",
-    value: "Built a corridor intelligence concept for freight visibility, port delay risk, CO2 tracking, and sustainable logistics planning.",
-    tools: ["Power BI", "DAX", "Power Query", "Forecasting"],
-    kpis: ["Port delay", "Corridor capacity", "Freight visibility", "CO2 tracking"],
-  },
-  {
     title: "AI Business Analyst Co-Pilot For European Market Decisions",
     category: "Business Analysis",
     image: "/projects/ai-business-demo-screenshot.png",
@@ -301,7 +301,7 @@ const featuredSupplyChainProjects = [
       "Helps planning and logistics teams prioritize mitigation actions before disruption becomes a customer or production issue.",
   },
   {
-    title: "Explainable AI Inventory Control Tower",
+    title: "XAI Inventory Control Tower",
     href: "/projects/xai-inventory-control-tower",
     category: "Inventory Optimization",
     businessProblem:
@@ -314,7 +314,7 @@ const featuredSupplyChainProjects = [
       "Improves confidence in planning decisions by showing why inventory risk exists and what action can reduce it.",
   },
   {
-    title: "European Procurement & Supplier Intelligence Platform",
+    title: "European Procurement & Supplier Risk Intelligence",
     href: "/projects/european-procurement-supplier-risk-intelligence",
     category: "Procurement Analytics",
     businessProblem:
@@ -325,6 +325,19 @@ const featuredSupplyChainProjects = [
     technologies: ["Power BI", "DAX", "Power Query", "Data modeling", "Supplier management"],
     impact:
       "Supports sourcing prioritization, supplier discussions, and procurement decisions with clearer performance evidence.",
+  },
+  {
+    title: "European Waterway Supply Chain Intelligence",
+    href: "/projects/european-waterway-supply-chain-intelligence",
+    category: "Logistics Analytics",
+    businessProblem:
+      "German and European logistics networks need better visibility of freight corridors, inland waterway options, port delays, congestion, and emissions pressure.",
+    solution:
+      "Corridor intelligence concept for freight visibility, port delay risk, CO2 tracking, and practical logistics planning.",
+    kpis: ["Port delay", "Freight visibility", "CO2 tracking", "Corridor capacity"],
+    technologies: ["Power BI", "DAX", "Power Query", "Logistics analytics"],
+    impact:
+      "Helps logistics and operations teams compare routes, understand bottlenecks, and discuss more resilient transport options.",
   },
 ];
 
@@ -356,7 +369,7 @@ const structuredData = [
     name: "Raj Bharat Bhayani",
     url: "https://www.rajbharatbhayani.eu",
     image: "https://www.rajbharatbhayani.eu/profile/profile.jpg",
-    jobTitle: "Supply Chain Analyst, Procurement Analyst, Logistics Analyst, Operations Analyst",
+    jobTitle: "Supply Chain Analyst, Junior Supply Chain Analyst, Procurement Analyst, Logistics Analyst, Operations Analyst",
     email: "mailto:rajbharatbhayani@gmail.com",
     telephone: "+49 176 62398987",
     address: {
@@ -400,7 +413,7 @@ const structuredData = [
     name: "Raj Bharat Bhayani Portfolio",
     url: "https://www.rajbharatbhayani.eu",
     description:
-      "Portfolio for Supply Chain Trainee, Junior Supply Chain Analyst, Procurement Analyst, Logistics Analyst, Operations Analyst, and Business Intelligence Analyst roles in Germany.",
+      "Portfolio for Supply Chain Trainee, Junior Supply Chain Analyst, Procurement Analyst, Logistics Analyst, Operations Analyst, and related Business Intelligence roles in Germany.",
   },
 ];
 
@@ -444,13 +457,13 @@ export default function Home() {
           <div>
             <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-blue-100/80 bg-white/80 px-4 py-2 text-sm font-bold text-blue-700 shadow-sm backdrop-blur">
               <span className="h-2 w-2 rounded-full bg-emerald-300" />
-              Germany-focused supply chain analytics portfolio
+              Germany-based | Seeking Supply Chain Trainee, Junior Supply Chain Analyst, Procurement Analyst and Operations Analyst roles
             </p>
             <h1 className="max-w-5xl text-4xl font-black leading-[1.08] tracking-tight md:text-5xl 2xl:text-6xl">
-              Supply Chain Analytics | Inventory Optimization | Procurement Intelligence | Data-Driven Decision Support
+              Supply Chain Analytics & Business Intelligence for German Industry
             </h1>
             <p className="mt-6 max-w-3xl text-xl font-semibold leading-8 text-blue-700">
-              MBA in Data Science focused on supply chain analytics, procurement intelligence, inventory optimization, logistics performance, and AI-powered decision support.
+              MBA Data Science graduate focused on inventory planning, demand forecasting, procurement analytics, logistics performance, and supply chain decision support.
             </p>
             <div className="mt-7 hidden max-w-3xl rounded-lg border border-slate-200/80 bg-white/80 p-2 shadow-xl shadow-slate-200/60 backdrop-blur lg:block">
               <div className="grid grid-cols-4 gap-2">
@@ -487,7 +500,7 @@ export default function Home() {
             <div className="premium-panel glass-panel relative overflow-hidden rounded-lg p-5">
               <div className="mb-4 flex items-center justify-between rounded-lg border border-slate-200/80 bg-white/75 px-4 py-3">
                 <div>
-                  <p className="text-xs font-black text-[#0071e3]">SUPPLY CHAIN PROFILE</p>
+                  <p className="text-xs font-black text-[#0071e3]">SUPPLY CHAIN ANALYST PROFILE</p>
                   <p className="mt-1 text-sm font-bold text-slate-500">Recruiter screening view for Germany</p>
                 </div>
                 <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-50 text-[#0071e3]">
@@ -566,7 +579,7 @@ export default function Home() {
             ))}
           </div>
           <p className="rounded-lg border border-blue-100 bg-blue-50/70 p-4 text-base font-bold leading-7 text-blue-800">
-            Suitable focus for companies such as DHL, DB Schenker, Bosch, Siemens, BMW, Mercedes-Benz, and other German employers working with logistics networks, procurement processes, manufacturing operations, and supply chain optimization.
+            Suitable focus for companies such as DHL, DB Schenker, Bosch, Siemens, BMW, Mercedes-Benz, and other German employers working with logistics networks, procurement processes, manufacturing operations, supply chain management, and operational reporting.
           </p>
         </div>
       </section>
@@ -605,11 +618,11 @@ export default function Home() {
           <div className="grid gap-8 lg:grid-cols-[0.42fr_0.58fr] lg:items-end">
             <SectionIntro eyebrow="Supply Chain Analytics Portfolio" title="Projects for inventory, procurement, logistics, and operations decisions." />
             <p className="max-w-3xl text-lg leading-8 text-slate-600">
-              These projects are built around realistic business problems: demand planning, inventory optimization, supplier performance, procurement risk, logistics bottlenecks, and KPI-based decision support for German employers.
+              These projects are built around realistic business problems for German and European supply chain, logistics, procurement, and operations teams: demand planning, inventory optimization, supplier performance, procurement risk, logistics bottlenecks, and KPI-based decision support.
             </p>
           </div>
 
-          <div className="mt-12 grid gap-6 lg:grid-cols-3">
+          <div className="mt-12 grid gap-6 lg:grid-cols-2 xl:grid-cols-4">
             {featuredSupplyChainProjects.map((project) => (
               <FeaturedProjectCard key={project.title} project={project} />
             ))}
@@ -626,7 +639,7 @@ export default function Home() {
           </div>
 
           <div className="mt-6 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {projects.slice(3).map((project) => (
+            {projects.slice(4).map((project) => (
               <ProjectCard key={project.title} project={project} />
             ))}
           </div>
@@ -636,7 +649,7 @@ export default function Home() {
       <section id="why-me" className="border-y border-slate-200/70 bg-white/70 px-5 py-20">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-8 lg:grid-cols-[0.38fr_0.62fr] lg:items-end">
-            <SectionIntro eyebrow="Why Hire Me" title="A practical analyst for supply chain, operations, and data work." dark />
+            <SectionIntro eyebrow="Why Hire Me" title="A practical supply chain analyst with business intelligence skills." dark />
             <p className="max-w-3xl text-lg leading-8 text-slate-600">
               Recruiters and hiring managers need more than tool names. They need someone who can understand the process, define useful KPIs, organize the data, and communicate what should happen next.
             </p>
@@ -742,7 +755,7 @@ export default function Home() {
               <h2 className="mt-4 text-4xl font-black tracking-tight md:text-6xl">Let&apos;s talk about supply chain roles in Germany.</h2>
             </div>
             <p className="max-w-3xl text-lg leading-8 text-slate-600">
-              I am looking for Supply Chain Trainee, Junior Supply Chain Analyst, Procurement Analyst, Logistics Analyst, Operations Analyst, and BI Analyst opportunities in Germany. I am open to relocation within Germany.
+              I am looking for Supply Chain Trainee, Junior Supply Chain Analyst, Procurement Analyst, Logistics Analyst, Operations Analyst, and BI Analyst opportunities in Germany. Business Analyst roles are secondary when they connect to supply chain, procurement, logistics, or operations topics.
             </p>
           </div>
 

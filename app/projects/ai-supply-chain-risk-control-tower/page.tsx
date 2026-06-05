@@ -92,12 +92,12 @@ export default function AiSupplyChainRiskControlTower() {
 
       <section className="mx-auto grid max-w-7xl gap-10 px-5 py-14 lg:grid-cols-[0.58fr_0.42fr] lg:items-center">
         <div>
-          <p className="text-sm font-black uppercase tracking-[0.28em] text-[#0071e3]">Live AI Supply Chain Demo</p>
+          <p className="text-sm font-black uppercase tracking-[0.28em] text-[#0071e3]">Supply Chain Risk Demo</p>
           <h1 className="mt-4 text-4xl font-black tracking-tight md:text-6xl">
             AI European Supply Chain Risk & Disruption Control Tower
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600">
-            A working demo that scores disruption risk across European logistics corridors and turns supplier,
+            A working demo that scores disruption risk across German and European logistics corridors and turns supplier,
             port, demand, and inventory signals into practical mitigation actions.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
@@ -109,14 +109,14 @@ export default function AiSupplyChainRiskControlTower() {
             </a>
           </div>
         </div>
-        <Image src="/projects/ai-supply-chain-demo-screenshot.png" alt="Live AI European supply chain risk demo screenshot" width={1366} height={700} priority className="rounded-lg border border-slate-200 bg-white shadow-2xl shadow-slate-200/80" />
+        <Image src="/projects/ai-supply-chain-demo-screenshot.png" alt="Supply chain risk and disruption control tower screenshot" width={1366} height={700} priority className="rounded-lg border border-slate-200 bg-white shadow-2xl shadow-slate-200/80" />
       </section>
 
       <section className="border-y border-slate-200 bg-[#f5f5f7] px-5 py-10">
         <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-3">
           <InfoCard icon={Route} title="Corridor Risk" text="Scores supplier delay, port congestion, inventory cover, demand volatility, and supplier reliability." />
           <InfoCard icon={PackageCheck} title="Inventory Exposure" text="Highlights shortage pressure and helps teams decide when to increase safety stock or expedite." />
-          <InfoCard icon={ShipWheel} title="European Logistics" text="Frames risk around ports, cross-border lanes, industrial suppliers, and transport bottlenecks." />
+          <InfoCard icon={ShipWheel} title="German & European Logistics" text="Frames risk around ports, cross-border lanes, industrial suppliers, and transport bottlenecks." />
         </div>
       </section>
 
@@ -124,7 +124,7 @@ export default function AiSupplyChainRiskControlTower() {
         <aside className="rounded-lg border border-slate-200 bg-white p-6">
           <p className="text-sm font-black uppercase tracking-[0.22em] text-[#0071e3]">Risk Inputs</p>
           <label className="mt-5 block text-sm font-black text-slate-700" htmlFor="corridor">
-            European logistics corridor
+            German and European logistics corridor
           </label>
           <select
             id="corridor"
@@ -146,7 +146,7 @@ export default function AiSupplyChainRiskControlTower() {
 
         <div className="grid gap-5">
           <div className="rounded-lg border border-slate-200 bg-white p-6 text-slate-950 shadow-2xl shadow-slate-200/80">
-            <p className="text-sm font-black uppercase tracking-[0.22em] text-[#0071e3]">AI Risk Brief</p>
+            <p className="text-sm font-black uppercase tracking-[0.22em] text-[#0071e3]">Risk Brief</p>
             <h2 className="mt-3 text-3xl font-black">{result.status}</h2>
             <p className="mt-4 leading-7 text-slate-600">{corridors[corridor].context}</p>
             <p className="mt-4 rounded-lg bg-slate-100 p-4 font-bold leading-7 text-slate-700">{result.recommendation}</p>
@@ -168,7 +168,7 @@ export default function AiSupplyChainRiskControlTower() {
             </p>
             <p className="mt-2 leading-7 text-slate-600">
               This live demo uses transparent scoring and scenario logic in the browser. It demonstrates how I would structure
-              an AI-ready control tower before connecting it to ERP, WMS, transport, supplier, port, and forecast data.
+              a practical risk-control dashboard before connecting it to ERP, WMS, transport, supplier, port, and forecast data.
             </p>
           </div>
         </div>

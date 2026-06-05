@@ -23,7 +23,7 @@ const siteUrl = "https://www.rajbharatbhayani.eu";
 const caseStudies: CaseStudy[] = [
   {
     slug: "european-procurement-supplier-risk-intelligence",
-    title: "European Procurement & Supplier Intelligence Platform",
+    title: "European Procurement & Supplier Risk Intelligence",
     category: "Procurement Analytics",
     image: "/projects/procurement.png",
     pdf: "/pdfs/procurement.pdf",
@@ -50,7 +50,7 @@ const caseStudies: CaseStudy[] = [
   },
   {
     slug: "xai-inventory-control-tower",
-    title: "Explainable AI Inventory Control Tower",
+    title: "XAI Inventory Control Tower",
     category: "Inventory Optimization",
     image: "/projects/xai.png",
     pdf: "/pdfs/xai.pdf",

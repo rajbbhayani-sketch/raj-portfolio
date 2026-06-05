@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 const title = "AI Business Analyst Co-Pilot | Raj Bharat Bhayani";
 const description =
-  "Interactive AI business analysis demo for European market decisions, requirement discovery, KPI risk, stakeholder urgency, and executive decision briefs.";
+  "Secondary business analysis demo for requirements, KPI review, stakeholder urgency, and decision briefs. Main portfolio focus remains supply chain analytics roles in Germany.";
 const path = "/projects/ai-business-analyst-copilot";
 const image = "/projects/ai-business-demo-screenshot.png";
 

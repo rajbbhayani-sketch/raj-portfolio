@@ -29,7 +29,7 @@ const skills = {
 const projects = [
   "AI European Supply Chain Risk & Disruption Control Tower - supplier delay, logistics bottlenecks, inventory exposure, and mitigation actions.",
   "Explainable AI Inventory Control Tower - stockout risk, safety stock, reorder point recommendations, and forecast interpretation.",
-  "European Procurement & Supplier Intelligence Platform - supplier performance, procurement analytics, cost exposure, and supplier risk evaluation.",
+  "European Procurement & Supplier Risk Intelligence - supplier performance, procurement analytics, cost exposure, and supplier risk evaluation.",
   "Demand Forecasting & Inventory Optimization Dashboard - forecast accuracy, inventory turnover, fill rate, service level, stockout risk, safety stock, and reorder point logic.",
 ];
 
