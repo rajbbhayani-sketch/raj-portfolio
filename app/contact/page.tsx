@@ -52,29 +52,29 @@ const contactItems: Array<{
 
 export default function ContactPage() {
   return (
-    <main className="min-h-screen bg-white text-slate-950">
+    <main className="future-grid relative min-h-screen overflow-hidden bg-white text-slate-950">
       <header className="border-b border-slate-200 bg-white px-5 py-4">
         <nav className="mx-auto flex max-w-5xl items-center justify-between">
           <NextLink
             href="/"
-            className="inline-flex items-center gap-2 font-black text-[#0071e3] hover:text-slate-950"
+            className="inline-flex items-center gap-2 font-bold text-[#0071e3] hover:text-slate-950"
           >
             <ArrowLeft size={18} /> Back to Portfolio
           </NextLink>
           <NextLink
             href="/cv"
-            className="rounded-full bg-[#0071e3] px-4 py-2 text-sm font-black text-white hover:bg-[#0077ed]"
+            className="rounded-full bg-[#0071e3] px-4 py-2 text-sm font-bold text-white hover:bg-[#0077ed]"
           >
             View CV
           </NextLink>
         </nav>
       </header>
 
-      <section className="mx-auto max-w-5xl px-5 py-14">
-        <p className="text-sm font-black uppercase tracking-[0.28em] text-[#0071e3]">
+      <section className="relative mx-auto max-w-5xl px-5 py-16 md:py-24">
+        <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-[#0071e3]">
           Recruiter Contact
         </p>
-        <h1 className="mt-4 text-4xl font-black tracking-tight md:text-6xl">
+        <h1 className="mt-4 max-w-4xl text-4xl font-extrabold leading-[1.08] tracking-tight text-[#0b1220] md:text-5xl">
           Contact me for supply chain roles in Germany.
         </h1>
         <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600">
@@ -91,15 +91,15 @@ export default function ContactPage() {
               href={href}
               target={href.startsWith("http") ? "_blank" : undefined}
               rel={href.startsWith("http") ? "noreferrer" : undefined}
-              className="rounded-lg border border-slate-200 bg-[#f8fbff] p-5 transition hover:border-[#0071e3]/60 hover:bg-white"
+              className="future-card p-5 transition hover:border-[#0071e3]/60"
             >
-              <span className="grid h-11 w-11 place-items-center rounded-lg bg-[#0071e3] text-white">
+              <span className="grid h-11 w-11 place-items-center rounded-2xl bg-[#0071e3] text-white">
                 <Icon size={20} />
               </span>
-              <span className="mt-4 block text-xs font-black uppercase tracking-[0.2em] text-slate-500">
+              <span className="mt-4 block text-xs font-extrabold uppercase tracking-[0.2em] text-slate-500">
                 {label}
               </span>
-              <span className="mt-2 block break-words text-lg font-black text-slate-950">
+              <span className="mt-2 block break-words text-lg font-bold text-[#0b1220]">
                 {value}
               </span>
             </a>
