@@ -87,6 +87,15 @@ const germanyRoles = [
   "Business Intelligence Analyst",
 ];
 
+const targetEmployers = [
+  "DHL",
+  "DB Schenker",
+  "Bosch",
+  "Siemens",
+  "BMW",
+  "Mercedes-Benz",
+];
+
 const roleMatches = [
   {
     role: "Supply Chain Trainee",
@@ -810,13 +819,36 @@ export default function Home() {
                 <span className="font-black text-slate-950">{role}</span>
               </div>
             ))}
+            <div className="future-card rounded-lg p-4 md:col-span-2">
+              <div className="flex items-start gap-3">
+                <BriefcaseBusiness
+                  className="mt-1 shrink-0 text-[#0071e3]"
+                  size={18}
+                />
+                <div className="min-w-0 flex-1">
+                  <p className="font-black text-slate-950">Target Employers</p>
+                  <p className="mt-2 text-sm font-semibold leading-6 text-slate-600">
+                    German employers aligned with supply chain, logistics,
+                    procurement, operations, and industrial analytics roles.
+                  </p>
+                  <div className="mt-4 grid gap-x-6 gap-y-3 sm:grid-cols-2 lg:grid-cols-3">
+                    {targetEmployers.map((employer) => (
+                      <div
+                        key={employer}
+                        className="flex items-center gap-2 text-base font-black text-slate-950"
+                      >
+                        <CheckCircle2
+                          className="shrink-0 text-[#0071e3]"
+                          size={16}
+                        />
+                        <span>{employer}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <p className="rounded-lg border border-blue-100 bg-blue-50/70 p-4 text-base font-bold leading-7 text-blue-800">
-            Suitable focus for companies such as DHL, DB Schenker, Bosch,
-            Siemens, BMW, Mercedes-Benz, and other German employers working with
-            logistics networks, procurement processes, manufacturing operations,
-            supply chain management, and operational reporting.
-          </p>
         </div>
       </section>
 
