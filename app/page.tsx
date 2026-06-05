@@ -62,6 +62,14 @@ const desktopProofPoints = [
   "PDF evidence",
 ];
 
+const decisionFlow = ["Requirements", "Data model", "Risk signal", "Action brief"];
+
+const heroMetrics = [
+  ["Portfolio OS", "BI + AI + Ops"],
+  ["Evidence", "7 case studies"],
+  ["Market", "Europe-ready"],
+];
+
 const roleMatches = [
   {
     role: "Business Analyst",
@@ -324,17 +332,17 @@ const structuredData = [
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen overflow-hidden bg-white/90 text-slate-950">
+    <main className="future-grid relative min-h-screen overflow-hidden bg-white text-slate-950">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(structuredData),
         }}
       />
-      <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur-xl">
+      <header className="sticky top-0 z-50 border-b border-slate-200/70 bg-white/75 shadow-sm shadow-slate-200/50 backdrop-blur-xl">
         <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4">
           <a href="#" className="flex items-center gap-3 font-black tracking-tight">
-            <span className="grid h-10 w-10 place-items-center rounded-full bg-[#0071e3] text-white">RB</span>
+            <span className="grid h-10 w-10 place-items-center rounded-lg bg-[#0071e3] text-white shadow-lg shadow-blue-200/80">RB</span>
             <span className="hidden sm:inline">Raj Bharat Bhayani</span>
           </a>
 
@@ -357,19 +365,29 @@ export default function Home() {
       </header>
 
       <section id="profile" className="relative overflow-hidden">
-        <div className="absolute inset-x-0 top-0 h-[560px] bg-[radial-gradient(circle_at_20%_20%,rgba(0,113,227,0.08),transparent_32%),radial-gradient(circle_at_82%_12%,rgba(245,245,247,0.95),transparent_32%)]" />
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#0071e3]/40 to-transparent" />
         <div className="relative mx-auto grid max-w-7xl gap-12 px-5 pb-12 pt-12 md:pt-16 lg:grid-cols-[0.62fr_0.38fr] lg:items-start xl:gap-16">
           <div>
-            <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-4 py-2 text-sm font-bold text-blue-700">
+            <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-blue-100/80 bg-white/80 px-4 py-2 text-sm font-bold text-blue-700 shadow-sm backdrop-blur">
               <span className="h-2 w-2 rounded-full bg-emerald-300" />
-              Berlin based - open to Business Analyst roles across Europe
+              AI-ready analyst portfolio - Berlin based, open across Europe
             </p>
             <h1 className="max-w-5xl text-5xl font-black leading-[1.03] tracking-tight md:text-6xl 2xl:text-7xl">
-              Business analysis, BI and AI decision support for European teams.
+              Business analysis, BI and AI decision support for future-ready teams.
             </h1>
             <p className="mt-6 max-w-3xl text-xl font-semibold leading-8 text-blue-700">
               I translate complex business questions into dashboards, risk intelligence, supply chain insights, and clear actions for hiring teams looking across Europe.
             </p>
+            <div className="mt-7 hidden max-w-3xl rounded-lg border border-slate-200/80 bg-white/80 p-2 shadow-xl shadow-slate-200/60 backdrop-blur lg:block">
+              <div className="grid grid-cols-4 gap-2">
+                {decisionFlow.map((step, index) => (
+                  <div key={step} className="rounded-lg border border-slate-200 bg-[#f8fbff] px-3 py-3">
+                    <p className="text-xs font-black text-[#0071e3]">0{index + 1}</p>
+                    <p className="mt-1 text-sm font-black text-slate-950">{step}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
             <div className="mt-8 flex flex-wrap gap-3">
               <a href="#projects" className="inline-flex items-center gap-2 rounded-full bg-slate-950 px-5 py-3 font-black text-white transition hover:bg-[#0071e3]">
                 View Case Studies <ArrowUpRight size={18} />
@@ -383,7 +401,7 @@ export default function Home() {
             </div>
             <div className="mt-8 hidden grid-cols-2 gap-3 lg:grid xl:grid-cols-4">
               {desktopProofPoints.map((point) => (
-                <div key={point} className="flex items-center gap-2 rounded-lg border border-slate-200 bg-white/80 px-4 py-3 text-sm font-black text-slate-700 shadow-sm backdrop-blur">
+                <div key={point} className="future-card flex items-center gap-2 rounded-lg px-4 py-3 text-sm font-black text-slate-700">
                   <CheckCircle2 size={16} className="shrink-0 text-[#0071e3]" />
                   <span>{point}</span>
                 </div>
@@ -392,8 +410,16 @@ export default function Home() {
           </div>
 
           <aside className="relative">
-            <div className="absolute -inset-5 rounded-[2rem] bg-blue-50 blur-2xl" />
-            <div className="premium-panel relative overflow-hidden rounded-lg border border-slate-200 bg-white p-5 shadow-2xl shadow-slate-200/80">
+            <div className="premium-panel glass-panel relative overflow-hidden rounded-lg p-5">
+              <div className="mb-4 flex items-center justify-between rounded-lg border border-slate-200/80 bg-white/75 px-4 py-3">
+                <div>
+                  <p className="text-xs font-black text-[#0071e3]">LIVE PROFILE SIGNAL</p>
+                  <p className="mt-1 text-sm font-bold text-slate-500">Recruiter screening view</p>
+                </div>
+                <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-50 text-[#0071e3]">
+                  <Sparkles size={18} />
+                </span>
+              </div>
               <div className="grid gap-5 md:grid-cols-[0.72fr_1.28fr] lg:grid-cols-1">
                 <Image src="/profile/profile.jpg" alt="Raj Bharat Bhayani" width={720} height={760} priority className="h-[320px] w-full rounded-lg bg-white object-contain object-center md:h-full lg:h-[240px] xl:h-[260px]" />
                 <div className="flex flex-col justify-between gap-5">
@@ -406,12 +432,21 @@ export default function Home() {
                   </div>
                   <dl className="grid gap-3">
                     {agencyHighlights.map((item) => (
-                      <div key={item.label} className="rounded-lg border border-slate-200 bg-[#f7f9fc] p-3">
+                      <div key={item.label} className="rounded-lg border border-slate-200 bg-white/80 p-3">
                         <dt className="text-xs font-black uppercase tracking-[0.18em] text-slate-400">{item.label}</dt>
                         <dd className="mt-1 text-sm font-black leading-6 text-slate-950">{item.value}</dd>
                       </div>
                     ))}
                   </dl>
+                  <div className="grid grid-cols-3 gap-3">
+                    {heroMetrics.map(([label, value]) => (
+                      <div key={label} className="rounded-lg border border-blue-100 bg-blue-50/60 p-3">
+                        <p className="text-xs font-black text-blue-700">{label}</p>
+                        <p className="mt-1 text-sm font-black text-slate-950">{value}</p>
+                      </div>
+                    ))}
+                  </div>
+                  <div className="signal-line" />
                   <div className="grid gap-3">
                     {recruiterSignals.map((signal) => (
                       <p key={signal} className="flex gap-3 text-sm leading-6 text-slate-700">
@@ -427,14 +462,14 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-y border-slate-200 bg-[#f5f5f7] px-5 py-8">
+      <section className="relative border-y border-slate-200/70 bg-white/70 px-5 py-8 backdrop-blur">
         <div className="mx-auto grid max-w-7xl gap-5 sm:grid-cols-2 lg:grid-cols-[1.2fr_repeat(4,minmax(0,1fr))]">
-          <div className="rounded-lg border border-slate-200 bg-white p-5">
+          <div className="future-card rounded-lg p-5">
             <p className="text-sm font-black uppercase tracking-[0.22em] text-[#0071e3]">Recruiter Proof</p>
             <p className="mt-3 text-2xl font-black tracking-tight">Fast signals for agency screening.</p>
           </div>
           {impactStats.map(([value, label]) => (
-            <div key={label} className="rounded-lg border border-slate-200 bg-white p-5">
+            <div key={label} className="future-card rounded-lg p-5">
               <p className="text-4xl font-black text-[#0071e3]">{value}</p>
               <p className="mt-2 text-sm font-semibold leading-6 text-slate-600">{label}</p>
             </div>
@@ -453,7 +488,7 @@ export default function Home() {
           </p>
           <div className="grid gap-3 pt-2 md:grid-cols-2">
             {roleMatches.map((item) => (
-              <div key={item.role} className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm">
+              <div key={item.role} className="future-card rounded-lg p-4">
                 <p className="font-black text-slate-950">{item.role}</p>
                 <p className="mt-2 text-sm font-semibold leading-6 text-slate-600">{item.proof}</p>
               </div>
@@ -469,7 +504,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="why-me" className="border-y border-slate-200 bg-[#f5f5f7] px-5 py-20">
+      <section id="why-me" className="border-y border-slate-200/70 bg-white/70 px-5 py-20">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-8 lg:grid-cols-[0.38fr_0.62fr] lg:items-end">
             <SectionIntro eyebrow="Why Hire Me" title="A practical analyst for business, data, and AI work." dark />
@@ -479,7 +514,7 @@ export default function Home() {
           </div>
           <div className="mt-12 grid gap-5 md:grid-cols-2">
             {hireReasons.map((reason) => (
-              <article key={reason.title} className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
+              <article key={reason.title} className="future-card rounded-lg p-6">
                 <CheckCircle2 className="text-[#0071e3]" size={26} />
                 <h3 className="mt-5 text-2xl font-black">{reason.title}</h3>
                 <p className="mt-3 leading-7 text-slate-600">{reason.text}</p>
@@ -489,12 +524,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="experience" className="bg-[#f7f9fc] px-5 py-20 text-slate-950">
+      <section id="experience" className="bg-[#f8fbff]/80 px-5 py-20 text-slate-950">
         <div className="mx-auto max-w-7xl">
           <SectionIntro eyebrow="Work History" title="Experience With Business, Data, And Operations" dark />
           <div className="mt-12 space-y-5">
             {experiences.map((job) => (
-              <article key={job.role} className="grid gap-6 rounded-lg border border-slate-200 bg-white p-6 shadow-sm md:grid-cols-[0.28fr_0.72fr]">
+              <article key={job.role} className="future-card grid gap-6 rounded-lg p-6 md:grid-cols-[0.28fr_0.72fr]">
                 <div className="text-sm font-bold text-slate-500">
                   <p>{job.period}</p>
                   <p className="mt-3 flex items-center gap-2 text-slate-700">
@@ -522,7 +557,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="projects" className="px-5 py-20">
+      <section id="projects" className="relative px-5 py-20">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-8 lg:grid-cols-[0.42fr_0.58fr] lg:items-end">
             <SectionIntro eyebrow="Proof Of Work" title="Case Studies Built Around Real Business Questions" />
@@ -545,12 +580,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="skills" className="bg-[#f7f9fc] px-5 py-20 text-slate-950">
+      <section id="skills" className="bg-[#f8fbff]/80 px-5 py-20 text-slate-950">
         <div className="mx-auto max-w-7xl">
           <SectionIntro eyebrow="Capabilities" title="What I Bring To A Hiring Team" dark />
           <div className="mt-12 grid gap-5 md:grid-cols-2">
             {skillGroups.map(({ title, icon: Icon, summary, skills }) => (
-              <div key={title} className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
+              <div key={title} className="future-card rounded-lg p-6">
                 <div className="flex items-center gap-3">
                   <span className="rounded-lg bg-blue-50 p-3 text-[#0071e3]">
                     <Icon size={22} />
@@ -575,7 +610,7 @@ export default function Home() {
         <SectionIntro eyebrow="Education" title="Academic Foundation" />
         <div className="mt-12 grid gap-5 md:grid-cols-2">
           {education.map((item) => (
-            <article key={item.degree} className="rounded-lg border border-slate-200 bg-white p-6">
+            <article key={item.degree} className="future-card rounded-lg p-6">
               <GraduationCap className="text-[#0071e3]" size={30} />
               <h3 className="mt-5 text-2xl font-black">{item.degree}</h3>
               <p className="mt-2 font-bold text-[#0071e3]">{item.school}</p>
@@ -592,8 +627,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="contact" className="relative border-t border-slate-200 bg-[#f5f5f7]/80 px-5 py-20">
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-56 bg-[radial-gradient(circle_at_20%_30%,rgba(0,113,227,0.08),transparent_34%),radial-gradient(circle_at_80%_20%,rgba(15,23,42,0.05),transparent_30%)]" />
+      <section id="contact" className="relative border-t border-slate-200/70 bg-white/80 px-5 py-20">
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#0071e3]/40 to-transparent" />
         <div className="relative mx-auto max-w-7xl">
           <div className="grid gap-8 lg:grid-cols-[0.45fr_0.55fr] lg:items-end">
             <div>
@@ -656,7 +691,7 @@ function ContactForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="rounded-lg border border-slate-200 bg-white p-6 shadow-2xl shadow-slate-200/80">
+    <form onSubmit={handleSubmit} className="glass-panel rounded-lg p-6">
       <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
         <div>
           <p className="text-sm font-black uppercase tracking-[0.22em] text-[#0071e3]">Contact Form</p>
@@ -722,8 +757,15 @@ function SectionIntro({ eyebrow, title, dark = false }: { eyebrow: string; title
 
 function ProjectCard({ project, featured = false }: { project: Project; featured?: boolean }) {
   return (
-    <article className={`group flex h-full flex-col overflow-hidden rounded-lg border bg-white shadow-sm transition duration-300 hover:-translate-y-1 hover:border-[#0071e3]/50 hover:shadow-2xl hover:shadow-slate-200/80 ${featured ? "border-blue-100" : "border-slate-200"}`}>
-      <div className={featured ? "bg-[#f7f9fc] p-5" : "bg-white p-4"}>
+    <article className={`future-card group flex h-full flex-col overflow-hidden rounded-lg ${featured ? "border-blue-100" : ""}`}>
+      <div className={`image-console ${featured ? "p-5" : "p-4"}`}>
+        <div className="mb-3 flex items-center justify-between">
+          <span className="inline-flex items-center gap-2 rounded-full border border-blue-100 bg-white/80 px-3 py-1 text-xs font-black text-[#0071e3]">
+            <Sparkles size={13} />
+            {project.category}
+          </span>
+          <span className="hidden text-xs font-black text-slate-400 sm:inline">CASE STUDY</span>
+        </div>
         <Image
           src={project.image}
           alt={project.title}
@@ -733,7 +775,7 @@ function ProjectCard({ project, featured = false }: { project: Project; featured
         />
       </div>
       <div className={`flex flex-1 flex-col ${featured ? "p-7" : "p-6"}`}>
-        <p className="text-sm font-black uppercase tracking-[0.22em] text-[#0071e3]">{project.category}</p>
+        <p className="text-sm font-black uppercase tracking-[0.22em] text-[#0071e3]">Decision Support Project</p>
         <h3 className={featured ? "mt-3 text-3xl font-black tracking-tight md:text-4xl" : "mt-3 text-2xl font-black tracking-tight text-slate-950"}>
           {project.title}
         </h3>
@@ -789,7 +831,7 @@ function ContactLink({
   wide?: boolean;
 }) {
   return (
-    <a href={href} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noreferrer" : undefined} className={`flex items-center gap-4 rounded-lg border border-slate-200 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:border-[#0071e3]/60 hover:shadow-lg hover:shadow-slate-200/80 ${wide ? "sm:col-span-2 lg:col-span-1" : ""}`}>
+    <a href={href} target={href.startsWith("http") ? "_blank" : undefined} rel={href.startsWith("http") ? "noreferrer" : undefined} className={`future-card flex items-center gap-4 rounded-lg p-4 ${wide ? "sm:col-span-2 lg:col-span-1" : ""}`}>
       <span className="grid h-11 w-11 shrink-0 place-items-center rounded-lg bg-[#0071e3] text-white">
         <Icon size={20} />
       </span>

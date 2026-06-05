@@ -13,13 +13,7 @@
 }
 
 body {
-  animation: backgroundDrift 22s ease-in-out infinite alternate;
-  background:
-    radial-gradient(circle at 12% 18%, rgba(0, 113, 227, 0.08), transparent 28%),
-    radial-gradient(circle at 88% 12%, rgba(0, 113, 227, 0.06), transparent 24%),
-    radial-gradient(circle at 50% 90%, rgba(15, 23, 42, 0.045), transparent 26%),
-    var(--background);
-  background-size: 120% 120%, 120% 120%, 130% 130%, auto;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fbff 46%, #ffffff 100%);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
@@ -30,6 +24,65 @@ html {
 
 img {
   max-width: 100%;
+}
+
+.future-grid {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.94) 0%, rgba(248, 251, 255, 0.9) 48%, rgba(255, 255, 255, 0.96) 100%),
+    repeating-linear-gradient(90deg, rgba(0, 113, 227, 0.055) 0 1px, transparent 1px 80px),
+    repeating-linear-gradient(0deg, rgba(15, 23, 42, 0.045) 0 1px, transparent 1px 80px);
+  background-size: auto, 80px 80px, 80px 80px;
+}
+
+.future-grid::before {
+  animation: gridShift 28s linear infinite;
+  background:
+    linear-gradient(110deg, transparent 0%, rgba(0, 113, 227, 0.08) 48%, transparent 62%),
+    linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.82) 72%, rgba(255, 255, 255, 1) 100%);
+  content: "";
+  inset: 0;
+  mask-image: linear-gradient(180deg, #000 0%, transparent 72%);
+  pointer-events: none;
+  position: absolute;
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(22px);
+  border: 1px solid rgba(148, 163, 184, 0.26);
+  box-shadow:
+    0 22px 70px rgba(15, 23, 42, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95);
+}
+
+.future-card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(248, 251, 255, 0.78));
+  border: 1px solid rgba(148, 163, 184, 0.28);
+  box-shadow: 0 16px 44px rgba(15, 23, 42, 0.055);
+  transition:
+    border-color 220ms ease,
+    box-shadow 220ms ease,
+    transform 220ms ease;
+}
+
+.future-card:hover {
+  border-color: rgba(0, 113, 227, 0.45);
+  box-shadow: 0 24px 70px rgba(15, 23, 42, 0.1);
+  transform: translateY(-3px);
+}
+
+.image-console {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(245, 249, 255, 0.96)),
+    repeating-linear-gradient(90deg, rgba(0, 113, 227, 0.05) 0 1px, transparent 1px 42px),
+    repeating-linear-gradient(0deg, rgba(15, 23, 42, 0.04) 0 1px, transparent 1px 42px);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.22);
+}
+
+.signal-line {
+  background: linear-gradient(90deg, transparent, rgba(0, 113, 227, 0.55), transparent);
+  height: 1px;
+  overflow: hidden;
 }
 
 .premium-panel {
@@ -62,6 +115,16 @@ img {
   }
 }
 
+@keyframes gridShift {
+  0% {
+    background-position: -35% 0, 0 0;
+  }
+
+  100% {
+    background-position: 135% 0, 0 0;
+  }
+}
+
 @keyframes panelSweep {
   0%,
   34% {
@@ -75,10 +138,7 @@ img {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  body {
-    animation: none;
-  }
-
+  .future-grid::before,
   .premium-panel::after {
     animation: none;
   }
