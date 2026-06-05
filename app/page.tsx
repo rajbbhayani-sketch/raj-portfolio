@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import NextLink from "next/link";
 import { FormEvent, useState } from "react";
 import {
   ArrowUpRight,
@@ -19,92 +20,102 @@ import {
 
 const navItems = [
   { label: "Profile", href: "#profile" },
-  { label: "Why Me", href: "#why-me" },
-  { label: "Experience", href: "#experience" },
+  { label: "Germany Roles", href: "#opportunities" },
   { label: "Projects", href: "#projects" },
+  { label: "Experience", href: "#experience" },
   { label: "Skills", href: "#skills" },
-  { label: "Contact", href: "#contact" },
+  { label: "CV", href: "/cv" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const impactStats = [
-  ["2+", "Years in analysis, BI, and operations"],
-  ["7", "Portfolio case studies for European business problems"],
+  ["2+", "Years across BI, analysis, and operations"],
+  ["8", "Supply chain, procurement, logistics, and analytics case studies"],
   ["4", "Languages for international teams"],
-  ["EU", "Open to roles across Europe"],
+  ["DE", "Focused on supply chain roles in Germany"],
 ];
 
 const recruiterSignals = [
-  "Based in Berlin and open to opportunities across Europe",
-  "MBA in General Technology Management with analytics and data science focus",
-  "Hands-on BI, operations, procurement, supply chain, and explainable AI projects",
-  "Comfortable translating business requirements into dashboards and decision support",
+  "Based in Germany and open to relocation within Germany",
+  "MBA with Data Science focus and supply chain analytics project work",
+  "Hands-on portfolio across inventory planning, procurement analytics, supplier risk, logistics bottlenecks, and operations KPIs",
+  "Comfortable turning business questions into Power BI-style dashboards, KPI logic, and practical decision support",
 ];
 
 const agencyHighlights = [
   {
     label: "Target roles",
-    value: "Business Analyst / BI Analyst / Supply Chain Analyst",
+    value: "Supply Chain Trainee / Junior Supply Chain Analyst / Procurement Analyst",
   },
   {
-    label: "Region",
-    value: "Berlin base, open across Europe",
+    label: "Location",
+    value: "Germany, open to relocation within Germany",
   },
   {
     label: "Core tools",
-    value: "Power BI, SQL, Python, Excel, AI workflows",
+    value: "Power BI, SQL, Python, Excel, SAP fundamentals",
   },
 ];
 
 const desktopProofPoints = [
-  "Recruiter-ready profile",
-  "Live AI demos",
-  "Dedicated case studies",
-  "PDF evidence",
+  "Inventory KPIs",
+  "Procurement analytics",
+  "Logistics risk",
+  "Operations reporting",
 ];
 
-const decisionFlow = ["Requirements", "Data model", "Risk signal", "Action brief"];
+const decisionFlow = ["Demand signal", "Inventory risk", "Supplier view", "Action brief"];
 
 const heroMetrics = [
-  ["Portfolio OS", "BI + AI + Ops"],
-  ["Evidence", "7 case studies"],
-  ["Market", "Europe-ready"],
+  ["Focus", "Supply chain analytics"],
+  ["Evidence", "8 case studies"],
+  ["Market", "Germany"],
+];
+
+const germanyRoles = [
+  "Supply Chain Trainee",
+  "Junior Supply Chain Analyst",
+  "Procurement Analyst",
+  "Logistics Analyst",
+  "Operations Analyst",
+  "Business Intelligence Analyst",
 ];
 
 const roleMatches = [
   {
-    role: "Business Analyst",
-    proof: "Requirements, stakeholder communication, KPI framing, and executive-ready summaries.",
+    role: "Supply Chain Trainee",
+    proof: "Strong learning profile with MBA Data Science background, operations exposure, and practical supply chain dashboard projects.",
   },
   {
-    role: "BI Analyst",
-    proof: "Power BI, DAX, Power Query, SQL, dashboard structure, and business reporting.",
+    role: "Junior Supply Chain Analyst",
+    proof: "Demand forecasting, inventory planning, supplier risk, logistics analytics, KPI monitoring, and Power BI-style reporting.",
   },
   {
-    role: "Supply Chain Analyst",
-    proof: "Supplier risk, logistics corridors, inventory exposure, and disruption control tower thinking.",
+    role: "Procurement Analyst",
+    proof: "Supplier performance, cost exposure, procurement risk, ESG visibility, and sourcing decision support.",
   },
   {
-    role: "Operations Analyst",
-    proof: "Process visibility, fulfillment flow, quick-commerce operations, and KPI control.",
+    role: "Logistics / Operations Analyst",
+    proof: "Fulfillment flow, logistics bottlenecks, service level, fill rate, stockout risk, and operational KPI tracking.",
   },
 ];
 
 const hireReasons = [
   {
-    title: "Business and technical bridge",
-    text: "I can speak with stakeholders, understand business pain, and translate it into dashboards, requirements, and decision workflows.",
+    title: "Supply chain analytics direction",
+    text: "My portfolio is focused on inventory planning, demand forecasting, procurement intelligence, supplier risk, logistics performance, and operations KPIs.",
   },
   {
-    title: "Europe-ready analyst profile",
-    text: "Based in Berlin, trained in Germany, and actively looking across Europe for business, BI, operations, supply chain, and AI analyst roles.",
+    title: "Germany-focused candidate",
+    text: "I am targeting supply chain, procurement, logistics, operations, and BI roles in Germany, with interest in industrial, automotive, manufacturing, retail, and logistics environments.",
   },
   {
-    title: "AI plus analytics mindset",
-    text: "My projects show how AI can support analysis without hiding the logic: clear inputs, transparent scoring, and practical recommendations.",
+    title: "Data-driven problem solving",
+    text: "I can translate operational questions into KPI definitions, dashboard views, SQL/Python analysis, and decision support that business teams can understand.",
   },
   {
     title: "Operations understanding",
-    text: "Experience in quick-commerce operations and supply chain projects helps me connect data analysis with real process execution.",
+    text: "My quick-commerce operations experience helps me connect analysis with practical topics such as stock availability, fulfillment flow, service levels, and process discipline.",
   },
 ];
 
@@ -165,76 +176,81 @@ const experiences = [
 
 const skillGroups = [
   {
-    title: "Business Analysis",
+    title: "Supply Chain",
     icon: BriefcaseBusiness,
-    summary: "Requirements, process thinking, stakeholder communication, and business problem framing.",
-    skills: ["Requirements Analysis", "Stakeholder Management", "Business Development", "Agile Testing", "Process Analysis"],
+    summary: "Practical supply chain topics for trainee and junior analyst roles in Germany.",
+    skills: ["Inventory Management", "Demand Forecasting", "Procurement Analytics", "Supplier Management", "Logistics Analytics", "KPI Monitoring"],
   },
   {
-    title: "Business Intelligence",
+    title: "Analytics",
     icon: BarChart3,
-    summary: "Dashboards and reporting systems that help teams understand performance and risk.",
-    skills: ["Power BI", "DAX", "Power Query", "SQL", "Excel", "Dashboard Building"],
+    summary: "Tools and reporting methods for business intelligence, operations reporting, and data analytics.",
+    skills: ["Power BI", "SQL", "Python", "Excel", "Data Visualization", "Dashboard Building", "SAP Fundamentals"],
   },
   {
-    title: "AI Decision Support",
+    title: "AI & Predictive Analytics",
     icon: Sparkles,
-    summary: "Explainable AI prototypes that turn model predictions into usable planning recommendations.",
-    skills: ["Python", "XGBoost", "SHAP", "Streamlit", "Forecasting", "Scenario Analysis"],
+    summary: "Measured use of machine learning and explainability for planning support, not exaggerated automation claims.",
+    skills: ["Machine Learning", "Explainable AI", "Predictive Analytics", "Decision Support Systems", "Forecast Interpretation"],
   },
   {
-    title: "Operations & Supply Chain",
+    title: "Business & Operations",
     icon: Database,
-    summary: "Operational visibility across procurement, inventory, logistics, and supplier risk.",
-    skills: ["Supply Chain Analytics", "Procurement Risk", "Inventory Analytics", "Data Modeling", "Operations Analytics"],
+    summary: "Business analysis habits that help connect data work with operational decision making.",
+    skills: ["Requirements Analysis", "Stakeholder Communication", "Process Analysis", "Operations Analytics", "Reporting"],
   },
 ];
 
 const projects = [
   {
-    title: "AI Business Analyst Co-Pilot For European Market Decisions",
-    category: "AI Business Analysis",
-    image: "/projects/ai-business-demo-screenshot.png",
-    href: "/projects/ai-business-analyst-copilot",
-    problem: "Business teams often lose time translating stakeholder requests, scattered KPI notes, customer signals, and market changes into clear requirements and action priorities.",
-    value: "Designed a portfolio prototype for an AI-assisted business analysis workflow that summarizes requirements, flags KPI anomalies, scores opportunities, and turns executive questions into structured next steps.",
-    tools: ["AI Workflow Design", "Power BI Concept", "Python", "Prompt Engineering", "Requirements Analysis"],
-  },
-  {
     title: "AI European Supply Chain Risk & Disruption Control Tower",
     category: "AI Supply Chain Analytics",
     image: "/projects/ai-supply-chain-demo-screenshot.png",
     href: "/projects/ai-supply-chain-risk-control-tower",
-    problem: "European supply chains face supplier delays, port congestion, transport disruption, inventory shortages, and sustainability pressure across countries and corridors.",
-    value: "Designed an AI control tower concept that predicts supplier delay risk, highlights logistics bottlenecks, monitors inventory exposure, and recommends mitigation actions for supply chain teams.",
-    tools: ["AI Risk Scoring", "Supply Chain Analytics", "Forecasting", "Scenario Analysis", "Power BI Concept"],
+    problem: "Supply chain teams need early visibility into supplier disruption, logistics bottlenecks, port congestion, low inventory cover, and demand volatility.",
+    value: "Built an interactive risk-control concept that monitors supplier delay, logistics risk, shortage exposure, and mitigation actions for European corridors.",
+    tools: ["Supply Chain Analytics", "Risk Monitoring", "Python", "Scenario Analysis", "Power BI Concept"],
+    kpis: ["Supplier delay risk", "Port congestion", "Stockout exposure", "Resilience score"],
   },
   {
-    title: "European Procurement & Supplier Risk Intelligence",
-    category: "Procurement Risk",
-    image: "/projects/procurement.png",
-    href: "/projects/european-procurement-supplier-risk-intelligence",
-    problem: "Procurement teams need one view of spend, delivery reliability, ESG exposure, supplier status, and country risk.",
-    value: "Designed an executive risk view that helps teams identify supplier exposure and prioritize sourcing decisions.",
-    tools: ["Power BI", "DAX", "Data Modeling", "Power Query"],
-  },
-  {
-    title: "XAI Inventory Control Tower",
-    category: "Explainable AI",
+    title: "Explainable AI Inventory Control Tower",
+    category: "Inventory Optimization",
     image: "/projects/xai.png",
     href: "/projects/xai-inventory-control-tower",
-    problem: "Inventory planners need to know why a part is risky, not only whether a model predicts a stockout.",
-    value: "Built a Streamlit prototype using XGBoost and SHAP to explain stockout drivers and support scenario planning.",
-    tools: ["Python", "Streamlit", "XGBoost", "SHAP", "Plotly"],
+    problem: "Inventory planners need to understand stockout risk, safety stock requirements, reorder points, and the reasons behind forecast or model recommendations.",
+    value: "Created a thesis-based inventory control tower concept using explainable AI to support stockout risk review, safety stock decisions, and reorder recommendations.",
+    tools: ["Python", "Streamlit", "XGBoost", "SHAP", "Forecast Interpretation"],
+    kpis: ["Stockout risk", "Safety stock", "Reorder point", "Service level"],
+  },
+  {
+    title: "European Procurement & Supplier Intelligence Platform",
+    category: "Procurement Analytics",
+    image: "/projects/procurement.png",
+    href: "/projects/european-procurement-supplier-risk-intelligence",
+    problem: "Procurement teams need one view of supplier performance, delivery reliability, cost exposure, supplier status, ESG risk, and country risk.",
+    value: "Designed an executive supplier intelligence view for procurement analytics, cost optimization, supplier risk evaluation, and sourcing prioritization.",
+    tools: ["Power BI", "DAX", "Power Query", "Data Modeling", "Supplier Management"],
+    kpis: ["Supplier OTIF", "Spend exposure", "Risk score", "Cost variance"],
+  },
+  {
+    title: "Demand Forecasting & Inventory Optimization Dashboard",
+    category: "Demand Planning",
+    image: "/projects/demand-forecasting-dashboard.png",
+    href: "/projects/demand-forecasting-inventory-optimization",
+    problem: "Planning teams need to connect forecast accuracy, inventory turnover, fill rate, service level, stockout risk, safety stock, and reorder points in one view.",
+    value: "Created a mock demand planning dashboard with realistic sample KPIs, forecast-versus-actual charts, inventory risk signals, and reorder recommendations.",
+    tools: ["Demand Forecasting", "Inventory Planning", "Power BI Concept", "Excel", "Python"],
+    kpis: ["Forecast accuracy", "Inventory turnover", "Fill rate", "Safety stock"],
   },
   {
     title: "European Currency Risk & Inflation Intelligence",
     category: "Financial Risk",
     image: "/projects/currency.png",
     href: "/projects/european-currency-risk-inflation-intelligence",
-    problem: "Currency movement and inflation pressure can weaken procurement cost predictability.",
+    problem: "Currency movement and inflation pressure can weaken procurement cost predictability for suppliers and contracts.",
     value: "Created a financial exposure model for volatility, inflation signals, supplier exposure, and procurement cost forecasting.",
     tools: ["Power BI", "Forecasting", "Power Query", "Data Modeling"],
+    kpis: ["Currency volatility", "Inflation signal", "Cost exposure", "Supplier dependency"],
   },
   {
     title: "European Defense Operations & Readiness Intelligence",
@@ -244,6 +260,7 @@ const projects = [
     problem: "Readiness drops when maintenance, downtime, throughput, procurement delay, and suppliers are managed separately.",
     value: "Designed an operational readiness dashboard for maintenance cost, downtime risk, throughput, and supplier exposure.",
     tools: ["Power BI", "Operations Analytics", "DAX", "Data Modeling"],
+    kpis: ["Availability", "Downtime", "Throughput", "Maintenance cost"],
   },
   {
     title: "European Waterway Supply Chain Intelligence",
@@ -253,17 +270,70 @@ const projects = [
     problem: "European freight networks face road congestion, port delay, fragmented visibility, and emissions pressure.",
     value: "Built a corridor intelligence concept for freight visibility, port delay risk, CO2 tracking, and sustainable logistics planning.",
     tools: ["Power BI", "DAX", "Power Query", "Forecasting"],
+    kpis: ["Port delay", "Corridor capacity", "Freight visibility", "CO2 tracking"],
+  },
+  {
+    title: "AI Business Analyst Co-Pilot For European Market Decisions",
+    category: "Business Analysis",
+    image: "/projects/ai-business-demo-screenshot.png",
+    href: "/projects/ai-business-analyst-copilot",
+    problem: "Business teams often lose time translating stakeholder requests, KPI notes, and market changes into clear requirements and action priorities.",
+    value: "Designed a portfolio prototype that summarizes requirements, flags KPI anomalies, scores opportunities, and turns executive questions into structured next steps.",
+    tools: ["Requirements Analysis", "Power BI Concept", "Python", "Prompt Engineering", "Business Analysis"],
+    kpis: ["Requirement priority", "KPI anomaly", "Opportunity score", "Confidence"],
   },
 ];
 
 type Project = (typeof projects)[number];
+
+const featuredSupplyChainProjects = [
+  {
+    title: "AI European Supply Chain Risk & Disruption Control Tower",
+    href: "/projects/ai-supply-chain-risk-control-tower",
+    category: "Supply Chain Risk",
+    businessProblem:
+      "Supplier disruption, logistics bottlenecks, port congestion, and low inventory cover can affect service levels and delivery reliability.",
+    solution:
+      "Interactive control tower concept for risk monitoring, supplier disruption analysis, logistics bottleneck review, and decision support.",
+    kpis: ["Supplier delay risk", "Port congestion", "Inventory cover", "Stockout exposure"],
+    technologies: ["Python", "Scenario analysis", "Power BI concept", "Supply chain analytics"],
+    impact:
+      "Helps planning and logistics teams prioritize mitigation actions before disruption becomes a customer or production issue.",
+  },
+  {
+    title: "Explainable AI Inventory Control Tower",
+    href: "/projects/xai-inventory-control-tower",
+    category: "Inventory Optimization",
+    businessProblem:
+      "Inventory planners need clear support for safety stock, reorder point recommendations, stockout risk, and forecast interpretation.",
+    solution:
+      "Inventory control tower concept using model explanations to support inventory optimization and planner-friendly decision review.",
+    kpis: ["Safety stock", "Reorder point", "Service level", "Stockout risk"],
+    technologies: ["Python", "XGBoost", "SHAP", "Streamlit", "Forecast interpretation"],
+    impact:
+      "Improves confidence in planning decisions by showing why inventory risk exists and what action can reduce it.",
+  },
+  {
+    title: "European Procurement & Supplier Intelligence Platform",
+    href: "/projects/european-procurement-supplier-risk-intelligence",
+    category: "Procurement Analytics",
+    businessProblem:
+      "Procurement teams need better visibility of supplier performance, cost exposure, delivery reliability, and risk evaluation.",
+    solution:
+      "Supplier intelligence platform concept for procurement analytics, cost optimization, supplier performance, and risk evaluation.",
+    kpis: ["Supplier OTIF", "Spend exposure", "Cost variance", "Risk score"],
+    technologies: ["Power BI", "DAX", "Power Query", "Data modeling", "Supplier management"],
+    impact:
+      "Supports sourcing prioritization, supplier discussions, and procurement decisions with clearer performance evidence.",
+  },
+];
 
 const education = [
   {
     degree: "MBA, General Technology Management",
     school: "Fachhochschule des Mittelstandes Bielefeld",
     period: "Oct 2024 - May 2026",
-    detail: "Focus on Data Science, Big Data Analytics, Technology Management, International Project Management, and research methods.",
+    detail: "MBA with Data Science focus, including Big Data Analytics, Technology Management, International Project Management, and research methods.",
     note: "Thesis: Explainable AI for risk-aware inventory planning of industrial spare parts.",
     certificate: "/certificates/mba-certificate.jpeg",
   },
@@ -286,7 +356,7 @@ const structuredData = [
     name: "Raj Bharat Bhayani",
     url: "https://www.rajbharatbhayani.eu",
     image: "https://www.rajbharatbhayani.eu/profile/profile.jpg",
-    jobTitle: "Business Analyst, BI Analyst, Supply Chain Analyst",
+    jobTitle: "Supply Chain Analyst, Procurement Analyst, Logistics Analyst, Operations Analyst",
     email: "mailto:rajbharatbhayani@gmail.com",
     telephone: "+49 176 62398987",
     address: {
@@ -304,7 +374,11 @@ const structuredData = [
       "Business Intelligence",
       "Power BI",
       "Supply Chain Analytics",
+      "Supply Chain Management",
+      "Demand Planning",
+      "Inventory Planning",
       "Procurement Analytics",
+      "Logistics Analytics",
       "Operations Analytics",
       "AI Decision Support",
       "Explainable AI",
@@ -326,7 +400,7 @@ const structuredData = [
     name: "Raj Bharat Bhayani Portfolio",
     url: "https://www.rajbharatbhayani.eu",
     description:
-      "Portfolio for European business analysis, BI, operations analytics, supply chain analytics, procurement risk, and AI decision support roles.",
+      "Portfolio for Supply Chain Trainee, Junior Supply Chain Analyst, Procurement Analyst, Logistics Analyst, Operations Analyst, and Business Intelligence Analyst roles in Germany.",
   },
 ];
 
@@ -359,7 +433,7 @@ export default function Home() {
             className="inline-flex items-center gap-2 rounded-full bg-[#0071e3] px-4 py-2 text-sm font-black text-white transition hover:bg-[#0077ed]"
           >
             <Mail size={16} />
-            Hire Me
+            Contact Me
           </a>
         </nav>
       </header>
@@ -370,13 +444,13 @@ export default function Home() {
           <div>
             <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-blue-100/80 bg-white/80 px-4 py-2 text-sm font-bold text-blue-700 shadow-sm backdrop-blur">
               <span className="h-2 w-2 rounded-full bg-emerald-300" />
-              AI-ready analyst portfolio - Berlin based, open across Europe
+              Germany-focused supply chain analytics portfolio
             </p>
-            <h1 className="max-w-5xl text-5xl font-black leading-[1.03] tracking-tight md:text-6xl 2xl:text-7xl">
-              Business analysis, BI and AI decision support for future-ready teams.
+            <h1 className="max-w-5xl text-4xl font-black leading-[1.08] tracking-tight md:text-5xl 2xl:text-6xl">
+              Supply Chain Analytics | Inventory Optimization | Procurement Intelligence | Data-Driven Decision Support
             </h1>
             <p className="mt-6 max-w-3xl text-xl font-semibold leading-8 text-blue-700">
-              I translate complex business questions into dashboards, risk intelligence, supply chain insights, and clear actions for hiring teams looking across Europe.
+              MBA in Data Science focused on supply chain analytics, procurement intelligence, inventory optimization, logistics performance, and AI-powered decision support.
             </p>
             <div className="mt-7 hidden max-w-3xl rounded-lg border border-slate-200/80 bg-white/80 p-2 shadow-xl shadow-slate-200/60 backdrop-blur lg:block">
               <div className="grid grid-cols-4 gap-2">
@@ -390,13 +464,13 @@ export default function Home() {
             </div>
             <div className="mt-8 flex flex-wrap gap-3">
               <a href="#projects" className="inline-flex items-center gap-2 rounded-full bg-slate-950 px-5 py-3 font-black text-white transition hover:bg-[#0071e3]">
-                View Case Studies <ArrowUpRight size={18} />
+                View Projects <ArrowUpRight size={18} />
+              </a>
+              <a href="/cv/raj-bharat-bhayani-supply-chain-cv.pdf" download className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-5 py-3 font-black text-slate-950 transition hover:border-[#0071e3] hover:text-[#0071e3]">
+                <Download size={18} /> Download CV
               </a>
               <a href="mailto:rajbharatbhayani@gmail.com" className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-5 py-3 font-black text-slate-950 transition hover:border-[#0071e3] hover:text-[#0071e3]">
-                <Mail size={18} /> Contact Raj
-              </a>
-              <a href="https://www.linkedin.com/in/mrrajbhayani" target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-5 py-3 font-black text-slate-950 transition hover:border-[#0071e3] hover:text-[#0071e3]">
-                <Link size={18} /> LinkedIn
+                <Mail size={18} /> Contact Me
               </a>
             </div>
             <div className="mt-8 hidden grid-cols-2 gap-3 lg:grid xl:grid-cols-4">
@@ -413,11 +487,11 @@ export default function Home() {
             <div className="premium-panel glass-panel relative overflow-hidden rounded-lg p-5">
               <div className="mb-4 flex items-center justify-between rounded-lg border border-slate-200/80 bg-white/75 px-4 py-3">
                 <div>
-                  <p className="text-xs font-black text-[#0071e3]">LIVE PROFILE SIGNAL</p>
-                  <p className="mt-1 text-sm font-bold text-slate-500">Recruiter screening view</p>
+                  <p className="text-xs font-black text-[#0071e3]">SUPPLY CHAIN PROFILE</p>
+                  <p className="mt-1 text-sm font-bold text-slate-500">Recruiter screening view for Germany</p>
                 </div>
                 <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-50 text-[#0071e3]">
-                  <Sparkles size={18} />
+                  <BarChart3 size={18} />
                 </span>
               </div>
               <div className="grid gap-5 md:grid-cols-[0.72fr_1.28fr] lg:grid-cols-1">
@@ -477,28 +551,83 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto grid max-w-7xl gap-10 px-5 py-20 lg:grid-cols-[0.38fr_0.62fr]">
-        <SectionIntro eyebrow="Positioning" title="Ready for European teams that need analytical clarity." />
-        <div className="space-y-5 text-lg leading-8 text-slate-600">
+      <section id="opportunities" className="mx-auto grid max-w-7xl gap-10 px-5 py-20 lg:grid-cols-[0.36fr_0.64fr]">
+        <SectionIntro eyebrow="Germany Roles" title="Open to Opportunities in Germany" />
+        <div className="space-y-6 text-lg leading-8 text-slate-600">
           <p>
-            My profile is built for teams that need someone who can understand business requirements, structure the problem, work with data, and communicate insights clearly to non-technical stakeholders.
+            I am targeting entry-level and junior roles in German industry, logistics, procurement, supply chain management, and operations. I am especially interested in employers where data analytics can improve demand planning, inventory planning, supplier performance, logistics visibility, service levels, and cost control.
           </p>
-          <p>
-            I am especially interested in roles where business analysis meets operations, procurement, supply chain, BI reporting, and AI-enabled decision support.
-          </p>
-          <div className="grid gap-3 pt-2 md:grid-cols-2">
-            {roleMatches.map((item) => (
-              <div key={item.role} className="future-card rounded-lg p-4">
-                <p className="font-black text-slate-950">{item.role}</p>
-                <p className="mt-2 text-sm font-semibold leading-6 text-slate-600">{item.proof}</p>
+          <div className="grid gap-3 md:grid-cols-2">
+            {germanyRoles.map((role) => (
+              <div key={role} className="future-card flex items-center gap-3 rounded-lg p-4">
+                <CheckCircle2 className="shrink-0 text-[#0071e3]" size={18} />
+                <span className="font-black text-slate-950">{role}</span>
               </div>
             ))}
           </div>
-          <div className="flex flex-wrap gap-3 pt-2">
-            {languages.map((language) => (
-              <span key={language} className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-bold text-slate-700">
-                {language}
-              </span>
+          <p className="rounded-lg border border-blue-100 bg-blue-50/70 p-4 text-base font-bold leading-7 text-blue-800">
+            Suitable focus for companies such as DHL, DB Schenker, Bosch, Siemens, BMW, Mercedes-Benz, and other German employers working with logistics networks, procurement processes, manufacturing operations, and supply chain optimization.
+          </p>
+        </div>
+      </section>
+
+      <section id="about" className="border-y border-slate-200/70 bg-white/70 px-5 py-20">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.36fr_0.64fr]">
+          <SectionIntro eyebrow="About Me" title="Supply chain analytics candidate with operations and data focus." />
+          <div className="space-y-5 text-lg leading-8 text-slate-600">
+            <p>
+              I am an MBA student with a Data Science focus and a background in business intelligence, operations, and business analysis. My current portfolio is built around supply chain analytics, procurement analytics, inventory optimization, logistics analytics, and data-driven decision support.
+            </p>
+            <p>
+              I enjoy practical analytical work: understanding the business problem, defining the right KPIs, preparing data, building dashboards, and explaining what the numbers mean for operations, procurement, logistics, or planning teams.
+            </p>
+            <div className="grid gap-3 pt-2 md:grid-cols-2">
+              {roleMatches.map((item) => (
+                <div key={item.role} className="future-card rounded-lg p-4">
+                  <p className="font-black text-slate-950">{item.role}</p>
+                  <p className="mt-2 text-sm font-semibold leading-6 text-slate-600">{item.proof}</p>
+                </div>
+              ))}
+            </div>
+            <div className="flex flex-wrap gap-3 pt-2">
+              {languages.map((language) => (
+                <span key={language} className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-bold text-slate-700">
+                  {language}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" className="relative px-5 py-20">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-8 lg:grid-cols-[0.42fr_0.58fr] lg:items-end">
+            <SectionIntro eyebrow="Supply Chain Analytics Portfolio" title="Projects for inventory, procurement, logistics, and operations decisions." />
+            <p className="max-w-3xl text-lg leading-8 text-slate-600">
+              These projects are built around realistic business problems: demand planning, inventory optimization, supplier performance, procurement risk, logistics bottlenecks, and KPI-based decision support for German employers.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-6 lg:grid-cols-3">
+            {featuredSupplyChainProjects.map((project) => (
+              <FeaturedProjectCard key={project.title} project={project} />
+            ))}
+          </div>
+
+          <div className="mt-12 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+            <div>
+              <p className="text-sm font-black uppercase tracking-[0.22em] text-[#0071e3]">Additional Case Studies</p>
+              <h3 className="mt-2 text-3xl font-black tracking-tight">More analytics evidence</h3>
+            </div>
+            <NextLink href="/projects/demand-forecasting-inventory-optimization" className="inline-flex items-center gap-2 rounded-full bg-[#0071e3] px-5 py-3 text-sm font-black text-white transition hover:bg-[#0077ed]">
+              Open Demand Planning Dashboard <ArrowUpRight size={16} />
+            </NextLink>
+          </div>
+
+          <div className="mt-6 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {projects.slice(3).map((project) => (
+              <ProjectCard key={project.title} project={project} />
             ))}
           </div>
         </div>
@@ -507,9 +636,9 @@ export default function Home() {
       <section id="why-me" className="border-y border-slate-200/70 bg-white/70 px-5 py-20">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-8 lg:grid-cols-[0.38fr_0.62fr] lg:items-end">
-            <SectionIntro eyebrow="Why Hire Me" title="A practical analyst for business, data, and AI work." dark />
+            <SectionIntro eyebrow="Why Hire Me" title="A practical analyst for supply chain, operations, and data work." dark />
             <p className="max-w-3xl text-lg leading-8 text-slate-600">
-              Recruiters and hiring managers need more than tools on a CV. They need someone who can understand the business question, organize the evidence, and communicate what should happen next.
+              Recruiters and hiring managers need more than tool names. They need someone who can understand the process, define useful KPIs, organize the data, and communicate what should happen next.
             </p>
           </div>
           <div className="mt-12 grid gap-5 md:grid-cols-2">
@@ -552,29 +681,6 @@ export default function Home() {
                   </ul>
                 </div>
               </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="projects" className="relative px-5 py-20">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid gap-8 lg:grid-cols-[0.42fr_0.58fr] lg:items-end">
-            <SectionIntro eyebrow="Proof Of Work" title="Case Studies Built Around Real Business Questions" />
-            <p className="max-w-3xl text-lg leading-8 text-slate-600">
-              These projects show the kind of thinking recruiters usually look for: problem framing, data structure, executive dashboards, measurable business value, and clear communication.
-            </p>
-          </div>
-
-          <div className="mt-12 grid gap-6 lg:grid-cols-2">
-            {projects.slice(0, 2).map((project) => (
-              <ProjectCard key={project.title} project={project} featured />
-            ))}
-          </div>
-
-          <div className="mt-6 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {projects.slice(2).map((project) => (
-              <ProjectCard key={project.title} project={project} />
             ))}
           </div>
         </div>
@@ -633,10 +739,10 @@ export default function Home() {
           <div className="grid gap-8 lg:grid-cols-[0.45fr_0.55fr] lg:items-end">
             <div>
               <p className="text-sm font-black uppercase tracking-[0.28em] text-[#0071e3]">Recruiters & Hiring Managers</p>
-              <h2 className="mt-4 text-4xl font-black tracking-tight md:text-6xl">Let&apos;s talk about your next analyst role.</h2>
+              <h2 className="mt-4 text-4xl font-black tracking-tight md:text-6xl">Let&apos;s talk about supply chain roles in Germany.</h2>
             </div>
             <p className="max-w-3xl text-lg leading-8 text-slate-600">
-              I am looking for full-time opportunities across Europe in business analysis, BI, operations analytics, supply chain analytics, procurement analytics, and AI-powered decision support.
+              I am looking for Supply Chain Trainee, Junior Supply Chain Analyst, Procurement Analyst, Logistics Analyst, Operations Analyst, and BI Analyst opportunities in Germany. I am open to relocation within Germany.
             </p>
           </div>
 
@@ -647,14 +753,14 @@ export default function Home() {
               <ContactLink icon={Phone} label="Phone" value="+49 176 62398987" href="tel:+4917662398987" />
               <ContactLink icon={Link} label="LinkedIn" value="linkedin.com/in/mrrajbhayani" href="https://www.linkedin.com/in/mrrajbhayani" />
               <ContactLink icon={Link} label="Instagram" value="@raj_bhayani___" href="https://www.instagram.com/raj_bhayani___" />
-              <ContactLink icon={MapPin} label="Current Base" value="Berlin, Germany - open across Europe" href="https://maps.google.com/?q=Berlin,Germany" wide />
+              <ContactLink icon={MapPin} label="Location" value="Germany - open to relocation within Germany" href="https://maps.google.com/?q=Germany" wide />
             </div>
           </div>
         </div>
       </section>
 
       <footer className="border-t border-slate-200 px-5 py-8 text-center text-sm text-slate-400">
-        &copy; 2026 Raj Bharat Bhayani. Built for European business, BI, operations, and AI analyst opportunities.
+        &copy; 2026 Raj Bharat Bhayani. Built for supply chain analytics, procurement, logistics, operations, and BI roles in Germany.
       </footer>
     </main>
   );
@@ -755,13 +861,57 @@ function SectionIntro({ eyebrow, title, dark = false }: { eyebrow: string; title
   );
 }
 
+function FeaturedProjectCard({ project }: { project: (typeof featuredSupplyChainProjects)[number] }) {
+  return (
+    <article className="future-card flex h-full flex-col rounded-lg p-6">
+      <div className="flex items-start justify-between gap-4">
+        <div>
+          <p className="text-sm font-black uppercase tracking-[0.22em] text-[#0071e3]">{project.category}</p>
+          <h3 className="mt-3 text-2xl font-black tracking-tight text-slate-950">{project.title}</h3>
+        </div>
+        <span className="grid h-11 w-11 shrink-0 place-items-center rounded-lg bg-blue-50 text-[#0071e3]">
+          <BarChart3 size={22} />
+        </span>
+      </div>
+      <div className="mt-6 grid gap-4">
+        <ProjectText label="Business problem" text={project.businessProblem} featured />
+        <ProjectText label="Solution" text={project.solution} featured />
+        <ProjectText label="Business impact" text={project.impact} featured />
+      </div>
+      <div className="mt-6">
+        <p className="text-xs font-black uppercase tracking-[0.2em] text-slate-500">KPIs</p>
+        <div className="mt-3 flex flex-wrap gap-2">
+          {project.kpis.map((kpi) => (
+            <span key={kpi} className="rounded-full bg-blue-50 px-3 py-1 text-xs font-black text-blue-700">
+              {kpi}
+            </span>
+          ))}
+        </div>
+      </div>
+      <div className="mt-5">
+        <p className="text-xs font-black uppercase tracking-[0.2em] text-slate-500">Technologies used</p>
+        <div className="mt-3 flex flex-wrap gap-2">
+          {project.technologies.map((tool) => (
+            <span key={tool} className="rounded-full border border-slate-200 px-3 py-1 text-xs font-bold text-slate-600">
+              {tool}
+            </span>
+          ))}
+        </div>
+      </div>
+      <a href={project.href} className="mt-auto inline-flex items-center gap-2 pt-7 text-sm font-black text-[#0071e3] transition hover:text-slate-950">
+        Open project <ArrowUpRight size={16} />
+      </a>
+    </article>
+  );
+}
+
 function ProjectCard({ project, featured = false }: { project: Project; featured?: boolean }) {
   return (
     <article className={`future-card group flex h-full flex-col overflow-hidden rounded-lg ${featured ? "border-blue-100" : ""}`}>
       <div className={`image-console ${featured ? "p-5" : "p-4"}`}>
         <div className="mb-3 flex items-center justify-between">
           <span className="inline-flex items-center gap-2 rounded-full border border-blue-100 bg-white/80 px-3 py-1 text-xs font-black text-[#0071e3]">
-            <Sparkles size={13} />
+            <BarChart3 size={13} />
             {project.category}
           </span>
           <span className="hidden text-xs font-black text-slate-400 sm:inline">CASE STUDY</span>
@@ -781,7 +931,14 @@ function ProjectCard({ project, featured = false }: { project: Project; featured
         </h3>
         <div className="mt-5 grid gap-4">
           <ProjectText label="Business problem" text={project.problem} featured={featured} />
-          <ProjectText label="Business value" text={project.value} featured={featured} />
+          <ProjectText label="Solution" text={project.value} featured={featured} />
+        </div>
+        <div className="mt-6 flex flex-wrap gap-2">
+          {project.kpis.map((kpi) => (
+            <span key={kpi} className="rounded-full bg-blue-50 px-3 py-1 text-xs font-black text-blue-700">
+              {kpi}
+            </span>
+          ))}
         </div>
         <div className="mt-6 flex flex-wrap gap-2">
           {project.tools.map((tool) => (

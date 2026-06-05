@@ -63,11 +63,11 @@ export default function Image() {
 
           <div style={{ display: "flex", flexDirection: "column", gap: 22 }}>
             <div style={{ color: "#0f172a", fontSize: 38, fontWeight: 800 }}>
-              Business Analyst - BI - Supply Chain - AI Decision Support
+              Supply Chain Analytics - Procurement - Inventory - Logistics
             </div>
             <div style={{ color: "#475569", display: "flex", fontSize: 27, fontWeight: 700, gap: 20 }}>
-              <span>Berlin, Germany</span>
-              <span style={{ color: "#0071e3" }}>Open across Europe</span>
+              <span>Germany</span>
+              <span style={{ color: "#0071e3" }}>Open to relocation</span>
             </div>
           </div>
         </div>

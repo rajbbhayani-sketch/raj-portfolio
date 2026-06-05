@@ -23,23 +23,23 @@ const siteUrl = "https://www.rajbharatbhayani.eu";
 const caseStudies: CaseStudy[] = [
   {
     slug: "european-procurement-supplier-risk-intelligence",
-    title: "European Procurement & Supplier Risk Intelligence",
-    category: "Procurement Risk",
+    title: "European Procurement & Supplier Intelligence Platform",
+    category: "Procurement Analytics",
     image: "/projects/procurement.png",
     pdf: "/pdfs/procurement.pdf",
     overview:
-      "An executive procurement intelligence case study focused on supplier reliability, ESG exposure, country risk, and spend visibility for European sourcing teams.",
+      "An executive procurement intelligence case study focused on supplier performance, delivery reliability, ESG exposure, country risk, spend visibility, and cost exposure for European sourcing teams.",
     businessProblem:
-      "Procurement teams often review spend, delivery performance, supplier risk, and ESG exposure in separate views, making it harder to prioritize sourcing action.",
+      "Procurement teams often review spend, delivery performance, supplier risk, cost exposure, and ESG exposure in separate views, making it harder to prioritize sourcing action.",
     approach: [
       "Structured supplier data around spend, delivery reliability, ESG score, country exposure, and supplier status.",
-      "Designed an executive dashboard concept for high-risk supplier identification and sourcing prioritization.",
+      "Designed an executive dashboard concept for supplier performance, cost exposure, high-risk supplier identification, and sourcing prioritization.",
       "Created risk categories that help procurement and finance teams discuss exposure using the same language.",
     ],
     businessValue: [
       "Improves visibility of supplier risk and delivery reliability.",
       "Supports supplier diversification and sourcing decisions.",
-      "Connects procurement cost, ESG, and operational exposure in one business view.",
+      "Connects procurement cost, supplier performance, ESG, and operational exposure in one business view.",
     ],
     tools: ["Power BI", "DAX", "Power Query", "Data Modeling", "Procurement Analytics"],
     metrics: [
@@ -50,17 +50,17 @@ const caseStudies: CaseStudy[] = [
   },
   {
     slug: "xai-inventory-control-tower",
-    title: "XAI Inventory Control Tower",
-    category: "Explainable AI",
+    title: "Explainable AI Inventory Control Tower",
+    category: "Inventory Optimization",
     image: "/projects/xai.png",
     pdf: "/pdfs/xai.pdf",
     overview:
-      "A thesis-based explainable AI prototype that helps inventory planners understand stockout risk and the reasoning behind model recommendations.",
+      "A thesis-based inventory optimization prototype that helps planners understand stockout risk, safety stock, reorder point recommendations, and the reasoning behind model outputs.",
     businessProblem:
-      "Inventory teams need more than a stockout prediction. They need to understand the drivers behind risk so decisions are explainable and trusted.",
+      "Inventory teams need more than a stockout prediction. They need to understand safety stock, reorder point logic, forecast interpretation, and the drivers behind risk so decisions are explainable and trusted.",
     approach: [
       "Used XGBoost for stockout risk prediction and SHAP for explanation of key risk drivers.",
-      "Designed a Streamlit control tower for safety stock, reorder recommendations, and scenario planning.",
+      "Designed a Streamlit control tower for safety stock, reorder point recommendations, stockout risk, and scenario planning.",
       "Translated model outputs into planner-friendly decision language.",
     ],
     businessValue: [

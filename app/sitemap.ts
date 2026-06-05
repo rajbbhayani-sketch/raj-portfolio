@@ -4,8 +4,11 @@ const siteUrl = "https://www.rajbharatbhayani.eu";
 
 const routes = [
   "/",
+  "/cv",
+  "/contact",
   "/projects/ai-business-analyst-copilot",
   "/projects/ai-supply-chain-risk-control-tower",
+  "/projects/demand-forecasting-inventory-optimization",
   "/projects/european-procurement-supplier-risk-intelligence",
   "/projects/xai-inventory-control-tower",
   "/projects/european-currency-risk-inflation-intelligence",

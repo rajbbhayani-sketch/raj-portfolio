@@ -14,9 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 const siteUrl = new URL("https://www.rajbharatbhayani.eu");
-const siteTitle = "Raj Bharat Bhayani | Business Analyst, BI & AI Decision Support";
+const siteTitle = "Raj Bharat Bhayani | Supply Chain Analytics & Procurement Analyst";
 const siteDescription =
-  "Berlin-based Business Analyst open to roles across Europe, focused on BI, operations analytics, supply chain analytics, procurement risk, and AI-powered decision support.";
+  "Germany-focused supply chain analytics portfolio for Supply Chain Trainee, Junior Supply Chain Analyst, Procurement Analyst, Logistics Analyst, Operations Analyst, and BI Analyst roles.";
 
 export const metadata: Metadata = {
   metadataBase: siteUrl,
@@ -28,15 +28,22 @@ export const metadata: Metadata = {
   description: siteDescription,
   keywords: [
     "Raj Bharat Bhayani",
-    "Business Analyst Europe",
-    "Business Intelligence Analyst",
-    "BI Analyst Berlin",
-    "Supply Chain Analyst Europe",
-    "Operations Analyst",
-    "AI Decision Support",
-    "Power BI",
+    "Supply Chain Analyst Germany",
+    "Supply Chain Trainee Germany",
+    "Junior Supply Chain Analyst",
+    "Demand Planning",
+    "Inventory Planning",
+    "Supply Chain Management",
     "Procurement Analytics",
-    "Supply Chain Analytics",
+    "Logistics Analytics",
+    "Operations Analyst Germany",
+    "Business Intelligence Germany",
+    "Power BI",
+    "SAP",
+    "Data Analytics Germany",
+    "Procurement Analyst Germany",
+    "Logistics Analyst Germany",
+    "Business Intelligence Analyst",
   ],
   authors: [{ name: "Raj Bharat Bhayani", url: siteUrl }],
   creator: "Raj Bharat Bhayani",
@@ -59,7 +66,7 @@ export const metadata: Metadata = {
         url: "/opengraph-image",
         width: 1200,
         height: 630,
-        alt: "Raj Bharat Bhayani portfolio preview for European analyst roles",
+        alt: "Raj Bharat Bhayani supply chain analytics portfolio preview for Germany roles",
       },
     ],
   },

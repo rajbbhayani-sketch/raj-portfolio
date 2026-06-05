@@ -35,10 +35,9 @@ img {
 }
 
 .future-grid::before {
-  animation: gridShift 28s linear infinite;
   background:
-    linear-gradient(110deg, transparent 0%, rgba(0, 113, 227, 0.08) 48%, transparent 62%),
-    linear-gradient(180deg, transparent 0%, rgba(255, 255, 255, 0.82) 72%, rgba(255, 255, 255, 1) 100%);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.94)),
+    linear-gradient(90deg, transparent, rgba(0, 113, 227, 0.045), transparent);
   content: "";
   inset: 0;
   mask-image: linear-gradient(180deg, #000 0%, transparent 72%);
@@ -90,56 +89,15 @@ img {
 }
 
 .premium-panel::after {
-  animation: panelSweep 9s ease-in-out infinite;
-  background: linear-gradient(115deg, transparent 0%, rgba(0, 113, 227, 0.08) 48%, transparent 62%);
+  background: linear-gradient(115deg, transparent 0%, rgba(0, 113, 227, 0.055) 48%, transparent 62%);
   content: "";
   inset: 0;
   pointer-events: none;
   position: absolute;
-  transform: translateX(-85%);
   z-index: 0;
 }
 
 .premium-panel > * {
   position: relative;
   z-index: 1;
-}
-
-@keyframes backgroundDrift {
-  0% {
-    background-position: 0% 0%, 100% 0%, 45% 100%, 0 0;
-  }
-
-  100% {
-    background-position: 8% 4%, 92% 8%, 52% 96%, 0 0;
-  }
-}
-
-@keyframes gridShift {
-  0% {
-    background-position: -35% 0, 0 0;
-  }
-
-  100% {
-    background-position: 135% 0, 0 0;
-  }
-}
-
-@keyframes panelSweep {
-  0%,
-  34% {
-    transform: translateX(-85%);
-  }
-
-  72%,
-  100% {
-    transform: translateX(85%);
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .future-grid::before,
-  .premium-panel::after {
-    animation: none;
-  }
 }
