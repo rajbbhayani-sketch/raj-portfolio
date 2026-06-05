@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
-const title = "AI European Supply Chain Risk Control Tower | Raj Bharat Bhayani";
+const title =
+  "AI European Supply Chain Risk Control Tower | Raj Bharat Bhayani";
 const description =
   "Interactive AI supply chain risk demo for European logistics corridors, supplier delay, port congestion, inventory exposure, and mitigation actions.";
 const path = "/projects/ai-supply-chain-risk-control-tower";

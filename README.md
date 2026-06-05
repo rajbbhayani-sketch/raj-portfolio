@@ -1,36 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Raj Bharat Bhayani Portfolio
 
-## Getting Started
+This repository contains Raj Bharat Bhayani's Supply Chain Analytics portfolio website. The site is designed for recruiter screening and portfolio review for supply chain, procurement, logistics, operations, and business intelligence roles in Germany.
 
-First, run the development server:
+## Positioning
+
+The portfolio focuses on practical supply chain analytics and business intelligence for German industry.
+
+Target roles:
+
+- Supply Chain Trainee
+- Junior Supply Chain Analyst
+- Procurement Analyst
+- Logistics Analyst
+- Operations Analyst
+- Business Intelligence Analyst, when connected to supply chain, procurement, logistics, or operations topics
+
+Business Analyst positioning is included as secondary context, not the primary profile.
+
+## Main Projects
+
+- AI European Supply Chain Risk & Disruption Control Tower
+- XAI Inventory Control Tower
+- European Procurement & Supplier Risk Intelligence
+- Demand Forecasting & Inventory Optimization Dashboard
+- European Waterway Supply Chain Intelligence
+- European Currency Risk & Inflation Intelligence
+- European Defense Operations & Readiness Intelligence
+- AI Business Analyst Co-Pilot for European Market Decisions
+
+The strongest supply chain projects are shown first on the homepage and are framed around business problems, solutions, KPIs, technologies used, and business impact.
+
+## Tech Stack
+
+- Next.js
+- TypeScript
+- Tailwind CSS
+- Vercel Analytics
+
+## Run Locally
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open the local site:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Run linting:
 
-## Learn More
+```bash
+npm run lint
+```
 
-To learn more about Next.js, take a look at the following resources:
+Create a production build:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run build
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Notes
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The website is intentionally written in a professional, recruiter-friendly tone. It avoids exaggerated experience claims and keeps the main focus on supply chain analytics roles in Germany.

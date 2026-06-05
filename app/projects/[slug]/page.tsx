@@ -1,7 +1,14 @@
 import Image from "next/image";
 import NextLink from "next/link";
 import type { Metadata } from "next";
-import { ArrowLeft, ArrowUpRight, BarChart3, CheckCircle2, FileText, Mail } from "lucide-react";
+import {
+  ArrowLeft,
+  ArrowUpRight,
+  BarChart3,
+  CheckCircle2,
+  FileText,
+  Mail,
+} from "lucide-react";
 import { notFound } from "next/navigation";
 
 type CaseStudy = {
@@ -41,7 +48,13 @@ const caseStudies: CaseStudy[] = [
       "Supports supplier diversification and sourcing decisions.",
       "Connects procurement cost, supplier performance, ESG, and operational exposure in one business view.",
     ],
-    tools: ["Power BI", "DAX", "Power Query", "Data Modeling", "Procurement Analytics"],
+    tools: [
+      "Power BI",
+      "DAX",
+      "Power Query",
+      "Data Modeling",
+      "Procurement Analytics",
+    ],
     metrics: [
       ["Supplier Risk", "Priority scoring"],
       ["Spend", "Visibility by supplier"],
@@ -95,7 +108,13 @@ const caseStudies: CaseStudy[] = [
       "Supports earlier warning signals before cost pressure reaches budgets.",
       "Helps teams connect market risk with sourcing and supplier decisions.",
     ],
-    tools: ["Power BI", "Power Query", "Forecasting", "Data Modeling", "Financial Analytics"],
+    tools: [
+      "Power BI",
+      "Power Query",
+      "Forecasting",
+      "Data Modeling",
+      "Financial Analytics",
+    ],
     metrics: [
       ["Currency", "Volatility view"],
       ["Inflation", "Cost pressure"],
@@ -122,7 +141,13 @@ const caseStudies: CaseStudy[] = [
       "Supports maintenance and procurement prioritization.",
       "Helps operational teams discuss constraints with clearer evidence.",
     ],
-    tools: ["Power BI", "DAX", "Power Query", "Operations Analytics", "Data Modeling"],
+    tools: [
+      "Power BI",
+      "DAX",
+      "Power Query",
+      "Operations Analytics",
+      "Data Modeling",
+    ],
     metrics: [
       ["Readiness", "Availability view"],
       ["Maintenance", "Cost and downtime"],
@@ -149,7 +174,13 @@ const caseStudies: CaseStudy[] = [
       "Improves visibility of port and corridor delay exposure.",
       "Shows how waterways can be part of resilient European freight planning.",
     ],
-    tools: ["Power BI", "DAX", "Power Query", "Forecasting", "Logistics Analytics"],
+    tools: [
+      "Power BI",
+      "DAX",
+      "Power Query",
+      "Forecasting",
+      "Logistics Analytics",
+    ],
     metrics: [
       ["Corridors", "Freight visibility"],
       ["Ports", "Delay risk"],
@@ -162,7 +193,11 @@ export function generateStaticParams() {
   return caseStudies.map((study) => ({ slug: study.slug }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
   const { slug } = await params;
   const study = caseStudies.find((item) => item.slug === slug);
 
@@ -205,7 +240,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   };
 }
 
-export default async function ProjectCaseStudy({ params }: { params: Promise<{ slug: string }> }) {
+export default async function ProjectCaseStudy({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
   const { slug } = await params;
   const study = caseStudies.find((item) => item.slug === slug);
 
@@ -217,10 +256,18 @@ export default async function ProjectCaseStudy({ params }: { params: Promise<{ s
     <main className="min-h-screen bg-white text-slate-950">
       <header className="border-b border-slate-200 bg-white/90 px-5 py-4 backdrop-blur-xl">
         <nav className="mx-auto flex max-w-7xl items-center justify-between">
-          <NextLink href="/#projects" className="inline-flex items-center gap-2 font-black text-[#0071e3] hover:text-slate-950">
+          <NextLink
+            href="/#projects"
+            className="inline-flex items-center gap-2 font-black text-[#0071e3] hover:text-slate-950"
+          >
             <ArrowLeft size={18} /> Back to Portfolio
           </NextLink>
-          <a href={study.pdf} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-[#0071e3] px-4 py-2 text-sm font-black text-white hover:bg-[#0077ed]">
+          <a
+            href={study.pdf}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 rounded-full bg-[#0071e3] px-4 py-2 text-sm font-black text-white hover:bg-[#0077ed]"
+          >
             <FileText size={16} /> Open PDF
           </a>
         </nav>
@@ -228,14 +275,28 @@ export default async function ProjectCaseStudy({ params }: { params: Promise<{ s
 
       <section className="mx-auto grid max-w-7xl gap-10 px-5 py-14 lg:grid-cols-[0.56fr_0.44fr] lg:items-center">
         <div>
-          <p className="text-sm font-black uppercase tracking-[0.28em] text-[#0071e3]">{study.category}</p>
-          <h1 className="mt-4 text-4xl font-black tracking-tight md:text-6xl">{study.title}</h1>
-          <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600">{study.overview}</p>
+          <p className="text-sm font-black uppercase tracking-[0.28em] text-[#0071e3]">
+            {study.category}
+          </p>
+          <h1 className="mt-4 text-4xl font-black tracking-tight md:text-6xl">
+            {study.title}
+          </h1>
+          <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600">
+            {study.overview}
+          </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <a href={study.pdf} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-slate-950 px-5 py-3 font-black text-white hover:bg-[#0071e3]">
+            <a
+              href={study.pdf}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-slate-950 px-5 py-3 font-black text-white hover:bg-[#0071e3]"
+            >
               Open Project PDF <ArrowUpRight size={18} />
             </a>
-            <a href="mailto:rajbharatbhayani@gmail.com" className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-5 py-3 font-black text-slate-950 hover:border-[#0071e3] hover:text-[#0071e3]">
+            <a
+              href="mailto:rajbharatbhayani@gmail.com"
+              className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-5 py-3 font-black text-slate-950 hover:border-[#0071e3] hover:text-[#0071e3]"
+            >
               <Mail size={18} /> Discuss This Project
             </a>
           </div>
@@ -254,9 +315,14 @@ export default async function ProjectCaseStudy({ params }: { params: Promise<{ s
       <section className="border-y border-slate-200 bg-[#f5f5f7] px-5 py-10">
         <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-3">
           {study.metrics.map(([label, value]) => (
-            <div key={label} className="rounded-lg border border-slate-200 bg-white p-5">
+            <div
+              key={label}
+              className="rounded-lg border border-slate-200 bg-white p-5"
+            >
               <BarChart3 className="text-[#0071e3]" size={26} />
-              <p className="mt-4 text-sm font-black uppercase tracking-[0.18em] text-slate-500">{label}</p>
+              <p className="mt-4 text-sm font-black uppercase tracking-[0.18em] text-slate-500">
+                {label}
+              </p>
               <p className="mt-2 text-2xl font-black">{value}</p>
             </div>
           ))}
@@ -268,10 +334,15 @@ export default async function ProjectCaseStudy({ params }: { params: Promise<{ s
         <CasePanel title="Approach" items={study.approach} />
         <CasePanel title="Business Value" items={study.businessValue} />
         <div className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
-          <p className="text-sm font-black uppercase tracking-[0.22em] text-[#0071e3]">Tools</p>
+          <p className="text-sm font-black uppercase tracking-[0.22em] text-[#0071e3]">
+            Tools
+          </p>
           <div className="mt-5 flex flex-wrap gap-2">
             {study.tools.map((tool) => (
-              <span key={tool} className="rounded-full bg-slate-100 px-3 py-1.5 text-sm font-bold text-slate-700">
+              <span
+                key={tool}
+                className="rounded-full bg-slate-100 px-3 py-1.5 text-sm font-bold text-slate-700"
+              >
                 {tool}
               </span>
             ))}
@@ -285,7 +356,9 @@ export default async function ProjectCaseStudy({ params }: { params: Promise<{ s
 function CasePanel({ title, items }: { title: string; items: string[] }) {
   return (
     <article className="rounded-lg border border-slate-200 bg-white p-6 shadow-sm">
-      <p className="text-sm font-black uppercase tracking-[0.22em] text-[#0071e3]">{title}</p>
+      <p className="text-sm font-black uppercase tracking-[0.22em] text-[#0071e3]">
+        {title}
+      </p>
       <div className="mt-5 grid gap-3">
         {items.map((item) => (
           <p key={item} className="flex gap-3 leading-7 text-slate-600">

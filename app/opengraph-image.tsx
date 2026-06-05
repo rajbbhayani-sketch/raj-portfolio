@@ -9,70 +9,91 @@ export const contentType = "image/png";
 
 export default function Image() {
   return new ImageResponse(
-    (
+    <div
+      style={{
+        alignItems: "center",
+        background: "#ffffff",
+        color: "#020617",
+        display: "flex",
+        height: "100%",
+        justifyContent: "center",
+        padding: "56px",
+        width: "100%",
+      }}
+    >
       <div
         style={{
-          alignItems: "center",
-          background: "#ffffff",
-          color: "#020617",
+          border: "1px solid #dbe3ef",
+          borderRadius: "28px",
           display: "flex",
+          flexDirection: "column",
           height: "100%",
-          justifyContent: "center",
-          padding: "56px",
+          justifyContent: "space-between",
+          padding: "48px",
           width: "100%",
         }}
       >
-        <div
-          style={{
-            border: "1px solid #dbe3ef",
-            borderRadius: "28px",
-            display: "flex",
-            flexDirection: "column",
-            height: "100%",
-            justifyContent: "space-between",
-            padding: "48px",
-            width: "100%",
-          }}
-        >
-          <div style={{ display: "flex", justifyContent: "space-between" }}>
-            <div style={{ display: "flex", flexDirection: "column" }}>
-              <div style={{ color: "#0071e3", fontSize: 24, fontWeight: 800, letterSpacing: 7 }}>
-                PORTFOLIO
-              </div>
-              <div style={{ fontSize: 72, fontWeight: 900, lineHeight: 0.94, marginTop: 28, maxWidth: 820 }}>
-                Raj Bharat Bhayani
-              </div>
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <div
+              style={{
+                color: "#0071e3",
+                fontSize: 24,
+                fontWeight: 800,
+                letterSpacing: 7,
+              }}
+            >
+              PORTFOLIO
             </div>
             <div
               style={{
-                alignItems: "center",
-                background: "#0071e3",
-                borderRadius: "999px",
-                color: "#ffffff",
-                display: "flex",
-                fontSize: 30,
+                fontSize: 72,
                 fontWeight: 900,
-                height: 92,
-                justifyContent: "center",
-                width: 92,
+                lineHeight: 0.94,
+                marginTop: 28,
+                maxWidth: 820,
               }}
             >
-              RB
+              Raj Bharat Bhayani
             </div>
           </div>
+          <div
+            style={{
+              alignItems: "center",
+              background: "#0071e3",
+              borderRadius: "999px",
+              color: "#ffffff",
+              display: "flex",
+              fontSize: 30,
+              fontWeight: 900,
+              height: 92,
+              justifyContent: "center",
+              width: 92,
+            }}
+          >
+            RB
+          </div>
+        </div>
 
-          <div style={{ display: "flex", flexDirection: "column", gap: 22 }}>
-            <div style={{ color: "#0f172a", fontSize: 38, fontWeight: 800 }}>
-              Supply Chain Analytics - Procurement - Inventory - Logistics
-            </div>
-            <div style={{ color: "#475569", display: "flex", fontSize: 27, fontWeight: 700, gap: 20 }}>
-              <span>Germany</span>
-              <span style={{ color: "#0071e3" }}>Open to relocation</span>
-            </div>
+        <div style={{ display: "flex", flexDirection: "column", gap: 22 }}>
+          <div style={{ color: "#0f172a", fontSize: 38, fontWeight: 800 }}>
+            Supply Chain Analytics - Procurement - Inventory - Logistics
+          </div>
+          <div
+            style={{
+              color: "#475569",
+              display: "flex",
+              fontSize: 27,
+              fontWeight: 700,
+              gap: 20,
+            }}
+          >
+            <span>Germany</span>
+            <span style={{ color: "#0071e3" }}>Open to relocation</span>
           </div>
         </div>
       </div>
-    ),
+    </div>,
     size,
   );
 }

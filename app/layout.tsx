@@ -14,7 +14,8 @@ const geistMono = Geist_Mono({
 });
 
 const siteUrl = new URL("https://www.rajbharatbhayani.eu");
-const siteTitle = "Raj Bharat Bhayani | Supply Chain Analyst & BI Portfolio Germany";
+const siteTitle =
+  "Raj Bharat Bhayani | Supply Chain Analyst & BI Portfolio Germany";
 const siteDescription =
   "Germany-focused supply chain analytics and business intelligence portfolio for Supply Chain Trainee, Junior Supply Chain Analyst, Procurement Analyst, Logistics Analyst, and Operations Analyst roles.";
 

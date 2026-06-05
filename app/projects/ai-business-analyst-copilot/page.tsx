@@ -2,22 +2,34 @@
 
 import Image from "next/image";
 import NextLink from "next/link";
-import { ArrowLeft, ArrowUpRight, BarChart3, CheckCircle2, Lightbulb, Link, Mail, Sparkles } from "lucide-react";
+import {
+  ArrowLeft,
+  ArrowUpRight,
+  BarChart3,
+  CheckCircle2,
+  Lightbulb,
+  Link,
+  Mail,
+  Sparkles,
+} from "lucide-react";
 import { useMemo, useState } from "react";
 
 const scenarios = {
   "European SaaS churn review": {
-    context: "A B2B SaaS team is seeing lower renewal confidence across Germany, Benelux, and the Nordics.",
+    context:
+      "A B2B SaaS team is seeing lower renewal confidence across Germany, Benelux, and the Nordics.",
     stakeholders: ["Sales", "Customer Success", "Finance", "Product"],
     kpi: "Net revenue retention",
   },
   "Retail market expansion": {
-    context: "A retail operations team is deciding which European market deserves the next growth sprint.",
+    context:
+      "A retail operations team is deciding which European market deserves the next growth sprint.",
     stakeholders: ["Country Manager", "Marketing", "Operations", "Finance"],
     kpi: "Market opportunity score",
   },
   "Procurement cost pressure": {
-    context: "A procurement team needs to explain why supplier cost pressure is rising across eurozone contracts.",
+    context:
+      "A procurement team needs to explain why supplier cost pressure is rising across eurozone contracts.",
     stakeholders: ["Procurement", "Finance", "Operations", "Suppliers"],
     kpi: "Cost variance risk",
   },
@@ -27,7 +39,9 @@ const githubUrl =
   "https://github.com/rajbbhayani-sketch/raj-portfolio/tree/main/app/projects/ai-business-analyst-copilot";
 
 export default function AiBusinessAnalystCopilot() {
-  const [scenario, setScenario] = useState<keyof typeof scenarios>("European SaaS churn review");
+  const [scenario, setScenario] = useState<keyof typeof scenarios>(
+    "European SaaS churn review",
+  );
   const [kpiChange, setKpiChange] = useState(12);
   const [dataQuality, setDataQuality] = useState(72);
   const [stakeholderUrgency, setStakeholderUrgency] = useState(68);
@@ -35,13 +49,31 @@ export default function AiBusinessAnalystCopilot() {
 
   const insight = useMemo(() => {
     const riskScore = Math.round(
-      kpiChange * 0.28 + (100 - dataQuality) * 0.24 + stakeholderUrgency * 0.26 + marketComplexity * 0.22,
+      kpiChange * 0.28 +
+        (100 - dataQuality) * 0.24 +
+        stakeholderUrgency * 0.26 +
+        marketComplexity * 0.22,
     );
-    const opportunityScore = Math.round((100 - riskScore) * 0.35 + dataQuality * 0.32 + stakeholderUrgency * 0.18 + marketComplexity * 0.15);
-    const confidence = Math.max(42, Math.min(94, Math.round(dataQuality * 0.72 + (100 - marketComplexity) * 0.18 + 12)));
+    const opportunityScore = Math.round(
+      (100 - riskScore) * 0.35 +
+        dataQuality * 0.32 +
+        stakeholderUrgency * 0.18 +
+        marketComplexity * 0.15,
+    );
+    const confidence = Math.max(
+      42,
+      Math.min(
+        94,
+        Math.round(dataQuality * 0.72 + (100 - marketComplexity) * 0.18 + 12),
+      ),
+    );
 
     const priority =
-      riskScore >= 70 ? "High priority discovery sprint" : riskScore >= 48 ? "Targeted business analysis review" : "Monitor and validate with stakeholders";
+      riskScore >= 70
+        ? "High priority discovery sprint"
+        : riskScore >= 48
+          ? "Targeted business analysis review"
+          : "Monitor and validate with stakeholders";
 
     const action =
       riskScore >= 70
@@ -73,10 +105,18 @@ export default function AiBusinessAnalystCopilot() {
     <main className="min-h-screen bg-white text-slate-950">
       <header className="border-b border-slate-200 bg-white/90 px-5 py-4">
         <nav className="mx-auto flex max-w-7xl items-center justify-between">
-          <NextLink href="/#projects" className="inline-flex items-center gap-2 font-black text-blue-700 hover:text-slate-950">
+          <NextLink
+            href="/#projects"
+            className="inline-flex items-center gap-2 font-black text-blue-700 hover:text-slate-950"
+          >
             <ArrowLeft size={18} /> Back to Portfolio
           </NextLink>
-          <a href={githubUrl} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 rounded-full bg-[#0071e3] px-4 py-2 text-sm font-black text-white hover:bg-[#0077ed]">
+          <a
+            href={githubUrl}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 rounded-full bg-[#0071e3] px-4 py-2 text-sm font-black text-white hover:bg-[#0077ed]"
+          >
             <Link size={16} /> GitHub Source
           </a>
         </nav>
@@ -84,44 +124,82 @@ export default function AiBusinessAnalystCopilot() {
 
       <section className="mx-auto grid max-w-7xl gap-10 px-5 py-14 lg:grid-cols-[0.58fr_0.42fr] lg:items-center">
         <div>
-          <p className="text-sm font-black uppercase tracking-[0.28em] text-[#0071e3]">Live AI Portfolio Demo</p>
+          <p className="text-sm font-black uppercase tracking-[0.28em] text-[#0071e3]">
+            Live AI Portfolio Demo
+          </p>
           <h1 className="mt-4 text-4xl font-black tracking-tight md:text-6xl">
             AI Business Analyst Co-Pilot For European Market Decisions
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600">
-            A working prototype that shows how I would use AI-assisted analysis to convert stakeholder input,
-            KPI movement, and market context into requirements, user stories, and executive next actions.
+            A working prototype that shows how I would use AI-assisted analysis
+            to convert stakeholder input, KPI movement, and market context into
+            requirements, user stories, and executive next actions.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <a href="#demo" className="inline-flex items-center gap-2 rounded-full bg-slate-950 px-5 py-3 font-black text-white hover:bg-[#0071e3]">
+            <a
+              href="#demo"
+              className="inline-flex items-center gap-2 rounded-full bg-slate-950 px-5 py-3 font-black text-white hover:bg-[#0071e3]"
+            >
               Try Live Demo <ArrowUpRight size={18} />
             </a>
-            <a href="mailto:rajbharatbhayani@gmail.com" className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-5 py-3 font-black text-slate-950 hover:border-[#0071e3] hover:text-[#0071e3]">
+            <a
+              href="mailto:rajbharatbhayani@gmail.com"
+              className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-5 py-3 font-black text-slate-950 hover:border-[#0071e3] hover:text-[#0071e3]"
+            >
               <Mail size={18} /> Discuss This Project
             </a>
           </div>
         </div>
-        <Image src="/projects/ai-business-demo-screenshot.png" alt="Live AI business analyst demo screenshot" width={1366} height={700} priority className="rounded-lg border border-slate-200 bg-white shadow-2xl shadow-slate-200/80" />
+        <Image
+          src="/projects/ai-business-demo-screenshot.png"
+          alt="Live AI business analyst demo screenshot"
+          width={1366}
+          height={700}
+          priority
+          className="rounded-lg border border-slate-200 bg-white shadow-2xl shadow-slate-200/80"
+        />
       </section>
 
       <section className="border-y border-slate-200 bg-[#f5f5f7] px-5 py-10">
         <div className="mx-auto grid max-w-7xl gap-5 md:grid-cols-3">
-          <InfoCard icon={Lightbulb} title="Business Analysis" text="Structures messy stakeholder needs into requirements, user stories, risks, and decision notes." />
-          <InfoCard icon={BarChart3} title="KPI Reasoning" text="Uses KPI movement, urgency, market complexity, and data quality to score analysis priority." />
-          <InfoCard icon={Sparkles} title="AI Ready Workflow" text="Built as a transparent demo that can later connect to an LLM or internal enterprise data." />
+          <InfoCard
+            icon={Lightbulb}
+            title="Business Analysis"
+            text="Structures messy stakeholder needs into requirements, user stories, risks, and decision notes."
+          />
+          <InfoCard
+            icon={BarChart3}
+            title="KPI Reasoning"
+            text="Uses KPI movement, urgency, market complexity, and data quality to score analysis priority."
+          />
+          <InfoCard
+            icon={Sparkles}
+            title="AI Ready Workflow"
+            text="Built as a transparent demo that can later connect to an LLM or internal enterprise data."
+          />
         </div>
       </section>
 
-      <section id="demo" className="mx-auto grid max-w-7xl gap-6 px-5 py-16 lg:grid-cols-[0.38fr_0.62fr]">
+      <section
+        id="demo"
+        className="mx-auto grid max-w-7xl gap-6 px-5 py-16 lg:grid-cols-[0.38fr_0.62fr]"
+      >
         <aside className="rounded-lg border border-slate-200 bg-white p-6">
-          <p className="text-sm font-black uppercase tracking-[0.22em] text-[#0071e3]">Scenario Inputs</p>
-          <label className="mt-5 block text-sm font-black text-slate-700" htmlFor="scenario">
+          <p className="text-sm font-black uppercase tracking-[0.22em] text-[#0071e3]">
+            Scenario Inputs
+          </p>
+          <label
+            className="mt-5 block text-sm font-black text-slate-700"
+            htmlFor="scenario"
+          >
             European business scenario
           </label>
           <select
             id="scenario"
             value={scenario}
-            onChange={(event) => setScenario(event.target.value as keyof typeof scenarios)}
+            onChange={(event) =>
+              setScenario(event.target.value as keyof typeof scenarios)
+            }
             className="mt-2 w-full rounded-lg border border-slate-200 bg-white px-4 py-3 font-bold text-slate-950 outline-none"
           >
             {Object.keys(scenarios).map((item) => (
@@ -129,18 +207,52 @@ export default function AiBusinessAnalystCopilot() {
             ))}
           </select>
 
-          <Slider label="KPI change or anomaly" value={kpiChange} setValue={setKpiChange} suffix="%" min={0} max={35} />
-          <Slider label="Data quality" value={dataQuality} setValue={setDataQuality} suffix="%" min={35} max={100} />
-          <Slider label="Stakeholder urgency" value={stakeholderUrgency} setValue={setStakeholderUrgency} suffix="%" min={0} max={100} />
-          <Slider label="Market complexity" value={marketComplexity} setValue={setMarketComplexity} suffix="%" min={0} max={100} />
+          <Slider
+            label="KPI change or anomaly"
+            value={kpiChange}
+            setValue={setKpiChange}
+            suffix="%"
+            min={0}
+            max={35}
+          />
+          <Slider
+            label="Data quality"
+            value={dataQuality}
+            setValue={setDataQuality}
+            suffix="%"
+            min={35}
+            max={100}
+          />
+          <Slider
+            label="Stakeholder urgency"
+            value={stakeholderUrgency}
+            setValue={setStakeholderUrgency}
+            suffix="%"
+            min={0}
+            max={100}
+          />
+          <Slider
+            label="Market complexity"
+            value={marketComplexity}
+            setValue={setMarketComplexity}
+            suffix="%"
+            min={0}
+            max={100}
+          />
         </aside>
 
         <div className="grid gap-5">
           <div className="rounded-lg border border-slate-200 bg-white p-6 text-slate-950 shadow-2xl shadow-slate-200/80">
-            <p className="text-sm font-black uppercase tracking-[0.22em] text-[#0071e3]">AI-Generated Business Brief</p>
+            <p className="text-sm font-black uppercase tracking-[0.22em] text-[#0071e3]">
+              AI-Generated Business Brief
+            </p>
             <h2 className="mt-3 text-3xl font-black">{insight.priority}</h2>
-            <p className="mt-4 leading-7 text-slate-600">{scenarios[scenario].context}</p>
-            <p className="mt-4 rounded-lg bg-slate-100 p-4 font-bold leading-7 text-slate-700">{insight.action}</p>
+            <p className="mt-4 leading-7 text-slate-600">
+              {scenarios[scenario].context}
+            </p>
+            <p className="mt-4 rounded-lg bg-slate-100 p-4 font-bold leading-7 text-slate-700">
+              {insight.action}
+            </p>
 
             <div className="mt-6 grid gap-3 sm:grid-cols-3">
               <Metric label="Risk Score" value={insight.riskScore} />
@@ -149,14 +261,22 @@ export default function AiBusinessAnalystCopilot() {
             </div>
           </div>
 
-          <OutputPanel title="Suggested Requirements" items={insight.requirements} />
-          <OutputPanel title="Generated User Stories" items={insight.userStories} />
+          <OutputPanel
+            title="Suggested Requirements"
+            items={insight.requirements}
+          />
+          <OutputPanel
+            title="Generated User Stories"
+            items={insight.userStories}
+          />
 
           <div className="rounded-lg border border-slate-200 bg-white p-5">
             <p className="font-black text-[#0071e3]">Transparency note</p>
             <p className="mt-2 leading-7 text-slate-600">
-              This live demo uses transparent scoring and rule-based generation in the browser. It demonstrates the workflow,
-              business logic, and UI. In a company setting, the same structure could connect to secure CRM, ERP, BI, and LLM APIs.
+              This live demo uses transparent scoring and rule-based generation
+              in the browser. It demonstrates the workflow, business logic, and
+              UI. In a company setting, the same structure could connect to
+              secure CRM, ERP, BI, and LLM APIs.
             </p>
           </div>
         </div>
@@ -226,7 +346,15 @@ function OutputPanel({ title, items }: { title: string; items: string[] }) {
   );
 }
 
-function InfoCard({ icon: Icon, title, text }: { icon: typeof Lightbulb; title: string; text: string }) {
+function InfoCard({
+  icon: Icon,
+  title,
+  text,
+}: {
+  icon: typeof Lightbulb;
+  title: string;
+  text: string;
+}) {
   return (
     <div className="rounded-lg border border-slate-200 bg-white p-5">
       <Icon className="text-[#0071e3]" size={28} />
