@@ -447,6 +447,7 @@ const featuredSupplyChainProjects = [
     title: "AI European Supply Chain Risk & Disruption Control Tower",
     href: "/projects/ai-supply-chain-risk-control-tower",
     category: "Supply Chain Risk",
+    image: "/projects/ai-supply-chain-demo-screenshot.png",
     businessProblem:
       "Supplier disruption, logistics bottlenecks, port congestion, and low inventory cover can affect service levels and delivery reliability.",
     solution:
@@ -470,6 +471,7 @@ const featuredSupplyChainProjects = [
     title: "XAI Inventory Control Tower",
     href: "/projects/xai-inventory-control-tower",
     category: "Inventory Optimization",
+    image: "/projects/xai.png",
     businessProblem:
       "Inventory planners need clear support for safety stock, reorder point recommendations, stockout risk, and forecast interpretation.",
     solution:
@@ -489,6 +491,7 @@ const featuredSupplyChainProjects = [
     title: "European Procurement & Supplier Risk Intelligence",
     href: "/projects/european-procurement-supplier-risk-intelligence",
     category: "Procurement Analytics",
+    image: "/projects/procurement.png",
     businessProblem:
       "Procurement teams need better visibility of supplier performance, cost exposure, delivery reliability, and risk evaluation.",
     solution:
@@ -508,6 +511,7 @@ const featuredSupplyChainProjects = [
     title: "Demand Forecasting & Inventory Optimization Dashboard",
     href: "/projects/demand-forecasting-inventory-optimization",
     category: "Demand Planning",
+    image: "/projects/demand-forecasting-dashboard.png",
     businessProblem:
       "Planning teams need a shared view of forecast accuracy, inventory turnover, fill rate, service level, stockout risk, safety stock, and reorder point logic.",
     solution:
@@ -651,20 +655,24 @@ export default function Home() {
         </nav>
       </header>
 
-      <section id="profile" className="relative overflow-hidden">
+      <section id="profile" className="hero-stage relative overflow-hidden">
         <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#0071e3]/40 to-transparent" />
         <div className="relative mx-auto grid max-w-7xl gap-12 px-5 pb-16 pt-14 md:pt-20 lg:grid-cols-[0.62fr_0.38fr] lg:items-start lg:pb-20 xl:gap-16">
           <div>
-            <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-[#0071e3]">
-              Germany Supply Chain Portfolio
-            </p>
+            <div className="inline-flex items-center gap-3 rounded-full border border-blue-200/70 bg-white/75 px-4 py-2 shadow-lg shadow-blue-900/5 backdrop-blur-xl">
+              <span className="h-2 w-2 rounded-full bg-[#0071e3] shadow-[0_0_0_5px_rgba(0,113,227,0.1)]" />
+              <p className="text-xs font-extrabold uppercase tracking-[0.26em] text-[#0071e3]">
+                Germany Supply Chain Portfolio
+              </p>
+            </div>
             <h1 className="mt-4 max-w-5xl text-4xl font-extrabold leading-[1.04] tracking-tight text-[#0b1220] md:text-5xl 2xl:text-6xl">
-              Supply Chain Analytics & Business Intelligence for German Industry
+              Supply Chain Analytics & Business Intelligence{" "}
+              <span className="text-[#0071e3]">for German Industry</span>
             </h1>
             <p className="mt-5 max-w-[720px] text-lg font-medium leading-8 text-slate-600 md:text-xl">
-              MBA Data Science graduate focused on inventory planning, demand
-              forecasting, procurement analytics, logistics performance, and
-              supply chain decision support.
+              MBA Data Science graduate focused on demand forecasting, inventory
+              optimization, procurement intelligence, logistics analytics, and
+              data-driven decision support.
             </p>
             <p className="mt-5 inline-flex max-w-3xl items-center gap-2 rounded-full border border-blue-100/80 bg-white/85 px-4 py-2 text-sm font-bold text-blue-700 shadow-sm shadow-blue-100/60 backdrop-blur">
               <span className="h-2 w-2 rounded-full bg-emerald-400" />
@@ -691,20 +699,20 @@ export default function Home() {
             <div className="mt-8 flex flex-wrap gap-3">
               <a
                 href="#projects"
-                className="inline-flex items-center gap-2 rounded-full bg-slate-950 px-5 py-3 font-bold text-white transition hover:bg-[#0071e3]"
+                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#0b1220] to-[#17355f] px-5 py-3 font-bold text-white shadow-xl shadow-slate-900/15 transition hover:-translate-y-0.5 hover:from-[#0071e3] hover:to-[#1684ea]"
               >
                 View Projects <ArrowUpRight size={18} />
               </a>
               <a
                 href="/cv/raj-bharat-bhayani-supply-chain-cv.pdf"
                 download
-                className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-5 py-3 font-bold text-slate-950 transition hover:border-[#0071e3] hover:text-[#0071e3]"
+                className="inline-flex items-center gap-2 rounded-full border border-slate-300/90 bg-white/75 px-5 py-3 font-bold text-slate-950 shadow-lg shadow-slate-900/5 backdrop-blur transition hover:-translate-y-0.5 hover:border-[#0071e3] hover:text-[#0071e3]"
               >
                 <Download size={18} /> Download CV
               </a>
               <a
                 href="mailto:rajbharatbhayani@gmail.com"
-                className="inline-flex items-center gap-2 rounded-full border border-slate-300 px-5 py-3 font-bold text-slate-950 transition hover:border-[#0071e3] hover:text-[#0071e3]"
+                className="inline-flex items-center gap-2 rounded-full border border-slate-300/90 bg-white/75 px-5 py-3 font-bold text-slate-950 shadow-lg shadow-slate-900/5 backdrop-blur transition hover:-translate-y-0.5 hover:border-[#0071e3] hover:text-[#0071e3]"
               >
                 <Mail size={18} /> Contact Me
               </a>
@@ -723,8 +731,8 @@ export default function Home() {
           </div>
 
           <aside className="relative">
-            <div className="premium-panel glass-panel relative overflow-hidden rounded-lg p-5">
-              <div className="mb-4 flex items-center justify-between rounded-lg border border-slate-200/80 bg-white/75 px-4 py-3">
+            <div className="premium-panel glass-panel relative overflow-hidden p-5">
+              <div className="mb-4 flex items-center justify-between rounded-2xl border border-blue-100/80 bg-white/80 px-4 py-3 shadow-sm">
                 <div>
                   <p className="text-xs font-extrabold text-[#0071e3]">
                     SUPPLY CHAIN ANALYST PROFILE
@@ -762,7 +770,7 @@ export default function Home() {
                     {agencyHighlights.map((item) => (
                       <div
                         key={item.label}
-                        className="rounded-lg border border-slate-200 bg-white/80 p-3"
+                        className="rounded-2xl border border-slate-200/80 bg-white/85 p-3 shadow-sm shadow-slate-900/5"
                       >
                         <dt className="text-xs font-extrabold uppercase tracking-[0.18em] text-slate-400">
                           {item.label}
@@ -777,7 +785,7 @@ export default function Home() {
                     {heroMetrics.map(([label, value]) => (
                       <div
                         key={label}
-                        className="rounded-lg border border-blue-100 bg-blue-50/60 p-3"
+                        className="rounded-2xl border border-blue-100 bg-gradient-to-b from-blue-50 to-white p-3 shadow-sm"
                       >
                         <p className="text-xs font-extrabold text-blue-700">
                           {label}
@@ -812,7 +820,7 @@ export default function Home() {
 
       <section
         id="recruiter-summary"
-        className="relative border-y border-slate-200/70 bg-white/80 px-5 py-16 backdrop-blur md:py-24"
+        className="premium-band relative px-5 py-16 backdrop-blur md:py-24"
       >
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
@@ -831,7 +839,7 @@ export default function Home() {
           </div>
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {impactStats.map(([value, label]) => (
-              <div key={label} className="future-card p-6">
+              <div key={label} className="future-card role-card p-6">
                 <p className="text-4xl font-extrabold text-[#0071e3]">
                   {value}
                 </p>
@@ -844,63 +852,78 @@ export default function Home() {
         </div>
       </section>
 
-      <section
-        id="opportunities"
-        className="mx-auto max-w-7xl px-5 py-16 md:py-24"
-      >
-        <SectionIntro
-          eyebrow="Germany Career Focus"
-          title="Targeting Supply Chain & Operations Roles in Germany"
-          subtitle="I am focused on entry-level and junior roles where analytics can improve demand planning, inventory visibility, supplier performance, logistics processes, service levels, and cost control."
-        />
-        <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {germanyRoles.map((role) => (
-            <article key={role.title} className="future-card p-6">
-              <CheckCircle2 className="text-[#0071e3]" size={20} />
-              <h3 className="mt-5 text-xl font-bold tracking-tight text-[#0b1220]">
-                {role.title}
-              </h3>
-              <p className="mt-3 text-base leading-7 text-slate-600">
-                {role.relevance}
-              </p>
-            </article>
-          ))}
-        </div>
-        <article className="future-card mt-6 p-6">
-          <div className="grid gap-6 lg:grid-cols-[0.34fr_0.66fr] lg:items-start">
-            <div>
+      <section id="opportunities" className="premium-band px-5 py-16 md:py-24">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-8 lg:grid-cols-[0.62fr_0.38fr] lg:items-end">
+            <SectionIntro
+              eyebrow="Germany Career Focus"
+              title="Targeting Supply Chain & Operations Roles in Germany"
+              subtitle="I am focused on entry-level and junior roles where analytics can improve demand planning, inventory visibility, supplier performance, logistics processes, service levels, and cost control."
+            />
+            <div className="glass-panel hidden p-5 lg:block">
               <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#0071e3]">
-                Employer Fit
+                Recruiter Match
               </p>
-              <h3 className="mt-3 text-2xl font-bold tracking-tight text-[#0b1220]">
-                Target Employers & Industries
-              </h3>
-            </div>
-            <div>
-              <p className="text-base leading-7 text-slate-600">
-                DHL, DB Schenker, Bosch, Siemens, BMW, Mercedes-Benz and German
-                employers in logistics, procurement, manufacturing, operations
-                and supply chain management.
+              <p className="mt-3 text-lg font-bold leading-7 text-[#0b1220]">
+                Supply Chain Analyst is the primary profile. Business
+                Intelligence supports the planning and operations story.
               </p>
-              <div className="mt-5 flex flex-wrap gap-2">
-                {targetEmployers.map((employer) => (
-                  <span
-                    key={employer}
-                    className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-bold text-slate-700"
-                  >
-                    {employer}
-                  </span>
-                ))}
-              </div>
             </div>
           </div>
-        </article>
+          <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+            {germanyRoles.map((role, index) => (
+              <article key={role.title} className="future-card role-card p-6">
+                <div className="flex items-center justify-between">
+                  <span className="grid h-11 w-11 place-items-center rounded-2xl border border-blue-100 bg-gradient-to-b from-blue-50 to-white text-[#0071e3] shadow-sm">
+                    <CheckCircle2 size={20} />
+                  </span>
+                  <span className="font-mono text-xs font-bold text-slate-400">
+                    0{index + 1}
+                  </span>
+                </div>
+                <h3 className="mt-5 text-xl font-bold tracking-tight text-[#0b1220]">
+                  {role.title}
+                </h3>
+                <p className="mt-3 text-base leading-7 text-slate-600">
+                  {role.relevance}
+                </p>
+              </article>
+            ))}
+          </div>
+          <article className="glass-panel mt-6 p-6">
+            <div className="grid gap-6 lg:grid-cols-[0.34fr_0.66fr] lg:items-start">
+              <div>
+                <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#0071e3]">
+                  Employer Fit
+                </p>
+                <h3 className="mt-3 text-2xl font-bold tracking-tight text-[#0b1220]">
+                  Target Employers & Industries
+                </h3>
+              </div>
+              <div>
+                <p className="text-base leading-7 text-slate-600">
+                  DHL, DB Schenker, Bosch, Siemens, BMW, Mercedes-Benz and
+                  German employers in logistics, procurement, manufacturing,
+                  operations and supply chain management.
+                </p>
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {targetEmployers.map((employer) => (
+                    <span
+                      key={employer}
+                      className="inline-flex items-center gap-2 rounded-full border border-blue-100 bg-white/85 px-4 py-2 text-sm font-bold text-slate-700 shadow-sm"
+                    >
+                      <span className="h-1.5 w-1.5 rounded-full bg-[#0071e3]" />
+                      {employer}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
       </section>
 
-      <section
-        id="about"
-        className="border-y border-slate-200/70 bg-white/80 px-5 py-16 md:py-24"
-      >
+      <section id="about" className="px-5 py-16 md:py-24">
         <div className="mx-auto max-w-7xl">
           <SectionIntro
             eyebrow="About Me"
@@ -1005,7 +1028,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="mt-8 grid gap-6 lg:grid-cols-2 xl:grid-cols-4">
+          <div className="mt-8 grid gap-6 lg:grid-cols-2">
             {featuredSupplyChainProjects.map((project) => (
               <FeaturedProjectCard key={project.title} project={project} />
             ))}
@@ -1036,10 +1059,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section
-        id="why-me"
-        className="border-y border-slate-200/70 bg-white/80 px-5 py-16 md:py-24"
-      >
+      <section id="why-me" className="premium-band px-5 py-16 md:py-24">
         <div className="mx-auto max-w-7xl">
           <SectionIntro
             eyebrow="Why Hire Me"
@@ -1048,8 +1068,10 @@ export default function Home() {
           />
           <div className="mt-10 grid gap-5 md:grid-cols-2">
             {hireReasons.map((reason) => (
-              <article key={reason.title} className="future-card p-6">
-                <CheckCircle2 className="text-[#0071e3]" size={22} />
+              <article key={reason.title} className="future-card role-card p-6">
+                <span className="grid h-11 w-11 place-items-center rounded-2xl border border-blue-100 bg-gradient-to-b from-blue-50 to-white text-[#0071e3] shadow-sm">
+                  <CheckCircle2 size={21} />
+                </span>
                 <h3 className="mt-5 text-xl font-bold tracking-tight text-[#0b1220]">
                   {reason.title}
                 </h3>
@@ -1060,10 +1082,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section
-        id="experience"
-        className="bg-[#f8fbff]/80 px-5 py-16 text-slate-950 md:py-24"
-      >
+      <section id="experience" className="px-5 py-16 text-slate-950 md:py-24">
         <div className="mx-auto max-w-7xl">
           <SectionIntro
             eyebrow="Work History"
@@ -1111,7 +1130,7 @@ export default function Home() {
 
       <section
         id="skills"
-        className="bg-[#f8fbff]/80 px-5 py-16 text-slate-950 md:py-24"
+        className="premium-band px-5 py-16 text-slate-950 md:py-24"
       >
         <div className="mx-auto max-w-7xl">
           <SectionIntro
@@ -1121,9 +1140,9 @@ export default function Home() {
           />
           <div className="mt-10 grid gap-5 md:grid-cols-2">
             {skillGroups.map(({ title, icon: Icon, summary, skills }) => (
-              <div key={title} className="future-card p-6">
+              <div key={title} className="future-card role-card p-6">
                 <div className="flex items-center gap-3">
-                  <span className="rounded-2xl bg-blue-50 p-3 text-[#0071e3]">
+                  <span className="rounded-2xl border border-blue-100 bg-gradient-to-b from-blue-50 to-white p-3 text-[#0071e3] shadow-sm">
                     <Icon size={22} />
                   </span>
                   <h3 className="text-xl font-bold tracking-tight text-[#0b1220]">
@@ -1183,7 +1202,7 @@ export default function Home() {
 
       <section
         id="contact"
-        className="relative border-t border-slate-200/70 bg-white/80 px-5 py-16 md:py-24"
+        className="contact-stage relative border-t border-slate-200/70 px-5 py-16 md:py-24"
       >
         <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#0071e3]/40 to-transparent" />
         <div className="relative mx-auto max-w-7xl">
@@ -1342,7 +1361,8 @@ function SectionIntro({
 }) {
   return (
     <div className="max-w-4xl">
-      <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-[#0071e3]">
+      <p className="flex items-center gap-3 text-xs font-extrabold uppercase tracking-[0.28em] text-[#0071e3]">
+        <span className="h-px w-8 bg-gradient-to-r from-[#0071e3] to-blue-300" />
         {eyebrow}
       </p>
       <h2 className="mt-3 text-[2rem] font-extrabold leading-[1.12] tracking-tight text-[#0b1220] md:text-[2.75rem]">
@@ -1363,69 +1383,84 @@ function FeaturedProjectCard({
   project: (typeof featuredSupplyChainProjects)[number];
 }) {
   return (
-    <article className="future-card flex h-full flex-col p-6">
-      <div className="flex items-start justify-between gap-4">
-        <div>
-          <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#0071e3]">
+    <article className="future-card project-feature group flex h-full flex-col">
+      <div className="image-console p-4">
+        <div className="mb-3 flex items-center justify-between gap-4">
+          <span className="inline-flex items-center gap-2 rounded-full border border-blue-100 bg-white/90 px-3 py-1 text-xs font-bold text-[#0071e3] shadow-sm">
+            <BarChart3 size={13} />
             {project.category}
-          </p>
-          <h3 className="mt-3 text-xl font-bold tracking-tight text-[#0b1220]">
-            {project.title}
-          </h3>
+          </span>
+          <span className="font-mono text-xs font-bold text-slate-400">
+            FEATURED CASE STUDY
+          </span>
         </div>
-        <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-blue-50 text-[#0071e3]">
-          <BarChart3 size={22} />
-        </span>
+        <div className="overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-inner">
+          <Image
+            src={project.image}
+            alt={`${project.title} dashboard preview`}
+            width={1000}
+            height={620}
+            className="project-image h-60 w-full object-contain object-center p-2 transition duration-500 group-hover:scale-[1.025] md:h-72"
+          />
+        </div>
       </div>
-      <div className="mt-6 grid gap-4">
-        <ProjectText
-          label="Business problem"
-          text={project.businessProblem}
-          featured
-        />
-        <ProjectText
-          label="Analytics solution"
-          text={project.solution}
-          featured
-        />
-        <ProjectText label="Business impact" text={project.impact} featured />
-      </div>
-      <div className="mt-6">
-        <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-slate-500">
-          KPIs
+      <div className="flex flex-1 flex-col p-6 md:p-7">
+        <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#0071e3]">
+          Supply Chain Decision Support
         </p>
-        <div className="mt-3 flex flex-wrap gap-2">
-          {project.kpis.map((kpi) => (
-            <span
-              key={kpi}
-              className="rounded-full bg-blue-50 px-3 py-1 text-xs font-bold text-blue-700"
-            >
-              {kpi}
-            </span>
-          ))}
+        <h3 className="mt-3 text-2xl font-bold tracking-tight text-[#0b1220] md:text-3xl">
+          {project.title}
+        </h3>
+        <div className="mt-6 grid gap-5 md:grid-cols-2">
+          <ProjectText
+            label="Business problem"
+            text={project.businessProblem}
+            featured
+          />
+          <ProjectText label="Solution" text={project.solution} featured />
         </div>
-      </div>
-      <div className="mt-5">
-        <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-slate-500">
-          Tools
-        </p>
-        <div className="mt-3 flex flex-wrap gap-2">
-          {project.technologies.map((tool) => (
-            <span
-              key={tool}
-              className="rounded-full border border-slate-200 px-3 py-1 text-xs font-bold text-slate-600"
-            >
-              {tool}
-            </span>
-          ))}
+        <div className="mt-5 rounded-2xl border border-blue-100 bg-gradient-to-r from-blue-50/90 to-white p-4">
+          <ProjectText label="Business impact" text={project.impact} featured />
         </div>
+        <div className="mt-6 grid gap-5 md:grid-cols-2">
+          <div>
+            <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-slate-500">
+              KPIs
+            </p>
+            <div className="mt-3 flex flex-wrap gap-2">
+              {project.kpis.map((kpi) => (
+                <span
+                  key={kpi}
+                  className="rounded-full bg-blue-50 px-3 py-1 text-xs font-bold text-blue-700"
+                >
+                  {kpi}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div>
+            <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-slate-500">
+              Tools
+            </p>
+            <div className="mt-3 flex flex-wrap gap-2">
+              {project.technologies.map((tool) => (
+                <span
+                  key={tool}
+                  className="rounded-full border border-slate-200 bg-white/80 px-3 py-1 text-xs font-bold text-slate-600"
+                >
+                  {tool}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+        <NextLink
+          href={project.href}
+          className="mt-auto inline-flex w-fit items-center gap-2 pt-7 text-sm font-bold text-[#0071e3] transition hover:gap-3 hover:text-slate-950"
+        >
+          Open project <ArrowUpRight size={16} />
+        </NextLink>
       </div>
-      <a
-        href={project.href}
-        className="mt-auto inline-flex items-center gap-2 pt-7 text-sm font-bold text-[#0071e3] transition hover:text-slate-950"
-      >
-        Open project <ArrowUpRight size={16} />
-      </a>
     </article>
   );
 }
@@ -1479,7 +1514,7 @@ function ProjectCard({
             featured={featured}
           />
           <ProjectText
-            label="Analytics solution"
+            label="Solution"
             text={project.value}
             featured={featured}
           />

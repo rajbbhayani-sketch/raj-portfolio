@@ -52,8 +52,8 @@ const contactItems: Array<{
 
 export default function ContactPage() {
   return (
-    <main className="future-grid relative min-h-screen overflow-hidden bg-white text-slate-950">
-      <header className="border-b border-slate-200 bg-white px-5 py-4">
+    <main className="future-grid contact-stage relative min-h-screen overflow-hidden bg-white text-slate-950">
+      <header className="relative z-10 border-b border-slate-200/70 bg-white/75 px-5 py-4 shadow-sm backdrop-blur-xl">
         <nav className="mx-auto flex max-w-5xl items-center justify-between">
           <NextLink
             href="/"
@@ -71,29 +71,49 @@ export default function ContactPage() {
       </header>
 
       <section className="relative mx-auto max-w-5xl px-5 py-16 md:py-24">
-        <p className="text-xs font-extrabold uppercase tracking-[0.28em] text-[#0071e3]">
-          Recruiter Contact
-        </p>
-        <h1 className="mt-4 max-w-4xl text-4xl font-extrabold leading-[1.08] tracking-tight text-[#0b1220] md:text-5xl">
-          Contact me for supply chain roles in Germany.
-        </h1>
-        <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600">
-          I am open to Supply Chain Trainee, Junior Supply Chain Analyst,
-          Procurement Analyst, Logistics Analyst, Operations Analyst, and
-          Business Intelligence Analyst opportunities in Germany, including
-          relocation within Germany.
-        </p>
+        <div className="grid gap-8 lg:grid-cols-[0.62fr_0.38fr] lg:items-end">
+          <div>
+            <p className="flex items-center gap-3 text-xs font-extrabold uppercase tracking-[0.28em] text-[#0071e3]">
+              <span className="h-px w-8 bg-gradient-to-r from-[#0071e3] to-blue-300" />
+              Recruiter Contact
+            </p>
+            <h1 className="mt-4 max-w-4xl text-4xl font-extrabold leading-[1.08] tracking-tight text-[#0b1220] md:text-5xl">
+              Contact me for{" "}
+              <span className="text-[#0071e3]">
+                supply chain roles in Germany.
+              </span>
+            </h1>
+            <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600">
+              I am open to Supply Chain Trainee, Junior Supply Chain Analyst,
+              Procurement Analyst, Logistics Analyst, Operations Analyst, and
+              Business Intelligence Analyst opportunities in Germany, including
+              relocation within Germany.
+            </p>
+          </div>
+          <aside className="glass-panel p-6">
+            <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#0071e3]">
+              Current Availability
+            </p>
+            <p className="mt-3 text-xl font-bold tracking-tight text-[#0b1220]">
+              Germany-based and open to relocation.
+            </p>
+            <p className="mt-3 text-sm leading-6 text-slate-600">
+              Direct contact for recruiter introductions, agency opportunities,
+              and junior supply chain analytics roles.
+            </p>
+          </aside>
+        </div>
 
-        <div className="mt-10 grid gap-4 md:grid-cols-2">
+        <div className="mt-12 grid gap-5 md:grid-cols-2">
           {contactItems.map(({ label, value, href, icon: Icon }) => (
             <a
               key={label}
               href={href}
               target={href.startsWith("http") ? "_blank" : undefined}
               rel={href.startsWith("http") ? "noreferrer" : undefined}
-              className="future-card p-5 transition hover:border-[#0071e3]/60"
+              className="future-card role-card p-6 transition hover:border-[#0071e3]/60"
             >
-              <span className="grid h-11 w-11 place-items-center rounded-2xl bg-[#0071e3] text-white">
+              <span className="grid h-11 w-11 place-items-center rounded-2xl bg-gradient-to-br from-[#0071e3] to-[#2691f0] text-white shadow-lg shadow-blue-200/80">
                 <Icon size={20} />
               </span>
               <span className="mt-4 block text-xs font-extrabold uppercase tracking-[0.2em] text-slate-500">

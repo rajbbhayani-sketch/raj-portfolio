@@ -95,7 +95,7 @@ const experience = [
 export default function CvPage() {
   return (
     <main className="future-grid relative min-h-screen overflow-hidden bg-white text-slate-950 print:bg-white">
-      <header className="border-b border-slate-200 bg-white px-5 py-4 print:hidden">
+      <header className="relative z-10 border-b border-slate-200/70 bg-white/75 px-5 py-4 shadow-sm backdrop-blur-xl print:hidden">
         <nav className="mx-auto flex max-w-6xl items-center justify-between">
           <NextLink
             href="/"
@@ -129,7 +129,7 @@ export default function CvPage() {
               Germany.
             </p>
           </div>
-          <div className="future-card p-5 text-sm font-bold leading-7 text-slate-700">
+          <div className="future-card role-card p-5 text-sm font-bold leading-7 text-slate-700">
             <p className="flex items-center gap-2">
               <Mail size={16} /> rajbharatbhayani@gmail.com
             </p>
@@ -177,7 +177,7 @@ export default function CvPage() {
             {projects.map((project) => (
               <p
                 key={project}
-                className="future-card p-4 leading-7 text-slate-700"
+                className="future-card role-card p-4 leading-7 text-slate-700"
               >
                 {project}
               </p>
@@ -199,9 +199,9 @@ export default function CvPage() {
         </CvSection>
 
         <CvSection title="Technical Skills">
-          <div className="grid gap-4 md:grid-cols-3">
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4 print:grid-cols-2">
             {Object.entries(skills).map(([group, items]) => (
-              <div key={group} className="future-card p-4">
+              <div key={group} className="future-card role-card p-4">
                 <p className="font-bold text-[#0b1220]">{group}</p>
                 <div className="mt-3 flex flex-wrap gap-2">
                   {items.map((item) => (
