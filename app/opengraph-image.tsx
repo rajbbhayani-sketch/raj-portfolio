@@ -77,7 +77,7 @@ export default function Image() {
 
         <div style={{ display: "flex", flexDirection: "column", gap: 22 }}>
           <div style={{ color: "#0f172a", fontSize: 38, fontWeight: 800 }}>
-            Supply Chain Analytics - Procurement - Inventory - Logistics
+            Junior Supply Chain Analyst
           </div>
           <div
             style={{
@@ -89,7 +89,9 @@ export default function Image() {
             }}
           >
             <span>Germany</span>
-            <span style={{ color: "#0071e3" }}>Open to relocation</span>
+            <span style={{ color: "#0071e3" }}>
+              Power BI - SQL - Excel - SAP MM
+            </span>
           </div>
         </div>
       </div>

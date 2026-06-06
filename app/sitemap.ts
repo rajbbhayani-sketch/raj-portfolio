@@ -6,6 +6,7 @@ const routes = [
   "/",
   "/cv",
   "/contact",
+  "/projects/archive",
   "/projects/ai-business-analyst-copilot",
   "/projects/ai-supply-chain-risk-control-tower",
   "/projects/demand-forecasting-inventory-optimization",

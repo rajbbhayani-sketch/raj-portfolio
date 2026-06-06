@@ -10,9 +10,9 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Contact - Supply Chain Analytics Roles",
+  title: "Contact - Junior Supply Chain Analyst",
   description:
-    "Contact Raj Bharat Bhayani for Supply Chain Trainee, Junior Supply Chain Analyst, Procurement Analyst, Logistics Analyst, Operations Analyst, and BI Analyst roles in Germany.",
+    "Contact Raj Bharat Bhayani for Junior Supply Chain Analyst opportunities in Germany.",
   alternates: {
     canonical: "/contact",
   },
@@ -84,10 +84,8 @@ export default function ContactPage() {
               </span>
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600">
-              I am open to Supply Chain Trainee, Junior Supply Chain Analyst,
-              Procurement Analyst, Logistics Analyst, Operations Analyst, and
-              Business Intelligence Analyst opportunities in Germany, including
-              relocation within Germany.
+              I am open to Junior Supply Chain Analyst opportunities in Germany,
+              including relocation across Germany.
             </p>
           </div>
           <aside className="glass-panel p-6">

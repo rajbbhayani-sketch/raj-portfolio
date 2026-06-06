@@ -14,10 +14,9 @@ const geistMono = Geist_Mono({
 });
 
 const siteUrl = new URL("https://www.rajbharatbhayani.eu");
-const siteTitle =
-  "Raj Bharat Bhayani | Supply Chain Analyst & BI Portfolio Germany";
+const siteTitle = "Raj Bharat Bhayani | Junior Supply Chain Analyst Germany";
 const siteDescription =
-  "Germany-focused supply chain analytics and business intelligence portfolio for Supply Chain Trainee, Junior Supply Chain Analyst, Procurement Analyst, Logistics Analyst, and Operations Analyst roles.";
+  "Focused portfolio for Junior Supply Chain Analyst roles in Germany, with inventory planning, demand forecasting, KPI reporting, Power BI, SQL, Excel, Python, and SAP MM fundamentals.";
 
 export const metadata: Metadata = {
   metadataBase: siteUrl,
@@ -29,22 +28,22 @@ export const metadata: Metadata = {
   description: siteDescription,
   keywords: [
     "Raj Bharat Bhayani",
-    "Supply Chain Analyst Germany",
+    "Junior Supply Chain Analyst Germany",
     "Supply Chain Trainee Germany",
-    "Junior Supply Chain Analyst",
     "Demand Planning",
+    "Demand Forecasting",
     "Inventory Planning",
     "Supply Chain Management",
     "Procurement Analytics",
     "Logistics Analytics",
-    "Operations Analyst Germany",
     "Business Intelligence Germany",
     "Power BI",
-    "SAP",
+    "SQL",
+    "Excel",
+    "SAP MM",
     "Data Analytics Germany",
     "Procurement Analyst Germany",
     "Logistics Analyst Germany",
-    "Business Intelligence Analyst",
   ],
   authors: [{ name: "Raj Bharat Bhayani", url: siteUrl }],
   creator: "Raj Bharat Bhayani",

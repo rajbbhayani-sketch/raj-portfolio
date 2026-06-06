@@ -3,88 +3,71 @@ import NextLink from "next/link";
 import { ArrowLeft, Download, Mail, MapPin } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "CV - Supply Chain Analytics",
+  title: "CV - Junior Supply Chain Analyst",
   description:
-    "Recruiter-friendly CV page for Raj Bharat Bhayani, focused on Supply Chain Trainee, Junior Supply Chain Analyst, Procurement Analyst, Logistics Analyst, Operations Analyst, and BI Analyst roles in Germany.",
+    "Recruiter-friendly CV for Raj Bharat Bhayani, focused on Junior Supply Chain Analyst roles in Germany.",
   alternates: {
     canonical: "/cv",
   },
 };
 
 const targetRoles = [
-  "Supply Chain Trainee",
   "Junior Supply Chain Analyst",
+  "Supply Chain Trainee",
   "Procurement Analyst",
   "Logistics Analyst",
-  "Operations Analyst",
-  "Business Intelligence Analyst",
 ];
 
 const skills = {
   "Supply Chain": [
-    "Inventory Management",
+    "Inventory Planning",
     "Demand Forecasting",
-    "Procurement Analytics",
-    "Supplier Management",
+    "Supply Chain Analytics",
     "Logistics Analytics",
+    "Procurement Analytics",
     "KPI Monitoring",
   ],
-  "Analytics & BI": [
-    "Power BI",
-    "Excel",
-    "Data Visualization",
-    "Dashboard Building",
-    "SAP Fundamentals",
-    "KPI Reporting",
-  ],
-  "Programming & Data": [
-    "SQL",
-    "Python",
-    "Data Modeling",
-    "Power Query",
-    "DAX Basics",
-    "Data Cleaning",
-  ],
-  "Business & Communication": [
-    "Requirements Analysis",
+  Tools: ["Power BI", "SQL", "Excel", "Python", "SAP MM Fundamentals"],
+  Business: [
+    "Business Analysis",
+    "Process Improvement",
     "Stakeholder Communication",
-    "Process Analysis",
-    "Operations Analytics",
+    "Reporting",
     "Decision Support",
   ],
 };
 
 const projects = [
-  "AI European Supply Chain Risk & Disruption Control Tower - supplier delay, logistics bottlenecks, inventory exposure, and mitigation actions.",
-  "Explainable AI Inventory Control Tower - stockout risk, safety stock, reorder point recommendations, and forecast interpretation.",
-  "European Procurement & Supplier Risk Intelligence - supplier performance, procurement analytics, cost exposure, and supplier risk evaluation.",
   "Demand Forecasting & Inventory Optimization Dashboard - forecast accuracy, inventory turnover, fill rate, service level, stockout risk, safety stock, and reorder point logic.",
+  "XAI Inventory Control Tower - stockout risk, safety stock, reorder point recommendations, and forecast interpretation.",
+  "European Procurement & Supplier Risk Intelligence - supplier performance, procurement analytics, cost exposure, and supplier risk evaluation.",
+  "AI European Supply Chain Risk & Disruption Control Tower - supplier delay, logistics bottlenecks, inventory exposure, and mitigation actions.",
 ];
 
 const experience = [
   [
-    "Hub Operations Working Student",
+    "Hub Operations Working Student – Flink",
     "Flink",
     "Part-time",
     "Berlin, Germany",
     "Supported inventory movement, fulfillment routines, order flow, and quick-commerce operations discipline.",
   ],
   [
-    "Business Analyst Intern",
+    "Business Analyst Intern – VSG Global",
     "VSG GLOBAL PTE. LTD",
     "Internship",
     "Singapore / Remote",
     "Analyzed requirements, demand patterns, cost, revenue, and profitability data for business reporting.",
   ],
   [
-    "Business Intelligence Analyst",
+    "Business Intelligence Analyst – Fledge Consulting",
     "Fledge Consulting Pvt Ltd",
     "Part-time",
     "Nagpur, India",
     "Supported dashboards, reports, requirements gathering, and business-to-technical communication.",
   ],
   [
-    "Master Thesis Researcher - Explainable AI & Inventory Decision Support",
+    "Master Thesis Researcher – Inventory Decision Support",
     "Fachhochschule des Mittelstandes Bielefeld",
     "Work Study",
     "Berlin, Germany",
@@ -123,10 +106,10 @@ export default function CvPage() {
               Raj Bharat Bhayani
             </h1>
             <p className="mt-4 max-w-3xl text-lg leading-8 text-slate-600">
-              MBA student with Data Science focus, targeting Supply Chain
-              Trainee, Junior Supply Chain Analyst, Procurement Analyst,
-              Logistics Analyst, Operations Analyst, and BI Analyst roles in
-              Germany.
+              MBA Data Science graduate focused on inventory planning, demand
+              forecasting, supply chain analytics, KPI reporting, and
+              data-driven decision support for Junior Supply Chain Analyst roles
+              in Germany.
             </p>
           </div>
           <div className="future-card role-card p-5 text-sm font-bold leading-7 text-slate-700">

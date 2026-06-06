@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import NextLink from "next/link";
-import { FormEvent, useState } from "react";
 import {
   ArrowUpRight,
   BarChart3,
@@ -19,140 +18,30 @@ import {
 
 const navItems = [
   { label: "Profile", href: "#profile" },
-  { label: "Germany Roles", href: "#opportunities" },
   { label: "Projects", href: "#projects" },
   { label: "Experience", href: "#experience" },
   { label: "Skills", href: "#skills" },
+  { label: "Education", href: "#education" },
   { label: "CV", href: "/cv" },
-  { label: "Contact", href: "/contact" },
+  { label: "Contact", href: "#contact" },
 ];
 
-const impactStats = [
-  ["2+", "Years across BI, analysis, and operations"],
-  ["8", "Supply chain, procurement, logistics, and analytics case studies"],
-  ["4", "Languages for international teams"],
-  ["DE", "Seeking supply chain roles in Germany"],
-];
-
-const recruiterSignals = [
-  "Based in Germany and open to relocation within Germany",
-  "MBA with Data Science focus and supply chain analytics project work",
-  "Hands-on portfolio across inventory planning, procurement analytics, supplier risk, logistics bottlenecks, and operations KPIs",
-  "Able to turn planning and operations questions into Power BI-style dashboards, KPI logic, and practical recommendations",
-];
-
-const agencyHighlights = [
+const recruiterSummary = [
   {
-    label: "Target roles",
-    value:
-      "Supply Chain Trainee / Junior Supply Chain Analyst / Procurement Analyst / Logistics Analyst / Operations Analyst",
+    label: "Main target",
+    value: "Junior Supply Chain Analyst",
   },
   {
-    label: "Region",
-    value: "Germany, open to relocation within Germany",
+    label: "Strength",
+    value: "Supply Chain Analytics + Business Intelligence",
   },
   {
-    label: "Core tools",
-    value: "Power BI, SQL, Python, Excel, SAP fundamentals",
-  },
-];
-
-const desktopProofPoints = [
-  "Inventory KPIs",
-  "Procurement analytics",
-  "Logistics risk",
-  "Operations reporting",
-];
-
-const decisionFlow = [
-  "Demand signal",
-  "Inventory risk",
-  "Supplier view",
-  "Action brief",
-];
-
-const heroMetrics = [
-  ["Main profile", "Supply Chain Analyst"],
-  ["Evidence", "8 case studies"],
-  ["Market", "Germany"],
-];
-
-const germanyRoles = [
-  {
-    title: "Supply Chain Trainee",
-    relevance: "Demand, inventory, logistics, and operations fundamentals.",
+    label: "Tools",
+    value: "Power BI, SQL, Excel, Python, SAP MM fundamentals",
   },
   {
-    title: "Junior Supply Chain Analyst",
-    relevance: "Planning KPIs, dashboarding, and supply chain data analysis.",
-  },
-  {
-    title: "Procurement Analyst",
-    relevance:
-      "Supplier performance, cost exposure, and procurement reporting.",
-  },
-  {
-    title: "Logistics Analyst",
-    relevance: "Bottlenecks, service levels, fulfillment, and transport KPIs.",
-  },
-  {
-    title: "Operations Analyst",
-    relevance: "Process performance, reporting discipline, and cost control.",
-  },
-  {
-    title: "Business Intelligence Analyst",
-    relevance: "Power BI, SQL, Excel, and stakeholder-ready dashboards.",
-  },
-];
-
-const targetEmployers = [
-  "DHL",
-  "DB Schenker",
-  "Bosch",
-  "Siemens",
-  "BMW",
-  "Mercedes-Benz",
-];
-
-const roleMatches = [
-  {
-    role: "Supply Chain Trainee",
-    proof:
-      "Strong learning profile with MBA Data Science background, operations exposure, and practical supply chain dashboard projects.",
-  },
-  {
-    role: "Junior Supply Chain Analyst",
-    proof:
-      "Demand forecasting, inventory planning, supplier risk, logistics analytics, KPI monitoring, and Power BI-style reporting.",
-  },
-  {
-    role: "Procurement Analyst",
-    proof:
-      "Supplier performance, cost exposure, procurement risk, ESG visibility, and sourcing decision support.",
-  },
-  {
-    role: "Logistics / Operations Analyst",
-    proof:
-      "Fulfillment flow, logistics bottlenecks, service level, fill rate, stockout risk, and operational KPI tracking.",
-  },
-];
-
-const hireReasons = [
-  {
-    title: "Supply chain analytics direction",
-    text: "My portfolio is focused on inventory planning, demand forecasting, procurement intelligence, supplier risk, logistics performance, and operations KPIs.",
-  },
-  {
-    title: "Germany-focused candidate",
-    text: "I am targeting supply chain, procurement, logistics, operations, and BI roles in Germany, with interest in industrial, automotive, manufacturing, retail, and logistics environments.",
-  },
-  {
-    title: "Data-driven problem solving",
-    text: "I can translate operational questions into KPI definitions, dashboard views, SQL/Python analysis, and decision support that business teams can understand.",
-  },
-  {
-    title: "Operations understanding",
-    text: "My quick-commerce operations experience helps me connect analysis with practical topics such as stock availability, fulfillment flow, service levels, and process discipline.",
+    label: "Location",
+    value: "Germany, open to relocation",
   },
 ];
 
@@ -162,12 +51,11 @@ const experiences = [
     company: "Fachhochschule des Mittelstandes Bielefeld",
     contract: "Work Study",
     location: "Berlin, Germany",
-    role: "Master Thesis Researcher - Explainable AI & Inventory Decision Support",
-    body: "Researched how explainable AI can support risk-aware spare parts inventory planning and make model outputs useful for business decision makers.",
+    role: "Master Thesis Researcher – Inventory Decision Support",
+    body: "Researched risk-aware inventory planning for industrial spare parts and translated analytical outputs into practical planning recommendations.",
     bullets: [
-      "Built a scenario-based decision framework using XGBoost and SHAP.",
-      "Created a Streamlit control tower for stockout risk, safety stock, and reorder decisions.",
-      "Converted model explanations into practical inventory planning recommendations.",
+      "Modelled stockout risk, safety stock, and reorder-point scenarios.",
+      "Built a planner-focused dashboard using Python and Streamlit.",
     ],
   },
   {
@@ -175,12 +63,11 @@ const experiences = [
     company: "Flink",
     contract: "Part-time",
     location: "Berlin, Germany",
-    role: "Hub Operations Working Student",
-    body: "Supported fast-moving quick-commerce operations with practical exposure to inventory flow, fulfillment, last-mile logistics, and process discipline.",
+    role: "Hub Operations Working Student – Flink",
+    body: "Supported inventory flow, order fulfillment, and daily hub operations in a fast-moving quick-commerce environment.",
     bullets: [
-      "Worked in a high-volume operations environment where speed, accuracy, and coordination matter.",
-      "Supported inventory movement, order flow, and fulfillment routines.",
-      "Developed practical understanding of supply chain execution and operational efficiency.",
+      "Worked with stock movement, order flow, and fulfillment routines.",
+      "Developed practical understanding of service levels and operational accuracy.",
     ],
   },
   {
@@ -188,12 +75,11 @@ const experiences = [
     company: "VSG GLOBAL PTE. LTD",
     contract: "Internship",
     location: "Singapore / Remote",
-    role: "Business Analyst Intern",
-    body: "Supported import-related business analysis, procurement coordination, documentation, and reporting for cross-functional business teams.",
+    role: "Business Analyst Intern – VSG Global",
+    body: "Supported import-related analysis, procurement coordination, documentation, and business reporting.",
     bullets: [
-      "Analyzed requirements, demand patterns, costs, revenue, and profitability data.",
-      "Created dashboards and reports to improve visibility of business metrics.",
-      "Collaborated with purchasing managers and cross-functional teams.",
+      "Analysed demand, cost, revenue, and profitability data.",
+      "Created reports for purchasing and cross-functional stakeholders.",
     ],
   },
   {
@@ -201,12 +87,11 @@ const experiences = [
     company: "Fledge Consulting Pvt Ltd",
     contract: "Part-time",
     location: "Nagpur, India",
-    role: "Business Intelligence Analyst",
-    body: "Supported BI reporting and client-facing analysis for international projects, connecting business needs with reporting and technical teams.",
+    role: "Business Intelligence Analyst – Fledge Consulting",
+    body: "Supported dashboard reporting, requirements analysis, and communication between business users and technical teams.",
     bullets: [
-      "Gathered and documented business requirements for clients and project teams.",
-      "Created and reviewed reports, dashboards, and visualizations.",
-      "Acted as a bridge between business users and technical teams.",
+      "Documented reporting requirements and reviewed dashboard outputs.",
+      "Helped translate business questions into clear reporting needs.",
     ],
   },
 ];
@@ -215,55 +100,27 @@ const skillGroups = [
   {
     title: "Supply Chain",
     icon: BriefcaseBusiness,
-    summary:
-      "Planning and operations topics aligned with trainee and junior supply chain roles in Germany.",
     skills: [
-      "Inventory Management",
+      "Inventory Planning",
       "Demand Forecasting",
-      "Procurement Analytics",
-      "Supplier Management",
+      "Supply Chain Analytics",
       "Logistics Analytics",
+      "Procurement Analytics",
       "KPI Monitoring",
     ],
   },
   {
-    title: "Analytics & BI",
-    icon: BarChart3,
-    summary:
-      "Dashboarding and KPI reporting for planning, procurement, logistics, and operations teams.",
-    skills: [
-      "Power BI",
-      "Excel",
-      "Data Visualization",
-      "Dashboard Building",
-      "SAP Fundamentals",
-      "KPI Reporting",
-    ],
-  },
-  {
-    title: "Programming & Data",
+    title: "Tools",
     icon: Database,
-    summary:
-      "Technical foundation for preparing data, checking logic, and building analytics prototypes.",
-    skills: [
-      "SQL",
-      "Python",
-      "Data Modeling",
-      "Power Query",
-      "DAX Basics",
-      "Data Cleaning",
-    ],
+    skills: ["Power BI", "SQL", "Excel", "Python", "SAP MM Fundamentals"],
   },
   {
-    title: "Business & Communication",
+    title: "Business",
     icon: CheckCircle2,
-    summary:
-      "Business analysis habits that make analytics useful for recruiters, managers, and operational teams.",
     skills: [
-      "Requirements Analysis",
+      "Business Analysis",
+      "Process Improvement",
       "Stakeholder Communication",
-      "Process Analysis",
-      "Operations Analytics",
       "Reporting",
       "Decision Support",
     ],
@@ -440,8 +297,6 @@ const projects = [
   },
 ];
 
-type Project = (typeof projects)[number];
-
 const featuredSupplyChainProjects = [
   {
     title: "AI European Supply Chain Risk & Disruption Control Tower",
@@ -449,9 +304,9 @@ const featuredSupplyChainProjects = [
     category: "Supply Chain Risk",
     image: "/projects/ai-supply-chain-demo-screenshot.png",
     businessProblem:
-      "Supplier disruption, logistics bottlenecks, port congestion, and low inventory cover can affect service levels and delivery reliability.",
+      "Supplier delays, logistics bottlenecks, and low inventory cover can disrupt service levels.",
     solution:
-      "Interactive control tower concept for risk monitoring, supplier disruption analysis, logistics bottleneck review, and decision support.",
+      "Control-tower dashboard for corridor risk, shortage exposure, and mitigation priorities.",
     kpis: [
       "Supplier delay risk",
       "Port congestion",
@@ -465,7 +320,7 @@ const featuredSupplyChainProjects = [
       "Supply chain analytics",
     ],
     impact:
-      "Helps planning and logistics teams prioritize mitigation actions before disruption becomes a customer or production issue.",
+      "Helps planners identify the highest-risk lanes and prioritise follow-up actions.",
   },
   {
     title: "XAI Inventory Control Tower",
@@ -473,9 +328,9 @@ const featuredSupplyChainProjects = [
     category: "Inventory Optimization",
     image: "/projects/xai.png",
     businessProblem:
-      "Inventory planners need clear support for safety stock, reorder point recommendations, stockout risk, and forecast interpretation.",
+      "Inventory planners need clear stockout, safety-stock, and reorder-point signals.",
     solution:
-      "Inventory control tower concept using model explanations to support inventory optimization and planner-friendly decision review.",
+      "Planner-focused control tower combining inventory KPIs with model explanations.",
     kpis: ["Safety stock", "Reorder point", "Service level", "Stockout risk"],
     technologies: [
       "Python",
@@ -484,8 +339,7 @@ const featuredSupplyChainProjects = [
       "Streamlit",
       "Forecast interpretation",
     ],
-    impact:
-      "Improves confidence in planning decisions by showing why inventory risk exists and what action can reduce it.",
+    impact: "Makes inventory recommendations easier to review and explain.",
   },
   {
     title: "European Procurement & Supplier Risk Intelligence",
@@ -493,9 +347,9 @@ const featuredSupplyChainProjects = [
     category: "Procurement Analytics",
     image: "/projects/procurement.png",
     businessProblem:
-      "Procurement teams need better visibility of supplier performance, cost exposure, delivery reliability, and risk evaluation.",
+      "Supplier performance, cost exposure, and delivery risk are difficult to compare.",
     solution:
-      "Supplier intelligence platform concept for procurement analytics, cost optimization, supplier performance, and risk evaluation.",
+      "Supplier scorecard combining OTIF, spend, cost variance, and risk.",
     kpis: ["Supplier OTIF", "Spend exposure", "Cost variance", "Risk score"],
     technologies: [
       "Power BI",
@@ -504,8 +358,7 @@ const featuredSupplyChainProjects = [
       "Data modeling",
       "Supplier management",
     ],
-    impact:
-      "Supports sourcing prioritization, supplier discussions, and procurement decisions with clearer performance evidence.",
+    impact: "Supports supplier reviews and evidence-based sourcing priorities.",
   },
   {
     title: "Demand Forecasting & Inventory Optimization Dashboard",
@@ -513,9 +366,9 @@ const featuredSupplyChainProjects = [
     category: "Demand Planning",
     image: "/projects/demand-forecasting-dashboard.png",
     businessProblem:
-      "Planning teams need a shared view of forecast accuracy, inventory turnover, fill rate, service level, stockout risk, safety stock, and reorder point logic.",
+      "Forecast quality and inventory risk are often reviewed in separate reports.",
     solution:
-      "Dashboard concept for demand forecasting, inventory optimization, SKU risk review, and practical replenishment recommendations.",
+      "Dashboard connecting forecast accuracy, service level, stock risk, and replenishment recommendations.",
     kpis: [
       "Forecast accuracy",
       "Inventory turnover",
@@ -524,18 +377,27 @@ const featuredSupplyChainProjects = [
     ],
     technologies: ["Power BI concept", "Excel", "Python", "Demand forecasting"],
     impact:
-      "Helps planning, procurement, and operations teams discuss inventory risk earlier and prioritize replenishment decisions.",
+      "Creates one planning view for earlier inventory and replenishment decisions.",
   },
 ];
 
+const homepageProjects = [
+  featuredSupplyChainProjects[3],
+  featuredSupplyChainProjects[1],
+  featuredSupplyChainProjects[2],
+  featuredSupplyChainProjects[0],
+];
+
+const archivedProjectCount = projects.length - homepageProjects.length;
+
 const education = [
   {
-    degree: "MBA, General Technology Management",
+    degree: "MBA, General Technology Management, Data Science Focus",
     school: "Fachhochschule des Mittelstandes Bielefeld",
     period: "Oct 2024 - May 2026",
     detail:
-      "MBA with Data Science focus, including Big Data Analytics, Technology Management, International Project Management, and research methods.",
-    note: "Thesis: Explainable AI for risk-aware inventory planning of industrial spare parts.",
+      "Graduate study combining data science, technology management, analytics, and business decision-making.",
+    note: "Explainable AI for Risk-Aware Inventory Planning of Industrial Spare Parts.",
     certificate: "/certificates/mba-certificate.jpeg",
   },
   {
@@ -543,17 +405,10 @@ const education = [
     school: "Bhakta Kavi Narsinh Mehta University",
     period: "Sep 2021 - Jun 2024",
     detail:
-      "Foundation in programming, databases, computer applications, statistics, and business IT fundamentals.",
-    note: "Technical base for analytics, reporting, and business intelligence work.",
+      "Foundation in programming, databases, statistics, and business IT.",
+    note: null,
     certificate: "/certificates/bca-certificate.png",
   },
-];
-
-const languages = [
-  "English - Fluent",
-  "German - A2/B1, actively improving",
-  "Hindi - Native",
-  "Gujarati - Native",
 ];
 
 const structuredData = [
@@ -563,8 +418,7 @@ const structuredData = [
     name: "Raj Bharat Bhayani",
     url: "https://www.rajbharatbhayani.eu",
     image: "https://www.rajbharatbhayani.eu/profile/profile.jpg",
-    jobTitle:
-      "Supply Chain Analyst, Junior Supply Chain Analyst, Procurement Analyst, Logistics Analyst, Operations Analyst",
+    jobTitle: "Junior Supply Chain Analyst",
     email: "mailto:rajbharatbhayani@gmail.com",
     telephone: "+49 176 62398987",
     address: {
@@ -574,22 +428,22 @@ const structuredData = [
     },
     sameAs: [
       "https://www.linkedin.com/in/mrrajbhayani",
-      "https://www.instagram.com/raj_bhayani___",
       "https://github.com/rajbbhayani-sketch/raj-portfolio",
     ],
     knowsAbout: [
       "Business Analysis",
       "Business Intelligence",
       "Power BI",
+      "SQL",
+      "Excel",
+      "SAP MM",
       "Supply Chain Analytics",
       "Supply Chain Management",
-      "Demand Planning",
+      "Demand Forecasting",
       "Inventory Planning",
       "Procurement Analytics",
       "Logistics Analytics",
-      "Operations Analytics",
-      "AI Decision Support",
-      "Explainable AI",
+      "KPI Reporting",
     ],
     alumniOf: [
       {
@@ -608,7 +462,7 @@ const structuredData = [
     name: "Raj Bharat Bhayani Portfolio",
     url: "https://www.rajbharatbhayani.eu",
     description:
-      "Portfolio for Supply Chain Trainee, Junior Supply Chain Analyst, Procurement Analyst, Logistics Analyst, Operations Analyst, and related Business Intelligence roles in Germany.",
+      "Focused portfolio for Junior Supply Chain Analyst roles in Germany, supported by business analytics, Power BI, SQL, Excel, Python, and SAP MM fundamentals.",
   },
 ];
 
@@ -662,71 +516,43 @@ export default function Home() {
             <div className="inline-flex items-center gap-3 rounded-full border border-blue-200/70 bg-white/75 px-4 py-2 shadow-lg shadow-blue-900/5 backdrop-blur-xl">
               <span className="h-2 w-2 rounded-full bg-[#0071e3] shadow-[0_0_0_5px_rgba(0,113,227,0.1)]" />
               <p className="text-xs font-extrabold uppercase tracking-[0.26em] text-[#0071e3]">
-                Germany Supply Chain Portfolio
+                Graduate Profile | Germany
               </p>
             </div>
             <h1 className="mt-4 max-w-5xl text-4xl font-extrabold leading-[1.04] tracking-tight text-[#0b1220] md:text-5xl 2xl:text-6xl">
-              Supply Chain Analytics & Business Intelligence{" "}
-              <span className="text-[#0071e3]">for German Industry</span>
+              Junior Supply Chain Analyst
             </h1>
             <p className="mt-5 max-w-[720px] text-lg font-medium leading-8 text-slate-600 md:text-xl">
-              MBA Data Science graduate focused on demand forecasting, inventory
-              optimization, procurement intelligence, logistics analytics, and
+              MBA Data Science graduate focused on inventory planning, demand
+              forecasting, supply chain analytics, KPI reporting, and
               data-driven decision support.
             </p>
-            <p className="mt-5 inline-flex max-w-3xl items-center gap-2 rounded-full border border-blue-100/80 bg-white/85 px-4 py-2 text-sm font-bold text-blue-700 shadow-sm shadow-blue-100/60 backdrop-blur">
-              <span className="h-2 w-2 rounded-full bg-emerald-400" />
-              Germany-based | Seeking Supply Chain Trainee, Junior Supply Chain
-              Analyst, Procurement Analyst and Operations Analyst roles
+            <p className="mt-5 max-w-3xl text-sm font-bold leading-7 text-blue-700 md:text-base">
+              Berlin, Germany | Open to relocation across Germany | Power BI |
+              SQL | Excel | SAP MM fundamentals
             </p>
-            <div className="mt-7 hidden max-w-3xl rounded-lg border border-slate-200/80 bg-white/80 p-2 shadow-xl shadow-slate-200/60 backdrop-blur lg:block">
-              <div className="grid grid-cols-4 gap-2">
-                {decisionFlow.map((step, index) => (
-                  <div
-                    key={step}
-                    className="rounded-lg border border-slate-200 bg-[#f8fbff] px-3 py-3"
-                  >
-                    <p className="text-xs font-extrabold text-[#0071e3]">
-                      0{index + 1}
-                    </p>
-                    <p className="mt-1 text-sm font-bold text-slate-950">
-                      {step}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
             <div className="mt-8 flex flex-wrap gap-3">
-              <a
-                href="#projects"
-                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#0b1220] to-[#17355f] px-5 py-3 font-bold text-white shadow-xl shadow-slate-900/15 transition hover:-translate-y-0.5 hover:from-[#0071e3] hover:to-[#1684ea]"
-              >
-                View Projects <ArrowUpRight size={18} />
-              </a>
               <a
                 href="/cv/raj-bharat-bhayani-supply-chain-cv.pdf"
                 download
-                className="inline-flex items-center gap-2 rounded-full border border-slate-300/90 bg-white/75 px-5 py-3 font-bold text-slate-950 shadow-lg shadow-slate-900/5 backdrop-blur transition hover:-translate-y-0.5 hover:border-[#0071e3] hover:text-[#0071e3]"
+                className="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#0b1220] to-[#17355f] px-5 py-3 font-bold text-white shadow-xl shadow-slate-900/15 transition hover:-translate-y-0.5 hover:from-[#0071e3] hover:to-[#1684ea]"
               >
                 <Download size={18} /> Download CV
               </a>
               <a
-                href="mailto:rajbharatbhayani@gmail.com"
+                href="#projects"
                 className="inline-flex items-center gap-2 rounded-full border border-slate-300/90 bg-white/75 px-5 py-3 font-bold text-slate-950 shadow-lg shadow-slate-900/5 backdrop-blur transition hover:-translate-y-0.5 hover:border-[#0071e3] hover:text-[#0071e3]"
               >
-                <Mail size={18} /> Contact Me
+                View Projects <ArrowUpRight size={18} />
               </a>
-            </div>
-            <div className="mt-8 hidden grid-cols-2 gap-3 lg:grid xl:grid-cols-4">
-              {desktopProofPoints.map((point) => (
-                <div
-                  key={point}
-                  className="future-card flex items-center gap-2 px-4 py-3 text-sm font-bold text-slate-700"
-                >
-                  <CheckCircle2 size={16} className="shrink-0 text-[#0071e3]" />
-                  <span>{point}</span>
-                </div>
-              ))}
+              <a
+                href="https://www.linkedin.com/in/mrrajbhayani"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-2 rounded-full border border-slate-300/90 bg-white/75 px-5 py-3 font-bold text-slate-950 shadow-lg shadow-slate-900/5 backdrop-blur transition hover:-translate-y-0.5 hover:border-[#0071e3] hover:text-[#0071e3]"
+              >
+                <Link size={18} /> LinkedIn
+              </a>
             </div>
           </div>
 
@@ -735,10 +561,10 @@ export default function Home() {
               <div className="mb-4 flex items-center justify-between rounded-2xl border border-blue-100/80 bg-white/80 px-4 py-3 shadow-sm">
                 <div>
                   <p className="text-xs font-extrabold text-[#0071e3]">
-                    SUPPLY CHAIN ANALYST PROFILE
+                    JUNIOR SUPPLY CHAIN ANALYST
                   </p>
                   <p className="mt-1 text-sm font-bold text-slate-500">
-                    Recruiter screening view for Germany
+                    Graduate profile for Germany
                   </p>
                 </div>
                 <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-50 text-[#0071e3]">
@@ -756,9 +582,6 @@ export default function Home() {
                 />
                 <div className="flex flex-col justify-between gap-5">
                   <div>
-                    <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-[#0071e3]">
-                      Recruiter Briefing
-                    </p>
                     <h2 className="mt-3 text-3xl font-bold text-[#0b1220]">
                       Raj Bharat Bhayani
                     </h2>
@@ -766,39 +589,13 @@ export default function Home() {
                       <MapPin size={17} /> Berlin, Germany
                     </p>
                   </div>
-                  <dl className="grid gap-3">
-                    {agencyHighlights.map((item) => (
-                      <div
-                        key={item.label}
-                        className="rounded-2xl border border-slate-200/80 bg-white/85 p-3 shadow-sm shadow-slate-900/5"
-                      >
-                        <dt className="text-xs font-extrabold uppercase tracking-[0.18em] text-slate-400">
-                          {item.label}
-                        </dt>
-                        <dd className="mt-1 text-sm font-bold leading-6 text-slate-950">
-                          {item.value}
-                        </dd>
-                      </div>
-                    ))}
-                  </dl>
-                  <div className="grid grid-cols-3 gap-3">
-                    {heroMetrics.map(([label, value]) => (
-                      <div
-                        key={label}
-                        className="rounded-2xl border border-blue-100 bg-gradient-to-b from-blue-50 to-white p-3 shadow-sm"
-                      >
-                        <p className="text-xs font-extrabold text-blue-700">
-                          {label}
-                        </p>
-                        <p className="mt-1 text-sm font-bold text-slate-950">
-                          {value}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                  <div className="signal-line" />
                   <div className="grid gap-3">
-                    {recruiterSignals.map((signal) => (
+                    {[
+                      "MBA Data Science graduate",
+                      "Inventory, demand, and KPI project work",
+                      "Power BI, SQL, Excel, Python, SAP MM fundamentals",
+                      "Open to relocation across Germany",
+                    ].map((signal) => (
                       <p
                         key={signal}
                         className="flex gap-3 text-sm leading-6 text-slate-700"
@@ -820,284 +617,73 @@ export default function Home() {
 
       <section
         id="recruiter-summary"
-        className="premium-band relative px-5 py-16 backdrop-blur md:py-24"
+        className="premium-band relative px-5 py-12 backdrop-blur md:py-16"
       >
         <div className="mx-auto max-w-7xl">
-          <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-            <SectionIntro
-              eyebrow="CV / Recruiter Summary"
-              title="Fast signals for recruiter screening."
-              subtitle="A concise view of the role focus, relevant evidence, language profile, and Germany-based job search."
-            />
-            <a
-              href="/cv/raj-bharat-bhayani-supply-chain-cv.pdf"
-              download
-              className="inline-flex w-fit items-center gap-2 rounded-full bg-[#0071e3] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#0077ed]"
-            >
-              <Download size={16} /> Download CV
-            </a>
-          </div>
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {impactStats.map(([value, label]) => (
-              <div key={label} className="future-card role-card p-6">
-                <p className="text-4xl font-extrabold text-[#0071e3]">
-                  {value}
+          <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-[#0071e3]">
+            Recruiter Summary
+          </p>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {recruiterSummary.map((item, index) => (
+              <article key={item.label} className="future-card role-card p-5">
+                <p className="font-mono text-xs font-bold text-blue-600">
+                  0{index + 1}
                 </p>
-                <p className="mt-3 text-sm font-semibold leading-6 text-slate-600">
-                  {label}
+                <p className="mt-4 text-xs font-extrabold uppercase tracking-[0.16em] text-slate-400">
+                  {item.label}
                 </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="opportunities" className="premium-band px-5 py-16 md:py-24">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid gap-8 lg:grid-cols-[0.62fr_0.38fr] lg:items-end">
-            <SectionIntro
-              eyebrow="Germany Career Focus"
-              title="Targeting Supply Chain & Operations Roles in Germany"
-              subtitle="I am focused on entry-level and junior roles where analytics can improve demand planning, inventory visibility, supplier performance, logistics processes, service levels, and cost control."
-            />
-            <div className="glass-panel hidden p-5 lg:block">
-              <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#0071e3]">
-                Recruiter Match
-              </p>
-              <p className="mt-3 text-lg font-bold leading-7 text-[#0b1220]">
-                Supply Chain Analyst is the primary profile. Business
-                Intelligence supports the planning and operations story.
-              </p>
-            </div>
-          </div>
-          <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-            {germanyRoles.map((role, index) => (
-              <article key={role.title} className="future-card role-card p-6">
-                <div className="flex items-center justify-between">
-                  <span className="grid h-11 w-11 place-items-center rounded-2xl border border-blue-100 bg-gradient-to-b from-blue-50 to-white text-[#0071e3] shadow-sm">
-                    <CheckCircle2 size={20} />
-                  </span>
-                  <span className="font-mono text-xs font-bold text-slate-400">
-                    0{index + 1}
-                  </span>
-                </div>
-                <h3 className="mt-5 text-xl font-bold tracking-tight text-[#0b1220]">
-                  {role.title}
-                </h3>
-                <p className="mt-3 text-base leading-7 text-slate-600">
-                  {role.relevance}
+                <p className="mt-2 font-bold leading-6 text-[#0b1220]">
+                  {item.value}
                 </p>
               </article>
             ))}
           </div>
-          <article className="glass-panel mt-6 p-6">
-            <div className="grid gap-6 lg:grid-cols-[0.34fr_0.66fr] lg:items-start">
-              <div>
-                <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#0071e3]">
-                  Employer Fit
-                </p>
-                <h3 className="mt-3 text-2xl font-bold tracking-tight text-[#0b1220]">
-                  Target Employers & Industries
-                </h3>
-              </div>
-              <div>
-                <p className="text-base leading-7 text-slate-600">
-                  DHL, DB Schenker, Bosch, Siemens, BMW, Mercedes-Benz and
-                  German employers in logistics, procurement, manufacturing,
-                  operations and supply chain management.
-                </p>
-                <div className="mt-5 flex flex-wrap gap-2">
-                  {targetEmployers.map((employer) => (
-                    <span
-                      key={employer}
-                      className="inline-flex items-center gap-2 rounded-full border border-blue-100 bg-white/85 px-4 py-2 text-sm font-bold text-slate-700 shadow-sm"
-                    >
-                      <span className="h-1.5 w-1.5 rounded-full bg-[#0071e3]" />
-                      {employer}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </article>
         </div>
       </section>
 
-      <section id="about" className="px-5 py-16 md:py-24">
+      <section id="projects" className="relative px-5 py-14 md:py-20">
         <div className="mx-auto max-w-7xl">
           <SectionIntro
-            eyebrow="About Me"
-            title="A practical analytics candidate for supply chain and operations teams."
-            subtitle="My focus is simple: use data to make planning, procurement, logistics, and operations decisions clearer for teams in Germany."
+            eyebrow="Featured Projects"
+            title="Supply chain analytics project work."
+            subtitle="Four practical case studies covering demand forecasting, inventory planning, procurement analytics, and supply chain risk."
           />
-          <div className="mt-10 grid gap-6 lg:grid-cols-[0.64fr_0.36fr]">
-            <article className="future-card p-7">
-              <div className="space-y-5 text-lg leading-8 text-slate-600">
-                <p>
-                  I am an MBA student with a Data Science focus and practical
-                  exposure to business intelligence, operations, and business
-                  analysis. My portfolio is now focused on supply chain
-                  analytics, inventory planning, procurement analytics,
-                  logistics analytics, and KPI-based decision support.
-                </p>
-                <p>
-                  I enjoy work that starts with a real business question:
-                  understand the process, define the right KPIs, prepare the
-                  data, build a clear dashboard, and explain what the numbers
-                  mean for planning, procurement, logistics, or operations.
-                </p>
-                <p>
-                  I am looking for entry-level and junior opportunities in
-                  Germany where I can keep improving while contributing to
-                  practical reporting, analysis, and process visibility.
-                </p>
-              </div>
-            </article>
-            <aside className="future-card p-7">
-              <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#0071e3]">
-                Current Focus
-              </p>
-              <h3 className="mt-3 text-2xl font-bold tracking-tight text-[#0b1220]">
-                Germany job search profile
-              </h3>
-              <div className="mt-5 grid gap-3">
-                {[
-                  "MBA Data Science",
-                  "Supply Chain Analyst as main profile",
-                  "Business Analyst as secondary profile",
-                  "Open to relocation within Germany",
-                ].map((item) => (
-                  <p
-                    key={item}
-                    className="flex gap-3 text-sm font-semibold leading-6 text-slate-700"
-                  >
-                    <CheckCircle2
-                      className="mt-1 shrink-0 text-[#0071e3]"
-                      size={16}
-                    />
-                    <span>{item}</span>
-                  </p>
-                ))}
-              </div>
-              <div className="mt-6 flex flex-wrap gap-2">
-                {languages.map((language) => (
-                  <span
-                    key={language}
-                    className="rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-bold text-slate-700"
-                  >
-                    {language}
-                  </span>
-                ))}
-              </div>
-            </aside>
-          </div>
-          <div className="mt-6 grid gap-5 md:grid-cols-2">
-            {roleMatches.map((item) => (
-              <div key={item.role} className="future-card p-5">
-                <p className="text-lg font-bold text-[#0b1220]">{item.role}</p>
-                <p className="mt-2 text-sm font-semibold leading-6 text-slate-600">
-                  {item.proof}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="projects" className="relative px-5 py-16 md:py-24">
-        <div className="mx-auto max-w-7xl">
-          <SectionIntro
-            eyebrow="Supply Chain Analytics Portfolio"
-            title="Projects that prove fit for planning, procurement, logistics, and operations."
-            subtitle="These case studies use realistic business problems for German and European supply chain, logistics, procurement, and operations teams."
-          />
-
-          <div className="mt-12 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
-            <div>
-              <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#0071e3]">
-                Featured Projects
-              </p>
-              <h3 className="mt-3 text-3xl font-bold tracking-tight text-[#0b1220] md:text-4xl">
-                Strongest supply chain evidence
-              </h3>
-            </div>
-            <p className="max-w-xl text-base leading-7 text-slate-600">
-              Built around demand planning, inventory optimization, supplier
-              performance, procurement risk, logistics bottlenecks, and KPI
-              decision support.
-            </p>
-          </div>
-
           <div className="mt-8 grid gap-6 lg:grid-cols-2">
-            {featuredSupplyChainProjects.map((project) => (
+            {homepageProjects.map((project) => (
               <FeaturedProjectCard key={project.title} project={project} />
             ))}
           </div>
-
-          <div className="mt-12 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
-            <div>
-              <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#0071e3]">
-                Additional Case Studies
-              </p>
-              <h3 className="mt-3 text-3xl font-bold tracking-tight text-[#0b1220]">
-                More analytics evidence
-              </h3>
-            </div>
+          <div className="mt-8 flex justify-end">
             <NextLink
-              href="/projects/demand-forecasting-inventory-optimization"
-              className="inline-flex items-center gap-2 rounded-full bg-[#0071e3] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#0077ed]"
+              href="/projects/archive"
+              className="inline-flex items-center gap-2 text-sm font-bold text-[#0071e3] transition hover:text-slate-950"
             >
-              Open Demand Planning Dashboard <ArrowUpRight size={16} />
+              View {archivedProjectCount} additional projects{" "}
+              <ArrowUpRight size={16} />
             </NextLink>
           </div>
-
-          <div className="mt-6 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {projects.slice(4).map((project) => (
-              <ProjectCard key={project.title} project={project} />
-            ))}
-          </div>
         </div>
       </section>
 
-      <section id="why-me" className="premium-band px-5 py-16 md:py-24">
+      <section
+        id="experience"
+        className="premium-band px-5 py-14 text-slate-950 md:py-20"
+      >
         <div className="mx-auto max-w-7xl">
           <SectionIntro
-            eyebrow="Why Hire Me"
-            title="A practical supply chain analyst with business intelligence skills."
-            subtitle="Recruiters and hiring managers need someone who can understand the process, define useful KPIs, organize the data, and communicate what should happen next."
+            eyebrow="Experience"
+            title="Relevant analytics and operations experience."
+            subtitle="Graduate research, hub operations, business analysis, and dashboard reporting experience."
           />
-          <div className="mt-10 grid gap-5 md:grid-cols-2">
-            {hireReasons.map((reason) => (
-              <article key={reason.title} className="future-card role-card p-6">
-                <span className="grid h-11 w-11 place-items-center rounded-2xl border border-blue-100 bg-gradient-to-b from-blue-50 to-white text-[#0071e3] shadow-sm">
-                  <CheckCircle2 size={21} />
-                </span>
-                <h3 className="mt-5 text-xl font-bold tracking-tight text-[#0b1220]">
-                  {reason.title}
-                </h3>
-                <p className="mt-3 leading-7 text-slate-600">{reason.text}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="experience" className="px-5 py-16 text-slate-950 md:py-24">
-        <div className="mx-auto max-w-7xl">
-          <SectionIntro
-            eyebrow="Work History"
-            title="Experience with business, data, and operations."
-            subtitle="A concise work history showing business intelligence, analysis, operations exposure, and inventory decision-support research."
-          />
-          <div className="mt-10 space-y-5">
+          <div className="mt-8 space-y-4">
             {experiences.map((job) => (
               <article
                 key={job.role}
-                className="future-card grid gap-6 p-6 md:grid-cols-[0.28fr_0.72fr]"
+                className="future-card grid gap-5 p-5 md:grid-cols-[0.25fr_0.75fr]"
               >
                 <div className="text-sm font-bold text-slate-500">
                   <p>{job.period}</p>
-                  <p className="mt-3 flex items-center gap-2 text-slate-700">
+                  <p className="mt-2 flex items-center gap-2 text-slate-700">
                     <MapPin size={15} /> {job.location}
                   </p>
                 </div>
@@ -1109,10 +695,13 @@ export default function Home() {
                   <h3 className="mt-2 text-2xl font-bold tracking-tight text-[#0b1220]">
                     {job.role}
                   </h3>
-                  <p className="mt-4 leading-7 text-slate-600">{job.body}</p>
-                  <ul className="mt-5 grid gap-3">
+                  <p className="mt-3 leading-7 text-slate-600">{job.body}</p>
+                  <ul className="mt-4 grid gap-2 md:grid-cols-2">
                     {job.bullets.map((bullet) => (
-                      <li key={bullet} className="flex gap-3 text-slate-600">
+                      <li
+                        key={bullet}
+                        className="flex gap-3 text-sm leading-6 text-slate-600"
+                      >
                         <CheckCircle2
                           className="mt-1 shrink-0 text-[#0071e3]"
                           size={17}
@@ -1128,19 +717,16 @@ export default function Home() {
         </div>
       </section>
 
-      <section
-        id="skills"
-        className="premium-band px-5 py-16 text-slate-950 md:py-24"
-      >
+      <section id="skills" className="px-5 py-14 text-slate-950 md:py-20">
         <div className="mx-auto max-w-7xl">
           <SectionIntro
             eyebrow="Skills"
-            title="Capabilities for supply chain analytics roles."
-            subtitle="Grouped skills for planning, procurement, logistics, operations reporting, and recruiter-friendly business communication."
+            title="Skills for junior supply chain analytics roles."
+            subtitle="A focused combination of supply chain knowledge, analytical tools, and business communication."
           />
-          <div className="mt-10 grid gap-5 md:grid-cols-2">
-            {skillGroups.map(({ title, icon: Icon, summary, skills }) => (
-              <div key={title} className="future-card role-card p-6">
+          <div className="mt-8 grid gap-5 md:grid-cols-3">
+            {skillGroups.map(({ title, icon: Icon, skills }) => (
+              <div key={title} className="future-card role-card p-5">
                 <div className="flex items-center gap-3">
                   <span className="rounded-2xl border border-blue-100 bg-gradient-to-b from-blue-50 to-white p-3 text-[#0071e3] shadow-sm">
                     <Icon size={22} />
@@ -1149,7 +735,6 @@ export default function Home() {
                     {title}
                   </h3>
                 </div>
-                <p className="mt-4 leading-7 text-slate-600">{summary}</p>
                 <div className="mt-5 flex flex-wrap gap-2">
                   {skills.map((skill) => (
                     <span
@@ -1166,187 +751,90 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="education" className="mx-auto max-w-7xl px-5 py-16 md:py-24">
-        <SectionIntro
-          eyebrow="Education"
-          title="Academic foundation for analytics work."
-          subtitle="Education focused on data science, technology management, business IT, statistics, and practical analytics foundations."
-        />
-        <div className="mt-10 grid gap-5 md:grid-cols-2">
-          {education.map((item) => (
-            <article key={item.degree} className="future-card p-6">
-              <GraduationCap className="text-[#0071e3]" size={30} />
-              <h3 className="mt-5 text-2xl font-bold tracking-tight text-[#0b1220]">
-                {item.degree}
-              </h3>
-              <p className="mt-2 font-bold text-[#0071e3]">{item.school}</p>
-              <p className="mt-2 text-sm font-bold text-slate-400">
-                {item.period}
-              </p>
-              <p className="mt-4 leading-7 text-slate-600">{item.detail}</p>
-              <p className="mt-4 rounded-lg border border-blue-100 bg-blue-50 p-4 text-sm font-bold leading-6 text-blue-700">
-                {item.note}
-              </p>
-              <a
-                href={item.certificate}
-                target="_blank"
-                rel="noreferrer"
-                className="mt-6 inline-flex items-center gap-2 rounded-full border border-slate-300 px-4 py-2 text-sm font-bold text-slate-950 transition hover:border-[#0071e3] hover:text-[#0071e3]"
-              >
-                <Download size={16} /> View Certificate
-              </a>
-            </article>
-          ))}
+      <section id="education" className="premium-band px-5 py-14 md:py-20">
+        <div className="mx-auto max-w-7xl">
+          <SectionIntro
+            eyebrow="Education"
+            title="Education."
+            subtitle="Data science, technology management, and business IT foundations."
+          />
+          <div className="mt-8 grid gap-5 md:grid-cols-2">
+            {education.map((item) => (
+              <article key={item.degree} className="future-card p-5">
+                <GraduationCap className="text-[#0071e3]" size={26} />
+                <h3 className="mt-4 text-xl font-bold tracking-tight text-[#0b1220]">
+                  {item.degree}
+                </h3>
+                <p className="mt-2 font-bold text-[#0071e3]">{item.school}</p>
+                <p className="mt-2 text-sm font-bold text-slate-400">
+                  {item.period}
+                </p>
+                <p className="mt-3 leading-7 text-slate-600">{item.detail}</p>
+                {item.note && (
+                  <p className="mt-4 rounded-2xl border border-blue-100 bg-blue-50 p-4 text-sm font-bold leading-6 text-blue-700">
+                    Thesis: {item.note}
+                  </p>
+                )}
+                <a
+                  href={item.certificate}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-6 inline-flex items-center gap-2 rounded-full border border-slate-300 px-4 py-2 text-sm font-bold text-slate-950 transition hover:border-[#0071e3] hover:text-[#0071e3]"
+                >
+                  <Download size={16} /> View Certificate
+                </a>
+              </article>
+            ))}
+          </div>
         </div>
       </section>
 
       <section
         id="contact"
-        className="contact-stage relative border-t border-slate-200/70 px-5 py-16 md:py-24"
+        className="contact-stage relative border-t border-slate-200/70 px-5 py-14 md:py-20"
       >
         <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#0071e3]/40 to-transparent" />
         <div className="relative mx-auto max-w-7xl">
           <SectionIntro
-            eyebrow="Recruiters & Hiring Managers"
-            title="Let's talk about supply chain roles in Germany."
-            subtitle="I am looking for Supply Chain Trainee, Junior Supply Chain Analyst, Procurement Analyst, Logistics Analyst, Operations Analyst, and BI Analyst opportunities in Germany. Business Analyst roles are secondary when they connect to supply chain, procurement, logistics, or operations topics."
+            eyebrow="Contact"
+            title="Open to Junior Supply Chain Analyst opportunities."
+            subtitle="Berlin-based and open to relocation across Germany."
           />
 
-          <div className="mt-10 grid gap-6 lg:grid-cols-[0.58fr_0.42fr]">
-            <ContactForm />
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
-              <ContactLink
-                icon={Mail}
-                label="Email"
-                value="rajbharatbhayani@gmail.com"
-                href="mailto:rajbharatbhayani@gmail.com"
-              />
-              <ContactLink
-                icon={Phone}
-                label="Phone"
-                value="+49 176 62398987"
-                href="tel:+4917662398987"
-              />
-              <ContactLink
-                icon={Link}
-                label="LinkedIn"
-                value="linkedin.com/in/mrrajbhayani"
-                href="https://www.linkedin.com/in/mrrajbhayani"
-              />
-              <ContactLink
-                icon={Link}
-                label="Instagram"
-                value="@raj_bhayani___"
-                href="https://www.instagram.com/raj_bhayani___"
-              />
-              <ContactLink
-                icon={MapPin}
-                label="Location"
-                value="Germany - open to relocation within Germany"
-                href="https://maps.google.com/?q=Germany"
-                wide
-              />
-            </div>
+          <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <ContactLink
+              icon={Mail}
+              label="Email"
+              value="rajbharatbhayani@gmail.com"
+              href="mailto:rajbharatbhayani@gmail.com"
+            />
+            <ContactLink
+              icon={Phone}
+              label="Phone"
+              value="+49 176 62398987"
+              href="tel:+4917662398987"
+            />
+            <ContactLink
+              icon={Link}
+              label="LinkedIn"
+              value="linkedin.com/in/mrrajbhayani"
+              href="https://www.linkedin.com/in/mrrajbhayani"
+            />
+            <ContactLink
+              icon={MapPin}
+              label="Location"
+              value="Germany - open to relocation"
+              href="https://maps.google.com/?q=Germany"
+            />
           </div>
         </div>
       </section>
 
       <footer className="border-t border-slate-200 px-5 py-8 text-center text-sm text-slate-400">
-        &copy; 2026 Raj Bharat Bhayani. Built for supply chain analytics,
-        procurement, logistics, operations, and BI roles in Germany.
+        &copy; 2026 Raj Bharat Bhayani. Junior Supply Chain Analyst portfolio
+        for Germany.
       </footer>
     </main>
-  );
-}
-
-function ContactForm() {
-  const [form, setForm] = useState({
-    name: "",
-    company: "",
-    role: "",
-    message: "",
-  });
-  const [submitted, setSubmitted] = useState(false);
-
-  const updateField = (field: keyof typeof form, value: string) => {
-    setForm((current) => ({ ...current, [field]: value }));
-  };
-
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const subject = encodeURIComponent(
-      `Portfolio inquiry from ${form.company || form.name || "a recruiter"}`,
-    );
-    const body = encodeURIComponent(
-      [
-        `Name: ${form.name}`,
-        `Company: ${form.company}`,
-        `Role / opportunity: ${form.role}`,
-        "",
-        form.message,
-      ].join("\n"),
-    );
-
-    window.location.href = `mailto:rajbharatbhayani@gmail.com?subject=${subject}&body=${body}`;
-    setSubmitted(true);
-  };
-
-  return (
-    <form onSubmit={handleSubmit} className="glass-panel p-6">
-      <div className="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
-        <div>
-          <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#0071e3]">
-            Contact Form
-          </p>
-          <h3 className="mt-2 text-2xl font-bold tracking-tight text-[#0b1220]">
-            Send a quick opportunity note
-          </h3>
-        </div>
-        <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-bold uppercase tracking-[0.16em] text-blue-700">
-          Email Draft
-        </span>
-      </div>
-      <div className="mt-6 grid gap-4 sm:grid-cols-2">
-        <input
-          required
-          value={form.name}
-          onChange={(event) => updateField("name", event.target.value)}
-          placeholder="Your name"
-          className="rounded-2xl border border-slate-200 px-4 py-3 font-semibold outline-none transition focus:border-[#0071e3]"
-        />
-        <input
-          value={form.company}
-          onChange={(event) => updateField("company", event.target.value)}
-          placeholder="Company"
-          className="rounded-2xl border border-slate-200 px-4 py-3 font-semibold outline-none transition focus:border-[#0071e3]"
-        />
-        <input
-          value={form.role}
-          onChange={(event) => updateField("role", event.target.value)}
-          placeholder="Role / opportunity"
-          className="rounded-2xl border border-slate-200 px-4 py-3 font-semibold outline-none transition focus:border-[#0071e3] sm:col-span-2"
-        />
-        <textarea
-          required
-          value={form.message}
-          onChange={(event) => updateField("message", event.target.value)}
-          placeholder="Short message"
-          rows={4}
-          className="resize-none rounded-2xl border border-slate-200 px-4 py-3 font-semibold outline-none transition focus:border-[#0071e3] sm:col-span-2"
-        />
-      </div>
-      <button
-        type="submit"
-        className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#0071e3] px-5 py-3 font-bold text-white transition hover:bg-[#0077ed]"
-      >
-        Send Email Draft <ArrowUpRight size={17} />
-      </button>
-      {submitted && (
-        <p className="mt-3 text-sm font-semibold text-slate-600">
-          Your email app should open with the message ready to send.
-        </p>
-      )}
-    </form>
   );
 }
 
@@ -1391,7 +879,7 @@ function FeaturedProjectCard({
             {project.category}
           </span>
           <span className="font-mono text-xs font-bold text-slate-400">
-            FEATURED CASE STUDY
+            PROJECT
           </span>
         </div>
         <div className="overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-inner">
@@ -1400,18 +888,15 @@ function FeaturedProjectCard({
             alt={`${project.title} dashboard preview`}
             width={1000}
             height={620}
-            className="project-image h-60 w-full object-contain object-center p-2 transition duration-500 group-hover:scale-[1.025] md:h-72"
+            className="project-image h-48 w-full object-contain object-center p-2 transition duration-500 group-hover:scale-[1.025] md:h-56"
           />
         </div>
       </div>
-      <div className="flex flex-1 flex-col p-6 md:p-7">
-        <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#0071e3]">
-          Supply Chain Decision Support
-        </p>
-        <h3 className="mt-3 text-2xl font-bold tracking-tight text-[#0b1220] md:text-3xl">
+      <div className="flex flex-1 flex-col p-5 md:p-6">
+        <h3 className="text-2xl font-bold tracking-tight text-[#0b1220]">
           {project.title}
         </h3>
-        <div className="mt-6 grid gap-5 md:grid-cols-2">
+        <div className="mt-5 grid gap-4 md:grid-cols-2">
           <ProjectText
             label="Business problem"
             text={project.businessProblem}
@@ -1419,10 +904,10 @@ function FeaturedProjectCard({
           />
           <ProjectText label="Solution" text={project.solution} featured />
         </div>
-        <div className="mt-5 rounded-2xl border border-blue-100 bg-gradient-to-r from-blue-50/90 to-white p-4">
+        <div className="mt-4 rounded-2xl border border-blue-100 bg-gradient-to-r from-blue-50/90 to-white p-4">
           <ProjectText label="Business impact" text={project.impact} featured />
         </div>
-        <div className="mt-6 grid gap-5 md:grid-cols-2">
+        <div className="mt-5 grid gap-4 md:grid-cols-2">
           <div>
             <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-slate-500">
               KPIs
@@ -1456,128 +941,10 @@ function FeaturedProjectCard({
         </div>
         <NextLink
           href={project.href}
-          className="mt-auto inline-flex w-fit items-center gap-2 pt-7 text-sm font-bold text-[#0071e3] transition hover:gap-3 hover:text-slate-950"
+          className="mt-auto inline-flex w-fit items-center gap-2 pt-6 text-sm font-bold text-[#0071e3] transition hover:gap-3 hover:text-slate-950"
         >
-          Open project <ArrowUpRight size={16} />
+          Open Project <ArrowUpRight size={16} />
         </NextLink>
-      </div>
-    </article>
-  );
-}
-
-function ProjectCard({
-  project,
-  featured = false,
-}: {
-  project: Project;
-  featured?: boolean;
-}) {
-  return (
-    <article
-      className={`future-card group flex h-full flex-col overflow-hidden ${featured ? "border-blue-100" : ""}`}
-    >
-      <div className={`image-console ${featured ? "p-5" : "p-4"}`}>
-        <div className="mb-3 flex items-center justify-between">
-          <span className="inline-flex items-center gap-2 rounded-full border border-blue-100 bg-white/80 px-3 py-1 text-xs font-bold text-[#0071e3]">
-            <BarChart3 size={13} />
-            {project.category}
-          </span>
-          <span className="hidden text-xs font-bold text-slate-400 sm:inline">
-            CASE STUDY
-          </span>
-        </div>
-        <Image
-          src={project.image}
-          alt={project.title}
-          width={900}
-          height={560}
-          className={`${featured ? "h-72 xl:h-80" : "h-60"} w-full rounded-lg object-contain object-center transition duration-300 group-hover:scale-[1.02]`}
-        />
-      </div>
-      <div className={`flex flex-1 flex-col ${featured ? "p-7" : "p-6"}`}>
-        <p className="text-xs font-extrabold uppercase tracking-[0.22em] text-[#0071e3]">
-          Decision Support Project
-        </p>
-        <h3
-          className={
-            featured
-              ? "mt-3 text-3xl font-bold tracking-tight text-[#0b1220] md:text-4xl"
-              : "mt-3 text-2xl font-bold tracking-tight text-[#0b1220]"
-          }
-        >
-          {project.title}
-        </h3>
-        <div className="mt-5 grid gap-4">
-          <ProjectText
-            label="Business problem"
-            text={project.problem}
-            featured={featured}
-          />
-          <ProjectText
-            label="Solution"
-            text={project.value}
-            featured={featured}
-          />
-          <ProjectText
-            label="Business impact"
-            text={project.impact}
-            featured={featured}
-          />
-        </div>
-        <div className="mt-6">
-          <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-slate-500">
-            KPIs
-          </p>
-          <div className="mt-3 flex flex-wrap gap-2">
-            {project.kpis.map((kpi) => (
-              <span
-                key={kpi}
-                className="rounded-full bg-blue-50 px-3 py-1 text-xs font-bold text-blue-700"
-              >
-                {kpi}
-              </span>
-            ))}
-          </div>
-        </div>
-        <div className="mt-6">
-          <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-slate-500">
-            Tools
-          </p>
-          <div className="mt-3 flex flex-wrap gap-2">
-            {project.tools.map((tool) => (
-              <span
-                key={tool}
-                className={
-                  featured
-                    ? "rounded-full border border-slate-200 px-3 py-1 text-xs font-bold text-slate-600"
-                    : "rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-700"
-                }
-              >
-                {tool}
-              </span>
-            ))}
-          </div>
-        </div>
-        <div className="mt-auto pt-7">
-          {project.href ? (
-            <a
-              href={project.href}
-              target="_blank"
-              rel="noreferrer"
-              className={
-                featured
-                  ? "inline-flex items-center gap-2 rounded-full bg-slate-950 px-5 py-3 text-sm font-bold text-white transition hover:bg-[#0077ed]"
-                  : "inline-flex items-center gap-2 rounded-full bg-[#0071e3] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#0077ed]"
-              }
-            >
-              Open Case Study / Demo <ArrowUpRight size={16} />
-            </a>
-          ) : (
-            <span className="rounded-full border border-slate-200 px-5 py-3 text-sm font-bold text-slate-600">
-              Private case study
-            </span>
-          )}
-        </div>
       </div>
     </article>
   );
@@ -1621,20 +988,18 @@ function ContactLink({
   label,
   value,
   href,
-  wide = false,
 }: {
   icon: typeof Mail;
   label: string;
   value: string;
   href: string;
-  wide?: boolean;
 }) {
   return (
     <a
       href={href}
       target={href.startsWith("http") ? "_blank" : undefined}
       rel={href.startsWith("http") ? "noreferrer" : undefined}
-      className={`future-card flex items-center gap-4 p-4 ${wide ? "sm:col-span-2 lg:col-span-1" : ""}`}
+      className="future-card flex items-center gap-4 p-4"
     >
       <span className="grid h-11 w-11 shrink-0 place-items-center rounded-2xl bg-[#0071e3] text-white">
         <Icon size={20} />

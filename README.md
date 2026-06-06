@@ -1,34 +1,23 @@
 # Raj Bharat Bhayani Portfolio
 
-This repository contains Raj Bharat Bhayani's Supply Chain Analytics portfolio website. The site is designed for recruiter screening and portfolio review for supply chain, procurement, logistics, operations, and business intelligence roles in Germany.
+This repository contains Raj Bharat Bhayani's focused job-search portfolio for Junior Supply Chain Analyst opportunities in Germany.
 
 ## Positioning
 
-The portfolio focuses on practical supply chain analytics and business intelligence for German industry.
+The primary profile is:
 
-Target roles:
+> Junior Supply Chain Analyst with strong Business Analytics skills.
 
-- Supply Chain Trainee
-- Junior Supply Chain Analyst
-- Procurement Analyst
-- Logistics Analyst
-- Operations Analyst
-- Business Intelligence Analyst, when connected to supply chain, procurement, logistics, or operations topics
-
-Business Analyst positioning is included as secondary context, not the primary profile.
+The portfolio emphasizes inventory planning, demand forecasting, supply chain analytics, KPI reporting, and data-driven decision support. Business Intelligence and Business Analysis are supporting strengths rather than separate target profiles.
 
 ## Main Projects
 
-- AI European Supply Chain Risk & Disruption Control Tower
+- Demand Forecasting & Inventory Optimization Dashboard
 - XAI Inventory Control Tower
 - European Procurement & Supplier Risk Intelligence
-- Demand Forecasting & Inventory Optimization Dashboard
-- European Waterway Supply Chain Intelligence
-- European Currency Risk & Inflation Intelligence
-- European Defense Operations & Readiness Intelligence
-- AI Business Analyst Co-Pilot for European Market Decisions
+- AI European Supply Chain Risk & Disruption Control Tower
 
-The strongest supply chain projects are shown first on the homepage and are framed around business problems, solutions, KPIs, technologies used, and business impact.
+Secondary analytics projects are available on the Additional Projects archive rather than the homepage.
 
 ## Tech Stack
 
