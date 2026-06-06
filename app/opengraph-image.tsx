@@ -90,7 +90,7 @@ export default function Image() {
           >
             <span>Germany</span>
             <span style={{ color: "#0071e3" }}>
-              Power BI - SQL - Excel - SAP MM
+              Planning - Inventory - Power BI - SQL
             </span>
           </div>
         </div>

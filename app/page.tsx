@@ -28,20 +28,21 @@ const navItems = [
 
 const recruiterSummary = [
   {
-    label: "Main target",
+    label: "Primary target",
     value: "Junior Supply Chain Analyst",
   },
   {
-    label: "Strength",
-    value: "Supply Chain Analytics + Business Intelligence",
+    label: "Secondary roles",
+    value:
+      "Supply Chain Planner, Inventory Analyst, Material Planning Analyst, Operations Analyst, Supply Chain Trainee",
   },
   {
-    label: "Tools",
-    value: "Power BI, SQL, Excel, Python, SAP MM fundamentals",
+    label: "Analytics toolkit",
+    value: "Power BI, SQL, Excel, Python; currently learning SAP MM",
   },
   {
-    label: "Location",
-    value: "Germany, open to relocation",
+    label: "Germany profile",
+    value: "Based in Germany, open to relocation; German B1, working toward B2",
   },
 ];
 
@@ -52,10 +53,10 @@ const experiences = [
     contract: "Work Study",
     location: "Berlin, Germany",
     role: "Master Thesis Researcher – Inventory Decision Support",
-    body: "Researched risk-aware inventory planning for industrial spare parts and translated analytical outputs into practical planning recommendations.",
+    body: "Completed a thesis on risk-aware inventory planning for industrial spare parts, with a focus on practical replenishment decisions.",
     bullets: [
-      "Modelled stockout risk, safety stock, and reorder-point scenarios.",
-      "Built a planner-focused dashboard using Python and Streamlit.",
+      "Analysed stockout risk, safety stock, reorder points, and supplier reliability.",
+      "Built a planner-focused decision-support dashboard using Python and Streamlit.",
     ],
   },
   {
@@ -64,10 +65,10 @@ const experiences = [
     contract: "Part-time",
     location: "Berlin, Germany",
     role: "Hub Operations Working Student – Flink",
-    body: "Supported inventory flow, order fulfillment, and daily hub operations in a fast-moving quick-commerce environment.",
+    body: "Supported inventory flow, order fulfilment, and daily hub operations in a fast-moving German quick-commerce environment.",
     bullets: [
-      "Worked with stock movement, order flow, and fulfillment routines.",
-      "Developed practical understanding of service levels and operational accuracy.",
+      "Worked with stock movement, order flow, availability, and fulfilment routines.",
+      "Built practical understanding of service levels, process discipline, and operational accuracy.",
     ],
   },
   {
@@ -76,7 +77,7 @@ const experiences = [
     contract: "Internship",
     location: "Singapore / Remote",
     role: "Business Analyst Intern – VSG Global",
-    body: "Supported import-related analysis, procurement coordination, documentation, and business reporting.",
+    body: "Supported import-related analysis, purchasing coordination, documentation, and business reporting.",
     bullets: [
       "Analysed demand, cost, revenue, and profitability data.",
       "Created reports for purchasing and cross-functional stakeholders.",
@@ -88,7 +89,7 @@ const experiences = [
     contract: "Part-time",
     location: "Nagpur, India",
     role: "Business Intelligence Analyst – Fledge Consulting",
-    body: "Supported dashboard reporting, requirements analysis, and communication between business users and technical teams.",
+    body: "Supported KPI dashboards, reporting requirements, and communication between business users and technical teams.",
     bullets: [
       "Documented reporting requirements and reviewed dashboard outputs.",
       "Helped translate business questions into clear reporting needs.",
@@ -102,17 +103,24 @@ const skillGroups = [
     icon: BriefcaseBusiness,
     skills: [
       "Inventory Planning",
-      "Demand Forecasting",
+      "Demand Planning & Forecasting",
       "Supply Chain Analytics",
-      "Logistics Analytics",
-      "Procurement Analytics",
-      "KPI Monitoring",
+      "Material Planning Fundamentals",
+      "Safety Stock & Reorder Point",
+      "Supply Chain KPI Reporting",
+      "Logistics Operations",
     ],
   },
   {
     title: "Tools",
     icon: Database,
-    skills: ["Power BI", "SQL", "Excel", "Python", "SAP MM Fundamentals"],
+    skills: [
+      "Power BI",
+      "SQL",
+      "Excel",
+      "Python",
+      "SAP MM - currently learning",
+    ],
   },
   {
     title: "Business",
@@ -121,7 +129,7 @@ const skillGroups = [
       "Business Analysis",
       "Process Improvement",
       "Stakeholder Communication",
-      "Reporting",
+      "Cross-functional Reporting",
       "Decision Support",
     ],
   },
@@ -129,7 +137,7 @@ const skillGroups = [
 
 const projects = [
   {
-    title: "AI European Supply Chain Risk & Disruption Control Tower",
+    title: "European Supply Chain Risk & Disruption Control Tower",
     category: "Supply Chain Risk Analytics",
     image: "/projects/ai-supply-chain-demo-screenshot.png",
     href: "/projects/ai-supply-chain-risk-control-tower",
@@ -154,14 +162,14 @@ const projects = [
       "Helps planners prioritize supplier follow-up and backup logistics options before service levels are affected.",
   },
   {
-    title: "XAI Inventory Control Tower",
-    category: "Inventory Optimization",
+    title: "Inventory Planning Decision Support Control Tower",
+    category: "Inventory Planning",
     image: "/projects/xai.png",
     href: "/projects/xai-inventory-control-tower",
     problem:
       "Inventory planners need to understand stockout risk, safety stock requirements, reorder points, and the reasons behind forecast or model recommendations.",
     value:
-      "Created a thesis-based inventory control tower concept using explainable AI to support stockout risk review, safety stock decisions, and reorder recommendations.",
+      "Created a thesis-based inventory control tower that combines stockout risk, safety stock, reorder recommendations, and explainable model outputs.",
     tools: [
       "Python",
       "Streamlit",
@@ -174,14 +182,14 @@ const projects = [
       "Connects inventory risk signals with clear planner actions for reorder, safety stock, and service-level decisions.",
   },
   {
-    title: "European Procurement & Supplier Risk Intelligence",
-    category: "Procurement Analytics",
+    title: "European Supplier Performance & Material Risk Intelligence",
+    category: "Supplier & Material Analytics",
     image: "/projects/procurement.png",
     href: "/projects/european-procurement-supplier-risk-intelligence",
     problem:
       "Procurement teams need one view of supplier performance, delivery reliability, cost exposure, supplier status, ESG risk, and country risk.",
     value:
-      "Designed an executive supplier intelligence view for procurement analytics, cost optimization, supplier risk evaluation, and sourcing prioritization.",
+      "Designed a supplier intelligence view for delivery performance, material availability, cost exposure, and supplier risk evaluation.",
     tools: [
       "Power BI",
       "DAX",
@@ -299,7 +307,7 @@ const projects = [
 
 const featuredSupplyChainProjects = [
   {
-    title: "AI European Supply Chain Risk & Disruption Control Tower",
+    title: "European Supply Chain Risk & Disruption Control Tower",
     href: "/projects/ai-supply-chain-risk-control-tower",
     category: "Supply Chain Risk",
     image: "/projects/ai-supply-chain-demo-screenshot.png",
@@ -323,14 +331,14 @@ const featuredSupplyChainProjects = [
       "Helps planners identify the highest-risk lanes and prioritise follow-up actions.",
   },
   {
-    title: "XAI Inventory Control Tower",
+    title: "Inventory Planning Decision Support Control Tower",
     href: "/projects/xai-inventory-control-tower",
-    category: "Inventory Optimization",
+    category: "Inventory Planning",
     image: "/projects/xai.png",
     businessProblem:
       "Inventory planners need clear stockout, safety-stock, and reorder-point signals.",
     solution:
-      "Planner-focused control tower combining inventory KPIs with model explanations.",
+      "Thesis-based control tower combining inventory KPIs, replenishment recommendations, and model explanations.",
     kpis: ["Safety stock", "Reorder point", "Service level", "Stockout risk"],
     technologies: [
       "Python",
@@ -339,17 +347,18 @@ const featuredSupplyChainProjects = [
       "Streamlit",
       "Forecast interpretation",
     ],
-    impact: "Makes inventory recommendations easier to review and explain.",
+    impact:
+      "Supports reviewable safety-stock, reorder-point, and stockout-risk decisions.",
   },
   {
-    title: "European Procurement & Supplier Risk Intelligence",
+    title: "European Supplier Performance & Material Risk Intelligence",
     href: "/projects/european-procurement-supplier-risk-intelligence",
-    category: "Procurement Analytics",
+    category: "Supplier & Material Analytics",
     image: "/projects/procurement.png",
     businessProblem:
-      "Supplier performance, cost exposure, and delivery risk are difficult to compare.",
+      "Supplier delivery performance, material risk, and cost exposure are difficult to compare.",
     solution:
-      "Supplier scorecard combining OTIF, spend, cost variance, and risk.",
+      "Supplier scorecard combining OTIF, material exposure, cost variance, and risk.",
     kpis: ["Supplier OTIF", "Spend exposure", "Cost variance", "Risk score"],
     technologies: [
       "Power BI",
@@ -358,7 +367,8 @@ const featuredSupplyChainProjects = [
       "Data modeling",
       "Supplier management",
     ],
-    impact: "Supports supplier reviews and evidence-based sourcing priorities.",
+    impact:
+      "Supports supplier reviews, material-risk follow-up, and evidence-based priorities.",
   },
   {
     title: "Demand Forecasting & Inventory Optimization Dashboard",
@@ -431,19 +441,19 @@ const structuredData = [
       "https://github.com/rajbbhayani-sketch/raj-portfolio",
     ],
     knowsAbout: [
-      "Business Analysis",
+      "Supply Chain Analytics",
+      "Supply Chain Planning",
+      "Inventory Planning",
+      "Demand Forecasting",
+      "Material Planning",
+      "Supply Chain KPI Reporting",
+      "Operations Analysis",
       "Business Intelligence",
       "Power BI",
       "SQL",
       "Excel",
+      "Python",
       "SAP MM",
-      "Supply Chain Analytics",
-      "Supply Chain Management",
-      "Demand Forecasting",
-      "Inventory Planning",
-      "Procurement Analytics",
-      "Logistics Analytics",
-      "KPI Reporting",
     ],
     alumniOf: [
       {
@@ -462,7 +472,7 @@ const structuredData = [
     name: "Raj Bharat Bhayani Portfolio",
     url: "https://www.rajbharatbhayani.eu",
     description:
-      "Focused portfolio for Junior Supply Chain Analyst roles in Germany, supported by business analytics, Power BI, SQL, Excel, Python, and SAP MM fundamentals.",
+      "Focused portfolio for Junior Supply Chain Analyst and supply chain planning roles in Germany, supported by inventory analytics, Power BI, SQL, Excel, Python, and SAP MM learning.",
   },
 ];
 
@@ -523,13 +533,13 @@ export default function Home() {
               Junior Supply Chain Analyst
             </h1>
             <p className="mt-5 max-w-[720px] text-lg font-medium leading-8 text-slate-600 md:text-xl">
-              MBA Data Science graduate focused on inventory planning, demand
-              forecasting, supply chain analytics, KPI reporting, and
-              data-driven decision support.
+              MBA graduate in General Technology Management with a Data Science
+              focus, applying analytics to inventory planning, demand
+              forecasting, KPI reporting, and supply chain decisions.
             </p>
             <p className="mt-5 max-w-3xl text-sm font-bold leading-7 text-blue-700 md:text-base">
-              Berlin, Germany | Open to relocation across Germany | Power BI |
-              SQL | Excel | SAP MM fundamentals
+              Berlin, Germany | Open to relocation | German B1, working toward
+              B2 | Power BI | SQL | Excel | Python | SAP MM in progress
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
@@ -591,10 +601,10 @@ export default function Home() {
                   </div>
                   <div className="grid gap-3">
                     {[
-                      "MBA Data Science graduate",
-                      "Inventory, demand, and KPI project work",
-                      "Power BI, SQL, Excel, Python, SAP MM fundamentals",
-                      "Open to relocation across Germany",
+                      "MBA in General Technology Management, Data Science focus",
+                      "Thesis on inventory planning for industrial spare parts",
+                      "Operations experience at Flink in Germany",
+                      "German B1, working toward B2; open to relocation",
                     ].map((signal) => (
                       <p
                         key={signal}
@@ -645,8 +655,8 @@ export default function Home() {
         <div className="mx-auto max-w-7xl">
           <SectionIntro
             eyebrow="Featured Projects"
-            title="Supply chain analytics project work."
-            subtitle="Four practical case studies covering demand forecasting, inventory planning, procurement analytics, and supply chain risk."
+            title="Planning and inventory analytics project work."
+            subtitle="Four practical case studies covering demand forecasting, inventory decisions, supplier performance, material risk, and supply chain disruption."
           />
           <div className="mt-8 grid gap-6 lg:grid-cols-2">
             {homepageProjects.map((project) => (
@@ -673,7 +683,7 @@ export default function Home() {
           <SectionIntro
             eyebrow="Experience"
             title="Relevant analytics and operations experience."
-            subtitle="Graduate research, hub operations, business analysis, and dashboard reporting experience."
+            subtitle="Inventory research, German hub operations, business analysis, and KPI reporting experience relevant to junior supply chain roles."
           />
           <div className="mt-8 space-y-4">
             {experiences.map((job) => (
@@ -722,7 +732,7 @@ export default function Home() {
           <SectionIntro
             eyebrow="Skills"
             title="Skills for junior supply chain analytics roles."
-            subtitle="A focused combination of supply chain knowledge, analytical tools, and business communication."
+            subtitle="A focused combination of planning knowledge, analytical tools, and cross-functional business communication."
           />
           <div className="mt-8 grid gap-5 md:grid-cols-3">
             {skillGroups.map(({ title, icon: Icon, skills }) => (

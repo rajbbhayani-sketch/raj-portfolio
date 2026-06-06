@@ -147,7 +147,7 @@ export default function AiSupplyChainRiskControlTower() {
             Supply Chain Risk Demo
           </p>
           <h1 className="mt-4 text-4xl font-black tracking-tight md:text-6xl">
-            AI European Supply Chain Risk & Disruption Control Tower
+            European Supply Chain Risk & Disruption Control Tower
           </h1>
           <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600">
             A working demo that scores disruption risk across German and

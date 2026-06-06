@@ -16,7 +16,7 @@ const geistMono = Geist_Mono({
 const siteUrl = new URL("https://www.rajbharatbhayani.eu");
 const siteTitle = "Raj Bharat Bhayani | Junior Supply Chain Analyst Germany";
 const siteDescription =
-  "Focused portfolio for Junior Supply Chain Analyst roles in Germany, with inventory planning, demand forecasting, KPI reporting, Power BI, SQL, Excel, Python, and SAP MM fundamentals.";
+  "Junior Supply Chain Analyst portfolio for Germany, focused on inventory planning, demand forecasting, material planning, operations analysis, KPI reporting, Power BI, SQL, Excel, Python, and SAP MM learning.";
 
 export const metadata: Metadata = {
   metadataBase: siteUrl,
@@ -29,21 +29,25 @@ export const metadata: Metadata = {
   keywords: [
     "Raj Bharat Bhayani",
     "Junior Supply Chain Analyst Germany",
+    "Supply Chain Planner Germany",
+    "Inventory Analyst Germany",
+    "Material Planning Analyst Germany",
+    "Operations Analyst Germany",
     "Supply Chain Trainee Germany",
     "Demand Planning",
     "Demand Forecasting",
     "Inventory Planning",
+    "Material Planning",
+    "Safety Stock",
+    "Reorder Point",
     "Supply Chain Management",
-    "Procurement Analytics",
-    "Logistics Analytics",
-    "Business Intelligence Germany",
+    "Supply Chain KPI Reporting",
+    "Operations Analytics",
     "Power BI",
     "SQL",
     "Excel",
+    "Python",
     "SAP MM",
-    "Data Analytics Germany",
-    "Procurement Analyst Germany",
-    "Logistics Analyst Germany",
   ],
   authors: [{ name: "Raj Bharat Bhayani", url: siteUrl }],
   creator: "Raj Bharat Bhayani",

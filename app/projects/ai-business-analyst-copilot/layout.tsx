@@ -9,6 +9,10 @@ const image = "/projects/ai-business-demo-screenshot.png";
 export const metadata: Metadata = {
   title,
   description,
+  robots: {
+    index: false,
+    follow: true,
+  },
   alternates: {
     canonical: path,
   },

@@ -7,6 +7,10 @@ export const metadata: Metadata = {
   title: "Additional Projects",
   description:
     "Archive of additional analytics projects by Raj Bharat Bhayani. The main portfolio focus remains Junior Supply Chain Analyst roles in Germany.",
+  robots: {
+    index: false,
+    follow: true,
+  },
   alternates: {
     canonical: "/projects/archive",
   },

@@ -30,30 +30,31 @@ const siteUrl = "https://www.rajbharatbhayani.eu";
 const caseStudies: CaseStudy[] = [
   {
     slug: "european-procurement-supplier-risk-intelligence",
-    title: "European Procurement & Supplier Risk Intelligence",
-    category: "Procurement Analytics",
+    title: "European Supplier Performance & Material Risk Intelligence",
+    category: "Supplier & Material Analytics",
     image: "/projects/procurement.png",
     pdf: "/pdfs/procurement.pdf",
     overview:
-      "An executive procurement intelligence case study focused on supplier performance, delivery reliability, ESG exposure, country risk, spend visibility, and cost exposure for European sourcing teams.",
+      "A supplier intelligence case study focused on delivery reliability, material exposure, supplier risk, spend visibility, and cost variance for European supply chain teams.",
     businessProblem:
-      "Procurement teams often review spend, delivery performance, supplier risk, cost exposure, and ESG exposure in separate views, making it harder to prioritize sourcing action.",
+      "Supply chain and purchasing teams often review delivery performance, material exposure, supplier risk, and cost variance separately, making follow-up priorities harder to set.",
     approach: [
-      "Structured supplier data around spend, delivery reliability, ESG score, country exposure, and supplier status.",
-      "Designed an executive dashboard concept for supplier performance, cost exposure, high-risk supplier identification, and sourcing prioritization.",
-      "Created risk categories that help procurement and finance teams discuss exposure using the same language.",
+      "Structured supplier data around OTIF, spend, delivery reliability, material exposure, country risk, and supplier status.",
+      "Designed a dashboard concept for supplier performance, cost variance, high-risk supplier identification, and material-risk prioritization.",
+      "Created clear risk categories for cross-functional supply chain and purchasing reviews.",
     ],
     businessValue: [
-      "Improves visibility of supplier risk and delivery reliability.",
-      "Supports supplier diversification and sourcing decisions.",
-      "Connects procurement cost, supplier performance, ESG, and operational exposure in one business view.",
+      "Improves visibility of supplier delivery risk and material exposure.",
+      "Supports supplier follow-up and material-planning priorities.",
+      "Connects supplier performance, cost variance, and operational exposure in one view.",
     ],
     tools: [
       "Power BI",
       "DAX",
       "Power Query",
       "Data Modeling",
-      "Procurement Analytics",
+      "Supplier Performance",
+      "Material Risk",
     ],
     metrics: [
       ["Supplier Risk", "Priority scoring"],
@@ -63,12 +64,12 @@ const caseStudies: CaseStudy[] = [
   },
   {
     slug: "xai-inventory-control-tower",
-    title: "XAI Inventory Control Tower",
-    category: "Inventory Optimization",
+    title: "Inventory Planning Decision Support Control Tower",
+    category: "Inventory Planning",
     image: "/projects/xai.png",
     pdf: "/pdfs/xai.pdf",
     overview:
-      "A thesis-based inventory optimization prototype that helps planners understand stockout risk, safety stock, reorder point recommendations, and the reasoning behind model outputs.",
+      "A thesis-based inventory planning prototype that helps planners review stockout risk, safety stock, reorder point recommendations, supplier reliability, and the reasoning behind model outputs.",
     businessProblem:
       "Inventory teams need more than a stockout prediction. They need to understand safety stock, reorder point logic, forecast interpretation, and the drivers behind risk so decisions are explainable and trusted.",
     approach: [
@@ -77,9 +78,9 @@ const caseStudies: CaseStudy[] = [
       "Translated model outputs into planner-friendly decision language.",
     ],
     businessValue: [
-      "Makes AI-supported inventory recommendations easier to trust.",
+      "Makes inventory recommendations easier to review and explain.",
       "Helps planners test demand, supplier reliability, and safety stock scenarios.",
-      "Shows how explainable AI can support spare parts planning decisions.",
+      "Shows how explainable modelling can support industrial spare-parts planning decisions.",
     ],
     tools: ["Python", "Streamlit", "XGBoost", "SHAP", "Plotly", "Pandas"],
     metrics: [
@@ -209,10 +210,18 @@ export async function generateMetadata({
 
   const title = `${study.title} | Raj Bharat Bhayani`;
   const url = `/projects/${study.slug}`;
+  const isFeatured = [
+    "european-procurement-supplier-risk-intelligence",
+    "xai-inventory-control-tower",
+  ].includes(study.slug);
 
   return {
     title,
     description: study.overview,
+    robots: {
+      index: isFeatured,
+      follow: true,
+    },
     alternates: {
       canonical: url,
     },

@@ -6,15 +6,10 @@ const routes = [
   "/",
   "/cv",
   "/contact",
-  "/projects/archive",
-  "/projects/ai-business-analyst-copilot",
   "/projects/ai-supply-chain-risk-control-tower",
   "/projects/demand-forecasting-inventory-optimization",
   "/projects/european-procurement-supplier-risk-intelligence",
   "/projects/xai-inventory-control-tower",
-  "/projects/european-currency-risk-inflation-intelligence",
-  "/projects/european-defense-operations-readiness-intelligence",
-  "/projects/european-waterway-supply-chain-intelligence",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

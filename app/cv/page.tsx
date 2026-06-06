@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import NextLink from "next/link";
-import { ArrowLeft, Download, Mail, MapPin } from "lucide-react";
+import { ArrowLeft, Download, Mail, MapPin, Phone } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "CV - Junior Supply Chain Analyst",
   description:
-    "Recruiter-friendly CV for Raj Bharat Bhayani, focused on Junior Supply Chain Analyst roles in Germany.",
+    "Recruiter-friendly CV for Raj Bharat Bhayani, focused on Junior Supply Chain Analyst, supply chain planning, inventory, material planning, operations, and trainee roles in Germany.",
   alternates: {
     canonical: "/cv",
   },
@@ -13,65 +13,68 @@ export const metadata: Metadata = {
 
 const targetRoles = [
   "Junior Supply Chain Analyst",
+  "Supply Chain Planner",
+  "Inventory Analyst",
+  "Material Planning Analyst",
+  "Operations Analyst",
   "Supply Chain Trainee",
-  "Procurement Analyst",
-  "Logistics Analyst",
 ];
 
 const skills = {
   "Supply Chain": [
     "Inventory Planning",
-    "Demand Forecasting",
+    "Demand Planning & Forecasting",
     "Supply Chain Analytics",
-    "Logistics Analytics",
-    "Procurement Analytics",
-    "KPI Monitoring",
+    "Material Planning Fundamentals",
+    "Safety Stock & Reorder Point",
+    "Supply Chain KPI Reporting",
+    "Logistics Operations",
   ],
-  Tools: ["Power BI", "SQL", "Excel", "Python", "SAP MM Fundamentals"],
+  Tools: ["Power BI", "SQL", "Excel", "Python", "SAP MM - currently learning"],
   Business: [
     "Business Analysis",
     "Process Improvement",
     "Stakeholder Communication",
-    "Reporting",
+    "Cross-functional Reporting",
     "Decision Support",
   ],
 };
 
 const projects = [
   "Demand Forecasting & Inventory Optimization Dashboard - forecast accuracy, inventory turnover, fill rate, service level, stockout risk, safety stock, and reorder point logic.",
-  "XAI Inventory Control Tower - stockout risk, safety stock, reorder point recommendations, and forecast interpretation.",
-  "European Procurement & Supplier Risk Intelligence - supplier performance, procurement analytics, cost exposure, and supplier risk evaluation.",
-  "AI European Supply Chain Risk & Disruption Control Tower - supplier delay, logistics bottlenecks, inventory exposure, and mitigation actions.",
+  "Inventory Planning Decision Support Control Tower - stockout risk, safety stock, reorder point recommendations, supplier reliability, and explainable planning support.",
+  "European Supplier Performance & Material Risk Intelligence - supplier OTIF, delivery reliability, material exposure, cost variance, and risk evaluation.",
+  "European Supply Chain Risk & Disruption Control Tower - supplier delay, logistics bottlenecks, inventory exposure, and mitigation actions.",
 ];
 
 const experience = [
+  [
+    "Master Thesis Researcher – Inventory Decision Support",
+    "Fachhochschule des Mittelstandes Bielefeld",
+    "Work Study",
+    "Berlin, Germany",
+    "Completed a thesis on explainable, risk-aware inventory planning for industrial spare parts, including stockout risk, safety stock, reorder points, and supplier reliability.",
+  ],
   [
     "Hub Operations Working Student – Flink",
     "Flink",
     "Part-time",
     "Berlin, Germany",
-    "Supported inventory movement, fulfillment routines, order flow, and quick-commerce operations discipline.",
+    "Supported inventory movement, availability, fulfilment routines, order flow, and daily operations in German quick commerce.",
   ],
   [
     "Business Analyst Intern – VSG Global",
     "VSG GLOBAL PTE. LTD",
     "Internship",
     "Singapore / Remote",
-    "Analyzed requirements, demand patterns, cost, revenue, and profitability data for business reporting.",
+    "Analysed requirements, demand patterns, cost, revenue, and profitability data for purchasing and business reporting.",
   ],
   [
     "Business Intelligence Analyst – Fledge Consulting",
     "Fledge Consulting Pvt Ltd",
     "Part-time",
     "Nagpur, India",
-    "Supported dashboards, reports, requirements gathering, and business-to-technical communication.",
-  ],
-  [
-    "Master Thesis Researcher – Inventory Decision Support",
-    "Fachhochschule des Mittelstandes Bielefeld",
-    "Work Study",
-    "Berlin, Germany",
-    "Researched explainable AI for risk-aware spare parts inventory planning.",
+    "Supported KPI dashboards, reporting requirements, and business-to-technical communication.",
   ],
 ];
 
@@ -106,10 +109,10 @@ export default function CvPage() {
               Raj Bharat Bhayani
             </h1>
             <p className="mt-4 max-w-3xl text-lg leading-8 text-slate-600">
-              MBA Data Science graduate focused on inventory planning, demand
-              forecasting, supply chain analytics, KPI reporting, and
-              data-driven decision support for Junior Supply Chain Analyst roles
-              in Germany.
+              MBA graduate in General Technology Management with a Data Science
+              focus, applying Power BI, SQL, Excel, and Python to inventory
+              planning, demand forecasting, KPI reporting, and supply chain
+              decision support.
             </p>
           </div>
           <div className="future-card role-card p-5 text-sm font-bold leading-7 text-slate-700">
@@ -117,12 +120,14 @@ export default function CvPage() {
               <Mail size={16} /> rajbharatbhayani@gmail.com
             </p>
             <p className="flex items-center gap-2">
+              <Phone size={16} /> +49 176 62398987
+            </p>
+            <p className="flex items-center gap-2">
               <MapPin size={16} /> Germany - open to relocation within Germany
             </p>
             <p>LinkedIn: linkedin.com/in/mrrajbhayani</p>
             <p>
-              Languages: English, German - A2/B1 actively improving, Hindi,
-              Gujarati
+              Languages: English, German - B1 working toward B2, Hindi, Gujarati
             </p>
           </div>
         </div>
@@ -143,9 +148,9 @@ export default function CvPage() {
         <CvSection title="Education">
           <div className="grid gap-4">
             <CvItem
-              title="MBA, General Technology Management"
+              title="MBA, General Technology Management, Data Science Focus"
               meta="Fachhochschule des Mittelstandes Bielefeld | Oct 2024 - May 2026"
-              body="Data Science focus with Big Data Analytics, Technology Management, International Project Management, and thesis work on explainable AI for inventory decision support."
+              body="Master thesis: Explainable AI for Risk-Aware Inventory Planning of Industrial Spare Parts."
             />
             <CvItem
               title="Bachelor of Computer Applications"

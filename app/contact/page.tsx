@@ -12,7 +12,7 @@ import {
 export const metadata: Metadata = {
   title: "Contact - Junior Supply Chain Analyst",
   description:
-    "Contact Raj Bharat Bhayani for Junior Supply Chain Analyst opportunities in Germany.",
+    "Contact Raj Bharat Bhayani for Junior Supply Chain Analyst and related supply chain planning opportunities in Germany.",
   alternates: {
     canonical: "/contact",
   },
@@ -84,8 +84,9 @@ export default function ContactPage() {
               </span>
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600">
-              I am open to Junior Supply Chain Analyst opportunities in Germany,
-              including relocation across Germany.
+              My primary target is Junior Supply Chain Analyst. I am also open
+              to supply chain planning, inventory, material planning,
+              operations, and trainee opportunities across Germany.
             </p>
           </div>
           <aside className="glass-panel p-6">
@@ -97,7 +98,8 @@ export default function ContactPage() {
             </p>
             <p className="mt-3 text-sm leading-6 text-slate-600">
               Direct contact for recruiter introductions, agency opportunities,
-              and junior supply chain analytics roles.
+              and junior supply chain planning or analytics roles. German B1,
+              working toward B2.
             </p>
           </aside>
         </div>
