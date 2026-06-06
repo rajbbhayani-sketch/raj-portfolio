@@ -1,6 +1,6 @@
 # Raj Bharat Bhayani Portfolio
 
-This repository contains Raj Bharat Bhayani's focused job-search portfolio for Junior Supply Chain Analyst opportunities in Germany.
+This repository contains Raj Bharat Bhayani's focused job-search portfolio for Junior Supply Chain Analyst opportunities in Germany and across Europe.
 
 ## Positioning
 

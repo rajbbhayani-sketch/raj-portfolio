@@ -12,7 +12,7 @@ import {
 export const metadata: Metadata = {
   title: "Contact - Junior Supply Chain Analyst",
   description:
-    "Contact Raj Bharat Bhayani for Junior Supply Chain Analyst and related supply chain planning opportunities in Germany.",
+    "Contact Raj Bharat Bhayani for Junior Supply Chain Analyst and related supply chain planning opportunities in Germany and across Europe.",
   alternates: {
     canonical: "/contact",
   },
@@ -44,8 +44,8 @@ const contactItems: Array<{
   },
   {
     label: "Location",
-    value: "Germany - open to relocation within Germany",
-    href: "https://maps.google.com/?q=Germany",
+    value: "Germany-based - open across Europe",
+    href: "https://maps.google.com/?q=Europe",
     icon: MapPin,
   },
 ];
@@ -80,13 +80,13 @@ export default function ContactPage() {
             <h1 className="mt-4 max-w-4xl text-4xl font-extrabold leading-[1.08] tracking-tight text-[#0b1220] md:text-5xl">
               Contact me for{" "}
               <span className="text-[#0071e3]">
-                supply chain roles in Germany.
+                supply chain roles in Germany and Europe.
               </span>
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600">
               My primary target is Junior Supply Chain Analyst. I am also open
               to supply chain planning, inventory, material planning,
-              operations, and trainee opportunities across Germany.
+              operations, and trainee opportunities across Europe.
             </p>
           </div>
           <aside className="glass-panel p-6">
@@ -94,12 +94,12 @@ export default function ContactPage() {
               Current Availability
             </p>
             <p className="mt-3 text-xl font-bold tracking-tight text-[#0b1220]">
-              Germany-based and open to relocation.
+              Germany-based and open across Europe.
             </p>
             <p className="mt-3 text-sm leading-6 text-slate-600">
               Direct contact for recruiter introductions, agency opportunities,
-              and junior supply chain planning or analytics roles. German B1,
-              working toward B2.
+              and junior supply chain planning or analytics roles throughout
+              Europe. German B1, working toward B2.
             </p>
           </aside>
         </div>

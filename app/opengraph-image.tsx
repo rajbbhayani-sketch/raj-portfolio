@@ -88,7 +88,7 @@ export default function Image() {
               gap: 20,
             }}
           >
-            <span>Germany</span>
+            <span>Germany + Europe</span>
             <span style={{ color: "#0071e3" }}>
               Planning - Inventory - Power BI - SQL
             </span>

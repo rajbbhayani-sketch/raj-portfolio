@@ -9,11 +9,16 @@ import {
   CheckCircle2,
   Database,
   Download,
+  FolderKanban,
+  Globe2,
   GraduationCap,
+  Languages,
   Link,
   Mail,
   MapPin,
   Phone,
+  Target,
+  Wrench,
 } from "lucide-react";
 
 const navItems = [
@@ -26,23 +31,30 @@ const navItems = [
   { label: "Contact", href: "#contact" },
 ];
 
-const recruiterSummary = [
+const recruiterProfile = [
   {
-    label: "Primary target",
+    icon: Target,
+    label: "Primary role",
     value: "Junior Supply Chain Analyst",
+    detail: "Planning, inventory, materials, and operations analytics",
   },
   {
-    label: "Secondary roles",
-    value:
-      "Supply Chain Planner, Inventory Analyst, Material Planning Analyst, Operations Analyst, Supply Chain Trainee",
+    icon: Globe2,
+    label: "Mobility",
+    value: "Germany + Europe",
+    detail: "Germany-based and open to relocation across Europe",
   },
   {
-    label: "Analytics toolkit",
-    value: "Power BI, SQL, Excel, Python; currently learning SAP MM",
+    icon: Wrench,
+    label: "Core toolkit",
+    value: "Power BI · SQL · Excel · Python",
+    detail: "Currently learning SAP MM",
   },
   {
-    label: "Germany profile",
-    value: "Based in Germany, open to relocation; German B1, working toward B2",
+    icon: Languages,
+    label: "Languages",
+    value: "English · German B1",
+    detail: "German actively progressing toward B2",
   },
 ];
 
@@ -350,146 +362,6 @@ const projects = [
   },
 ];
 
-const featuredSupplyChainProjects = [
-  {
-    title: "Inventory Optimization Project",
-    href: "/projects/inventory-optimization",
-    category: "Inventory Planning",
-    image: "/projects/inventory-optimization.png",
-    businessProblem:
-      "Replenishment decisions must balance service targets, demand variation, lead time, and inventory cost.",
-    solution:
-      "Interactive model for safety stock, reorder point, EOQ, stock cover, and annual relevant cost.",
-    kpis: ["Safety stock", "Reorder point", "EOQ", "Stock cover"],
-    technologies: [
-      "Inventory optimization",
-      "Scenario analysis",
-      "Replenishment logic",
-      "TypeScript",
-    ],
-    impact:
-      "Creates transparent replenishment recommendations for German distribution and spare-parts scenarios.",
-  },
-  {
-    title: "Material Planning Simulator",
-    href: "/projects/material-planning-simulator",
-    category: "Material Requirements Planning",
-    image: "/projects/material-planning-simulator.png",
-    businessProblem:
-      "German plants need component availability aligned with production demand and European supplier lead time.",
-    solution:
-      "Eight-week MRP simulation with projected stock, planned receipts, lot sizing, and order releases.",
-    kpis: [
-      "Gross requirements",
-      "Projected stock",
-      "Planned receipts",
-      "Order releases",
-    ],
-    technologies: [
-      "MRP logic",
-      "Material planning",
-      "Lot sizing",
-      "TypeScript",
-    ],
-    impact:
-      "Supports material availability, supplier scheduling, and production-shortage prevention.",
-  },
-  {
-    title: "European Supply Chain Risk & Disruption Control Tower",
-    href: "/projects/ai-supply-chain-risk-control-tower",
-    category: "Supply Chain Risk",
-    image: "/projects/ai-supply-chain-demo-screenshot.png",
-    businessProblem:
-      "Supplier delays, logistics bottlenecks, and low inventory cover can disrupt service levels.",
-    solution:
-      "Control-tower dashboard for corridor risk, shortage exposure, and mitigation priorities.",
-    kpis: [
-      "Supplier delay risk",
-      "Port congestion",
-      "Inventory cover",
-      "Stockout exposure",
-    ],
-    technologies: [
-      "Python",
-      "Scenario analysis",
-      "Power BI concept",
-      "Supply chain analytics",
-    ],
-    impact:
-      "Helps planners identify the highest-risk lanes and prioritise follow-up actions.",
-  },
-  {
-    title: "Inventory Planning Decision Support Control Tower",
-    href: "/projects/xai-inventory-control-tower",
-    category: "Inventory Planning",
-    image: "/projects/xai.png",
-    businessProblem:
-      "Inventory planners need clear stockout, safety-stock, and reorder-point signals.",
-    solution:
-      "Thesis-based control tower combining inventory KPIs, replenishment recommendations, and model explanations.",
-    kpis: ["Safety stock", "Reorder point", "Service level", "Stockout risk"],
-    technologies: [
-      "Python",
-      "XGBoost",
-      "SHAP",
-      "Streamlit",
-      "Forecast interpretation",
-    ],
-    impact:
-      "Supports reviewable safety-stock, reorder-point, and stockout-risk decisions.",
-  },
-  {
-    title: "European Supplier Performance & Material Risk Intelligence",
-    href: "/projects/european-procurement-supplier-risk-intelligence",
-    category: "Supplier & Material Analytics",
-    image: "/projects/procurement.png",
-    businessProblem:
-      "Supplier delivery performance, material risk, and cost exposure are difficult to compare.",
-    solution:
-      "Supplier scorecard combining OTIF, material exposure, cost variance, and risk.",
-    kpis: ["Supplier OTIF", "Spend exposure", "Cost variance", "Risk score"],
-    technologies: [
-      "Power BI",
-      "DAX",
-      "Power Query",
-      "Data modeling",
-      "Supplier management",
-    ],
-    impact:
-      "Supports supplier reviews, material-risk follow-up, and evidence-based priorities.",
-  },
-  {
-    title: "Demand Forecasting & Inventory Optimization Dashboard",
-    href: "/projects/demand-forecasting-inventory-optimization",
-    category: "Demand Planning",
-    image: "/projects/demand-forecasting-dashboard.png",
-    businessProblem:
-      "Forecast quality and inventory risk are often reviewed in separate reports.",
-    solution:
-      "Dashboard connecting forecast accuracy, service level, stock risk, and replenishment recommendations.",
-    kpis: [
-      "Forecast accuracy",
-      "Inventory turnover",
-      "Fill rate",
-      "Safety stock",
-    ],
-    technologies: ["Power BI concept", "Excel", "Python", "Demand forecasting"],
-    impact:
-      "Creates one planning view for earlier inventory and replenishment decisions.",
-  },
-];
-
-const homepageProjects = [
-  featuredSupplyChainProjects[0],
-  featuredSupplyChainProjects[1],
-  featuredSupplyChainProjects[5],
-  featuredSupplyChainProjects[3],
-  featuredSupplyChainProjects[4],
-  featuredSupplyChainProjects[2],
-];
-
-const archivedProjectCount = projects.length - homepageProjects.length;
-
 const education = [
   {
     degree: "MBA, General Technology Management, Data Science Focus",
@@ -565,7 +437,7 @@ const structuredData = [
     name: "Raj Bharat Bhayani Portfolio",
     url: "https://www.rajbharatbhayani.eu",
     description:
-      "Focused portfolio for Junior Supply Chain Analyst and supply chain planning roles in Germany, supported by inventory analytics, Power BI, SQL, Excel, Python, and SAP MM learning.",
+      "Focused portfolio for Junior Supply Chain Analyst and supply chain planning roles in Germany and across Europe, supported by inventory analytics, Power BI, SQL, Excel, Python, and SAP MM learning.",
   },
 ];
 
@@ -619,7 +491,7 @@ export default function Home() {
             <div className="inline-flex items-center gap-3 rounded-full border border-blue-200/70 bg-white/75 px-4 py-2 shadow-lg shadow-blue-900/5 backdrop-blur-xl">
               <span className="h-2 w-2 rounded-full bg-[#0071e3] shadow-[0_0_0_5px_rgba(0,113,227,0.1)]" />
               <p className="text-xs font-extrabold uppercase tracking-[0.26em] text-[#0071e3]">
-                Graduate Profile | Germany
+                Graduate Profile | Germany & Europe
               </p>
             </div>
             <h1 className="mt-4 max-w-5xl text-4xl font-extrabold leading-[1.04] tracking-tight text-[#0b1220] md:text-5xl 2xl:text-6xl">
@@ -631,8 +503,8 @@ export default function Home() {
               forecasting, KPI reporting, and supply chain decisions.
             </p>
             <p className="mt-5 max-w-3xl text-sm font-bold leading-7 text-blue-700 md:text-base">
-              Berlin, Germany | Open to relocation | German B1, working toward
-              B2 | Power BI | SQL | Excel | Python | SAP MM in progress
+              Berlin, Germany | Open to opportunities across Europe | German B1,
+              working toward B2 | Power BI | SQL | Excel | Python
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
@@ -667,7 +539,7 @@ export default function Home() {
                     JUNIOR SUPPLY CHAIN ANALYST
                   </p>
                   <p className="mt-1 text-sm font-bold text-slate-500">
-                    Graduate profile for Germany
+                    Graduate profile for Germany & Europe
                   </p>
                 </div>
                 <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-50 text-[#0071e3]">
@@ -697,7 +569,7 @@ export default function Home() {
                       "MBA in General Technology Management, Data Science focus",
                       "Thesis on inventory planning for industrial spare parts",
                       "Operations experience at Flink in Germany",
-                      "German B1, working toward B2; open to relocation",
+                      "Open to supply chain opportunities across Europe",
                     ].map((signal) => (
                       <p
                         key={signal}
@@ -720,50 +592,93 @@ export default function Home() {
 
       <section
         id="recruiter-summary"
-        className="premium-band relative px-5 py-12 backdrop-blur md:py-16"
+        className="premium-band relative px-5 py-10 backdrop-blur md:py-14"
       >
         <div className="mx-auto max-w-7xl">
-          <p className="text-xs font-extrabold uppercase tracking-[0.24em] text-[#0071e3]">
-            Recruiter Summary
-          </p>
-          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {recruiterSummary.map((item, index) => (
-              <article key={item.label} className="future-card role-card p-5">
-                <p className="font-mono text-xs font-bold text-blue-600">
-                  0{index + 1}
+          <div className="glass-panel overflow-hidden p-5 md:p-6">
+            <div className="grid gap-6 lg:grid-cols-[0.34fr_0.66fr] lg:items-center">
+              <div className="border-b border-slate-200 pb-6 lg:border-b-0 lg:border-r lg:pb-0 lg:pr-8">
+                <div className="inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1.5 text-xs font-extrabold uppercase tracking-[0.16em] text-emerald-700">
+                  <span className="h-2 w-2 rounded-full bg-emerald-500 shadow-[0_0_0_5px_rgba(16,185,129,0.12)]" />
+                  Open to work
+                </div>
+                <h2 className="mt-4 text-2xl font-extrabold tracking-tight text-[#0b1220] md:text-3xl">
+                  Current recruiter profile
+                </h2>
+                <p className="mt-3 max-w-md text-sm leading-6 text-slate-600">
+                  Germany is my primary market. I am also open to junior supply
+                  chain, planning, inventory, materials, and operations roles
+                  across Europe.
                 </p>
-                <p className="mt-4 text-xs font-extrabold uppercase tracking-[0.16em] text-slate-400">
-                  {item.label}
-                </p>
-                <p className="mt-2 font-bold leading-6 text-[#0b1220]">
-                  {item.value}
-                </p>
-              </article>
-            ))}
+              </div>
+
+              <div className="grid gap-x-8 gap-y-6 sm:grid-cols-2">
+                {recruiterProfile.map(
+                  ({ icon: Icon, label, value, detail }) => (
+                    <article key={label} className="flex gap-4">
+                      <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl border border-blue-100 bg-blue-50 text-[#0071e3]">
+                        <Icon size={19} />
+                      </span>
+                      <div>
+                        <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-slate-400">
+                          {label}
+                        </p>
+                        <p className="mt-1 font-extrabold text-[#0b1220]">
+                          {value}
+                        </p>
+                        <p className="mt-1 text-sm leading-5 text-slate-500">
+                          {detail}
+                        </p>
+                      </div>
+                    </article>
+                  ),
+                )}
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <section id="projects" className="relative px-5 py-14 md:py-20">
+      <section id="projects" className="relative px-5 py-14 md:py-16">
         <div className="mx-auto max-w-7xl">
           <SectionIntro
-            eyebrow="Featured Projects"
-            title="Planning and inventory analytics project work."
-            subtitle="Six practical case studies led by working inventory optimization and material planning tools for German and European supply chains."
+            eyebrow="Project Index"
+            title="All projects. One clear view."
+            subtitle={`${projects.length} working tools and analytics case studies for supply chain, inventory, material planning, logistics, operations, and business reporting across Germany and Europe.`}
           />
-          <div className="mt-8 grid gap-6 lg:grid-cols-2">
-            {homepageProjects.map((project) => (
-              <FeaturedProjectCard key={project.title} project={project} />
-            ))}
+
+          <div className="mt-8 flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-slate-200/80 bg-white/75 px-5 py-4 shadow-sm backdrop-blur">
+            <div className="flex items-center gap-3">
+              <span className="grid h-10 w-10 place-items-center rounded-xl bg-[#0071e3] text-white">
+                <FolderKanban size={20} />
+              </span>
+              <div>
+                <p className="font-extrabold text-[#0b1220]">
+                  Complete portfolio directory
+                </p>
+                <p className="text-sm text-slate-500">
+                  Every project opens on its own detailed page.
+                </p>
+              </div>
+            </div>
+            <div className="flex gap-2 text-xs font-bold">
+              <span className="rounded-full bg-blue-50 px-3 py-1.5 text-blue-700">
+                {projects.length} projects
+              </span>
+              <span className="rounded-full bg-emerald-50 px-3 py-1.5 text-emerald-700">
+                3 interactive tools
+              </span>
+            </div>
           </div>
-          <div className="mt-8 flex justify-end">
-            <NextLink
-              href="/projects/archive"
-              className="inline-flex items-center gap-2 text-sm font-bold text-[#0071e3] transition hover:text-slate-950"
-            >
-              View {archivedProjectCount} additional projects{" "}
-              <ArrowUpRight size={16} />
-            </NextLink>
+
+          <div className="mt-5 grid gap-3 lg:grid-cols-2">
+            {projects.map((project, index) => (
+              <ProjectIndexCard
+                key={project.title}
+                project={project}
+                index={index}
+              />
+            ))}
           </div>
         </div>
       </section>
@@ -901,7 +816,7 @@ export default function Home() {
           <SectionIntro
             eyebrow="Contact"
             title="Open to Junior Supply Chain Analyst opportunities."
-            subtitle="Berlin-based and open to relocation across Germany."
+            subtitle="Berlin-based, targeting Germany first, and open to opportunities and relocation across Europe."
           />
 
           <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -926,8 +841,8 @@ export default function Home() {
             <ContactLink
               icon={MapPin}
               label="Location"
-              value="Germany - open to relocation"
-              href="https://maps.google.com/?q=Germany"
+              value="Germany - open across Europe"
+              href="https://maps.google.com/?q=Europe"
             />
           </div>
         </div>
@@ -935,7 +850,7 @@ export default function Home() {
 
       <footer className="border-t border-slate-200 px-5 py-8 text-center text-sm text-slate-400">
         &copy; 2026 Raj Bharat Bhayani. Junior Supply Chain Analyst portfolio
-        for Germany.
+        for Germany and Europe.
       </footer>
     </main>
   );
@@ -968,121 +883,72 @@ function SectionIntro({
   );
 }
 
-function FeaturedProjectCard({
+function ProjectIndexCard({
   project,
+  index,
 }: {
-  project: (typeof featuredSupplyChainProjects)[number];
+  project: (typeof projects)[number];
+  index: number;
 }) {
+  const isInteractive = [
+    "/projects/inventory-optimization",
+    "/projects/material-planning-simulator",
+    "/projects/ai-supply-chain-risk-control-tower",
+  ].includes(project.href);
+
   return (
-    <article className="future-card project-feature group flex h-full flex-col">
-      <div className="image-console p-4">
-        <div className="mb-3 flex items-center justify-between gap-4">
-          <span className="inline-flex items-center gap-2 rounded-full border border-blue-100 bg-white/90 px-3 py-1 text-xs font-bold text-[#0071e3] shadow-sm">
-            <BarChart3 size={13} />
-            {project.category}
-          </span>
-          <span className="font-mono text-xs font-bold text-slate-400">
-            PROJECT
-          </span>
-        </div>
-        <div className="overflow-hidden rounded-2xl border border-slate-200/80 bg-white shadow-inner">
+    <NextLink
+      href={project.href}
+      className="future-card group grid min-h-[154px] grid-cols-[76px_minmax(0,1fr)_36px] items-center gap-4 p-4 sm:grid-cols-[104px_minmax(0,1fr)_40px]"
+    >
+      <div className="relative">
+        <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-inner">
           <Image
             src={project.image}
-            alt={`${project.title} dashboard preview`}
-            width={1000}
-            height={620}
-            className="project-image h-48 w-full object-contain object-center p-2 transition duration-500 group-hover:scale-[1.025] md:h-56"
+            alt={`${project.title} preview`}
+            width={220}
+            height={150}
+            className="h-20 w-full object-contain p-1.5 transition duration-300 group-hover:scale-[1.04]"
           />
         </div>
+        <span className="absolute -left-1 -top-2 rounded-lg bg-[#0b1220] px-2 py-1 font-mono text-[10px] font-bold text-white shadow-md">
+          {String(index + 1).padStart(2, "0")}
+        </span>
       </div>
-      <div className="flex flex-1 flex-col p-5 md:p-6">
-        <h3 className="text-2xl font-bold tracking-tight text-[#0b1220]">
+
+      <div className="min-w-0">
+        <div className="flex flex-wrap items-center gap-2">
+          <span className="text-[11px] font-extrabold uppercase tracking-[0.16em] text-[#0071e3]">
+            {project.category}
+          </span>
+          {isInteractive && (
+            <span className="rounded-full bg-emerald-50 px-2 py-1 text-[10px] font-extrabold uppercase tracking-[0.12em] text-emerald-700">
+              Interactive
+            </span>
+          )}
+        </div>
+        <h3 className="mt-2 text-lg font-extrabold leading-6 tracking-tight text-[#0b1220] transition group-hover:text-[#0071e3]">
           {project.title}
         </h3>
-        <div className="mt-5 grid gap-4 md:grid-cols-2">
-          <ProjectText
-            label="Business problem"
-            text={project.businessProblem}
-            featured
-          />
-          <ProjectText label="Solution" text={project.solution} featured />
+        <p className="mt-2 line-clamp-2 text-sm leading-5 text-slate-600">
+          {project.value}
+        </p>
+        <div className="mt-3 hidden flex-wrap gap-1.5 sm:flex">
+          {project.tools.slice(0, 3).map((tool) => (
+            <span
+              key={tool}
+              className="rounded-full bg-slate-100 px-2.5 py-1 text-[11px] font-bold text-slate-600"
+            >
+              {tool}
+            </span>
+          ))}
         </div>
-        <div className="mt-4 rounded-2xl border border-blue-100 bg-gradient-to-r from-blue-50/90 to-white p-4">
-          <ProjectText label="Business impact" text={project.impact} featured />
-        </div>
-        <div className="mt-5 grid gap-4 md:grid-cols-2">
-          <div>
-            <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-slate-500">
-              KPIs
-            </p>
-            <div className="mt-3 flex flex-wrap gap-2">
-              {project.kpis.map((kpi) => (
-                <span
-                  key={kpi}
-                  className="rounded-full bg-blue-50 px-3 py-1 text-xs font-bold text-blue-700"
-                >
-                  {kpi}
-                </span>
-              ))}
-            </div>
-          </div>
-          <div>
-            <p className="text-xs font-extrabold uppercase tracking-[0.2em] text-slate-500">
-              Tools
-            </p>
-            <div className="mt-3 flex flex-wrap gap-2">
-              {project.technologies.map((tool) => (
-                <span
-                  key={tool}
-                  className="rounded-full border border-slate-200 bg-white/80 px-3 py-1 text-xs font-bold text-slate-600"
-                >
-                  {tool}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
-        <NextLink
-          href={project.href}
-          className="mt-auto inline-flex w-fit items-center gap-2 pt-6 text-sm font-bold text-[#0071e3] transition hover:gap-3 hover:text-slate-950"
-        >
-          Open Project <ArrowUpRight size={16} />
-        </NextLink>
       </div>
-    </article>
-  );
-}
 
-function ProjectText({
-  label,
-  text,
-  featured,
-}: {
-  label: string;
-  text: string;
-  featured: boolean;
-}) {
-  return (
-    <div>
-      <p
-        className={
-          featured
-            ? "text-xs font-extrabold uppercase tracking-[0.2em] text-slate-500"
-            : "text-xs font-extrabold uppercase tracking-[0.2em] text-[#0071e3]"
-        }
-      >
-        {label}
-      </p>
-      <p
-        className={
-          featured
-            ? "mt-2 text-sm leading-6 text-slate-600"
-            : "mt-2 text-sm leading-6 text-slate-600"
-        }
-      >
-        {text}
-      </p>
-    </div>
+      <span className="grid h-9 w-9 place-items-center rounded-full border border-slate-200 bg-white text-[#0071e3] transition group-hover:border-[#0071e3] group-hover:bg-[#0071e3] group-hover:text-white">
+        <ArrowUpRight size={17} />
+      </span>
+    </NextLink>
   );
 }
 

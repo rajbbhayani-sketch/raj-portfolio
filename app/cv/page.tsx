@@ -5,7 +5,7 @@ import { ArrowLeft, Download, Mail, MapPin, Phone } from "lucide-react";
 export const metadata: Metadata = {
   title: "CV - Junior Supply Chain Analyst",
   description:
-    "Recruiter-friendly CV for Raj Bharat Bhayani, focused on Junior Supply Chain Analyst, supply chain planning, inventory, material planning, operations, and trainee roles in Germany.",
+    "Recruiter-friendly CV for Raj Bharat Bhayani, focused on Junior Supply Chain Analyst, supply chain planning, inventory, material planning, operations, and trainee roles in Germany and across Europe.",
   alternates: {
     canonical: "/cv",
   },
@@ -123,7 +123,8 @@ export default function CvPage() {
               <Phone size={16} /> +49 176 62398987
             </p>
             <p className="flex items-center gap-2">
-              <MapPin size={16} /> Germany - open to relocation within Germany
+              <MapPin size={16} /> Germany-based - open to opportunities and
+              relocation across Europe
             </p>
             <p>LinkedIn: linkedin.com/in/mrrajbhayani</p>
             <p>
