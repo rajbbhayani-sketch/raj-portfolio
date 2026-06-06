@@ -137,6 +137,51 @@ const skillGroups = [
 
 const projects = [
   {
+    title: "Inventory Optimization Project",
+    category: "Inventory Planning",
+    image: "/projects/inventory-optimization.png",
+    href: "/projects/inventory-optimization",
+    problem:
+      "German and European planning teams need transparent replenishment rules that balance service level, supplier lead time, demand variability, and inventory cost.",
+    value:
+      "Built an interactive inventory model for safety stock, reorder point, EOQ, stock cover, order frequency, and annual relevant inventory cost.",
+    tools: [
+      "Inventory Optimization",
+      "Safety Stock",
+      "EOQ",
+      "Reorder Point",
+      "Scenario Analysis",
+    ],
+    kpis: ["Safety stock", "Reorder point", "Stock cover", "Inventory cost"],
+    impact:
+      "Supports replenishment decisions, stockout prevention, and excess-inventory review for German distribution scenarios.",
+  },
+  {
+    title: "Material Planning Simulator",
+    category: "Material Requirements Planning",
+    image: "/projects/material-planning-simulator.png",
+    href: "/projects/material-planning-simulator",
+    problem:
+      "German plants need material availability aligned with production demand, lot size, safety stock, scrap, and European supplier lead times.",
+    value:
+      "Built an eight-week MRP simulator for gross requirements, projected stock, net requirements, planned receipts, and time-phased order releases.",
+    tools: [
+      "Material Planning",
+      "MRP Logic",
+      "Lot Sizing",
+      "Supplier Lead Time",
+      "Scenario Analysis",
+    ],
+    kpis: [
+      "Gross requirements",
+      "Planned receipts",
+      "Projected stock",
+      "Order releases",
+    ],
+    impact:
+      "Supports material availability reviews, supplier scheduling, and earlier action on production shortage risk.",
+  },
+  {
     title: "European Supply Chain Risk & Disruption Control Tower",
     category: "Supply Chain Risk Analytics",
     image: "/projects/ai-supply-chain-demo-screenshot.png",
@@ -307,6 +352,49 @@ const projects = [
 
 const featuredSupplyChainProjects = [
   {
+    title: "Inventory Optimization Project",
+    href: "/projects/inventory-optimization",
+    category: "Inventory Planning",
+    image: "/projects/inventory-optimization.png",
+    businessProblem:
+      "Replenishment decisions must balance service targets, demand variation, lead time, and inventory cost.",
+    solution:
+      "Interactive model for safety stock, reorder point, EOQ, stock cover, and annual relevant cost.",
+    kpis: ["Safety stock", "Reorder point", "EOQ", "Stock cover"],
+    technologies: [
+      "Inventory optimization",
+      "Scenario analysis",
+      "Replenishment logic",
+      "TypeScript",
+    ],
+    impact:
+      "Creates transparent replenishment recommendations for German distribution and spare-parts scenarios.",
+  },
+  {
+    title: "Material Planning Simulator",
+    href: "/projects/material-planning-simulator",
+    category: "Material Requirements Planning",
+    image: "/projects/material-planning-simulator.png",
+    businessProblem:
+      "German plants need component availability aligned with production demand and European supplier lead time.",
+    solution:
+      "Eight-week MRP simulation with projected stock, planned receipts, lot sizing, and order releases.",
+    kpis: [
+      "Gross requirements",
+      "Projected stock",
+      "Planned receipts",
+      "Order releases",
+    ],
+    technologies: [
+      "MRP logic",
+      "Material planning",
+      "Lot sizing",
+      "TypeScript",
+    ],
+    impact:
+      "Supports material availability, supplier scheduling, and production-shortage prevention.",
+  },
+  {
     title: "European Supply Chain Risk & Disruption Control Tower",
     href: "/projects/ai-supply-chain-risk-control-tower",
     category: "Supply Chain Risk",
@@ -392,10 +480,12 @@ const featuredSupplyChainProjects = [
 ];
 
 const homepageProjects = [
-  featuredSupplyChainProjects[3],
-  featuredSupplyChainProjects[1],
-  featuredSupplyChainProjects[2],
   featuredSupplyChainProjects[0],
+  featuredSupplyChainProjects[1],
+  featuredSupplyChainProjects[5],
+  featuredSupplyChainProjects[3],
+  featuredSupplyChainProjects[4],
+  featuredSupplyChainProjects[2],
 ];
 
 const archivedProjectCount = projects.length - homepageProjects.length;
@@ -446,6 +536,9 @@ const structuredData = [
       "Inventory Planning",
       "Demand Forecasting",
       "Material Planning",
+      "Material Requirements Planning",
+      "Inventory Optimization",
+      "Economic Order Quantity",
       "Supply Chain KPI Reporting",
       "Operations Analysis",
       "Business Intelligence",
@@ -656,7 +749,7 @@ export default function Home() {
           <SectionIntro
             eyebrow="Featured Projects"
             title="Planning and inventory analytics project work."
-            subtitle="Four practical case studies covering demand forecasting, inventory decisions, supplier performance, material risk, and supply chain disruption."
+            subtitle="Six practical case studies led by working inventory optimization and material planning tools for German and European supply chains."
           />
           <div className="mt-8 grid gap-6 lg:grid-cols-2">
             {homepageProjects.map((project) => (

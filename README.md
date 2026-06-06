@@ -14,6 +14,8 @@ The portfolio emphasizes inventory planning, demand forecasting, material planni
 
 ## Main Projects
 
+- Inventory Optimization Project
+- Material Planning Simulator
 - Demand Forecasting & Inventory Optimization Dashboard
 - Inventory Planning Decision Support Control Tower
 - European Supplier Performance & Material Risk Intelligence

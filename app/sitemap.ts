@@ -6,6 +6,8 @@ const routes = [
   "/",
   "/cv",
   "/contact",
+  "/projects/inventory-optimization",
+  "/projects/material-planning-simulator",
   "/projects/ai-supply-chain-risk-control-tower",
   "/projects/demand-forecasting-inventory-optimization",
   "/projects/european-procurement-supplier-risk-intelligence",

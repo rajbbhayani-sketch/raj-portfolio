@@ -41,10 +41,10 @@ const skills = {
 };
 
 const projects = [
+  "Inventory Optimization Project - interactive safety stock, reorder point, EOQ, stock cover, order frequency, and inventory cost scenarios for German distribution networks.",
+  "Material Planning Simulator - eight-week MRP logic for German plants and European suppliers, including gross requirements, projected stock, lot sizing, planned receipts, and order releases.",
   "Demand Forecasting & Inventory Optimization Dashboard - forecast accuracy, inventory turnover, fill rate, service level, stockout risk, safety stock, and reorder point logic.",
   "Inventory Planning Decision Support Control Tower - stockout risk, safety stock, reorder point recommendations, supplier reliability, and explainable planning support.",
-  "European Supplier Performance & Material Risk Intelligence - supplier OTIF, delivery reliability, material exposure, cost variance, and risk evaluation.",
-  "European Supply Chain Risk & Disruption Control Tower - supplier delay, logistics bottlenecks, inventory exposure, and mitigation actions.",
 ];
 
 const experience = [
