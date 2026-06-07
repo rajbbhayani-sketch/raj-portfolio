@@ -30,7 +30,11 @@ const skills = {
     "Supply Chain KPI Reporting",
     "Logistics Operations",
   ],
-  Tools: ["Power BI", "SQL", "Excel", "Python", "SAP MM - currently learning"],
+  "SAP S/4HANA - Active Learning": [
+    "Sourcing and Procurement",
+    "Production Planning",
+  ],
+  Tools: ["Power BI", "SQL", "Excel", "Python"],
   Business: [
     "Business Analysis",
     "Process Improvement",
@@ -110,9 +114,9 @@ export default function CvPage() {
             </h1>
             <p className="mt-4 max-w-3xl text-lg leading-8 text-slate-600">
               MBA graduate in General Technology Management with a Data Science
-              focus, applying Power BI, SQL, Excel, and Python to inventory
-              planning, demand forecasting, KPI reporting, and supply chain
-              decision support.
+              focus, applying SAP S/4HANA learning, Power BI, SQL, Excel, and
+              Python to inventory planning, demand forecasting, KPI reporting,
+              and supply chain decision support.
             </p>
           </div>
           <div className="future-card role-card p-5 text-sm font-bold leading-7 text-slate-700">
@@ -128,7 +132,8 @@ export default function CvPage() {
             </p>
             <p>LinkedIn: linkedin.com/in/mrrajbhayani</p>
             <p>
-              Languages: English, German - B1 working toward B2, Hindi, Gujarati
+              Languages: English - C1, German - B1 working toward B2, Hindi,
+              Gujarati
             </p>
           </div>
         </div>

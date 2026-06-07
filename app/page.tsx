@@ -13,6 +13,7 @@ import {
   Globe2,
   GraduationCap,
   Languages,
+  Layers3,
   Link,
   Mail,
   MapPin,
@@ -47,13 +48,13 @@ const recruiterProfile = [
   {
     icon: Wrench,
     label: "Core toolkit",
-    value: "Power BI · SQL · Excel · Python",
-    detail: "Currently learning SAP MM",
+    value: "SAP S/4HANA · Power BI · SQL",
+    detail: "Sourcing, procurement, production planning, Excel, and Python",
   },
   {
     icon: Languages,
     label: "Languages",
-    value: "English · German B1",
+    value: "English C1 · German B1",
     detail: "German actively progressing toward B2",
   },
 ];
@@ -126,13 +127,7 @@ const skillGroups = [
   {
     title: "Tools",
     icon: Database,
-    skills: [
-      "Power BI",
-      "SQL",
-      "Excel",
-      "Python",
-      "SAP MM - currently learning",
-    ],
+    skills: ["Power BI", "SQL", "Excel", "Python"],
   },
   {
     title: "Business",
@@ -418,7 +413,8 @@ const structuredData = [
       "SQL",
       "Excel",
       "Python",
-      "SAP MM",
+      "SAP S/4HANA Sourcing and Procurement",
+      "SAP S/4HANA Production Planning",
     ],
     alumniOf: [
       {
@@ -437,7 +433,7 @@ const structuredData = [
     name: "Raj Bharat Bhayani Portfolio",
     url: "https://www.rajbharatbhayani.eu",
     description:
-      "Focused portfolio for Junior Supply Chain Analyst and supply chain planning roles in Germany and across Europe, supported by inventory analytics, Power BI, SQL, Excel, Python, and SAP MM learning.",
+      "Focused portfolio for Junior Supply Chain Analyst and supply chain planning roles in Germany and across Europe, supported by inventory analytics, SAP S/4HANA learning, Power BI, SQL, Excel, and Python.",
   },
 ];
 
@@ -503,8 +499,8 @@ export default function Home() {
               forecasting, KPI reporting, and supply chain decisions.
             </p>
             <p className="mt-5 max-w-3xl text-sm font-bold leading-7 text-blue-700 md:text-base">
-              Berlin, Germany | Open to opportunities across Europe | German B1,
-              working toward B2 | Power BI | SQL | Excel | Python
+              Berlin, Germany | Open across Europe | English C1 | German B1,
+              working toward B2 | SAP S/4HANA | Power BI | SQL | Excel
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
@@ -740,8 +736,44 @@ export default function Home() {
           <SectionIntro
             eyebrow="Skills"
             title="Skills for junior supply chain analytics roles."
-            subtitle="A focused combination of planning knowledge, analytical tools, and cross-functional business communication."
+            subtitle="A focused combination of SAP S/4HANA learning, planning knowledge, analytical tools, and cross-functional business communication."
           />
+          <div className="mt-8 overflow-hidden rounded-3xl border border-blue-200 bg-gradient-to-br from-[#071a35] via-[#0b376d] to-[#0071e3] p-6 text-white shadow-[0_24px_70px_rgba(0,83,170,0.22)] md:p-8">
+            <div className="grid gap-6 lg:grid-cols-[0.42fr_0.58fr] lg:items-center">
+              <div>
+                <div className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-xs font-extrabold uppercase tracking-[0.16em] text-blue-100 backdrop-blur">
+                  <Layers3 size={15} />
+                  Priority Learning Focus
+                </div>
+                <h3 className="mt-4 text-2xl font-extrabold tracking-tight md:text-3xl">
+                  SAP S/4HANA for supply chain planning
+                </h3>
+                <p className="mt-3 max-w-xl text-sm leading-6 text-blue-100 md:text-base">
+                  Building practical ERP knowledge relevant to procurement,
+                  material availability, purchasing processes, and production
+                  planning.
+                </p>
+              </div>
+              <div className="grid gap-3 sm:grid-cols-2">
+                {[
+                  "SAP S/4HANA Sourcing and Procurement",
+                  "SAP S/4HANA Production Planning",
+                ].map((skill) => (
+                  <div
+                    key={skill}
+                    className="rounded-2xl border border-white/20 bg-white/10 p-5 backdrop-blur"
+                  >
+                    <p className="text-xs font-extrabold uppercase tracking-[0.16em] text-blue-200">
+                      Currently Learning
+                    </p>
+                    <p className="mt-2 font-extrabold leading-6 text-white">
+                      {skill}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
           <div className="mt-8 grid gap-5 md:grid-cols-3">
             {skillGroups.map(({ title, icon: Icon, skills }) => (
               <div key={title} className="future-card role-card p-5">

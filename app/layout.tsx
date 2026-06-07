@@ -17,7 +17,7 @@ const siteUrl = new URL("https://www.rajbharatbhayani.eu");
 const siteTitle =
   "Raj Bharat Bhayani | Junior Supply Chain Analyst Germany & Europe";
 const siteDescription =
-  "Germany-based Junior Supply Chain Analyst portfolio open to opportunities across Europe, focused on inventory planning, demand forecasting, material planning, operations analysis, Power BI, SQL, Excel, Python, and SAP MM learning.";
+  "Germany-based Junior Supply Chain Analyst portfolio open across Europe, focused on inventory planning, demand forecasting, SAP S/4HANA Sourcing and Procurement, SAP S/4HANA Production Planning, Power BI, SQL, Excel, and Python.";
 
 export const metadata: Metadata = {
   metadataBase: siteUrl,
@@ -54,7 +54,8 @@ export const metadata: Metadata = {
     "SQL",
     "Excel",
     "Python",
-    "SAP MM",
+    "SAP S/4HANA Sourcing and Procurement",
+    "SAP S/4HANA Production Planning",
   ],
   authors: [{ name: "Raj Bharat Bhayani", url: siteUrl }],
   creator: "Raj Bharat Bhayani",

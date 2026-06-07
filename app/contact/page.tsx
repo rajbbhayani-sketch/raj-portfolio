@@ -99,7 +99,7 @@ export default function ContactPage() {
             <p className="mt-3 text-sm leading-6 text-slate-600">
               Direct contact for recruiter introductions, agency opportunities,
               and junior supply chain planning or analytics roles throughout
-              Europe. German B1, working toward B2.
+              Europe. English C1; German B1, working toward B2.
             </p>
           </aside>
         </div>

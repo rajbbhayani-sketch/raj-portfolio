@@ -8,6 +8,9 @@ The primary profile is:
 
 > Junior Supply Chain Analyst with strong Business Analytics skills.
 
+Current ERP learning focus: SAP S/4HANA Sourcing and Procurement and SAP
+S/4HANA Production Planning.
+
 Secondary target roles are Supply Chain Planner, Inventory Analyst, Material Planning Analyst, Operations Analyst, and Supply Chain Trainee.
 
 The portfolio emphasizes inventory planning, demand forecasting, material planning, supply chain analytics, KPI reporting, and data-driven decision support. Business Intelligence and Business Analysis are supporting strengths rather than separate target profiles.
